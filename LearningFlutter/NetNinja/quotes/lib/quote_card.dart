@@ -6,6 +6,8 @@ class QuoteCard extends StatelessWidget {
   final Quote quote;
   final Function() delete;
 
+  static const int a = 1;
+
   const QuoteCard({super.key, required this.quote, required this.delete});
 
   @override
@@ -34,7 +36,7 @@ class QuoteCard extends StatelessWidget {
             TextButton.icon(
               onPressed: delete,
               icon: const Icon(Icons.delete),
-              label: const Text('delete quoute'),
+              label: const Text('delete quote'),
             ),
           ],
         ),
