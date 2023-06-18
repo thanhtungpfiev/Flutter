@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_study_app/controllers/questions_papers/data_uploader.dart';
 import 'package:get/get.dart';
 
-import '../controllers/questions_papers/loading_status.dart';
+import '../../../controllers/questions_papers/loading_status.dart';
 
 class DataUploaderScreen extends StatelessWidget {
   DataUploaderScreen({Key? key}) : super(key: key);

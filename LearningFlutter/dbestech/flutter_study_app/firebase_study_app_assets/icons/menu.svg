@@ -1,0 +1,23 @@
+<svg id="menu" viewBox="0 0 19.19 19.19" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>.cls-1{fill:#fff;}</style>
+    </defs>
+    <path class="cls-1" d="M4.8,2.4A2.4,2.4,0,1,1,2.4,0,2.39,2.39,0,0,1,4.8,2.4Z"
+        data-name="Path 23" id="Path_23" transform="translate(0 0)" />
+    <path class="cls-1" d="M4.8,9.6A2.4,2.4,0,1,1,2.4,7.2,2.4,2.4,0,0,1,4.8,9.6Z"
+        data-name="Path 24" id="Path_24" transform="translate(0 0)" />
+    <path class="cls-1" d="M2.4,19.19A2.4,2.4,0,1,0,0,16.79H0A2.39,2.39,0,0,0,2.4,19.19Z"
+        data-name="Path 25" id="Path_25" transform="translate(0 0)" />
+    <path class="cls-1" d="M12,2.4A2.4,2.4,0,1,1,9.6,0h0A2.4,2.4,0,0,1,12,2.4Z" data-name="Path 26"
+        id="Path_26" transform="translate(0 0)" />
+    <path class="cls-1" d="M9.6,12A2.4,2.4,0,1,0,7.2,9.6h0A2.4,2.4,0,0,0,9.6,12Z"
+        data-name="Path 27" id="Path_27" transform="translate(0 0)" />
+    <path class="cls-1" d="M12,16.79a2.4,2.4,0,1,1-2.4-2.4h0A2.41,2.41,0,0,1,12,16.79Z"
+        data-name="Path 28" id="Path_28" transform="translate(0 0)" />
+    <path class="cls-1" d="M16.79,4.8a2.4,2.4,0,1,0-2.4-2.4,2.39,2.39,0,0,0,2.4,2.4Z"
+        data-name="Path 29" id="Path_29" transform="translate(0 0)" />
+    <path class="cls-1" d="M19.19,9.6a2.4,2.4,0,1,1-2.4-2.4h0A2.39,2.39,0,0,1,19.19,9.6Z"
+        data-name="Path 30" id="Path_30" transform="translate(0 0)" />
+    <path class="cls-1" d="M16.79,19.19a2.4,2.4,0,1,0-2.4-2.4h0A2.4,2.4,0,0,0,16.79,19.19Z"
+        data-name="Path 31" id="Path_31" transform="translate(0 0)" />
+</svg>

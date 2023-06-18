@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 /// id : "ppr004"
 /// title : "Biology"
 /// image_url : ""
@@ -13,21 +15,24 @@ class QuestionPaperModel {
     required String description,
     required num timeSeconds,
     required List<Questions> questions,
+    required int questionCount,
   }) {
     _id = id;
     _title = title;
-    _imageUrl = imageUrl;
+    imageUrl = imageUrl;
     _description = description;
     _timeSeconds = timeSeconds;
+    _questionCount = questionCount;
     _questions = questions;
   }
 
   QuestionPaperModel.fromJson(dynamic json) {
     _id = json['id'];
     _title = json['title'];
-    _imageUrl = json['image_url'];
+    imageUrl = json['image_url'];
     _description = json['Description'];
     _timeSeconds = json['time_seconds'];
+    _questionCount = 0;
     if (json['questions'] != null) {
       _questions = [];
       json['questions'].forEach((v) {
@@ -36,11 +41,22 @@ class QuestionPaperModel {
     }
   }
 
+  QuestionPaperModel.fromSnapshot(DocumentSnapshot json) {
+    _id = json.id;
+    _title = json['title'];
+    imageUrl = json['image_url'];
+    _description = json['Description'];
+    _timeSeconds = json['time_seconds'];
+    _questionCount = json['question_count'];
+    _questions = [];
+  }
+
   late String _id;
   late String _title;
-  late String _imageUrl;
+  late String imageUrl;
   late String _description;
   late num _timeSeconds;
+  late int _questionCount;
   late List<Questions> _questions;
 
   QuestionPaperModel copyWith({
@@ -49,6 +65,7 @@ class QuestionPaperModel {
     required String imageUrl,
     required String description,
     required num timeSeconds,
+    required int questionCount,
     required List<Questions> questions,
   }) =>
       QuestionPaperModel(
@@ -57,6 +74,7 @@ class QuestionPaperModel {
         imageUrl: imageUrl,
         description: description,
         timeSeconds: timeSeconds,
+        questionCount: questionCount,
         questions: questions,
       );
 
@@ -64,11 +82,11 @@ class QuestionPaperModel {
 
   String get title => _title;
 
-  String get imageUrl => _imageUrl;
-
   String get description => _description;
 
   num get timeSeconds => _timeSeconds;
+
+  int get questionCount => _questionCount;
 
   List<Questions> get questions => _questions;
 
@@ -76,12 +94,15 @@ class QuestionPaperModel {
     final map = <String, dynamic>{};
     map['id'] = _id;
     map['title'] = _title;
-    map['image_url'] = _imageUrl;
+    map['image_url'] = imageUrl;
     map['Description'] = _description;
     map['time_seconds'] = _timeSeconds;
+    map['question_count'] = _questionCount;
     map['questions'] = _questions.map((v) => v.toJson()).toList();
     return map;
   }
+
+  String timeInMinutes() => "${(timeSeconds / 60).ceil()} mins";
 }
 
 /// id : "ppr004q001"

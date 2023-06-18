@@ -11,8 +11,8 @@ import 'package:get/get.dart';
 class DataUploader extends GetxController {
   @override
   void onReady() {
-    uploadData();
     super.onReady();
+    uploadData();
   }
 
   final loadingStatus = LoadingStatus.loading.obs;
@@ -27,7 +27,7 @@ class DataUploader extends GetxController {
     // * load json file from assets
     final paperInAssets = manifestMap.keys
         .where((path) =>
-            path.startsWith('assets/DB/papers') && path.endsWith('.json'))
+            path.startsWith("assets/DB/papers") && path.endsWith(".json"))
         .toList();
     List<QuestionPaperModel> questionPapers = [];
     for (var paper in paperInAssets) {
