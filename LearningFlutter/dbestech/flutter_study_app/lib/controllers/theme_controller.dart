@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_study_app/configs/themes/app_dark_theme.dart';
-import 'package:flutter_study_app/configs/themes/app_light_theme.dart';
 import 'package:get/get.dart';
+
+import '../configs/themes/app_dark_theme.dart';
+import '../configs/themes/app_light_theme.dart';
 
 class ThemeController extends GetxController {
   late ThemeData _darkTheme;
@@ -9,8 +10,8 @@ class ThemeController extends GetxController {
 
   @override
   void onInit() {
-    super.onInit();
     initializeThemeData();
+    super.onInit();
   }
 
   void initializeThemeData() {

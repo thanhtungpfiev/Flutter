@@ -1,9 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter_study_app/firebase_ref/references.dart';
-import 'package:flutter_study_app/models/question_paper_model.dart';
-import 'package:flutter_study_app/services/firebase_storage_service.dart';
 import 'package:get/get.dart';
 
+import '../../firebase_ref/references.dart';
+import '../../models/question_paper_model.dart';
+import '../../routes/app_routes.dart';
+import '../../services/firebase_storage_service.dart';
 import '../../util/app_logger.dart';
 import '../auth_controller.dart';
 
@@ -12,8 +13,8 @@ class QuestionPaperController extends GetxController {
 
   @override
   void onReady() {
-    super.onReady();
     getAllPapers();
+    super.onReady();
   }
 
   Future<void> getAllPapers() async {
@@ -40,7 +41,11 @@ class QuestionPaperController extends GetxController {
     if (authController.isLoggedIn()) {
       if (tryAgain) {
         Get.back();
-      } else {}
+        Get.toNamed(AppRoutes.questionsRoute,
+            arguments: paper, preventDuplicates: false);
+      } else {
+        Get.toNamed(AppRoutes.questionsRoute, arguments: paper);
+      }
     } else {
       authController.showLoginAlertDialogue();
     }

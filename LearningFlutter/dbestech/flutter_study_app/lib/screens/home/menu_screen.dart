@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_study_app/configs/themes/app_colors.dart';
-import 'package:flutter_study_app/configs/themes/ui_parameters.dart';
-import 'package:flutter_study_app/controllers/zoom_drawer_controller.dart';
 import 'package:get/get.dart';
+
+import '../../configs/themes/app_colors.dart';
+import '../../configs/themes/ui_parameters.dart';
+import '../../controllers/zoom_drawer_controller.dart';
 
 class MyMenuScreen extends GetView<MyZoomDrawerController> {
   const MyMenuScreen({super.key});

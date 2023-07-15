@@ -13,8 +13,8 @@ class MyZoomDrawerController extends GetxController {
 
   @override
   void onReady() {
-    super.onReady();
     user.value = authController.getUser();
+    super.onReady();
   }
 
   void toggleDrawer() {

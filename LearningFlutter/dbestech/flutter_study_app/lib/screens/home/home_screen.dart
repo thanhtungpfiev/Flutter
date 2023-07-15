@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_study_app/configs/themes/app_colors.dart';
-import 'package:flutter_study_app/configs/themes/custom_text_styles.dart';
-import 'package:flutter_study_app/configs/themes/ui_parameters.dart';
-import 'package:flutter_study_app/controllers/questions_papers/question_paper_controller.dart';
-import 'package:flutter_study_app/controllers/zoom_drawer_controller.dart';
-import 'package:flutter_study_app/screens/home/question_card.dart';
-import 'package:flutter_study_app/widgets/content_area.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:get/get.dart';
 
+import '../../configs/themes/app_colors.dart';
 import '../../configs/themes/app_icons.dart';
+import '../../configs/themes/custom_text_styles.dart';
+import '../../configs/themes/ui_parameters.dart';
+import '../../controllers/questions_papers/question_paper_controller.dart';
+import '../../controllers/zoom_drawer_controller.dart';
 import '../../widgets/app_circle_button.dart';
+import '../../widgets/content_area.dart';
 import 'menu_screen.dart';
+import 'question_card.dart';
 
 class HomeScreen extends GetView<MyZoomDrawerController> {
   const HomeScreen({super.key});

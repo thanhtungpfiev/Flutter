@@ -3,16 +3,17 @@ import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_study_app/controllers/questions_papers/loading_status.dart';
-import 'package:flutter_study_app/firebase_ref/references.dart';
-import 'package:flutter_study_app/models/question_paper_model.dart';
 import 'package:get/get.dart';
+
+import '../../firebase_ref/references.dart';
+import '../../models/question_paper_model.dart';
+import 'loading_status.dart';
 
 class DataUploader extends GetxController {
   @override
   void onReady() {
-    super.onReady();
     uploadData();
+    super.onReady();
   }
 
   final loadingStatus = LoadingStatus.loading.obs;

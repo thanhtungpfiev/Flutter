@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_study_app/configs/themes/app_colors.dart';
-import 'package:flutter_study_app/configs/themes/ui_parameters.dart';
+
+import '../configs/themes/app_colors.dart';
+import '../configs/themes/ui_parameters.dart';
 
 class ContentArea extends StatelessWidget {
   final bool addPadding;

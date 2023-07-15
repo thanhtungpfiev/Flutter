@@ -7,8 +7,6 @@ import '../../controllers/auth_controller.dart';
 import '../../widgets/common/main_button.dart';
 
 class LoginScreen extends GetView<AuthController> {
-  static const String routeName = "/login";
-
   const LoginScreen({super.key});
 
   @override

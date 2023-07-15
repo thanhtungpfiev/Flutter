@@ -1,72 +1,60 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-/// id : "ppr004"
-/// title : "Biology"
-/// image_url : ""
-/// Description : "Basic Biology Multiple Choice Questions (MCQ) to practice basic Biology quiz answers"
-/// time_seconds : 900
-/// questions : [{"id":"ppr004q001","question":"A relationship in which one animal hunts, kills and eats another","answers":[{"identifier":"A","Answer":"Symbiosis"},{"identifier":"B","Answer":"Mutualism"},{"identifier":"C","Answer":"Parasitism"},{"identifier":"D","Answer":"Predation"}],"correct_answer":"D"},{"id":"ppr004q002","question":"The animal that is hunted and killed for food.","answers":[{"identifier":"A","Answer":"Decomposer"},{"identifier":"B","Answer":"Predator"},{"identifier":"C","Answer":"Scavenger"},{"identifier":"D","Answer":"Prey"}],"correct_answer":"D"},{"id":"ppr004q003","question":"A close relationship between two different species of organisms living together.","answers":[{"identifier":"A","Answer":"Mutualism"},{"identifier":"B","Answer":"Symbiosis"},{"identifier":"C","Answer":"Competition"},{"identifier":"D","Answer":"Commensialism"}],"correct_answer":"B"},{"id":"ppr004q004","question":"A symbiotic relationship in which both species benefit.","answers":[{"identifier":"A","Answer":"Mutualism"},{"identifier":"B","Answer":"Commensialism"},{"identifier":"C","Answer":"Parasitism"},{"identifier":"D","Answer":"Predation"}],"correct_answer":"A"},{"id":"ppr004q005","question":"Which organelle is found in most plants, some bacteria and some protists?","answers":[{"identifier":"A","Answer":"ribosomes"},{"identifier":"B","Answer":"mitochondria"},{"identifier":"C","Answer":"endoplasmic reticulum"},{"identifier":"D","Answer":"chloroplasts"}],"correct_answer":"D"}]
-
 class QuestionPaperModel {
+  late String _id;
+  late String _title;
+  late String _imageUrl;
+  late String _description;
+  late int _timeSeconds;
+  late int _questionCount;
+  late List<Question> _questions;
+
+  String get id => _id;
+
+  String get title => _title;
+
+  // ignore: unnecessary_getters_setters
+  String get imageUrl => _imageUrl;
+
+  String get description => _description;
+
+  int get timeSeconds => _timeSeconds;
+
+  int get questionCount => _questionCount;
+
+  // ignore: unnecessary_getters_setters
+  List<Question> get questions => _questions;
+
+  set imageUrl(String imageUrl) => _imageUrl = imageUrl;
+
+  set questions(List<Question> questions) => _questions = questions;
+
   QuestionPaperModel({
     required String id,
     required String title,
     required String imageUrl,
     required String description,
-    required num timeSeconds,
-    required List<Questions> questions,
+    required int timeSeconds,
+    required List<Question> questions,
     required int questionCount,
   }) {
     _id = id;
     _title = title;
-    imageUrl = imageUrl;
+    _imageUrl = imageUrl;
     _description = description;
     _timeSeconds = timeSeconds;
     _questionCount = questionCount;
     _questions = questions;
   }
 
-  QuestionPaperModel.fromJson(dynamic json) {
-    _id = json['id'];
-    _title = json['title'];
-    imageUrl = json['image_url'];
-    _description = json['Description'];
-    _timeSeconds = json['time_seconds'];
-    _questionCount = 0;
-    if (json['questions'] != null) {
-      _questions = [];
-      json['questions'].forEach((v) {
-        _questions.add(Questions.fromJson(v));
-      });
-    }
-  }
-
-  QuestionPaperModel.fromSnapshot(DocumentSnapshot json) {
-    _id = json.id;
-    _title = json['title'];
-    imageUrl = json['image_url'];
-    _description = json['Description'];
-    _timeSeconds = json['time_seconds'];
-    _questionCount = json['question_count'];
-    _questions = [];
-  }
-
-  late String _id;
-  late String _title;
-  late String imageUrl;
-  late String _description;
-  late num _timeSeconds;
-  late int _questionCount;
-  late List<Questions> _questions;
-
   QuestionPaperModel copyWith({
     required String id,
     required String title,
     required String imageUrl,
     required String description,
-    required num timeSeconds,
+    required int timeSeconds,
     required int questionCount,
-    required List<Questions> questions,
+    required List<Question> questions,
   }) =>
       QuestionPaperModel(
         id: id,
@@ -78,23 +66,36 @@ class QuestionPaperModel {
         questions: questions,
       );
 
-  String get id => _id;
+  QuestionPaperModel.fromJson(dynamic json) {
+    _id = json['id'];
+    _title = json['title'];
+    _imageUrl = json['image_url'];
+    _description = json['Description'];
+    _timeSeconds = json['time_seconds'];
+    _questionCount = 0;
+    if (json['questions'] != null) {
+      _questions = [];
+      json['questions'].forEach((v) {
+        _questions.add(Question.fromJson(v));
+      });
+    }
+  }
 
-  String get title => _title;
-
-  String get description => _description;
-
-  num get timeSeconds => _timeSeconds;
-
-  int get questionCount => _questionCount;
-
-  List<Questions> get questions => _questions;
+  QuestionPaperModel.fromSnapshot(DocumentSnapshot snapshot) {
+    _id = snapshot.id;
+    _title = snapshot['title'];
+    _imageUrl = snapshot['image_url'];
+    _description = snapshot['Description'];
+    _timeSeconds = snapshot['time_seconds'];
+    _questionCount = snapshot['question_count'];
+    _questions = [];
+  }
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     map['id'] = _id;
     map['title'] = _title;
-    map['image_url'] = imageUrl;
+    map['image_url'] = _imageUrl;
     map['Description'] = _description;
     map['time_seconds'] = _timeSeconds;
     map['question_count'] = _questionCount;
@@ -110,11 +111,34 @@ class QuestionPaperModel {
 /// answers : [{"identifier":"A","Answer":"Symbiosis"},{"identifier":"B","Answer":"Mutualism"},{"identifier":"C","Answer":"Parasitism"},{"identifier":"D","Answer":"Predation"}]
 /// correct_answer : "D"
 
-class Questions {
-  Questions({
+class Question {
+  late String _id;
+  late String _question;
+  late List<Answer> _answers;
+  late String _correctAnswer;
+  String? _selectedAnswer;
+
+  String get id => _id;
+
+  String get question => _question;
+
+  // ignore: unnecessary_getters_setters
+  List<Answer> get answers => _answers;
+
+  String get correctAnswer => _correctAnswer;
+
+  // ignore: unnecessary_getters_setters
+  String? get selectedAnswer => _selectedAnswer;
+
+  set answers(List<Answer> answers) => _answers = answers;
+
+  set selectedAnswer(String? selectedAnswer) =>
+      _selectedAnswer = selectedAnswer;
+
+  Question({
     required String id,
     required String question,
-    required List<Answers> answers,
+    required List<Answer> answers,
     required String correctAnswer,
   }) {
     _id = id;
@@ -123,43 +147,37 @@ class Questions {
     _correctAnswer = correctAnswer;
   }
 
-  Questions.fromJson(dynamic json) {
-    _id = json['id'];
-    _question = json['question'];
-    if (json['answers'] != null) {
-      _answers = [];
-      json['answers'].forEach((v) {
-        _answers.add(Answers.fromJson(v));
-      });
-    }
-    _correctAnswer = json['correct_answer'];
-  }
-
-  late String _id;
-  late String _question;
-  late List<Answers> _answers;
-  late String _correctAnswer;
-
-  Questions copyWith({
+  Question copyWith({
     required String id,
     required String question,
-    required List<Answers> answers,
+    required List<Answer> answers,
     required String correctAnswer,
   }) =>
-      Questions(
+      Question(
         id: id,
         question: question,
         answers: answers,
         correctAnswer: correctAnswer,
       );
 
-  String get id => _id;
+  Question.fromJson(dynamic json) {
+    _id = json['id'];
+    _question = json['question'];
+    if (json['answers'] != null) {
+      _answers = [];
+      json['answers'].forEach((v) {
+        _answers.add(Answer.fromJson(v));
+      });
+    }
+    _correctAnswer = json['correct_answer'];
+  }
 
-  String get question => _question;
-
-  List<Answers> get answers => _answers;
-
-  String get correctAnswer => _correctAnswer;
+  Question.fromSnapshot(QueryDocumentSnapshot<Map<String, dynamic>> snapshot) {
+    _id = snapshot.id;
+    _question = snapshot['question'];
+    _answers = [];
+    _correctAnswer = snapshot['correct_answer'];
+  }
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -174,8 +192,15 @@ class Questions {
 /// identifier : "A"
 /// Answer : "Symbiosis"
 
-class Answers {
-  Answers({
+class Answer {
+  late String _identifier;
+  late String _answer;
+
+  String get identifier => _identifier;
+
+  String get answer => _answer;
+
+  Answer({
     required String identifier,
     required String answer,
   }) {
@@ -183,26 +208,24 @@ class Answers {
     _answer = answer;
   }
 
-  Answers.fromJson(dynamic json) {
-    _identifier = json['identifier'];
-    _answer = json['Answer'];
-  }
-
-  late String _identifier;
-  late String _answer;
-
-  Answers copyWith({
+  Answer copyWith({
     required String identifier,
     required String answer,
   }) =>
-      Answers(
+      Answer(
         identifier: identifier,
         answer: answer,
       );
 
-  String get identifier => _identifier;
+  Answer.fromJson(dynamic json) {
+    _identifier = json['identifier'];
+    _answer = json['Answer'];
+  }
 
-  String get answer => _answer;
+  Answer.fromSnapshot(QueryDocumentSnapshot<Map<String, dynamic>> snapshot) {
+    _identifier = snapshot['identifier'];
+    _answer = snapshot['Answer'];
+  }
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};

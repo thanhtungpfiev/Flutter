@@ -1,11 +1,11 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_study_app/bindings/initial_bindings.dart';
-import 'package:flutter_study_app/controllers/theme_controller.dart';
-import 'package:flutter_study_app/routes/app_routes.dart';
 import 'package:get/get.dart';
 
+import 'bindings/initial_bindings.dart';
+import 'controllers/theme_controller.dart';
 import 'firebase_options.dart';
+import 'routes/app_routes.dart';
 
 // ! just need for uploading data
 // Future<void> main() async {

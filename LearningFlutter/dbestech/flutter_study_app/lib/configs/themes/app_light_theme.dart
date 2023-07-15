@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_study_app/configs/themes/sub_theme_data_mixin.dart';
+
+import 'sub_theme_data_mixin.dart';
 
 const Color primaryLightColorLight = Color(0xFF3ac3cb);
 const Color primaryColorLight = Color(0xFFf85187);

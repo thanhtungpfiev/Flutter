@@ -3,16 +3,15 @@ import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 import '../firebase_ref/references.dart';
-import '../screens/login/login_screen.dart';
+import '../routes/app_routes.dart';
 import '../util/app_logger.dart';
 import '../widgets/dialogs/dialogue_widget.dart';
 
 class AuthController extends GetxController {
   @override
   void onReady() {
-    // TODO: implement onReady
-    super.onReady();
     initAuth();
+    super.onReady();
   }
 
   late FirebaseAuth _auth;
@@ -30,7 +29,7 @@ class AuthController extends GetxController {
   }
 
   void navigateToIntroduction() {
-    Get.offAllNamed("/introduction");
+    Get.offAllNamed(AppRoutes.introductionRoute);
   }
 
   signInWithGoogle() async {
@@ -74,7 +73,7 @@ class AuthController extends GetxController {
   }
 
   void navigateToLoginPage() {
-    Get.toNamed(LoginScreen.routeName);
+    Get.toNamed(AppRoutes.loginRoute);
   }
 
   User? getUser() {
