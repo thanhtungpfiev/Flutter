@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:travo_app/helpers/local_storage_helper.dart';
+import 'representation/screens/splash_screen.dart';
+import 'routes.dart';
 import 'core/constants/color_constants.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+  await LocalStorageHelper.initLocalStorageHelper();
   runApp(const MyApp());
 }
 
@@ -15,20 +21,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: ColorPalette.primaryColor,
-        scaffoldBackgroundColor: ColorPalette.backgroundColor,
+        scaffoldBackgroundColor: ColorPalette.backgroundScaffoldColor,
       ),
-      home: const MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Text('Hello world'),
+      routes: routes,
+      home: const SplashScreen(),
     );
   }
 }

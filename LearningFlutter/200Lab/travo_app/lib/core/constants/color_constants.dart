@@ -8,10 +8,10 @@ class ColorPalette {
   static const Color dividerColor = Color(0xffE5E7EB);
   static const Color titleColor = Color(0xff323B4B);
   static const Color subTitleColor = Color(0xff838383);
-  static const Color backgroundColor = Color(0xffF2F2F2);
+  static const Color backgroundScaffoldColor = Color(0xffF2F2F2);
 }
 
-class Gradient {
+class Gradients {
   static const LinearGradient defaultBackgroundGradient = LinearGradient(
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
