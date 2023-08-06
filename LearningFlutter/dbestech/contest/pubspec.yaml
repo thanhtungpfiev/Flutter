@@ -1,0 +1,24 @@
+name: contest
+version: 1.0.0+1
+publish_to: none
+description: Flutter Getx App Tutorial | Flutter App Development Tutorial | State management
+environment:
+  sdk: '>=3.0.6 <4.0.0'
+
+dependencies:
+  cupertino_icons: ^1.0.2
+  get: 4.6.5
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/img/
+    - assets/json/
+
