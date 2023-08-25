@@ -14,6 +14,7 @@ class HomeController extends GetxController {
     super.onInit();
     localNotificationHelper.initializeNotification();
     localNotificationHelper.requestAndroidPermissions();
+    localNotificationHelper.listenNotification();
   }
 
   @override

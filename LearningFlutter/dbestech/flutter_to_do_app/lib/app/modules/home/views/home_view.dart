@@ -19,14 +19,6 @@ class HomeView extends GetView<HomeController> {
       appBar: MyCustomAppBar(
         onTap: () {
           themeHelper.changeThemeMode();
-          controller.localNotificationHelper.displayNotification(
-            title: 'Theme Changed',
-            body: Get.isDarkMode
-                ? 'Activated Light Theme'
-                : 'Activated Dark Theme',
-          );
-          // controller.localNotificationHelper.scheduledNotification();
-          // controller.localNotificationHelper.listenNotification();
           controller.getAllTasks();
         },
         child: Obx(() {

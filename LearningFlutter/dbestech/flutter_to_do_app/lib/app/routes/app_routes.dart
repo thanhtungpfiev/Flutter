@@ -7,6 +7,7 @@ abstract class Routes {
   static const home = _Paths.home;
   static const addTask = _Paths.addTask;
   static const splash = _Paths.splash;
+  static const notification = _Paths.notification;
 }
 
 abstract class _Paths {
@@ -15,4 +16,5 @@ abstract class _Paths {
   static const home = '/home';
   static const addTask = '/add-task';
   static const splash = '/splash';
+  static const notification = '/notification';
 }

@@ -24,6 +24,13 @@ class HomeTasksListView extends StatelessWidget {
             if (task.repeat == 'Daily' ||
                 task.date ==
                     DateFormat.yMd().format(controller.selectedDate.value)) {
+              var hour = task.startTime!.split(':')[0];
+              var minute = task.startTime!.split(':')[1].split(' ')[0];
+              var am = task.startTime!.split(':')[1].split(' ')[1];
+              controller.localNotificationHelper.scheduledNotification(
+                  am == 'AM' ? int.parse(hour) : int.parse(hour) + 12,
+                  int.parse(minute),
+                  task);
               return AnimationConfiguration.staggeredList(
                 position: index,
                 child: SlideAnimation(
