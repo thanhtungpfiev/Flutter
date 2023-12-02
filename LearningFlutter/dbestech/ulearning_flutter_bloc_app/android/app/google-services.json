@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "920299979701",
+    "project_id": "ulearning-app-d924f",
+    "storage_bucket": "ulearning-app-d924f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:920299979701:android:90d04b032dd12929fe8ffc",
+        "android_client_info": {
+          "package_name": "com.thanhtungpfiev.ulearning_flutter_bloc_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8xmBU_JmFIbjyrGDLFdA4bYkNXGWTcXM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
