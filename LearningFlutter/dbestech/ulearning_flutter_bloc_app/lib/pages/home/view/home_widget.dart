@@ -3,10 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../common/entities/course.dart';
 import '../../../common/values/colors.dart';
+import '../../../common/values/constants.dart';
+import '../../../common/widgets/base_text_widget.dart';
 import '../bloc/home_bloc.dart';
 
-AppBar buildAppBar() {
+AppBar buildAppBar(String avatar) {
   return AppBar(
     title: Container(
       margin: EdgeInsets.symmetric(horizontal: 7.w),
@@ -23,9 +26,9 @@ AppBar buildAppBar() {
             child: Container(
               width: 40.w,
               height: 40.h,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                   image: DecorationImage(
-                image: AssetImage('assets/icons/person.png'),
+                image: NetworkImage('${AppConstants.serverApiUrl}/$avatar'),
               )),
             ),
           )
@@ -185,9 +188,9 @@ Widget menuView() {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            _reusableSubTitleText('Choose your course'),
+            reusableText('Choose your course'),
             GestureDetector(
-              child: _reusableSubTitleText(
+              child: reusableText(
                 'See all',
                 color: AppColors.primaryThirdElementText,
                 fontSize: 10,
@@ -200,13 +203,13 @@ Widget menuView() {
         margin: EdgeInsets.only(top: 20.w),
         child: Row(
           children: [
-            _reusableText('All'),
-            _reusableText(
+            _reusableMenuText('All'),
+            _reusableMenuText(
               'Popular',
               textColor: AppColors.primaryThirdElementText,
               backgroundColor: Colors.white,
             ),
-            _reusableText(
+            _reusableMenuText(
               'Newest',
               textColor: AppColors.primaryThirdElementText,
               backgroundColor: Colors.white,
@@ -218,7 +221,7 @@ Widget menuView() {
   );
 }
 
-Container _reusableText(String menuText,
+Container _reusableMenuText(String menuText,
     {Color textColor = AppColors.primaryElementText,
     Color backgroundColor = AppColors.primaryElement}) {
   return Container(
@@ -229,7 +232,7 @@ Container _reusableText(String menuText,
       border: Border.all(color: backgroundColor),
     ),
     padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 5.h),
-    child: _reusableSubTitleText(
+    child: reusableText(
       menuText,
       color: textColor,
       fontWeight: FontWeight.normal,
@@ -238,27 +241,14 @@ Container _reusableText(String menuText,
   );
 }
 
-Widget _reusableSubTitleText(String text,
-    {Color color = AppColors.primaryText,
-    FontWeight fontWeight = FontWeight.bold,
-    int fontSize = 16}) {
-  return Text(
-    text,
-    style: TextStyle(
-      color: color,
-      fontWeight: fontWeight,
-      fontSize: fontSize.sp,
-    ),
-  );
-}
-
-Container courseGrid() {
+Container courseGrid(CourseItem item) {
   return Container(
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(15.w),
-      image: const DecorationImage(
+      image: DecorationImage(
         fit: BoxFit.fill,
-        image: AssetImage('assets/icons/image_1.png'),
+        image: NetworkImage(
+            '${AppConstants.serverApiUrl}/uploads/${item.thumbnail}'),
       ),
     ),
     child: Container(
@@ -268,7 +258,7 @@ Container courseGrid() {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Best course for IT',
+            item.name ?? '',
             maxLines: 1,
             overflow: TextOverflow.fade,
             textAlign: TextAlign.left,
@@ -283,7 +273,7 @@ Container courseGrid() {
             height: 5.h,
           ),
           Text(
-            'Flutter best course',
+            item.description ?? '',
             maxLines: 1,
             overflow: TextOverflow.fade,
             textAlign: TextAlign.left,

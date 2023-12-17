@@ -10,3 +10,9 @@ class HomeDotsEvent extends HomeEvent {
 
   const HomeDotsEvent(this.index);
 }
+
+class HomeCourseItemEvent extends HomeEvent {
+  final List<CourseItem> courseItem;
+
+  const HomeCourseItemEvent(this.courseItem);
+}

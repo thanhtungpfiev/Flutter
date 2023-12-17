@@ -45,10 +45,15 @@ class RegisterController {
       if (credential.user != null) {
         await credential.user!.sendEmailVerification();
         await credential.user!.updateDisplayName(userName);
+        String photoURL = 'uploads/default.png';
+        await credential.user!.updatePhotoURL(photoURL);
+
         toastInfo(
             msg:
                 'An email has been sent to your registered email. To activate it please check your email box and click the link.');
-        Navigator.of(context).pop();
+        if (context.mounted) {
+          Navigator.of(context).pop();
+        }
       }
     } on FirebaseAuthException catch (e) {
       if (e.code == 'email-already-in-use') {

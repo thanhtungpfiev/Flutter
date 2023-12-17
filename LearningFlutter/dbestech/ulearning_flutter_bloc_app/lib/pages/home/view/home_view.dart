@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../common/entities/user.dart';
+import '../../../common/routes/routes.dart';
 import '../../../common/values/colors.dart';
 import '../bloc/home_bloc.dart';
+import '../controller/home_controller.dart';
 import 'home_widget.dart';
 
 class HomeView extends StatefulWidget {
@@ -14,13 +17,30 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  UserItem? userProfile;
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void didChangeDependencies() {
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
+    userProfile = HomeController(context: context).userProfile;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: buildAppBar(),
+      appBar: buildAppBar(userProfile != null ? userProfile!.avatar ?? '' : ''),
       body: BlocBuilder<HomeBloc, HomeState>(
         builder: (context, state) {
+          if (state.courseItem.isEmpty) {
+            HomeController(context: context).init();
+          }
           return Container(
             margin: EdgeInsets.symmetric(horizontal: 25.w),
             child: CustomScrollView(
@@ -29,7 +49,10 @@ class _HomeViewState extends State<HomeView> {
                   child: homePageText('Hello,',
                       color: AppColors.primaryThirdElementText),
                 ),
-                SliverToBoxAdapter(child: homePageText('Thanh Tung', top: 5)),
+                SliverToBoxAdapter(
+                    child: homePageText(
+                        userProfile != null ? userProfile!.name ?? '' : '',
+                        top: 5)),
                 SliverPadding(
                   padding: EdgeInsets.only(top: 20.h),
                 ),
@@ -47,11 +70,16 @@ class _HomeViewState extends State<HomeView> {
                       crossAxisSpacing: 15,
                       childAspectRatio: 1.6,
                     ),
-                    delegate: SliverChildBuilderDelegate(childCount: 4,
-                        (context, index) {
+                    delegate: SliverChildBuilderDelegate(
+                        childCount: state.courseItem.length, (context, index) {
                       return GestureDetector(
-                        onTap: null,
-                        child: courseGrid(),
+                        onTap: () {
+                          Navigator.of(context)
+                              .pushNamed(AppRoutes.courseDetail, arguments: {
+                            'id': state.courseItem.elementAt(index).id
+                          });
+                        },
+                        child: courseGrid(state.courseItem[index]),
                       );
                     }),
                   ),

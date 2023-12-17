@@ -27,7 +27,7 @@ class _ProfileViewState extends State<ProfileView> {
               ),
               Padding(
                 padding: EdgeInsets.only(left: 25.w),
-                child: buildListView(),
+                child: buildListView(context),
               ),
             ],
           ),
