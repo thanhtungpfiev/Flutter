@@ -1,3 +1,5 @@
+// ignore_for_file: lines_longer_than_80_chars
+
 import 'package:bloc/bloc.dart';
 import 'package:education_app/src/on_boarding/domain/usecases/cache_first_timer_usecase.dart';
 import 'package:education_app/src/on_boarding/domain/usecases/check_if_user_is_first_timer_usecase.dart';
