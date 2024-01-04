@@ -2,8 +2,8 @@ import 'package:education_app/core/usecases/usecases.dart';
 import 'package:education_app/core/utils/typedefs.dart';
 import 'package:education_app/src/on_boarding/domain/repositories/on_boarding_repository.dart';
 
-class CheckIfUserIsFirstTimerUsecase extends UseCase<bool, void> {
-  const CheckIfUserIsFirstTimerUsecase(this._onBoardingRepository);
+class CheckIfUserIsFirstTimerUseCase extends UseCase<bool, void> {
+  const CheckIfUserIsFirstTimerUseCase(this._onBoardingRepository);
   final OnBoardingRepository _onBoardingRepository;
 
   @override
