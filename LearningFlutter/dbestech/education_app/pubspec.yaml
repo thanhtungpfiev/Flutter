@@ -15,6 +15,7 @@ dependencies:
     flutter:
         sdk: flutter
     lottie: ^2.7.0
+    shared_preferences: ^2.2.2
 
 
 dev_dependencies:
