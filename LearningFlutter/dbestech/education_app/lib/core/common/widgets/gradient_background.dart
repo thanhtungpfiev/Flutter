@@ -1,9 +1,8 @@
-// ignore_for_file: lines_longer_than_80_chars
-
 import 'package:flutter/material.dart';
 
 class GradientBackground extends StatelessWidget {
-  const GradientBackground({required this.child, required this.imagePath, super.key});
+  const GradientBackground(
+      {required this.child, required this.imagePath, super.key,});
 
   final Widget child;
   final String imagePath;

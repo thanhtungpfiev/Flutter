@@ -1,5 +1,3 @@
-// ignore_for_file: lines_longer_than_80_chars
-
 import 'package:education_app/core/extensions/context_extension.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +10,8 @@ class LoadingView extends StatelessWidget {
       color: Colors.transparent,
       child: Center(
         child: CircularProgressIndicator(
-          valueColor: AlwaysStoppedAnimation<Color>(context.theme.colorScheme.secondary),
+          valueColor: AlwaysStoppedAnimation<Color>(
+              context.theme.colorScheme.secondary,),
         ),
       ),
     );

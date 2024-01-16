@@ -1,5 +1,3 @@
-// ignore_for_file: lines_longer_than_80_chars
-
 import 'package:education_app/core/common/views/loading_view.dart';
 import 'package:education_app/core/common/widgets/gradient_background.dart';
 import 'package:education_app/core/res/colours.dart';
@@ -36,14 +34,15 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         imagePath: MediaRes.onBoardingBackground,
         child: BlocConsumer<OnBoardingCubit, OnBoardingState>(
           listener: (context, state) {
-            if (state is OnBoardingStatus && !state.isFirstTimer) {
+            if (state is OnBoardingStatusState && !state.isFirstTimer) {
               Navigator.of(context).pushReplacementNamed('/home');
-            } else if (state is UserCached) {
+            } else if (state is UserCachedState) {
               // TODO(User-Cached-Handler): Push to the appropriate screen
             }
           },
           builder: (BuildContext context, OnBoardingState state) {
-            if (state is CheckingIfUserIsFirstTimer || state is CachingFirstTimer) {
+            if (state is CheckingIfUserIsFirstTimerState ||
+                state is CachingFirstTimerState) {
               return const LoadingView();
             }
             return Stack(
@@ -51,9 +50,15 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 PageView(
                   controller: pageController,
                   children: const [
-                    OnBoardingBody(pageContentEntity: PageContentEntity.first()),
-                    OnBoardingBody(pageContentEntity: PageContentEntity.second()),
-                    OnBoardingBody(pageContentEntity: PageContentEntity.third()),
+                    OnBoardingBody(
+                      pageContentEntity: PageContentEntity.first(),
+                    ),
+                    OnBoardingBody(
+                      pageContentEntity: PageContentEntity.second(),
+                    ),
+                    OnBoardingBody(
+                      pageContentEntity: PageContentEntity.third(),
+                    ),
                   ],
                 ),
                 Align(

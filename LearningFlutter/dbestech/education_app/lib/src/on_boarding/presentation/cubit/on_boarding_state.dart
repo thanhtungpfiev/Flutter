@@ -6,31 +6,31 @@ abstract class OnBoardingState extends Equatable {
   List<Object> get props => [];
 }
 
-class OnBoardingInitial extends OnBoardingState {
-  const OnBoardingInitial();
+class OnBoardingInitialState extends OnBoardingState {
+  const OnBoardingInitialState();
 }
 
-class CachingFirstTimer extends OnBoardingState {
-  const CachingFirstTimer();
+class CachingFirstTimerState extends OnBoardingState {
+  const CachingFirstTimerState();
 }
 
-class CheckingIfUserIsFirstTimer extends OnBoardingState {
-  const CheckingIfUserIsFirstTimer();
+class CheckingIfUserIsFirstTimerState extends OnBoardingState {
+  const CheckingIfUserIsFirstTimerState();
 }
 
-class UserCached extends OnBoardingState {
-  const UserCached();
+class UserCachedState extends OnBoardingState {
+  const UserCachedState();
 }
 
-class OnBoardingStatus extends OnBoardingState {
-  const OnBoardingStatus({required this.isFirstTimer});
+class OnBoardingStatusState extends OnBoardingState {
+  const OnBoardingStatusState({required this.isFirstTimer});
   final bool isFirstTimer;
   @override
   List<Object> get props => [isFirstTimer];
 }
 
-class OnBoardingError extends OnBoardingState {
-  const OnBoardingError({required this.message});
+class OnBoardingErrorState extends OnBoardingState {
+  const OnBoardingErrorState({required this.message});
   final String message;
   @override
   List<Object> get props => [message];

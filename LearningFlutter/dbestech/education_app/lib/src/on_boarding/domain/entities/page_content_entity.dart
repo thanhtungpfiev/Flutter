@@ -1,5 +1,3 @@
-// ignore_for_file: lines_longer_than_80_chars
-
 import 'package:education_app/core/res/media_res.dart';
 import 'package:equatable/equatable.dart';
 
@@ -14,7 +12,8 @@ class PageContentEntity extends Equatable {
       : this(
           imagePath: MediaRes.casualReading,
           title: 'Brand new curriculum',
-          description: 'This is the first online education platform designed by the '
+          description:
+              'This is the first online education platform designed by the '
               "world's top professors",
         );
 
@@ -22,7 +21,8 @@ class PageContentEntity extends Equatable {
       : this(
           imagePath: MediaRes.casualLife,
           title: 'Brand a fun atmosphere',
-          description: 'This is the first online education platform designed by the '
+          description:
+              'This is the first online education platform designed by the '
               "world's top professors",
         );
 
@@ -30,7 +30,8 @@ class PageContentEntity extends Equatable {
       : this(
           imagePath: MediaRes.casualMeditationScience,
           title: 'Easy to join the lesson',
-          description: 'This is the first online education platform designed by the '
+          description:
+              'This is the first online education platform designed by the '
               "world's top professors",
         );
 

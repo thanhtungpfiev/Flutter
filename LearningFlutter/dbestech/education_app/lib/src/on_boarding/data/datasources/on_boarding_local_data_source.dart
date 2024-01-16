@@ -9,13 +9,13 @@ abstract class OnBoardingLocalDataSource {
 }
 
 class OnBoardingLocalDataSourceImpl implements OnBoardingLocalDataSource {
-  const OnBoardingLocalDataSourceImpl(this._sharedPreferences);
-  final SharedPreferences _sharedPreferences;
+  const OnBoardingLocalDataSourceImpl(this._prefs);
+  final SharedPreferences _prefs;
 
   @override
   Future<void> cacheFirstTimer() async {
     try {
-      await _sharedPreferences.setBool(kFirstTimerKey, false);
+      await _prefs.setBool(kFirstTimerKey, false);
     } catch (e) {
       throw CacheException(message: e.toString());
     }
@@ -24,7 +24,7 @@ class OnBoardingLocalDataSourceImpl implements OnBoardingLocalDataSource {
   @override
   Future<bool> checkIfUserIsFirstTimer() async {
     try {
-      return _sharedPreferences.getBool(kFirstTimerKey) ?? true;
+      return _prefs.getBool(kFirstTimerKey) ?? true;
     } catch (e) {
       throw CacheException(message: e.toString());
     }

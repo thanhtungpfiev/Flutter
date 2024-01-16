@@ -1,5 +1,3 @@
-// ignore_for_file: lines_longer_than_80_chars
-
 import 'package:dartz/dartz.dart';
 import 'package:education_app/core/errors/failures.dart';
 import 'package:education_app/src/on_boarding/domain/usecases/cache_first_timer_usecase.dart';
@@ -16,7 +14,8 @@ void main() {
     cacheFirstTimerUseCase = CacheFirstTimerUseCase(mockOnBoardingRepository);
   });
 
-  test('class: cache_first_timer_usecase_test function: call result: true', () async {
+  test('class: cache_first_timer_usecase_test function: call result: true',
+      () async {
     // arrange
     when(() => mockOnBoardingRepository.cacheFirstTimer()).thenAnswer(
       (_) async => const Right(null),

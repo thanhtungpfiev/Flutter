@@ -3,12 +3,12 @@ import 'package:education_app/core/utils/typedefs.dart';
 import 'package:education_app/src/on_boarding/domain/repositories/on_boarding_repository.dart';
 
 class CacheFirstTimerUseCase extends UseCase<void, void> {
-  const CacheFirstTimerUseCase(this._onBoardingRepository);
+  const CacheFirstTimerUseCase(this._repository);
 
-  final OnBoardingRepository _onBoardingRepository;
+  final OnBoardingRepository _repository;
 
   @override
   ResultFuture<void> call({void params}) {
-    return _onBoardingRepository.cacheFirstTimer();
+    return _repository.cacheFirstTimer();
   }
 }

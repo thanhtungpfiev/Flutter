@@ -1,5 +1,3 @@
-// ignore_for_file: lines_longer_than_80_chars
-
 import 'package:bloc/bloc.dart';
 import 'package:education_app/src/on_boarding/domain/usecases/cache_first_timer_usecase.dart';
 import 'package:education_app/src/on_boarding/domain/usecases/check_if_user_is_first_timer_usecase.dart';
@@ -8,27 +6,29 @@ import 'package:equatable/equatable.dart';
 part 'on_boarding_state.dart';
 
 class OnBoardingCubit extends Cubit<OnBoardingState> {
-  OnBoardingCubit(this._cacheFirstTimerUseCase, this._checkIfUserIsFirstTimerUseCase)
-      : super(const OnBoardingInitial());
+  OnBoardingCubit(
+    this._cacheFirstTimerUseCase,
+    this._checkIfUserIsFirstTimerUseCase,
+  ) : super(const OnBoardingInitialState());
 
   final CacheFirstTimerUseCase _cacheFirstTimerUseCase;
   final CheckIfUserIsFirstTimerUseCase _checkIfUserIsFirstTimerUseCase;
 
   Future<void> cacheFirstTimer() async {
-    emit(const CachingFirstTimer());
+    emit(const CachingFirstTimerState());
     final result = await _cacheFirstTimerUseCase.call();
     result.fold(
-      (failure) => emit(OnBoardingError(message: failure.message)),
-      (_) => emit(const UserCached()),
+      (failure) => emit(OnBoardingErrorState(message: failure.message)),
+      (_) => emit(const UserCachedState()),
     );
   }
 
   Future<void> checkIfUserIsFirstTimer() async {
-    emit(const CheckingIfUserIsFirstTimer());
+    emit(const CheckingIfUserIsFirstTimerState());
     final result = await _checkIfUserIsFirstTimerUseCase.call();
     result.fold(
-      (failure) => emit(const OnBoardingStatus(isFirstTimer: true)),
-      (isFirstTimer) => emit(OnBoardingStatus(isFirstTimer: isFirstTimer)),
+      (failure) => emit(const OnBoardingStatusState(isFirstTimer: true)),
+      (isFirstTimer) => emit(OnBoardingStatusState(isFirstTimer: isFirstTimer)),
     );
   }
 }
