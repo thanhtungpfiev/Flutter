@@ -4,7 +4,7 @@ import 'dart:io';
 import 'package:bloc/bloc.dart';
 import 'package:education_app/core/common/enums/update_user_enums.dart';
 import 'package:education_app/src/authentication/domain/entities/local_user_entity.dart';
-import 'package:education_app/src/authentication/domain/usecases/forgot_pasword_usecase.dart';
+import 'package:education_app/src/authentication/domain/usecases/forgot_password_usecase.dart';
 import 'package:education_app/src/authentication/domain/usecases/signin_usecase.dart';
 import 'package:education_app/src/authentication/domain/usecases/signup_usecase.dart';
 import 'package:education_app/src/authentication/domain/usecases/update_user_usecase.dart';
