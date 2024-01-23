@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 
 class GradientBackground extends StatelessWidget {
-  const GradientBackground(
-      {required this.child, required this.imagePath, super.key,});
+  const GradientBackground({
+    required this.imagePath,
+    required this.child,
+    super.key,
+  });
 
-  final Widget child;
   final String imagePath;
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {
