@@ -23,12 +23,12 @@ class AuthenticationErrorState extends AuthenticationState {
 }
 
 class AuthenticationSignedInState extends AuthenticationState {
-  const AuthenticationSignedInState({required this.localUserEntity});
+  const AuthenticationSignedInState({required this.user});
 
-  final LocalUserEntity localUserEntity;
+  final LocalUserEntity user;
 
   @override
-  List<Object> get props => [localUserEntity];
+  List<Object> get props => [user];
 }
 
 class AuthenticationSignedUpState extends AuthenticationState {

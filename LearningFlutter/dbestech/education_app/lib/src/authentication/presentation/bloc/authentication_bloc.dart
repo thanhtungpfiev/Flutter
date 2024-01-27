@@ -48,7 +48,7 @@ class AuthenticationBloc
     result.fold(
       (failure) => emit(AuthenticationErrorState(message: failure.message)),
       (user) => emit(
-        AuthenticationSignedInState(localUserEntity: user),
+        AuthenticationSignedInState(user: user),
       ),
     );
   }

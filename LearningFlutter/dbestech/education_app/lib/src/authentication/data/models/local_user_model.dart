@@ -19,14 +19,15 @@ class LocalUserModel extends LocalUserEntity {
     return LocalUserModel(
       uid: map['uid'] as String,
       email: map['email'] as String,
-      profilePic: map['profilePic'] as String,
-      bio: map['bio'] as String,
-      points: map['points'] as int,
+      points: (map['points'] as num).toInt(),
       fullName: map['fullName'] as String,
-      groupIds: map['groupIds'] as List<String>,
-      enrolledCourseIds: map['enrolledCourseIds'] as List<String>,
-      following: map['following'] as List<String>,
-      followers: map['followers'] as List<String>,
+      profilePic: map['profilePic'] as String?,
+      bio: map['bio'] as String?,
+      groupIds: (map['groupIds'] as List<dynamic>).cast<String>(),
+      enrolledCourseIds:
+          (map['enrolledCourseIds'] as List<dynamic>).cast<String>(),
+      following: (map['following'] as List<dynamic>).cast<String>(),
+      followers: (map['followers'] as List<dynamic>).cast<String>(),
     );
   }
 
