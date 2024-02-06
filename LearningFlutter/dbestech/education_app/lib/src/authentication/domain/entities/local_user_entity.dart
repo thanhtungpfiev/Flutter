@@ -43,6 +43,14 @@ class LocalUserEntity extends Equatable {
   List<Object?> get props => [
         uid,
         email,
+        profilePic,
+        bio,
+        points,
+        fullName,
+        groupIds.length,
+        enrolledCourseIds.length,
+        following.length,
+        followers.length,
       ];
 
   @override
