@@ -16,6 +16,7 @@ class ProfileHeader extends StatelessWidget {
         final image = user?.profilePic == null || user!.profilePic!.isEmpty
             ? null
             : user.profilePic;
+
         return Column(
           children: [
             CircleAvatar(
