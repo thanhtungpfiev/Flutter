@@ -15,6 +15,8 @@ class LocalUserModel extends LocalUserEntity {
     super.bio,
   });
 
+  const LocalUserModel.empty() : super.empty();
+
   factory LocalUserModel.fromMap(DataMap map) {
     return LocalUserModel(
       uid: map['uid'] as String,
@@ -30,8 +32,6 @@ class LocalUserModel extends LocalUserEntity {
       followers: (map['followers'] as List<dynamic>).cast<String>(),
     );
   }
-
-  const LocalUserModel.empty() : super.empty();
 
   DataMap toMap() {
     return {

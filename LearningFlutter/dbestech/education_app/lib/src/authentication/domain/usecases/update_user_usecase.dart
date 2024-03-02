@@ -4,15 +4,17 @@ import 'package:education_app/core/utils/typedefs.dart';
 import 'package:education_app/src/authentication/domain/repositories/authentication_repository.dart';
 import 'package:equatable/equatable.dart';
 
-class UpdateUserUseCase extends UseCase<void, UpdateUserParams> {
+class UpdateUserUseCase extends UseCaseWithParams<void, UpdateUserParams> {
   const UpdateUserUseCase(this._repository);
 
   final AuthenticationRepository _repository;
 
   @override
-  ResultFuture<void> call({UpdateUserParams? params}) {
+  ResultFuture<void> call(UpdateUserParams params) {
     return _repository.updateUser(
-        action: params!.action, userData: params.userData,);
+      action: params.action,
+      userData: params.userData,
+    );
   }
 }
 

@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:education_app/firebase_options.dart';
-import 'package:education_app/src/authentication/data/datasources/authentication_remote_data_source.dart';
+import 'package:education_app/src/authentication/data/data_sources'
+    '/authentication_remote_data_source.dart';
 import 'package:education_app/src/authentication/data/repositories/authentication_repository_impl.dart';
 import 'package:education_app/src/authentication/domain/repositories/authentication_repository.dart';
 import 'package:education_app/src/authentication/domain/usecases/forgot_password_usecase.dart';
@@ -8,7 +9,8 @@ import 'package:education_app/src/authentication/domain/usecases/signin_usecase.
 import 'package:education_app/src/authentication/domain/usecases/signup_usecase.dart';
 import 'package:education_app/src/authentication/domain/usecases/update_user_usecase.dart';
 import 'package:education_app/src/authentication/presentation/bloc/authentication_bloc.dart';
-import 'package:education_app/src/on_boarding/data/datasources/on_boarding_local_data_source.dart';
+import 'package:education_app/src/on_boarding/data/data_sources'
+    '/on_boarding_local_data_source.dart';
 import 'package:education_app/src/on_boarding/data/repositories/on_boarding_repository_impl.dart';
 import 'package:education_app/src/on_boarding/domain/repositories/on_boarding_repository.dart';
 import 'package:education_app/src/on_boarding/domain/usecases/cache_first_timer_usecase.dart';

@@ -3,15 +3,15 @@ import 'package:education_app/core/utils/typedefs.dart';
 import 'package:education_app/src/authentication/domain/repositories/authentication_repository.dart';
 import 'package:equatable/equatable.dart';
 
-class SignUpUseCase extends UseCase<void, SignUpParams> {
+class SignUpUseCase extends UseCaseWithParams<void, SignUpParams> {
   SignUpUseCase(this._repository);
 
   final AuthenticationRepository _repository;
 
   @override
-  ResultFuture<void> call({SignUpParams? params}) {
+  ResultFuture<void> call(SignUpParams params) {
     return _repository.signUp(
-      fullName: params!.fullName,
+      fullName: params.fullName,
       email: params.email,
       password: params.password,
     );

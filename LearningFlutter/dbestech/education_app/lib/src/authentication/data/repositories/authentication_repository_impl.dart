@@ -3,7 +3,8 @@ import 'package:education_app/core/common/enums/update_user_enums.dart';
 import 'package:education_app/core/errors/exceptions.dart';
 import 'package:education_app/core/errors/failures.dart';
 import 'package:education_app/core/utils/typedefs.dart';
-import 'package:education_app/src/authentication/data/datasources/authentication_remote_data_source.dart';
+import 'package:education_app/src/authentication/data/data_sources'
+    '/authentication_remote_data_source.dart';
 import 'package:education_app/src/authentication/domain/entities/local_user_entity.dart';
 import 'package:education_app/src/authentication/domain/repositories/authentication_repository.dart';
 

@@ -40,7 +40,7 @@ class AuthenticationBloc
     Emitter<AuthenticationState> emit,
   ) async {
     final result = await _signInUseCase.call(
-      params: SignInParams(
+      SignInParams(
         email: event.email,
         password: event.password,
       ),
@@ -58,7 +58,7 @@ class AuthenticationBloc
     Emitter<AuthenticationState> emit,
   ) async {
     final result = await _signUpUseCase.call(
-      params: SignUpParams(
+      SignUpParams(
         fullName: event.fullName,
         email: event.email,
         password: event.password,
@@ -74,7 +74,7 @@ class AuthenticationBloc
     AuthenticationForgotPasswordEvent event,
     Emitter<AuthenticationState> emit,
   ) async {
-    final result = await _forgotPasswordUseCase.call(params: event.email);
+    final result = await _forgotPasswordUseCase.call(event.email);
     result.fold(
       (failure) => emit(AuthenticationErrorState(message: failure.message)),
       (_) => emit(const AuthenticationForgotPasswordSentState()),
@@ -86,7 +86,7 @@ class AuthenticationBloc
     Emitter<AuthenticationState> emit,
   ) async {
     final result = await _updateUserUseCase.call(
-      params: UpdateUserParams(
+      UpdateUserParams(
         action: event.action,
         userData: event.userData,
       ),
