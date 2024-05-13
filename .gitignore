@@ -1,2 +1,1646 @@
 /LearningFlutter/dbestech/resources/education_app_code_along-main
 /LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284
+Learning/LearningFlutter/200Lab/travo_app/android/app/src/debug/AndroidManifest.xml
+Learning/LearningFlutter/200Lab/travo_app/android/.gitignore
+Learning/LearningFlutter/200Lab/travo_app/android/build.gradle
+Learning/LearningFlutter/200Lab/travo_app/android/gradle.properties
+Learning/LearningFlutter/200Lab/travo_app/android/settings.gradle
+Learning/LearningFlutter/200Lab/travo_app/android/app/build.gradle
+Learning/LearningFlutter/200Lab/travo_app/android/app/src/main/AndroidManifest.xml
+Learning/LearningFlutter/200Lab/travo_app/android/app/src/main/kotlin/com/example/travo_app/MainActivity.kt
+Learning/LearningFlutter/200Lab/travo_app/android/app/src/main/res/drawable/launch_background.xml
+Learning/LearningFlutter/200Lab/travo_app/android/app/src/main/res/drawable-v21/launch_background.xml
+Learning/LearningFlutter/200Lab/travo_app/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+Learning/LearningFlutter/200Lab/travo_app/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+Learning/LearningFlutter/200Lab/travo_app/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+Learning/LearningFlutter/200Lab/travo_app/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+Learning/LearningFlutter/200Lab/travo_app/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+Learning/LearningFlutter/200Lab/travo_app/android/app/src/main/res/values/styles.xml
+Learning/LearningFlutter/200Lab/travo_app/android/app/src/main/res/values-night/styles.xml
+Learning/LearningFlutter/200Lab/travo_app/android/app/src/profile/AndroidManifest.xml
+Learning/LearningFlutter/200Lab/travo_app/android/gradle/wrapper/gradle-wrapper.properties
+Learning/LearningFlutter/200Lab/travo_app/ios/.gitignore
+Learning/LearningFlutter/200Lab/travo_app/ios/Flutter/AppFrameworkInfo.plist
+Learning/LearningFlutter/200Lab/travo_app/ios/Flutter/Debug.xcconfig
+Learning/LearningFlutter/200Lab/travo_app/ios/Flutter/Release.xcconfig
+Learning/LearningFlutter/200Lab/travo_app/ios/Runner/AppDelegate.swift
+Learning/LearningFlutter/200Lab/travo_app/ios/Runner/Info.plist
+Learning/LearningFlutter/200Lab/travo_app/ios/Runner/Runner-Bridging-Header.h
+Learning/LearningFlutter/200Lab/travo_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
+Learning/LearningFlutter/200Lab/travo_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png
+Learning/LearningFlutter/200Lab/travo_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png
+Learning/LearningFlutter/200Lab/travo_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png
+Learning/LearningFlutter/200Lab/travo_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png
+Learning/LearningFlutter/200Lab/travo_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png
+Learning/LearningFlutter/200Lab/travo_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png
+Learning/LearningFlutter/200Lab/travo_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png
+Learning/LearningFlutter/200Lab/travo_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png
+Learning/LearningFlutter/200Lab/travo_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png
+Learning/LearningFlutter/200Lab/travo_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png
+Learning/LearningFlutter/200Lab/travo_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png
+Learning/LearningFlutter/200Lab/travo_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png
+Learning/LearningFlutter/200Lab/travo_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png
+Learning/LearningFlutter/200Lab/travo_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png
+Learning/LearningFlutter/200Lab/travo_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png
+Learning/LearningFlutter/200Lab/travo_app/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json
+Learning/LearningFlutter/200Lab/travo_app/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png
+Learning/LearningFlutter/200Lab/travo_app/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png
+Learning/LearningFlutter/200Lab/travo_app/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png
+Learning/LearningFlutter/200Lab/travo_app/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md
+Learning/LearningFlutter/200Lab/travo_app/ios/Runner/Base.lproj/LaunchScreen.storyboard
+Learning/LearningFlutter/200Lab/travo_app/ios/Runner/Base.lproj/Main.storyboard
+Learning/LearningFlutter/200Lab/travo_app/ios/Runner.xcodeproj/project.pbxproj
+Learning/LearningFlutter/200Lab/travo_app/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/200Lab/travo_app/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/200Lab/travo_app/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+Learning/LearningFlutter/200Lab/travo_app/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
+Learning/LearningFlutter/200Lab/travo_app/ios/Runner.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/200Lab/travo_app/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/200Lab/travo_app/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+Learning/LearningFlutter/dbestech/education_app/android/.gitignore
+Learning/LearningFlutter/dbestech/education_app/android/build.gradle
+Learning/LearningFlutter/dbestech/education_app/android/gradle.properties
+Learning/LearningFlutter/dbestech/education_app/android/settings.gradle
+Learning/LearningFlutter/dbestech/education_app/android/app/build.gradle
+Learning/LearningFlutter/dbestech/education_app/android/app/google-services.json
+Learning/LearningFlutter/dbestech/education_app/android/app/src/debug/AndroidManifest.xml
+Learning/LearningFlutter/dbestech/education_app/android/app/src/main/AndroidManifest.xml
+Learning/LearningFlutter/dbestech/education_app/android/app/src/main/kotlin/com/example/education_app/MainActivity.kt
+Learning/LearningFlutter/dbestech/education_app/android/app/src/main/res/drawable/launch_background.xml
+Learning/LearningFlutter/dbestech/education_app/android/app/src/main/res/drawable-v21/launch_background.xml
+Learning/LearningFlutter/dbestech/education_app/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/education_app/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/education_app/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/education_app/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/education_app/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/education_app/android/app/src/main/res/values/styles.xml
+Learning/LearningFlutter/dbestech/education_app/android/app/src/main/res/values-night/styles.xml
+Learning/LearningFlutter/dbestech/education_app/android/app/src/profile/AndroidManifest.xml
+Learning/LearningFlutter/dbestech/education_app/android/gradle/wrapper/gradle-wrapper.properties
+Learning/LearningFlutter/dbestech/education_app/ios/.gitignore
+Learning/LearningFlutter/dbestech/education_app/ios/firebase_app_id_file.json
+Learning/LearningFlutter/dbestech/education_app/ios/Flutter/AppFrameworkInfo.plist
+Learning/LearningFlutter/dbestech/education_app/ios/Flutter/Debug.xcconfig
+Learning/LearningFlutter/dbestech/education_app/ios/Flutter/Release.xcconfig
+Learning/LearningFlutter/dbestech/education_app/ios/Runner/AppDelegate.swift
+Learning/LearningFlutter/dbestech/education_app/ios/Runner/GoogleService-Info.plist
+Learning/LearningFlutter/dbestech/education_app/ios/Runner/Info.plist
+Learning/LearningFlutter/dbestech/education_app/ios/Runner/Runner-Bridging-Header.h
+Learning/LearningFlutter/dbestech/education_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
+Learning/LearningFlutter/dbestech/education_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png
+Learning/LearningFlutter/dbestech/education_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png
+Learning/LearningFlutter/dbestech/education_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png
+Learning/LearningFlutter/dbestech/education_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png
+Learning/LearningFlutter/dbestech/education_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png
+Learning/LearningFlutter/dbestech/education_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png
+Learning/LearningFlutter/dbestech/education_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png
+Learning/LearningFlutter/dbestech/education_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png
+Learning/LearningFlutter/dbestech/education_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png
+Learning/LearningFlutter/dbestech/education_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png
+Learning/LearningFlutter/dbestech/education_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png
+Learning/LearningFlutter/dbestech/education_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png
+Learning/LearningFlutter/dbestech/education_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png
+Learning/LearningFlutter/dbestech/education_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png
+Learning/LearningFlutter/dbestech/education_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png
+Learning/LearningFlutter/dbestech/education_app/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json
+Learning/LearningFlutter/dbestech/education_app/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png
+Learning/LearningFlutter/dbestech/education_app/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png
+Learning/LearningFlutter/dbestech/education_app/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png
+Learning/LearningFlutter/dbestech/education_app/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md
+Learning/LearningFlutter/dbestech/education_app/ios/Runner/Base.lproj/LaunchScreen.storyboard
+Learning/LearningFlutter/dbestech/education_app/ios/Runner/Base.lproj/Main.storyboard
+Learning/LearningFlutter/dbestech/education_app/ios/Runner.xcodeproj/project.pbxproj
+Learning/LearningFlutter/dbestech/education_app/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/dbestech/education_app/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/dbestech/education_app/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+Learning/LearningFlutter/dbestech/education_app/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
+Learning/LearningFlutter/dbestech/education_app/ios/Runner.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/dbestech/education_app/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/dbestech/education_app/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+Learning/LearningFlutter/dbestech/education_app/ios/RunnerTests/RunnerTests.swift
+Learning/LearningFlutter/dbestech/flutter_contest/android/.gitignore
+Learning/LearningFlutter/dbestech/flutter_contest/android/build.gradle
+Learning/LearningFlutter/dbestech/flutter_contest/android/gradle.properties
+Learning/LearningFlutter/dbestech/flutter_contest/android/settings.gradle
+Learning/LearningFlutter/dbestech/flutter_contest/android/app/build.gradle
+Learning/LearningFlutter/dbestech/flutter_contest/android/app/src/debug/AndroidManifest.xml
+Learning/LearningFlutter/dbestech/flutter_contest/android/app/src/main/AndroidManifest.xml
+Learning/LearningFlutter/dbestech/flutter_contest/android/app/src/main/kotlin/com/example/contest/MainActivity.kt
+Learning/LearningFlutter/dbestech/flutter_contest/android/app/src/main/res/drawable/launch_background.xml
+Learning/LearningFlutter/dbestech/flutter_contest/android/app/src/main/res/drawable-v21/launch_background.xml
+Learning/LearningFlutter/dbestech/flutter_contest/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/flutter_contest/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/flutter_contest/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/flutter_contest/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/flutter_contest/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/flutter_contest/android/app/src/main/res/values/styles.xml
+Learning/LearningFlutter/dbestech/flutter_contest/android/app/src/main/res/values-night/styles.xml
+Learning/LearningFlutter/dbestech/flutter_contest/android/app/src/profile/AndroidManifest.xml
+Learning/LearningFlutter/dbestech/flutter_contest/android/gradle/wrapper/gradle-wrapper.properties
+Learning/LearningFlutter/dbestech/flutter_payment_app/android/.gitignore
+Learning/LearningFlutter/dbestech/flutter_payment_app/android/build.gradle
+Learning/LearningFlutter/dbestech/flutter_payment_app/android/gradle.properties
+Learning/LearningFlutter/dbestech/flutter_payment_app/android/settings.gradle
+Learning/LearningFlutter/dbestech/flutter_payment_app/android/app/build.gradle
+Learning/LearningFlutter/dbestech/flutter_payment_app/android/app/src/debug/AndroidManifest.xml
+Learning/LearningFlutter/dbestech/flutter_payment_app/android/app/src/main/AndroidManifest.xml
+Learning/LearningFlutter/dbestech/flutter_payment_app/android/app/src/main/kotlin/com/thanhtungpfiev/flutter_payment_app/MainActivity.kt
+Learning/LearningFlutter/dbestech/flutter_payment_app/android/app/src/main/res/drawable/launch_background.xml
+Learning/LearningFlutter/dbestech/flutter_payment_app/android/app/src/main/res/drawable-v21/launch_background.xml
+Learning/LearningFlutter/dbestech/flutter_payment_app/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/flutter_payment_app/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/flutter_payment_app/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/flutter_payment_app/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/flutter_payment_app/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/flutter_payment_app/android/app/src/main/res/values/styles.xml
+Learning/LearningFlutter/dbestech/flutter_payment_app/android/app/src/main/res/values-night/styles.xml
+Learning/LearningFlutter/dbestech/flutter_payment_app/android/app/src/profile/AndroidManifest.xml
+Learning/LearningFlutter/dbestech/flutter_payment_app/android/gradle/wrapper/gradle-wrapper.properties
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/.gitignore
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Flutter/AppFrameworkInfo.plist
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Flutter/Debug.xcconfig
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Flutter/Release.xcconfig
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Runner/AppDelegate.swift
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Runner/Info.plist
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Runner/Runner-Bridging-Header.h
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Runner/Base.lproj/LaunchScreen.storyboard
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Runner/Base.lproj/Main.storyboard
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Runner.xcodeproj/project.pbxproj
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Runner.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+Learning/LearningFlutter/dbestech/flutter_payment_app/ios/RunnerTests/RunnerTests.swift
+Learning/LearningFlutter/dbestech/flutter_study_app/android/.gitignore
+Learning/LearningFlutter/dbestech/flutter_study_app/android/build.gradle
+Learning/LearningFlutter/dbestech/flutter_study_app/android/gradle.properties
+Learning/LearningFlutter/dbestech/flutter_study_app/android/settings.gradle
+Learning/LearningFlutter/dbestech/flutter_study_app/android/app/build.gradle
+Learning/LearningFlutter/dbestech/flutter_study_app/android/app/google-services.json
+Learning/LearningFlutter/dbestech/flutter_study_app/android/app/google-services.json_
+Learning/LearningFlutter/dbestech/flutter_study_app/android/app/src/debug/AndroidManifest.xml
+Learning/LearningFlutter/dbestech/flutter_study_app/android/app/src/main/AndroidManifest.xml
+Learning/LearningFlutter/dbestech/flutter_study_app/android/app/src/main/kotlin/com/example/flutter_study_app/MainActivity.kt
+Learning/LearningFlutter/dbestech/flutter_study_app/android/app/src/main/res/drawable/launch_background.xml
+Learning/LearningFlutter/dbestech/flutter_study_app/android/app/src/main/res/drawable-v21/launch_background.xml
+Learning/LearningFlutter/dbestech/flutter_study_app/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/flutter_study_app/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/flutter_study_app/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/flutter_study_app/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/flutter_study_app/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/flutter_study_app/android/app/src/main/res/values/styles.xml
+Learning/LearningFlutter/dbestech/flutter_study_app/android/app/src/main/res/values-night/styles.xml
+Learning/LearningFlutter/dbestech/flutter_study_app/android/app/src/profile/AndroidManifest.xml
+Learning/LearningFlutter/dbestech/flutter_study_app/android/gradle/wrapper/gradle-wrapper.properties
+Learning/LearningFlutter/dbestech/flutter_to_do_app/android/.gitignore
+Learning/LearningFlutter/dbestech/flutter_to_do_app/android/build.gradle
+Learning/LearningFlutter/dbestech/flutter_to_do_app/android/gradle.properties
+Learning/LearningFlutter/dbestech/flutter_to_do_app/android/settings.gradle
+Learning/LearningFlutter/dbestech/flutter_to_do_app/android/app/build.gradle
+Learning/LearningFlutter/dbestech/flutter_to_do_app/android/app/src/debug/AndroidManifest.xml
+Learning/LearningFlutter/dbestech/flutter_to_do_app/android/app/src/main/AndroidManifest.xml
+Learning/LearningFlutter/dbestech/flutter_to_do_app/android/app/src/main/kotlin/com/thanhtungpfiev/flutter_to_do_app/MainActivity.kt
+Learning/LearningFlutter/dbestech/flutter_to_do_app/android/app/src/main/res/drawable/ic_launcher.png
+Learning/LearningFlutter/dbestech/flutter_to_do_app/android/app/src/main/res/drawable/launch_background.xml
+Learning/LearningFlutter/dbestech/flutter_to_do_app/android/app/src/main/res/drawable-v21/launch_background.xml
+Learning/LearningFlutter/dbestech/flutter_to_do_app/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/flutter_to_do_app/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/flutter_to_do_app/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/flutter_to_do_app/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/flutter_to_do_app/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/flutter_to_do_app/android/app/src/main/res/values/styles.xml
+Learning/LearningFlutter/dbestech/flutter_to_do_app/android/app/src/main/res/values-night/styles.xml
+Learning/LearningFlutter/dbestech/flutter_to_do_app/android/app/src/profile/AndroidManifest.xml
+Learning/LearningFlutter/dbestech/flutter_to_do_app/android/gradle/wrapper/gradle-wrapper.properties
+Learning/LearningFlutter/dbestech/flutter_video_player_app/android/.gitignore
+Learning/LearningFlutter/dbestech/flutter_video_player_app/android/build.gradle
+Learning/LearningFlutter/dbestech/flutter_video_player_app/android/gradle.properties
+Learning/LearningFlutter/dbestech/flutter_video_player_app/android/settings.gradle
+Learning/LearningFlutter/dbestech/flutter_video_player_app/android/app/build.gradle
+Learning/LearningFlutter/dbestech/flutter_video_player_app/android/app/src/debug/AndroidManifest.xml
+Learning/LearningFlutter/dbestech/flutter_video_player_app/android/app/src/main/AndroidManifest.xml
+Learning/LearningFlutter/dbestech/flutter_video_player_app/android/app/src/main/kotlin/com/thanhtungpfiev/flutter_video_player_app/MainActivity.kt
+Learning/LearningFlutter/dbestech/flutter_video_player_app/android/app/src/main/res/drawable/launch_background.xml
+Learning/LearningFlutter/dbestech/flutter_video_player_app/android/app/src/main/res/drawable-v21/launch_background.xml
+Learning/LearningFlutter/dbestech/flutter_video_player_app/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/flutter_video_player_app/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/flutter_video_player_app/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/flutter_video_player_app/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/flutter_video_player_app/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/flutter_video_player_app/android/app/src/main/res/values/styles.xml
+Learning/LearningFlutter/dbestech/flutter_video_player_app/android/app/src/main/res/values-night/styles.xml
+Learning/LearningFlutter/dbestech/flutter_video_player_app/android/app/src/profile/AndroidManifest.xml
+Learning/LearningFlutter/dbestech/flutter_video_player_app/android/gradle/wrapper/gradle-wrapper.properties
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/android/.gitignore
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/android/build.gradle
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/android/gradle.properties
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/android/settings.gradle
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/android/app/build.gradle
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/android/app/google-services.json
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/android/app/src/debug/AndroidManifest.xml
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/android/app/src/main/AndroidManifest.xml
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/android/app/src/main/kotlin/com/dbestech/education_app/MainActivity.kt
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/android/app/src/main/res/drawable/launch_background.xml
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/android/app/src/main/res/drawable-v21/launch_background.xml
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/android/app/src/main/res/values/styles.xml
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/android/app/src/main/res/values-night/styles.xml
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/android/app/src/profile/AndroidManifest.xml
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/android/gradle/wrapper/gradle-wrapper.properties
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/.gitignore
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/firebase_app_id_file.json
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Flutter/AppFrameworkInfo.plist
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Flutter/Debug.xcconfig
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Flutter/Release.xcconfig
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner/AppDelegate.swift
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner/GoogleService-Info.plist
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner/Info.plist
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner/Runner-Bridging-Header.h
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner/Base.lproj/LaunchScreen.storyboard
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner/Base.lproj/Main.storyboard
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner.xcodeproj/project.pbxproj
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/ios/RunnerTests/RunnerTests.swift
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/linux/.gitignore
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/linux/CMakeLists.txt
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/linux/main.cc
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/linux/my_application.cc
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/linux/my_application.h
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/linux/flutter/CMakeLists.txt
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/linux/flutter/generated_plugin_registrant.cc
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/linux/flutter/generated_plugin_registrant.h
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/linux/flutter/generated_plugins.cmake
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/macos/.gitignore
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/macos/Flutter/Flutter-Debug.xcconfig
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/macos/Flutter/Flutter-Release.xcconfig
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/macos/Flutter/GeneratedPluginRegistrant.swift
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/macos/Runner/AppDelegate.swift
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/macos/Runner/DebugProfile.entitlements
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/macos/Runner/Info.plist
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/macos/Runner/MainFlutterWindow.swift
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/macos/Runner/Release.entitlements
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_16.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_32.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_64.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_128.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_256.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_512.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_1024.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/macos/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/macos/Runner/Base.lproj/MainMenu.xib
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/macos/Runner/Configs/AppInfo.xcconfig
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/macos/Runner/Configs/Debug.xcconfig
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/macos/Runner/Configs/Release.xcconfig
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/macos/Runner/Configs/Warnings.xcconfig
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/macos/Runner.xcodeproj/project.pbxproj
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/macos/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/macos/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/macos/Runner.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/macos/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/macos/RunnerTests/RunnerTests.swift
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/web/favicon.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/web/index.html
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/web/manifest.json
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/web/icons/Icon-192.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/web/icons/Icon-512.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/web/icons/Icon-maskable-192.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/web/icons/Icon-maskable-512.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/windows/.gitignore
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/windows/CMakeLists.txt
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/windows/flutter/CMakeLists.txt
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/windows/flutter/generated_plugin_registrant.cc
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/windows/flutter/generated_plugin_registrant.h
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/windows/flutter/generated_plugins.cmake
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/windows/runner/CMakeLists.txt
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/windows/runner/flutter_window.cpp
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/windows/runner/flutter_window.h
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/windows/runner/main.cpp
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/windows/runner/resource.h
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/windows/runner/runner.exe.manifest
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/windows/runner/Runner.rc
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/windows/runner/utils.cpp
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/windows/runner/utils.h
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/windows/runner/win32_window.cpp
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/windows/runner/win32_window.h
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-7144a3a969a3e847824afbfb47cf40f6af0ff284/windows/runner/resources/app_icon.ico
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/android/.gitignore
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/android/build.gradle
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/android/gradle.properties
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/android/settings.gradle
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/android/app/build.gradle
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/android/app/google-services.json
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/android/app/src/debug/AndroidManifest.xml
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/android/app/src/main/AndroidManifest.xml
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/android/app/src/main/kotlin/com/dbestech/education_app/MainActivity.kt
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/android/app/src/main/res/drawable/launch_background.xml
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/android/app/src/main/res/drawable-v21/launch_background.xml
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/android/app/src/main/res/values/styles.xml
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/android/app/src/main/res/values-night/styles.xml
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/android/app/src/profile/AndroidManifest.xml
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/android/gradle/wrapper/gradle-wrapper.properties
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/.gitignore
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/firebase_app_id_file.json
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Flutter/AppFrameworkInfo.plist
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Flutter/Debug.xcconfig
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Flutter/Release.xcconfig
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner/AppDelegate.swift
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner/GoogleService-Info.plist
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner/Info.plist
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner/Runner-Bridging-Header.h
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner/Base.lproj/LaunchScreen.storyboard
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner/Base.lproj/Main.storyboard
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner.xcodeproj/project.pbxproj
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/ios/RunnerTests/RunnerTests.swift
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/linux/.gitignore
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/linux/CMakeLists.txt
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/linux/main.cc
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/linux/my_application.cc
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/linux/my_application.h
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/linux/flutter/CMakeLists.txt
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/linux/flutter/generated_plugin_registrant.cc
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/linux/flutter/generated_plugin_registrant.h
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/linux/flutter/generated_plugins.cmake
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/macos/.gitignore
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/macos/Flutter/Flutter-Debug.xcconfig
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/macos/Flutter/Flutter-Release.xcconfig
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/macos/Flutter/GeneratedPluginRegistrant.swift
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/macos/Runner/AppDelegate.swift
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/macos/Runner/DebugProfile.entitlements
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/macos/Runner/Info.plist
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/macos/Runner/MainFlutterWindow.swift
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/macos/Runner/Release.entitlements
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_16.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_32.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_64.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_128.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_256.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_512.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_1024.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/macos/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/macos/Runner/Base.lproj/MainMenu.xib
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/macos/Runner/Configs/AppInfo.xcconfig
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/macos/Runner/Configs/Debug.xcconfig
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/macos/Runner/Configs/Release.xcconfig
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/macos/Runner/Configs/Warnings.xcconfig
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/macos/Runner.xcodeproj/project.pbxproj
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/macos/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/macos/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/macos/Runner.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/macos/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/macos/RunnerTests/RunnerTests.swift
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/web/favicon.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/web/index.html
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/web/manifest.json
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/web/icons/Icon-192.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/web/icons/Icon-512.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/web/icons/Icon-maskable-192.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/web/icons/Icon-maskable-512.png
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/windows/.gitignore
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/windows/CMakeLists.txt
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/windows/flutter/CMakeLists.txt
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/windows/flutter/generated_plugin_registrant.cc
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/windows/flutter/generated_plugin_registrant.h
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/windows/flutter/generated_plugins.cmake
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/windows/runner/CMakeLists.txt
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/windows/runner/flutter_window.cpp
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/windows/runner/flutter_window.h
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/windows/runner/main.cpp
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/windows/runner/resource.h
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/windows/runner/runner.exe.manifest
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/windows/runner/Runner.rc
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/windows/runner/utils.cpp
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/windows/runner/utils.h
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/windows/runner/win32_window.cpp
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/windows/runner/win32_window.h
+Learning/LearningFlutter/dbestech/resources/education_app_code_along-main/windows/runner/resources/app_icon.ico
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/android/.gitignore
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/android/build.gradle
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/android/gradle.properties
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/android/settings.gradle
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/android/app/build.gradle
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/android/app/google-services.json
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/android/app/src/debug/AndroidManifest.xml
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/android/app/src/main/AndroidManifest.xml
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/android/app/src/main/kotlin/com/thanhtungpfiev/ulearning_flutter_bloc_app/MainActivity.kt
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/android/app/src/main/res/drawable/launch_background.xml
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/android/app/src/main/res/drawable-v21/launch_background.xml
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/android/app/src/main/res/values/styles.xml
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/android/app/src/main/res/values-night/styles.xml
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/android/app/src/profile/AndroidManifest.xml
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/android/gradle/wrapper/gradle-wrapper.properties
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/.gitignore
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/firebase_app_id_file.json
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Flutter/AppFrameworkInfo.plist
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Flutter/Debug.xcconfig
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Flutter/Release.xcconfig
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner/AppDelegate.swift
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner/GoogleService-Info.plist
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner/Info.plist
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner/Runner-Bridging-Header.h
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner/Base.lproj/LaunchScreen.storyboard
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner/Base.lproj/Main.storyboard
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner.xcodeproj/project.pbxproj
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+Learning/LearningFlutter/dbestech/ulearning_flutter_bloc_app/ios/RunnerTests/RunnerTests.swift
+Learning/LearningFlutter/Example/getx_clean_default/android/.gitignore
+Learning/LearningFlutter/Example/getx_clean_default/android/build.gradle
+Learning/LearningFlutter/Example/getx_clean_default/android/gradle.properties
+Learning/LearningFlutter/Example/getx_clean_default/android/settings.gradle
+Learning/LearningFlutter/Example/getx_clean_default/android/app/build.gradle
+Learning/LearningFlutter/Example/getx_clean_default/android/app/src/debug/AndroidManifest.xml
+Learning/LearningFlutter/Example/getx_clean_default/android/app/src/main/AndroidManifest.xml
+Learning/LearningFlutter/Example/getx_clean_default/android/app/src/main/kotlin/com/example/getx_clean_default/MainActivity.kt
+Learning/LearningFlutter/Example/getx_clean_default/android/app/src/main/res/drawable/launch_background.xml
+Learning/LearningFlutter/Example/getx_clean_default/android/app/src/main/res/drawable-v21/launch_background.xml
+Learning/LearningFlutter/Example/getx_clean_default/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+Learning/LearningFlutter/Example/getx_clean_default/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+Learning/LearningFlutter/Example/getx_clean_default/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+Learning/LearningFlutter/Example/getx_clean_default/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+Learning/LearningFlutter/Example/getx_clean_default/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+Learning/LearningFlutter/Example/getx_clean_default/android/app/src/main/res/values/styles.xml
+Learning/LearningFlutter/Example/getx_clean_default/android/app/src/main/res/values-night/styles.xml
+Learning/LearningFlutter/Example/getx_clean_default/android/app/src/profile/AndroidManifest.xml
+Learning/LearningFlutter/Example/getx_clean_default/android/gradle/wrapper/gradle-wrapper.properties
+Learning/LearningFlutter/Example/getx_clean_default/ios/.gitignore
+Learning/LearningFlutter/Example/getx_clean_default/ios/Flutter/AppFrameworkInfo.plist
+Learning/LearningFlutter/Example/getx_clean_default/ios/Flutter/Debug.xcconfig
+Learning/LearningFlutter/Example/getx_clean_default/ios/Flutter/Release.xcconfig
+Learning/LearningFlutter/Example/getx_clean_default/ios/Runner/AppDelegate.swift
+Learning/LearningFlutter/Example/getx_clean_default/ios/Runner/Info.plist
+Learning/LearningFlutter/Example/getx_clean_default/ios/Runner/Runner-Bridging-Header.h
+Learning/LearningFlutter/Example/getx_clean_default/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
+Learning/LearningFlutter/Example/getx_clean_default/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png
+Learning/LearningFlutter/Example/getx_clean_default/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png
+Learning/LearningFlutter/Example/getx_clean_default/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png
+Learning/LearningFlutter/Example/getx_clean_default/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png
+Learning/LearningFlutter/Example/getx_clean_default/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png
+Learning/LearningFlutter/Example/getx_clean_default/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png
+Learning/LearningFlutter/Example/getx_clean_default/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png
+Learning/LearningFlutter/Example/getx_clean_default/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png
+Learning/LearningFlutter/Example/getx_clean_default/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png
+Learning/LearningFlutter/Example/getx_clean_default/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png
+Learning/LearningFlutter/Example/getx_clean_default/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png
+Learning/LearningFlutter/Example/getx_clean_default/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png
+Learning/LearningFlutter/Example/getx_clean_default/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png
+Learning/LearningFlutter/Example/getx_clean_default/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png
+Learning/LearningFlutter/Example/getx_clean_default/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png
+Learning/LearningFlutter/Example/getx_clean_default/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json
+Learning/LearningFlutter/Example/getx_clean_default/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png
+Learning/LearningFlutter/Example/getx_clean_default/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png
+Learning/LearningFlutter/Example/getx_clean_default/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png
+Learning/LearningFlutter/Example/getx_clean_default/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md
+Learning/LearningFlutter/Example/getx_clean_default/ios/Runner/Base.lproj/LaunchScreen.storyboard
+Learning/LearningFlutter/Example/getx_clean_default/ios/Runner/Base.lproj/Main.storyboard
+Learning/LearningFlutter/Example/getx_clean_default/ios/Runner.xcodeproj/project.pbxproj
+Learning/LearningFlutter/Example/getx_clean_default/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/Example/getx_clean_default/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/Example/getx_clean_default/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+Learning/LearningFlutter/Example/getx_clean_default/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
+Learning/LearningFlutter/Example/getx_clean_default/ios/Runner.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/Example/getx_clean_default/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/Example/getx_clean_default/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+Learning/LearningFlutter/Example/getx_clean_default/ios/RunnerTests/RunnerTests.swift
+Learning/LearningFlutter/Example/getx_clean_default/linux/.gitignore
+Learning/LearningFlutter/Example/getx_clean_default/linux/CMakeLists.txt
+Learning/LearningFlutter/Example/getx_clean_default/linux/main.cc
+Learning/LearningFlutter/Example/getx_clean_default/linux/my_application.cc
+Learning/LearningFlutter/Example/getx_clean_default/linux/my_application.h
+Learning/LearningFlutter/Example/getx_clean_default/linux/flutter/CMakeLists.txt
+Learning/LearningFlutter/Example/getx_clean_default/linux/flutter/generated_plugin_registrant.cc
+Learning/LearningFlutter/Example/getx_clean_default/linux/flutter/generated_plugin_registrant.h
+Learning/LearningFlutter/Example/getx_clean_default/linux/flutter/generated_plugins.cmake
+Learning/LearningFlutter/Example/getx_clean_default/macos/.gitignore
+Learning/LearningFlutter/Example/getx_clean_default/macos/Flutter/Flutter-Debug.xcconfig
+Learning/LearningFlutter/Example/getx_clean_default/macos/Flutter/Flutter-Release.xcconfig
+Learning/LearningFlutter/Example/getx_clean_default/macos/Flutter/GeneratedPluginRegistrant.swift
+Learning/LearningFlutter/Example/getx_clean_default/macos/Runner/AppDelegate.swift
+Learning/LearningFlutter/Example/getx_clean_default/macos/Runner/DebugProfile.entitlements
+Learning/LearningFlutter/Example/getx_clean_default/macos/Runner/Info.plist
+Learning/LearningFlutter/Example/getx_clean_default/macos/Runner/MainFlutterWindow.swift
+Learning/LearningFlutter/Example/getx_clean_default/macos/Runner/Release.entitlements
+Learning/LearningFlutter/Example/getx_clean_default/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_16.png
+Learning/LearningFlutter/Example/getx_clean_default/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_32.png
+Learning/LearningFlutter/Example/getx_clean_default/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_64.png
+Learning/LearningFlutter/Example/getx_clean_default/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_128.png
+Learning/LearningFlutter/Example/getx_clean_default/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_256.png
+Learning/LearningFlutter/Example/getx_clean_default/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_512.png
+Learning/LearningFlutter/Example/getx_clean_default/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_1024.png
+Learning/LearningFlutter/Example/getx_clean_default/macos/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
+Learning/LearningFlutter/Example/getx_clean_default/macos/Runner/Base.lproj/MainMenu.xib
+Learning/LearningFlutter/Example/getx_clean_default/macos/Runner/Configs/AppInfo.xcconfig
+Learning/LearningFlutter/Example/getx_clean_default/macos/Runner/Configs/Debug.xcconfig
+Learning/LearningFlutter/Example/getx_clean_default/macos/Runner/Configs/Release.xcconfig
+Learning/LearningFlutter/Example/getx_clean_default/macos/Runner/Configs/Warnings.xcconfig
+Learning/LearningFlutter/Example/getx_clean_default/macos/Runner.xcodeproj/project.pbxproj
+Learning/LearningFlutter/Example/getx_clean_default/macos/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/Example/getx_clean_default/macos/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
+Learning/LearningFlutter/Example/getx_clean_default/macos/Runner.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/Example/getx_clean_default/macos/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/Example/getx_clean_default/macos/RunnerTests/RunnerTests.swift
+Learning/LearningFlutter/Example/getx_clean_default/web/favicon.png
+Learning/LearningFlutter/Example/getx_clean_default/web/index.html
+Learning/LearningFlutter/Example/getx_clean_default/web/manifest.json
+Learning/LearningFlutter/Example/getx_clean_default/web/icons/Icon-192.png
+Learning/LearningFlutter/Example/getx_clean_default/web/icons/Icon-512.png
+Learning/LearningFlutter/Example/getx_clean_default/web/icons/Icon-maskable-192.png
+Learning/LearningFlutter/Example/getx_clean_default/web/icons/Icon-maskable-512.png
+Learning/LearningFlutter/Example/getx_clean_default/windows/.gitignore
+Learning/LearningFlutter/Example/getx_clean_default/windows/CMakeLists.txt
+Learning/LearningFlutter/Example/getx_clean_default/windows/flutter/CMakeLists.txt
+Learning/LearningFlutter/Example/getx_clean_default/windows/flutter/generated_plugin_registrant.cc
+Learning/LearningFlutter/Example/getx_clean_default/windows/flutter/generated_plugin_registrant.h
+Learning/LearningFlutter/Example/getx_clean_default/windows/flutter/generated_plugins.cmake
+Learning/LearningFlutter/Example/getx_clean_default/windows/runner/CMakeLists.txt
+Learning/LearningFlutter/Example/getx_clean_default/windows/runner/flutter_window.cpp
+Learning/LearningFlutter/Example/getx_clean_default/windows/runner/flutter_window.h
+Learning/LearningFlutter/Example/getx_clean_default/windows/runner/main.cpp
+Learning/LearningFlutter/Example/getx_clean_default/windows/runner/resource.h
+Learning/LearningFlutter/Example/getx_clean_default/windows/runner/runner.exe.manifest
+Learning/LearningFlutter/Example/getx_clean_default/windows/runner/Runner.rc
+Learning/LearningFlutter/Example/getx_clean_default/windows/runner/utils.cpp
+Learning/LearningFlutter/Example/getx_clean_default/windows/runner/utils.h
+Learning/LearningFlutter/Example/getx_clean_default/windows/runner/win32_window.cpp
+Learning/LearningFlutter/Example/getx_clean_default/windows/runner/win32_window.h
+Learning/LearningFlutter/Example/getx_clean_default/windows/runner/resources/app_icon.ico
+Learning/LearningFlutter/Example/getx_pattern_default/android/.gitignore
+Learning/LearningFlutter/Example/getx_pattern_default/android/build.gradle
+Learning/LearningFlutter/Example/getx_pattern_default/android/gradle.properties
+Learning/LearningFlutter/Example/getx_pattern_default/android/settings.gradle
+Learning/LearningFlutter/Example/getx_pattern_default/android/app/build.gradle
+Learning/LearningFlutter/Example/getx_pattern_default/android/app/src/debug/AndroidManifest.xml
+Learning/LearningFlutter/Example/getx_pattern_default/android/app/src/main/AndroidManifest.xml
+Learning/LearningFlutter/Example/getx_pattern_default/android/app/src/main/kotlin/com/thanhtungpfiev/getx_pattern_default/MainActivity.kt
+Learning/LearningFlutter/Example/getx_pattern_default/android/app/src/main/res/drawable/launch_background.xml
+Learning/LearningFlutter/Example/getx_pattern_default/android/app/src/main/res/drawable-v21/launch_background.xml
+Learning/LearningFlutter/Example/getx_pattern_default/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+Learning/LearningFlutter/Example/getx_pattern_default/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+Learning/LearningFlutter/Example/getx_pattern_default/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+Learning/LearningFlutter/Example/getx_pattern_default/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+Learning/LearningFlutter/Example/getx_pattern_default/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+Learning/LearningFlutter/Example/getx_pattern_default/android/app/src/main/res/values/styles.xml
+Learning/LearningFlutter/Example/getx_pattern_default/android/app/src/main/res/values-night/styles.xml
+Learning/LearningFlutter/Example/getx_pattern_default/android/app/src/profile/AndroidManifest.xml
+Learning/LearningFlutter/Example/getx_pattern_default/android/gradle/wrapper/gradle-wrapper.properties
+Learning/LearningFlutter/Example/getx_pattern_default/ios/.gitignore
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Flutter/AppFrameworkInfo.plist
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Flutter/Debug.xcconfig
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Flutter/Release.xcconfig
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Runner/AppDelegate.swift
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Runner/Info.plist
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Runner/Runner-Bridging-Header.h
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Runner/Base.lproj/LaunchScreen.storyboard
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Runner/Base.lproj/Main.storyboard
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Runner.xcodeproj/project.pbxproj
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Runner.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/Example/getx_pattern_default/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+Learning/LearningFlutter/Example/getx_pattern_default/ios/RunnerTests/RunnerTests.swift
+Learning/LearningFlutter/Example/getx_pattern_default/linux/.gitignore
+Learning/LearningFlutter/Example/getx_pattern_default/linux/CMakeLists.txt
+Learning/LearningFlutter/Example/getx_pattern_default/linux/main.cc
+Learning/LearningFlutter/Example/getx_pattern_default/linux/my_application.cc
+Learning/LearningFlutter/Example/getx_pattern_default/linux/my_application.h
+Learning/LearningFlutter/Example/getx_pattern_default/linux/flutter/CMakeLists.txt
+Learning/LearningFlutter/Example/getx_pattern_default/linux/flutter/generated_plugin_registrant.cc
+Learning/LearningFlutter/Example/getx_pattern_default/linux/flutter/generated_plugin_registrant.h
+Learning/LearningFlutter/Example/getx_pattern_default/linux/flutter/generated_plugins.cmake
+Learning/LearningFlutter/Example/getx_pattern_default/macos/.gitignore
+Learning/LearningFlutter/Example/getx_pattern_default/macos/Flutter/Flutter-Debug.xcconfig
+Learning/LearningFlutter/Example/getx_pattern_default/macos/Flutter/Flutter-Release.xcconfig
+Learning/LearningFlutter/Example/getx_pattern_default/macos/Flutter/GeneratedPluginRegistrant.swift
+Learning/LearningFlutter/Example/getx_pattern_default/macos/Runner/AppDelegate.swift
+Learning/LearningFlutter/Example/getx_pattern_default/macos/Runner/DebugProfile.entitlements
+Learning/LearningFlutter/Example/getx_pattern_default/macos/Runner/Info.plist
+Learning/LearningFlutter/Example/getx_pattern_default/macos/Runner/MainFlutterWindow.swift
+Learning/LearningFlutter/Example/getx_pattern_default/macos/Runner/Release.entitlements
+Learning/LearningFlutter/Example/getx_pattern_default/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_16.png
+Learning/LearningFlutter/Example/getx_pattern_default/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_32.png
+Learning/LearningFlutter/Example/getx_pattern_default/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_64.png
+Learning/LearningFlutter/Example/getx_pattern_default/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_128.png
+Learning/LearningFlutter/Example/getx_pattern_default/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_256.png
+Learning/LearningFlutter/Example/getx_pattern_default/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_512.png
+Learning/LearningFlutter/Example/getx_pattern_default/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_1024.png
+Learning/LearningFlutter/Example/getx_pattern_default/macos/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
+Learning/LearningFlutter/Example/getx_pattern_default/macos/Runner/Base.lproj/MainMenu.xib
+Learning/LearningFlutter/Example/getx_pattern_default/macos/Runner/Configs/AppInfo.xcconfig
+Learning/LearningFlutter/Example/getx_pattern_default/macos/Runner/Configs/Debug.xcconfig
+Learning/LearningFlutter/Example/getx_pattern_default/macos/Runner/Configs/Release.xcconfig
+Learning/LearningFlutter/Example/getx_pattern_default/macos/Runner/Configs/Warnings.xcconfig
+Learning/LearningFlutter/Example/getx_pattern_default/macos/Runner.xcodeproj/project.pbxproj
+Learning/LearningFlutter/Example/getx_pattern_default/macos/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/Example/getx_pattern_default/macos/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
+Learning/LearningFlutter/Example/getx_pattern_default/macos/Runner.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/Example/getx_pattern_default/macos/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/Example/getx_pattern_default/macos/RunnerTests/RunnerTests.swift
+Learning/LearningFlutter/Example/getx_pattern_default/web/favicon.png
+Learning/LearningFlutter/Example/getx_pattern_default/web/index.html
+Learning/LearningFlutter/Example/getx_pattern_default/web/manifest.json
+Learning/LearningFlutter/Example/getx_pattern_default/web/icons/Icon-192.png
+Learning/LearningFlutter/Example/getx_pattern_default/web/icons/Icon-512.png
+Learning/LearningFlutter/Example/getx_pattern_default/web/icons/Icon-maskable-192.png
+Learning/LearningFlutter/Example/getx_pattern_default/web/icons/Icon-maskable-512.png
+Learning/LearningFlutter/Example/getx_pattern_default/windows/.gitignore
+Learning/LearningFlutter/Example/getx_pattern_default/windows/CMakeLists.txt
+Learning/LearningFlutter/Example/getx_pattern_default/windows/flutter/CMakeLists.txt
+Learning/LearningFlutter/Example/getx_pattern_default/windows/flutter/generated_plugin_registrant.cc
+Learning/LearningFlutter/Example/getx_pattern_default/windows/flutter/generated_plugin_registrant.h
+Learning/LearningFlutter/Example/getx_pattern_default/windows/flutter/generated_plugins.cmake
+Learning/LearningFlutter/Example/getx_pattern_default/windows/runner/CMakeLists.txt
+Learning/LearningFlutter/Example/getx_pattern_default/windows/runner/flutter_window.cpp
+Learning/LearningFlutter/Example/getx_pattern_default/windows/runner/flutter_window.h
+Learning/LearningFlutter/Example/getx_pattern_default/windows/runner/main.cpp
+Learning/LearningFlutter/Example/getx_pattern_default/windows/runner/resource.h
+Learning/LearningFlutter/Example/getx_pattern_default/windows/runner/runner.exe.manifest
+Learning/LearningFlutter/Example/getx_pattern_default/windows/runner/Runner.rc
+Learning/LearningFlutter/Example/getx_pattern_default/windows/runner/utils.cpp
+Learning/LearningFlutter/Example/getx_pattern_default/windows/runner/utils.h
+Learning/LearningFlutter/Example/getx_pattern_default/windows/runner/win32_window.cpp
+Learning/LearningFlutter/Example/getx_pattern_default/windows/runner/win32_window.h
+Learning/LearningFlutter/Example/getx_pattern_default/windows/runner/resources/app_icon.ico
+Learning/LearningFlutter/FlutterGuys/clean_architecture/android/.gitignore
+Learning/LearningFlutter/FlutterGuys/clean_architecture/android/build.gradle
+Learning/LearningFlutter/FlutterGuys/clean_architecture/android/gradle.properties
+Learning/LearningFlutter/FlutterGuys/clean_architecture/android/settings.gradle
+Learning/LearningFlutter/FlutterGuys/clean_architecture/android/app/build.gradle
+Learning/LearningFlutter/FlutterGuys/clean_architecture/android/app/src/debug/AndroidManifest.xml
+Learning/LearningFlutter/FlutterGuys/clean_architecture/android/app/src/main/AndroidManifest.xml
+Learning/LearningFlutter/FlutterGuys/clean_architecture/android/app/src/main/kotlin/com/thanhtungpfiev/clean_architecture/MainActivity.kt
+Learning/LearningFlutter/FlutterGuys/clean_architecture/android/app/src/main/res/drawable/launch_background.xml
+Learning/LearningFlutter/FlutterGuys/clean_architecture/android/app/src/main/res/drawable-v21/launch_background.xml
+Learning/LearningFlutter/FlutterGuys/clean_architecture/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+Learning/LearningFlutter/FlutterGuys/clean_architecture/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+Learning/LearningFlutter/FlutterGuys/clean_architecture/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+Learning/LearningFlutter/FlutterGuys/clean_architecture/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+Learning/LearningFlutter/FlutterGuys/clean_architecture/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+Learning/LearningFlutter/FlutterGuys/clean_architecture/android/app/src/main/res/values/styles.xml
+Learning/LearningFlutter/FlutterGuys/clean_architecture/android/app/src/main/res/values-night/styles.xml
+Learning/LearningFlutter/FlutterGuys/clean_architecture/android/app/src/profile/AndroidManifest.xml
+Learning/LearningFlutter/FlutterGuys/clean_architecture/android/gradle/wrapper/gradle-wrapper.properties
+Learning/LearningFlutter/FlutterGuys/clean_architecture_v2/android/.gitignore
+Learning/LearningFlutter/FlutterGuys/clean_architecture_v2/android/build.gradle
+Learning/LearningFlutter/FlutterGuys/clean_architecture_v2/android/gradle.properties
+Learning/LearningFlutter/FlutterGuys/clean_architecture_v2/android/settings.gradle
+Learning/LearningFlutter/FlutterGuys/clean_architecture_v2/android/app/build.gradle
+Learning/LearningFlutter/FlutterGuys/clean_architecture_v2/android/app/src/debug/AndroidManifest.xml
+Learning/LearningFlutter/FlutterGuys/clean_architecture_v2/android/app/src/main/AndroidManifest.xml
+Learning/LearningFlutter/FlutterGuys/clean_architecture_v2/android/app/src/main/kotlin/com/example/clean_architecture_v2/MainActivity.kt
+Learning/LearningFlutter/FlutterGuys/clean_architecture_v2/android/app/src/main/res/drawable/launch_background.xml
+Learning/LearningFlutter/FlutterGuys/clean_architecture_v2/android/app/src/main/res/drawable-v21/launch_background.xml
+Learning/LearningFlutter/FlutterGuys/clean_architecture_v2/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+Learning/LearningFlutter/FlutterGuys/clean_architecture_v2/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+Learning/LearningFlutter/FlutterGuys/clean_architecture_v2/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+Learning/LearningFlutter/FlutterGuys/clean_architecture_v2/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+Learning/LearningFlutter/FlutterGuys/clean_architecture_v2/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+Learning/LearningFlutter/FlutterGuys/clean_architecture_v2/android/app/src/main/res/values/styles.xml
+Learning/LearningFlutter/FlutterGuys/clean_architecture_v2/android/app/src/main/res/values-night/styles.xml
+Learning/LearningFlutter/FlutterGuys/clean_architecture_v2/android/app/src/profile/AndroidManifest.xml
+Learning/LearningFlutter/FlutterGuys/clean_architecture_v2/android/gradle/wrapper/gradle-wrapper.properties
+Learning/LearningFlutter/FlutterGuys/movie_app/android/.gitignore
+Learning/LearningFlutter/FlutterGuys/movie_app/android/build.gradle
+Learning/LearningFlutter/FlutterGuys/movie_app/android/gradle.properties
+Learning/LearningFlutter/FlutterGuys/movie_app/android/settings.gradle
+Learning/LearningFlutter/FlutterGuys/movie_app/android/app/build.gradle
+Learning/LearningFlutter/FlutterGuys/movie_app/android/app/src/debug/AndroidManifest.xml
+Learning/LearningFlutter/FlutterGuys/movie_app/android/app/src/main/AndroidManifest.xml
+Learning/LearningFlutter/FlutterGuys/movie_app/android/app/src/main/kotlin/com/thanhtungpfiev/movie_app/MainActivity.kt
+Learning/LearningFlutter/FlutterGuys/movie_app/android/app/src/main/res/drawable/launch_background.xml
+Learning/LearningFlutter/FlutterGuys/movie_app/android/app/src/main/res/drawable-v21/launch_background.xml
+Learning/LearningFlutter/FlutterGuys/movie_app/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+Learning/LearningFlutter/FlutterGuys/movie_app/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+Learning/LearningFlutter/FlutterGuys/movie_app/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+Learning/LearningFlutter/FlutterGuys/movie_app/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+Learning/LearningFlutter/FlutterGuys/movie_app/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+Learning/LearningFlutter/FlutterGuys/movie_app/android/app/src/main/res/values/styles.xml
+Learning/LearningFlutter/FlutterGuys/movie_app/android/app/src/main/res/values-night/styles.xml
+Learning/LearningFlutter/FlutterGuys/movie_app/android/app/src/profile/AndroidManifest.xml
+Learning/LearningFlutter/FlutterGuys/movie_app/android/gradle/wrapper/gradle-wrapper.properties
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/.gitignore
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Flutter/AppFrameworkInfo.plist
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Flutter/Debug.xcconfig
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Flutter/Release.xcconfig
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Runner/AppDelegate.swift
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Runner/Info.plist
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Runner/Runner-Bridging-Header.h
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Runner/Base.lproj/LaunchScreen.storyboard
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Runner/Base.lproj/Main.storyboard
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Runner.xcodeproj/project.pbxproj
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Runner.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+Learning/LearningFlutter/FlutterGuys/movie_app/ios/RunnerTests/RunnerTests.swift
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/android/.gitignore
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/android/build.gradle
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/android/gradle.properties
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/android/settings.gradle
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/android/app/build.gradle
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/android/app/src/debug/AndroidManifest.xml
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/android/app/src/main/AndroidManifest.xml
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/android/app/src/main/kotlin/com/thanhtungpfiev/weather_clean_architecture_tdd/MainActivity.kt
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/android/app/src/main/res/drawable/launch_background.xml
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/android/app/src/main/res/drawable-v21/launch_background.xml
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/android/app/src/main/res/values/styles.xml
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/android/app/src/main/res/values-night/styles.xml
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/android/app/src/profile/AndroidManifest.xml
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/android/gradle/wrapper/gradle-wrapper.properties
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/.gitignore
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Flutter/AppFrameworkInfo.plist
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Flutter/Debug.xcconfig
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Flutter/Release.xcconfig
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Runner/AppDelegate.swift
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Runner/Info.plist
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Runner/Runner-Bridging-Header.h
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Runner/Base.lproj/LaunchScreen.storyboard
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Runner/Base.lproj/Main.storyboard
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Runner.xcodeproj/project.pbxproj
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Runner.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/ios/RunnerTests/RunnerTests.swift
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/linux/.gitignore
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/linux/CMakeLists.txt
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/linux/main.cc
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/linux/my_application.cc
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/linux/my_application.h
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/linux/flutter/CMakeLists.txt
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/linux/flutter/generated_plugin_registrant.cc
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/linux/flutter/generated_plugin_registrant.h
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/linux/flutter/generated_plugins.cmake
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/macos/.gitignore
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/macos/Flutter/Flutter-Debug.xcconfig
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/macos/Flutter/Flutter-Release.xcconfig
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/macos/Flutter/GeneratedPluginRegistrant.swift
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/macos/Runner/AppDelegate.swift
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/macos/Runner/DebugProfile.entitlements
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/macos/Runner/Info.plist
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/macos/Runner/MainFlutterWindow.swift
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/macos/Runner/Release.entitlements
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_16.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_32.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_64.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_128.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_256.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_512.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_1024.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/macos/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/macos/Runner/Base.lproj/MainMenu.xib
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/macos/Runner/Configs/AppInfo.xcconfig
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/macos/Runner/Configs/Debug.xcconfig
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/macos/Runner/Configs/Release.xcconfig
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/macos/Runner/Configs/Warnings.xcconfig
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/macos/Runner.xcodeproj/project.pbxproj
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/macos/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/macos/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/macos/Runner.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/macos/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/macos/RunnerTests/RunnerTests.swift
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/web/favicon.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/web/index.html
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/web/manifest.json
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/web/icons/Icon-192.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/web/icons/Icon-512.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/web/icons/Icon-maskable-192.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/web/icons/Icon-maskable-512.png
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/windows/.gitignore
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/windows/CMakeLists.txt
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/windows/flutter/CMakeLists.txt
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/windows/flutter/generated_plugin_registrant.cc
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/windows/flutter/generated_plugin_registrant.h
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/windows/flutter/generated_plugins.cmake
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/windows/runner/CMakeLists.txt
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/windows/runner/flutter_window.cpp
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/windows/runner/flutter_window.h
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/windows/runner/main.cpp
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/windows/runner/resource.h
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/windows/runner/runner.exe.manifest
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/windows/runner/Runner.rc
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/windows/runner/utils.cpp
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/windows/runner/utils.h
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/windows/runner/win32_window.cpp
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/windows/runner/win32_window.h
+Learning/LearningFlutter/FlutterGuys/weather_clean_architecture_tdd/windows/runner/resources/app_icon.ico
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/android/.gitignore
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/android/build.gradle
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/android/gradle.properties
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/android/settings.gradle
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/android/app/build.gradle
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/android/app/src/debug/AndroidManifest.xml
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/android/app/src/main/AndroidManifest.xml
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/android/app/src/main/kotlin/com/example/getx_todo_list/MainActivity.kt
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/android/app/src/main/res/drawable/launch_background.xml
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/android/app/src/main/res/drawable-v21/launch_background.xml
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/android/app/src/main/res/values/styles.xml
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/android/app/src/main/res/values-night/styles.xml
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/android/app/src/profile/AndroidManifest.xml
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/android/gradle/wrapper/gradle-wrapper.properties
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/.gitignore
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Flutter/AppFrameworkInfo.plist
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Flutter/Debug.xcconfig
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Flutter/Release.xcconfig
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Runner/AppDelegate.swift
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Runner/Info.plist
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Runner/Runner-Bridging-Header.h
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Runner/Base.lproj/LaunchScreen.storyboard
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Runner/Base.lproj/Main.storyboard
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Runner.xcodeproj/project.pbxproj
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Runner.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/linux/.gitignore
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/linux/CMakeLists.txt
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/linux/main.cc
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/linux/my_application.cc
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/linux/my_application.h
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/linux/flutter/CMakeLists.txt
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/linux/flutter/generated_plugin_registrant.cc
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/linux/flutter/generated_plugin_registrant.h
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/linux/flutter/generated_plugins.cmake
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/macos/.gitignore
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/macos/Flutter/Flutter-Debug.xcconfig
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/macos/Flutter/Flutter-Release.xcconfig
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/macos/Flutter/GeneratedPluginRegistrant.swift
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/macos/Runner/AppDelegate.swift
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/macos/Runner/DebugProfile.entitlements
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/macos/Runner/Info.plist
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/macos/Runner/MainFlutterWindow.swift
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/macos/Runner/Release.entitlements
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_16.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_32.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_64.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_128.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_256.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_512.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_1024.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/macos/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/macos/Runner/Base.lproj/MainMenu.xib
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/macos/Runner/Configs/AppInfo.xcconfig
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/macos/Runner/Configs/Debug.xcconfig
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/macos/Runner/Configs/Release.xcconfig
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/macos/Runner/Configs/Warnings.xcconfig
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/macos/Runner.xcodeproj/project.pbxproj
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/macos/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/macos/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/macos/Runner.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/macos/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/web/favicon.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/web/index.html
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/web/manifest.json
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/web/icons/Icon-192.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/web/icons/Icon-512.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/web/icons/Icon-maskable-192.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/web/icons/Icon-maskable-512.png
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/windows/.gitignore
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/windows/CMakeLists.txt
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/windows/flutter/CMakeLists.txt
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/windows/flutter/generated_plugin_registrant.cc
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/windows/flutter/generated_plugin_registrant.h
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/windows/flutter/generated_plugins.cmake
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/windows/runner/CMakeLists.txt
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/windows/runner/flutter_window.cpp
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/windows/runner/flutter_window.h
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/windows/runner/main.cpp
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/windows/runner/resource.h
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/windows/runner/runner.exe.manifest
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/windows/runner/Runner.rc
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/windows/runner/utils.cpp
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/windows/runner/utils.h
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/windows/runner/win32_window.cpp
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/windows/runner/win32_window.h
+Learning/LearningFlutter/FullstackSchool/getx_todo_list/windows/runner/resources/app_icon.ico
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/android/.gitignore
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/android/build.gradle
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/android/gradle.properties
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/android/settings.gradle
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/android/app/build.gradle
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/android/app/google-services.json
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/android/app/src/debug/AndroidManifest.xml
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/android/app/src/main/AndroidManifest.xml
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/android/app/src/main/kotlin/com/example/test_firebase_analytics/MainActivity.kt
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/android/app/src/main/res/drawable/launch_background.xml
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/android/app/src/main/res/drawable-v21/launch_background.xml
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/android/app/src/main/res/values/styles.xml
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/android/app/src/main/res/values-night/styles.xml
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/android/app/src/profile/AndroidManifest.xml
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/android/gradle/wrapper/gradle-wrapper.properties
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/.gitignore
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/firebase_app_id_file.json
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Flutter/AppFrameworkInfo.plist
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Flutter/Debug.xcconfig
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Flutter/Release.xcconfig
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner/AppDelegate.swift
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner/GoogleService-Info.plist
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner/Info.plist
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner/Runner-Bridging-Header.h
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner/Base.lproj/LaunchScreen.storyboard
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner/Base.lproj/Main.storyboard
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner.xcodeproj/project.pbxproj
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/GoogleCodeLabs/test_firebase_analytics/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+Learning/LearningFlutter/NetNinja/brew_crew/android/.gitignore
+Learning/LearningFlutter/NetNinja/brew_crew/android/build.gradle
+Learning/LearningFlutter/NetNinja/brew_crew/android/gradle.properties
+Learning/LearningFlutter/NetNinja/brew_crew/android/settings.gradle
+Learning/LearningFlutter/NetNinja/brew_crew/android/app/build.gradle
+Learning/LearningFlutter/NetNinja/brew_crew/android/app/google-services.json
+Learning/LearningFlutter/NetNinja/brew_crew/android/app/src/debug/AndroidManifest.xml
+Learning/LearningFlutter/NetNinja/brew_crew/android/app/src/main/AndroidManifest.xml
+Learning/LearningFlutter/NetNinja/brew_crew/android/app/src/main/kotlin/com/example/brew_crew/MainActivity.kt
+Learning/LearningFlutter/NetNinja/brew_crew/android/app/src/main/res/drawable/launch_background.xml
+Learning/LearningFlutter/NetNinja/brew_crew/android/app/src/main/res/drawable-v21/launch_background.xml
+Learning/LearningFlutter/NetNinja/brew_crew/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+Learning/LearningFlutter/NetNinja/brew_crew/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+Learning/LearningFlutter/NetNinja/brew_crew/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+Learning/LearningFlutter/NetNinja/brew_crew/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+Learning/LearningFlutter/NetNinja/brew_crew/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+Learning/LearningFlutter/NetNinja/brew_crew/android/app/src/main/res/values/styles.xml
+Learning/LearningFlutter/NetNinja/brew_crew/android/app/src/main/res/values-night/styles.xml
+Learning/LearningFlutter/NetNinja/brew_crew/android/app/src/profile/AndroidManifest.xml
+Learning/LearningFlutter/NetNinja/brew_crew/android/gradle/wrapper/gradle-wrapper.properties
+Learning/LearningFlutter/NetNinja/brew_crew/ios/.gitignore
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Flutter/AppFrameworkInfo.plist
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Flutter/Debug.xcconfig
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Flutter/Release.xcconfig
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Runner/AppDelegate.swift
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Runner/Info.plist
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Runner/Runner-Bridging-Header.h
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Runner/Base.lproj/LaunchScreen.storyboard
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Runner/Base.lproj/Main.storyboard
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Runner.xcodeproj/project.pbxproj
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Runner.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/NetNinja/brew_crew/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+Learning/LearningFlutter/NetNinja/ninja_id/android/.gitignore
+Learning/LearningFlutter/NetNinja/ninja_id/android/build.gradle
+Learning/LearningFlutter/NetNinja/ninja_id/android/gradle.properties
+Learning/LearningFlutter/NetNinja/ninja_id/android/settings.gradle
+Learning/LearningFlutter/NetNinja/ninja_id/android/app/build.gradle
+Learning/LearningFlutter/NetNinja/ninja_id/android/app/src/debug/AndroidManifest.xml
+Learning/LearningFlutter/NetNinja/ninja_id/android/app/src/main/AndroidManifest.xml
+Learning/LearningFlutter/NetNinja/ninja_id/android/app/src/main/kotlin/com/example/ninja_id/MainActivity.kt
+Learning/LearningFlutter/NetNinja/ninja_id/android/app/src/main/res/drawable/launch_background.xml
+Learning/LearningFlutter/NetNinja/ninja_id/android/app/src/main/res/drawable-v21/launch_background.xml
+Learning/LearningFlutter/NetNinja/ninja_id/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+Learning/LearningFlutter/NetNinja/ninja_id/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+Learning/LearningFlutter/NetNinja/ninja_id/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+Learning/LearningFlutter/NetNinja/ninja_id/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+Learning/LearningFlutter/NetNinja/ninja_id/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+Learning/LearningFlutter/NetNinja/ninja_id/android/app/src/main/res/values/styles.xml
+Learning/LearningFlutter/NetNinja/ninja_id/android/app/src/main/res/values-night/styles.xml
+Learning/LearningFlutter/NetNinja/ninja_id/android/app/src/profile/AndroidManifest.xml
+Learning/LearningFlutter/NetNinja/ninja_id/android/gradle/wrapper/gradle-wrapper.properties
+Learning/LearningFlutter/NetNinja/ninja_id/ios/.gitignore
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Flutter/AppFrameworkInfo.plist
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Flutter/Debug.xcconfig
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Flutter/Release.xcconfig
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Runner/AppDelegate.swift
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Runner/Info.plist
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Runner/Runner-Bridging-Header.h
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Runner/Base.lproj/LaunchScreen.storyboard
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Runner/Base.lproj/Main.storyboard
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Runner.xcodeproj/project.pbxproj
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Runner.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/NetNinja/ninja_id/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+Learning/LearningFlutter/NetNinja/quotes/android/.gitignore
+Learning/LearningFlutter/NetNinja/quotes/android/build.gradle
+Learning/LearningFlutter/NetNinja/quotes/android/gradle.properties
+Learning/LearningFlutter/NetNinja/quotes/android/settings.gradle
+Learning/LearningFlutter/NetNinja/quotes/android/app/build.gradle
+Learning/LearningFlutter/NetNinja/quotes/android/app/src/debug/AndroidManifest.xml
+Learning/LearningFlutter/NetNinja/quotes/android/app/src/main/AndroidManifest.xml
+Learning/LearningFlutter/NetNinja/quotes/android/app/src/main/kotlin/com/example/quotes/MainActivity.kt
+Learning/LearningFlutter/NetNinja/quotes/android/app/src/main/res/drawable/launch_background.xml
+Learning/LearningFlutter/NetNinja/quotes/android/app/src/main/res/drawable-v21/launch_background.xml
+Learning/LearningFlutter/NetNinja/quotes/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+Learning/LearningFlutter/NetNinja/quotes/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+Learning/LearningFlutter/NetNinja/quotes/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+Learning/LearningFlutter/NetNinja/quotes/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+Learning/LearningFlutter/NetNinja/quotes/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+Learning/LearningFlutter/NetNinja/quotes/android/app/src/main/res/values/styles.xml
+Learning/LearningFlutter/NetNinja/quotes/android/app/src/main/res/values-night/styles.xml
+Learning/LearningFlutter/NetNinja/quotes/android/app/src/profile/AndroidManifest.xml
+Learning/LearningFlutter/NetNinja/quotes/android/gradle/wrapper/gradle-wrapper.properties
+Learning/LearningFlutter/NetNinja/quotes/ios/.gitignore
+Learning/LearningFlutter/NetNinja/quotes/ios/Flutter/AppFrameworkInfo.plist
+Learning/LearningFlutter/NetNinja/quotes/ios/Flutter/Debug.xcconfig
+Learning/LearningFlutter/NetNinja/quotes/ios/Flutter/Release.xcconfig
+Learning/LearningFlutter/NetNinja/quotes/ios/Runner/AppDelegate.swift
+Learning/LearningFlutter/NetNinja/quotes/ios/Runner/Info.plist
+Learning/LearningFlutter/NetNinja/quotes/ios/Runner/Runner-Bridging-Header.h
+Learning/LearningFlutter/NetNinja/quotes/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
+Learning/LearningFlutter/NetNinja/quotes/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png
+Learning/LearningFlutter/NetNinja/quotes/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png
+Learning/LearningFlutter/NetNinja/quotes/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png
+Learning/LearningFlutter/NetNinja/quotes/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png
+Learning/LearningFlutter/NetNinja/quotes/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png
+Learning/LearningFlutter/NetNinja/quotes/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png
+Learning/LearningFlutter/NetNinja/quotes/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png
+Learning/LearningFlutter/NetNinja/quotes/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png
+Learning/LearningFlutter/NetNinja/quotes/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png
+Learning/LearningFlutter/NetNinja/quotes/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png
+Learning/LearningFlutter/NetNinja/quotes/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png
+Learning/LearningFlutter/NetNinja/quotes/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png
+Learning/LearningFlutter/NetNinja/quotes/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png
+Learning/LearningFlutter/NetNinja/quotes/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png
+Learning/LearningFlutter/NetNinja/quotes/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png
+Learning/LearningFlutter/NetNinja/quotes/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json
+Learning/LearningFlutter/NetNinja/quotes/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png
+Learning/LearningFlutter/NetNinja/quotes/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png
+Learning/LearningFlutter/NetNinja/quotes/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png
+Learning/LearningFlutter/NetNinja/quotes/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md
+Learning/LearningFlutter/NetNinja/quotes/ios/Runner/Base.lproj/LaunchScreen.storyboard
+Learning/LearningFlutter/NetNinja/quotes/ios/Runner/Base.lproj/Main.storyboard
+Learning/LearningFlutter/NetNinja/quotes/ios/Runner.xcodeproj/project.pbxproj
+Learning/LearningFlutter/NetNinja/quotes/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/NetNinja/quotes/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/NetNinja/quotes/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+Learning/LearningFlutter/NetNinja/quotes/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
+Learning/LearningFlutter/NetNinja/quotes/ios/Runner.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/NetNinja/quotes/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/NetNinja/quotes/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+Learning/LearningFlutter/NetNinja/world_time/android/.gitignore
+Learning/LearningFlutter/NetNinja/world_time/android/build.gradle
+Learning/LearningFlutter/NetNinja/world_time/android/gradle.properties
+Learning/LearningFlutter/NetNinja/world_time/android/settings.gradle
+Learning/LearningFlutter/NetNinja/world_time/android/app/build.gradle
+Learning/LearningFlutter/NetNinja/world_time/android/app/src/debug/AndroidManifest.xml
+Learning/LearningFlutter/NetNinja/world_time/android/app/src/main/AndroidManifest.xml
+Learning/LearningFlutter/NetNinja/world_time/android/app/src/main/kotlin/com/example/world_time/MainActivity.kt
+Learning/LearningFlutter/NetNinja/world_time/android/app/src/main/res/drawable/launch_background.xml
+Learning/LearningFlutter/NetNinja/world_time/android/app/src/main/res/drawable-v21/launch_background.xml
+Learning/LearningFlutter/NetNinja/world_time/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+Learning/LearningFlutter/NetNinja/world_time/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+Learning/LearningFlutter/NetNinja/world_time/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+Learning/LearningFlutter/NetNinja/world_time/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+Learning/LearningFlutter/NetNinja/world_time/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+Learning/LearningFlutter/NetNinja/world_time/android/app/src/main/res/values/styles.xml
+Learning/LearningFlutter/NetNinja/world_time/android/app/src/main/res/values-night/styles.xml
+Learning/LearningFlutter/NetNinja/world_time/android/app/src/profile/AndroidManifest.xml
+Learning/LearningFlutter/NetNinja/world_time/android/gradle/wrapper/gradle-wrapper.properties
+Learning/LearningFlutter/NetNinja/world_time/ios/.gitignore
+Learning/LearningFlutter/NetNinja/world_time/ios/Flutter/AppFrameworkInfo.plist
+Learning/LearningFlutter/NetNinja/world_time/ios/Flutter/Debug.xcconfig
+Learning/LearningFlutter/NetNinja/world_time/ios/Flutter/Release.xcconfig
+Learning/LearningFlutter/NetNinja/world_time/ios/Runner/AppDelegate.swift
+Learning/LearningFlutter/NetNinja/world_time/ios/Runner/Info.plist
+Learning/LearningFlutter/NetNinja/world_time/ios/Runner/Runner-Bridging-Header.h
+Learning/LearningFlutter/NetNinja/world_time/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
+Learning/LearningFlutter/NetNinja/world_time/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png
+Learning/LearningFlutter/NetNinja/world_time/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png
+Learning/LearningFlutter/NetNinja/world_time/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png
+Learning/LearningFlutter/NetNinja/world_time/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png
+Learning/LearningFlutter/NetNinja/world_time/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png
+Learning/LearningFlutter/NetNinja/world_time/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png
+Learning/LearningFlutter/NetNinja/world_time/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png
+Learning/LearningFlutter/NetNinja/world_time/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png
+Learning/LearningFlutter/NetNinja/world_time/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png
+Learning/LearningFlutter/NetNinja/world_time/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png
+Learning/LearningFlutter/NetNinja/world_time/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png
+Learning/LearningFlutter/NetNinja/world_time/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png
+Learning/LearningFlutter/NetNinja/world_time/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png
+Learning/LearningFlutter/NetNinja/world_time/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png
+Learning/LearningFlutter/NetNinja/world_time/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png
+Learning/LearningFlutter/NetNinja/world_time/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json
+Learning/LearningFlutter/NetNinja/world_time/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png
+Learning/LearningFlutter/NetNinja/world_time/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png
+Learning/LearningFlutter/NetNinja/world_time/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png
+Learning/LearningFlutter/NetNinja/world_time/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md
+Learning/LearningFlutter/NetNinja/world_time/ios/Runner/Base.lproj/LaunchScreen.storyboard
+Learning/LearningFlutter/NetNinja/world_time/ios/Runner/Base.lproj/Main.storyboard
+Learning/LearningFlutter/NetNinja/world_time/ios/Runner.xcodeproj/project.pbxproj
+Learning/LearningFlutter/NetNinja/world_time/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/NetNinja/world_time/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/NetNinja/world_time/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+Learning/LearningFlutter/NetNinja/world_time/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
+Learning/LearningFlutter/NetNinja/world_time/ios/Runner.xcworkspace/contents.xcworkspacedata
+Learning/LearningFlutter/NetNinja/world_time/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Learning/LearningFlutter/NetNinja/world_time/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bitcoin_ticker_flutter_master/android/.gitignore
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bitcoin_ticker_flutter_master/android/build.gradle
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bitcoin_ticker_flutter_master/android/gradle.properties
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bitcoin_ticker_flutter_master/android/settings.gradle
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bitcoin_ticker_flutter_master/android/app/build.gradle
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bitcoin_ticker_flutter_master/android/app/src/debug/AndroidManifest.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bitcoin_ticker_flutter_master/android/app/src/main/AndroidManifest.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bitcoin_ticker_flutter_master/android/app/src/main/kotlin/com/example/bitcoin_ticker_flutter_master/MainActivity.kt
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bitcoin_ticker_flutter_master/android/app/src/main/res/drawable/launch_background.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bitcoin_ticker_flutter_master/android/app/src/main/res/drawable-v21/launch_background.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bitcoin_ticker_flutter_master/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bitcoin_ticker_flutter_master/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bitcoin_ticker_flutter_master/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bitcoin_ticker_flutter_master/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bitcoin_ticker_flutter_master/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bitcoin_ticker_flutter_master/android/app/src/main/res/values/styles.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bitcoin_ticker_flutter_master/android/app/src/main/res/values-night/styles.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bitcoin_ticker_flutter_master/android/app/src/profile/AndroidManifest.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bitcoin_ticker_flutter_master/android/gradle/wrapper/gradle-wrapper.properties
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bmi_calculator_flutter_master/android/.gitignore
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bmi_calculator_flutter_master/android/build.gradle
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bmi_calculator_flutter_master/android/gradle.properties
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bmi_calculator_flutter_master/android/settings.gradle
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bmi_calculator_flutter_master/android/app/build.gradle
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bmi_calculator_flutter_master/android/app/src/debug/AndroidManifest.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bmi_calculator_flutter_master/android/app/src/main/AndroidManifest.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bmi_calculator_flutter_master/android/app/src/main/kotlin/com/example/bmi_calculator_flutter_master/MainActivity.kt
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bmi_calculator_flutter_master/android/app/src/main/res/drawable/launch_background.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bmi_calculator_flutter_master/android/app/src/main/res/drawable-v21/launch_background.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bmi_calculator_flutter_master/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bmi_calculator_flutter_master/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bmi_calculator_flutter_master/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bmi_calculator_flutter_master/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bmi_calculator_flutter_master/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bmi_calculator_flutter_master/android/app/src/main/res/values/styles.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bmi_calculator_flutter_master/android/app/src/main/res/values-night/styles.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bmi_calculator_flutter_master/android/app/src/profile/AndroidManifest.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/bmi_calculator_flutter_master/android/gradle/wrapper/gradle-wrapper.properties
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/clima_flutter_master/android/.gitignore
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/clima_flutter_master/android/build.gradle
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/clima_flutter_master/android/gradle.properties
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/clima_flutter_master/android/settings.gradle
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/clima_flutter_master/android/app/build.gradle
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/clima_flutter_master/android/app/src/debug/AndroidManifest.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/clima_flutter_master/android/app/src/main/AndroidManifest.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/clima_flutter_master/android/app/src/main/kotlin/com/example/clima_flutter_master/MainActivity.kt
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/clima_flutter_master/android/app/src/main/res/drawable/launch_background.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/clima_flutter_master/android/app/src/main/res/drawable-v21/launch_background.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/clima_flutter_master/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/clima_flutter_master/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/clima_flutter_master/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/clima_flutter_master/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/clima_flutter_master/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/clima_flutter_master/android/app/src/main/res/values/styles.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/clima_flutter_master/android/app/src/main/res/values-night/styles.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/clima_flutter_master/android/app/src/profile/AndroidManifest.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/clima_flutter_master/android/gradle/wrapper/gradle-wrapper.properties
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/destini_challenge_starting_master/android/.gitignore
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/destini_challenge_starting_master/android/build.gradle
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/destini_challenge_starting_master/android/gradle.properties
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/destini_challenge_starting_master/android/settings.gradle
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/destini_challenge_starting_master/android/app/build.gradle
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/destini_challenge_starting_master/android/app/src/debug/AndroidManifest.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/destini_challenge_starting_master/android/app/src/main/AndroidManifest.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/destini_challenge_starting_master/android/app/src/main/kotlin/com/example/destini_challenge_starting_master/MainActivity.kt
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/destini_challenge_starting_master/android/app/src/main/res/drawable/launch_background.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/destini_challenge_starting_master/android/app/src/main/res/drawable-v21/launch_background.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/destini_challenge_starting_master/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/destini_challenge_starting_master/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/destini_challenge_starting_master/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/destini_challenge_starting_master/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/destini_challenge_starting_master/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/destini_challenge_starting_master/android/app/src/main/res/values/styles.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/destini_challenge_starting_master/android/app/src/main/res/values-night/styles.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/destini_challenge_starting_master/android/app/src/profile/AndroidManifest.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/destini_challenge_starting_master/android/gradle/wrapper/gradle-wrapper.properties
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/dicee_flutter/android/.gitignore
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/dicee_flutter/android/build.gradle
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/dicee_flutter/android/gradle.properties
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/dicee_flutter/android/settings.gradle
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/dicee_flutter/android/app/build.gradle
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/dicee_flutter/android/app/src/debug/AndroidManifest.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/dicee_flutter/android/app/src/main/AndroidManifest.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/dicee_flutter/android/app/src/main/kotlin/com/example/dicee_flutter/MainActivity.kt
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/dicee_flutter/android/app/src/main/res/drawable/launch_background.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/dicee_flutter/android/app/src/main/res/drawable-v21/launch_background.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/dicee_flutter/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/dicee_flutter/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/dicee_flutter/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/dicee_flutter/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/dicee_flutter/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/dicee_flutter/android/app/src/main/res/values/styles.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/dicee_flutter/android/app/src/main/res/values-night/styles.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/dicee_flutter/android/app/src/profile/AndroidManifest.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/dicee_flutter/android/gradle/wrapper/gradle-wrapper.properties
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_poor/android/.gitignore
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_poor/android/build.gradle
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_poor/android/gradle.properties
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_poor/android/settings.gradle
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_poor/android/app/build.gradle
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_poor/android/app/src/debug/AndroidManifest.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_poor/android/app/src/main/AndroidManifest.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_poor/android/app/src/main/kotlin/com/thanhtungpfiev/i_am_poor/MainActivity.kt
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_poor/android/app/src/main/res/drawable/launch_background.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_poor/android/app/src/main/res/drawable-v21/launch_background.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_poor/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_poor/android/app/src/main/res/mipmap-hdpi/launcher_icon.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_poor/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_poor/android/app/src/main/res/mipmap-mdpi/launcher_icon.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_poor/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_poor/android/app/src/main/res/mipmap-xhdpi/launcher_icon.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_poor/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_poor/android/app/src/main/res/mipmap-xxhdpi/launcher_icon.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_poor/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_poor/android/app/src/main/res/mipmap-xxxhdpi/launcher_icon.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_poor/android/app/src/main/res/values/styles.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_poor/android/app/src/main/res/values-night/styles.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_poor/android/app/src/profile/AndroidManifest.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_poor/android/gradle/wrapper/gradle-wrapper.properties
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_rich/android/.gitignore
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_rich/android/build.gradle
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_rich/android/gradle.properties
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_rich/android/settings.gradle
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_rich/android/app/build.gradle
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_rich/android/app/src/debug/AndroidManifest.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_rich/android/app/src/main/AndroidManifest.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_rich/android/app/src/main/kotlin/com/example/i_am_rich/MainActivity.kt
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_rich/android/app/src/main/res/drawable/launch_background.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_rich/android/app/src/main/res/drawable-v21/launch_background.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_rich/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_rich/android/app/src/main/res/mipmap-hdpi/launcher_icon.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_rich/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_rich/android/app/src/main/res/mipmap-mdpi/launcher_icon.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_rich/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_rich/android/app/src/main/res/mipmap-xhdpi/launcher_icon.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_rich/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_rich/android/app/src/main/res/mipmap-xxhdpi/launcher_icon.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_rich/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_rich/android/app/src/main/res/mipmap-xxxhdpi/launcher_icon.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_rich/android/app/src/main/res/values/styles.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_rich/android/app/src/main/res/values-night/styles.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_rich/android/app/src/profile/AndroidManifest.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/i_am_rich/android/gradle/wrapper/gradle-wrapper.properties
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/magic_8_ball_flutter/android/.gitignore
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/magic_8_ball_flutter/android/build.gradle
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/magic_8_ball_flutter/android/gradle.properties
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/magic_8_ball_flutter/android/settings.gradle
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/magic_8_ball_flutter/android/app/build.gradle
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/magic_8_ball_flutter/android/app/src/debug/AndroidManifest.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/magic_8_ball_flutter/android/app/src/main/AndroidManifest.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/magic_8_ball_flutter/android/app/src/main/kotlin/com/example/magic_8_ball_flutter/MainActivity.kt
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/magic_8_ball_flutter/android/app/src/main/res/drawable/launch_background.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/magic_8_ball_flutter/android/app/src/main/res/drawable-v21/launch_background.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/magic_8_ball_flutter/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/magic_8_ball_flutter/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/magic_8_ball_flutter/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/magic_8_ball_flutter/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/magic_8_ball_flutter/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/magic_8_ball_flutter/android/app/src/main/res/values/styles.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/magic_8_ball_flutter/android/app/src/main/res/values-night/styles.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/magic_8_ball_flutter/android/app/src/profile/AndroidManifest.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/magic_8_ball_flutter/android/gradle/wrapper/gradle-wrapper.properties
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/mi_card_flutter/android/.gitignore
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/mi_card_flutter/android/build.gradle
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/mi_card_flutter/android/gradle.properties
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/mi_card_flutter/android/settings.gradle
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/mi_card_flutter/android/app/build.gradle
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/mi_card_flutter/android/app/src/debug/AndroidManifest.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/mi_card_flutter/android/app/src/main/AndroidManifest.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/mi_card_flutter/android/app/src/main/kotlin/com/example/mi_card_flutter/MainActivity.kt
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/mi_card_flutter/android/app/src/main/res/drawable/launch_background.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/mi_card_flutter/android/app/src/main/res/drawable-v21/launch_background.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/mi_card_flutter/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/mi_card_flutter/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/mi_card_flutter/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/mi_card_flutter/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/mi_card_flutter/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/mi_card_flutter/android/app/src/main/res/values/styles.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/mi_card_flutter/android/app/src/main/res/values-night/styles.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/mi_card_flutter/android/app/src/profile/AndroidManifest.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/mi_card_flutter/android/gradle/wrapper/gradle-wrapper.properties
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/quizzler_flutter_master/android/.gitignore
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/quizzler_flutter_master/android/build.gradle
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/quizzler_flutter_master/android/gradle.properties
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/quizzler_flutter_master/android/settings.gradle
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/quizzler_flutter_master/android/app/build.gradle
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/quizzler_flutter_master/android/app/src/debug/AndroidManifest.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/quizzler_flutter_master/android/app/src/main/AndroidManifest.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/quizzler_flutter_master/android/app/src/main/kotlin/com/example/quizzler_flutter_master/MainActivity.kt
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/quizzler_flutter_master/android/app/src/main/res/drawable/launch_background.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/quizzler_flutter_master/android/app/src/main/res/drawable-v21/launch_background.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/quizzler_flutter_master/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/quizzler_flutter_master/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/quizzler_flutter_master/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/quizzler_flutter_master/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/quizzler_flutter_master/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/quizzler_flutter_master/android/app/src/main/res/values/styles.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/quizzler_flutter_master/android/app/src/main/res/values-night/styles.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/quizzler_flutter_master/android/app/src/profile/AndroidManifest.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/quizzler_flutter_master/android/gradle/wrapper/gradle-wrapper.properties
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/xylophone_flutter/android/.gitignore
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/xylophone_flutter/android/build.gradle
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/xylophone_flutter/android/gradle.properties
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/xylophone_flutter/android/settings.gradle
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/xylophone_flutter/android/app/build.gradle
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/xylophone_flutter/android/app/src/debug/AndroidManifest.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/xylophone_flutter/android/app/src/main/AndroidManifest.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/xylophone_flutter/android/app/src/main/kotlin/com/example/xylophone_flutter/MainActivity.kt
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/xylophone_flutter/android/app/src/main/res/drawable/launch_background.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/xylophone_flutter/android/app/src/main/res/drawable-v21/launch_background.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/xylophone_flutter/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/xylophone_flutter/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/xylophone_flutter/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/xylophone_flutter/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/xylophone_flutter/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/xylophone_flutter/android/app/src/main/res/values/styles.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/xylophone_flutter/android/app/src/main/res/values-night/styles.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/xylophone_flutter/android/app/src/profile/AndroidManifest.xml
+Learning/LearningFlutter/Udemy/The Complete Flutter Development Bootcamp with Dart/xylophone_flutter/android/gradle/wrapper/gradle-wrapper.properties
