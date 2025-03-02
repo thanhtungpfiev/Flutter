@@ -8,6 +8,7 @@ class HomeController extends GetxController {
   var sensors = <Map<String, dynamic>>[].obs;
   var sensorData = <Map<String, dynamic>>[].obs;
   final List<SensorDataGenerator> _generators = [];
+  var isRunning = false.obs;
 
   @override
   void onInit() {
@@ -27,7 +28,13 @@ class HomeController extends GetxController {
     super.onClose();
   }
 
-  void addSensor(String name, double minValue, double maxValue, int frequency, Color color) {
+  void addSensor(
+    String name,
+    double minValue,
+    double maxValue,
+    int frequency,
+    Color color,
+  ) {
     final sensor = {
       'name': name,
       'minValue': minValue,
@@ -49,15 +56,32 @@ class HomeController extends GetxController {
       },
     );
     _generators.add(generator);
+
+    // Start data generation for the new sensor if already running
+    if (isRunning.value) {
+      generator.start();
+    }
+  }
+
+  void removeSensor(String name) {
+    final index = sensors.indexWhere((sensor) => sensor['name'] == name);
+    if (index != -1) {
+      _generators[index].stop();
+      _generators.removeAt(index);
+      sensors.removeAt(index);
+      sensorData.removeWhere((data) => data['name'] == name);
+    }
   }
 
   void startDataGeneration() {
+    isRunning.value = true;
     for (var generator in _generators) {
       generator.start();
     }
   }
 
   void stopDataGeneration() {
+    isRunning.value = false;
     for (var generator in _generators) {
       generator.stop();
     }

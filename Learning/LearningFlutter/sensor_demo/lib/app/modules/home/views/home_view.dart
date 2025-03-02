@@ -80,13 +80,28 @@ class HomeView extends GetView<HomeController> {
                                   Icons.sensors,
                                   color: sensor['color'],
                                 ),
-                                trailing: Container(
-                                  width: 24,
-                                  height: 24,
-                                  decoration: BoxDecoration(
-                                    color: sensor['color'],
-                                    shape: BoxShape.circle,
-                                  ),
+                                trailing: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Container(
+                                      width: 24,
+                                      height: 24,
+                                      decoration: BoxDecoration(
+                                        color: sensor['color'],
+                                        shape: BoxShape.circle,
+                                      ),
+                                    ),
+                                    SizedBox(width: 8),
+                                    IconButton(
+                                      icon: Icon(
+                                        Icons.delete,
+                                        color: Colors.red,
+                                      ),
+                                      onPressed: () {
+                                        controller.removeSensor(sensor['name']);
+                                      },
+                                    ),
+                                  ],
                                 ),
                               ),
                             );
