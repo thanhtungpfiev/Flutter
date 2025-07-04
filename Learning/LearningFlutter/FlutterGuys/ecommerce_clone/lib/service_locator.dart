@@ -1,0 +1,47 @@
+import 'package:ecommerce_clone/common/bloc/button/basic_reactive_button_cubit.dart';
+import 'package:ecommerce_clone/data/auth/data_sources/auth_firebase_service.dart';
+import 'package:ecommerce_clone/data/auth/data_sources/auth_service.dart';
+import 'package:ecommerce_clone/data/auth/repositories/auth_repository_impl.dart';
+import 'package:ecommerce_clone/domain/auth/repositories/auth_repository.dart';
+import 'package:ecommerce_clone/domain/auth/usecases/get_ages_usecase.dart';
+import 'package:ecommerce_clone/domain/auth/usecases/is_logged_in_usecase.dart';
+import 'package:ecommerce_clone/domain/auth/usecases/send_password_reset_email_usecase.dart';
+import 'package:ecommerce_clone/domain/auth/usecases/signin_usecase.dart';
+import 'package:ecommerce_clone/domain/auth/usecases/signup_usecase.dart';
+import 'package:ecommerce_clone/presentation/auth/bloc/age_selection_cubit.dart';
+import 'package:ecommerce_clone/presentation/auth/bloc/ages_display_cubit.dart';
+import 'package:ecommerce_clone/presentation/auth/bloc/gender_selection_cubit.dart';
+import 'package:ecommerce_clone/presentation/splash/bloc/splash_cubit.dart';
+import 'package:get_it/get_it.dart';
+
+final sl = GetIt.instance;
+
+Future<void> initializeDependencies() async {
+  // Services
+  sl.registerSingleton<AuthService>(AuthFirebaseService());
+
+  // Repositories
+  sl.registerSingleton<AuthRepository>(AuthRepositoryImpl(authService: sl()));
+
+  // Usecases
+  sl.registerSingleton<SignupUseCase>(SignupUseCase(authRepository: sl()));
+  sl.registerSingleton<SigninUseCase>(SigninUseCase(authRepository: sl()));
+  sl.registerSingleton<GetAgesUseCase>(GetAgesUseCase(authRepository: sl()));
+  sl.registerSingleton<SendPasswordResetEmailUseCase>(
+    SendPasswordResetEmailUseCase(authRepository: sl()),
+  );
+  sl.registerSingleton<IsLoggedInUseCase>(
+    IsLoggedInUseCase(authRepository: sl()),
+  );
+
+  // Blocs
+  sl.registerFactory<SplashCubit>(() => SplashCubit(isLoggedInUseCase: sl()));
+  sl.registerFactory<GenderSelectionCubit>(() => GenderSelectionCubit());
+  sl.registerFactory<BasicReactiveButtonCubit>(
+    () => BasicReactiveButtonCubit(),
+  );
+  sl.registerFactory<AgeSelectionCubit>(() => AgeSelectionCubit());
+  sl.registerFactory<AgesDisplayCubit>(
+    () => AgesDisplayCubit(getAgesUseCase: sl()),
+  );
+}
