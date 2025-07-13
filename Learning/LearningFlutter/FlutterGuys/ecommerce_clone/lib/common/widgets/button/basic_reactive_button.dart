@@ -1,5 +1,5 @@
-import 'package:ecommerce_clone/common/bloc/button/basic_reactive_button_cubit.dart';
-import 'package:ecommerce_clone/common/bloc/button/basic_reactive_button_state.dart';
+import 'package:ecommerce_clone/common/blocs/button/basic_reactive_button_cubit.dart';
+import 'package:ecommerce_clone/common/blocs/button/basic_reactive_button_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

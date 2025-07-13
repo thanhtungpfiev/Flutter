@@ -4,10 +4,10 @@ class BasicReactiveButtonInitialState extends BasicReactiveButtonState {}
 
 class BasicReactiveButtonLoadingState extends BasicReactiveButtonState {}
 
-class BasicReactiveButtonSuccessState extends BasicReactiveButtonState {}
+class BasicReactiveButtonLoadSuccessState extends BasicReactiveButtonState {}
 
-class BasicReactiveButtonErrorState extends BasicReactiveButtonState {
+class BasicReactiveButtonLoadErrorState extends BasicReactiveButtonState {
   final String errorMessage;
 
-  BasicReactiveButtonErrorState({required this.errorMessage});
+  BasicReactiveButtonLoadErrorState({required this.errorMessage});
 }

@@ -1,5 +1,5 @@
 import 'package:ecommerce_clone/domain/auth/usecases/get_ages_usecase.dart';
-import 'package:ecommerce_clone/presentation/auth/bloc/ages_display_states.dart';
+import 'package:ecommerce_clone/presentation/auth/blocs/ages_display_states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AgesDisplayCubit extends Cubit<AgesDisplayState> {
@@ -16,7 +16,7 @@ class AgesDisplayCubit extends Cubit<AgesDisplayState> {
         emit(AgesDisplayLoadErrorState(errorMessage: message));
       },
       (data) {
-        emit(AgesDisplaySuccessState(ages: data));
+        emit(AgesDisplayLoadSuccessState(ages: data));
       },
     );
   }

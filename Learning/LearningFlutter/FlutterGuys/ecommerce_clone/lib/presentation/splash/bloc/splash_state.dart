@@ -1,7 +1,7 @@
 abstract class SplashState {}
 
-class DisplaySplash extends SplashState {}
+class SplashDisplayState extends SplashState {}
 
-class Authenticated extends SplashState {}
+class SplashAuthenticatedState extends SplashState {}
 
-class UnAuthenticated extends SplashState {}
+class SplashUnAuthenticatedState extends SplashState {}

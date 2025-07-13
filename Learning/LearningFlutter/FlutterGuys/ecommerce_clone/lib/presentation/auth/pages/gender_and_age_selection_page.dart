@@ -1,5 +1,6 @@
-import 'package:ecommerce_clone/common/bloc/button/basic_reactive_button_cubit.dart';
-import 'package:ecommerce_clone/common/bloc/button/basic_reactive_button_state.dart';
+import 'package:ecommerce_clone/common/blocs/button/basic_reactive_button_cubit.dart';
+import 'package:ecommerce_clone/common/blocs/button/basic_reactive_button_state.dart';
+import 'package:ecommerce_clone/common/enums/gender.dart';
 import 'package:ecommerce_clone/common/helper/bottom_sheet/app_bottom_sheet.dart';
 import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
 import 'package:ecommerce_clone/common/widgets/app_bar/basic_app_bar.dart';
@@ -7,9 +8,9 @@ import 'package:ecommerce_clone/common/widgets/button/basic_reactive_button.dart
 import 'package:ecommerce_clone/core/configs/theme/app_colors.dart';
 import 'package:ecommerce_clone/data/auth/models/user_signup_req_model.dart';
 import 'package:ecommerce_clone/domain/auth/usecases/signup_usecase.dart';
-import 'package:ecommerce_clone/presentation/auth/bloc/age_selection_cubit.dart';
-import 'package:ecommerce_clone/presentation/auth/bloc/ages_display_cubit.dart';
-import 'package:ecommerce_clone/presentation/auth/bloc/gender_selection_cubit.dart';
+import 'package:ecommerce_clone/presentation/auth/blocs/age_selection_cubit.dart';
+import 'package:ecommerce_clone/presentation/auth/blocs/ages_display_cubit.dart';
+import 'package:ecommerce_clone/presentation/auth/blocs/gender_selection_cubit.dart';
 import 'package:ecommerce_clone/presentation/auth/widgets/ages_widget.dart';
 import 'package:ecommerce_clone/presentation/home/pages/home_page.dart';
 import 'package:ecommerce_clone/service_locator.dart';
@@ -37,7 +38,7 @@ class GenderAndAgeSelectionPage extends StatelessWidget {
         ],
         child: BlocListener<BasicReactiveButtonCubit, BasicReactiveButtonState>(
           listener: (context, state) {
-            if (state is BasicReactiveButtonErrorState) {
+            if (state is BasicReactiveButtonLoadErrorState) {
               var snackbar = SnackBar(
                 content: Text(state.errorMessage),
                 backgroundColor: Colors.red,
@@ -45,7 +46,7 @@ class GenderAndAgeSelectionPage extends StatelessWidget {
               );
               ScaffoldMessenger.of(context).showSnackBar(snackbar);
             }
-            if (state is BasicReactiveButtonSuccessState) {
+            if (state is BasicReactiveButtonLoadSuccessState) {
               AppNavigator.pushAndRemoveUntil(context, const HomePage());
             }
           },

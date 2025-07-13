@@ -131,4 +131,28 @@ class AuthFirebaseService implements AuthService {
       print('Error during sign out: $e');
     }
   }
+
+  @override
+  Future<Either> getUser() async {
+    try {
+      var currentUser = FirebaseAuth.instance.currentUser;
+      if (currentUser == null) {
+        return const Left('No user is currently signed in');
+      }
+
+      var userData = await FirebaseFirestore.instance
+          .collection('Users')
+          .doc(currentUser.uid)
+          .get()
+          .then((value) => value.data());
+
+      if (userData == null) {
+        return const Left('User data not found');
+      }
+
+      return Right(userData);
+    } catch (e) {
+      return const Left('Please try again');
+    }
+  }
 }

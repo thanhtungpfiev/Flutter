@@ -3,7 +3,7 @@ import 'package:ecommerce_clone/presentation/splash/bloc/splash_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SplashCubit extends Cubit<SplashState> {
-  SplashCubit({required this.isLoggedInUseCase}) : super(DisplaySplash());
+  SplashCubit({required this.isLoggedInUseCase}) : super(SplashDisplayState());
 
   final IsLoggedInUseCase isLoggedInUseCase;
 
@@ -11,9 +11,9 @@ class SplashCubit extends Cubit<SplashState> {
     await Future.delayed(const Duration(seconds: 2));
     var isLoggedIn = await isLoggedInUseCase.call();
     if (isLoggedIn) {
-      emit(Authenticated());
+      emit(SplashAuthenticatedState());
     } else {
-      emit(UnAuthenticated());
+      emit(SplashUnAuthenticatedState());
     }
   }
 }

@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:ecommerce_clone/presentation/auth/bloc/age_selection_cubit.dart';
-import 'package:ecommerce_clone/presentation/auth/bloc/ages_display_cubit.dart';
-import 'package:ecommerce_clone/presentation/auth/bloc/ages_display_states.dart';
+import 'package:ecommerce_clone/presentation/auth/blocs/age_selection_cubit.dart';
+import 'package:ecommerce_clone/presentation/auth/blocs/ages_display_cubit.dart';
+import 'package:ecommerce_clone/presentation/auth/blocs/ages_display_states.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -21,7 +21,7 @@ class AgesWidget extends StatelessWidget {
             );
           }
 
-          if (state is AgesDisplaySuccessState) {
+          if (state is AgesDisplayLoadSuccessState) {
             return _ages(state.ages);
           }
 

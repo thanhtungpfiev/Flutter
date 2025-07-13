@@ -1,5 +1,3 @@
-import 'package:flutter_bloc/flutter_bloc.dart';
-
 enum Gender {
   men,
   women;
@@ -45,24 +43,5 @@ enum Gender {
       default:
         throw ArgumentError('Invalid gender index: $value');
     }
-  }
-}
-
-class GenderSelectionCubit extends Cubit<Gender> {
-  GenderSelectionCubit() : super(Gender.men);
-
-  Gender selectedGender = Gender.men;
-
-  void selectGender(Gender gender) {
-    selectedGender = gender;
-    emit(gender);
-  }
-
-  void selectMale() {
-    emit(Gender.men);
-  }
-
-  void selectFemale() {
-    emit(Gender.women);
   }
 }

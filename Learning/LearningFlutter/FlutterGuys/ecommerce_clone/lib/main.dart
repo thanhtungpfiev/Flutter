@@ -6,7 +6,6 @@ import 'package:ecommerce_clone/firebase_options.dart';
 import 'package:ecommerce_clone/presentation/splash/bloc/splash_cubit.dart';
 import 'package:ecommerce_clone/presentation/splash/pages/splash_page.dart';
 import 'package:ecommerce_clone/service_locator.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,11 +16,8 @@ void main() async {
 
   // Set Firebase Auth persistence for desktop platforms
   if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
-    try {
-      await FirebaseAuth.instance.setPersistence(Persistence.LOCAL);
-    } catch (e) {
-      print('Error setting Firebase Auth persistence: $e');
-    }
+    // Note: setPersistence() is only supported on web platforms
+    // Firebase Auth automatically handles persistence on desktop platforms
 
     await DesktopWindow.setWindowSize(
       const Size(390, 844),

@@ -1,5 +1,5 @@
-import 'package:ecommerce_clone/common/bloc/button/basic_reactive_button_cubit.dart';
-import 'package:ecommerce_clone/common/bloc/button/basic_reactive_button_state.dart';
+import 'package:ecommerce_clone/common/blocs/button/basic_reactive_button_cubit.dart';
+import 'package:ecommerce_clone/common/blocs/button/basic_reactive_button_state.dart';
 import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
 import 'package:ecommerce_clone/common/widgets/app_bar/basic_app_bar.dart';
 import 'package:ecommerce_clone/common/widgets/button/basic_reactive_button.dart';
@@ -43,7 +43,7 @@ class _EnterPasswordPageState extends State<EnterPasswordPage> {
           child:
               BlocListener<BasicReactiveButtonCubit, BasicReactiveButtonState>(
                 listener: (context, state) {
-                  if (state is BasicReactiveButtonErrorState) {
+                  if (state is BasicReactiveButtonLoadErrorState) {
                     var snackbar = SnackBar(
                       content: Text(state.errorMessage),
                       backgroundColor: Colors.red,
@@ -51,7 +51,7 @@ class _EnterPasswordPageState extends State<EnterPasswordPage> {
                     );
                     ScaffoldMessenger.of(context).showSnackBar(snackbar);
                   }
-                  if (state is BasicReactiveButtonSuccessState) {
+                  if (state is BasicReactiveButtonLoadSuccessState) {
                     AppNavigator.pushAndRemoveUntil(context, const HomePage());
                   }
                 },

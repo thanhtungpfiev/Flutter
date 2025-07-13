@@ -1,5 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:ecommerce_clone/data/auth/data_sources/auth_service.dart';
+import 'package:ecommerce_clone/data/auth/extensions/user_model_extension.dart';
+import 'package:ecommerce_clone/data/auth/models/user_model.dart';
 import 'package:ecommerce_clone/data/auth/models/user_signin_req_model.dart';
 import 'package:ecommerce_clone/data/auth/models/user_signup_req_model.dart';
 import 'package:ecommerce_clone/domain/auth/repositories/auth_repository.dart';
@@ -37,5 +39,18 @@ class AuthRepositoryImpl implements AuthRepository {
   @override
   Future<void> signOut() async {
     return await authService.signOut();
+  }
+
+  @override
+  Future<Either> getUser() async {
+    var user = await authService.getUser();
+    return user.fold(
+      (error) {
+        return Left(error);
+      },
+      (data) {
+        return Right(UserModel.fromMap(data).toEntity());
+      },
+    );
   }
 }
