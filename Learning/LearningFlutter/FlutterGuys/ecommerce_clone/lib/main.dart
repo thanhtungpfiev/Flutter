@@ -20,10 +20,10 @@ void main() async {
     // Firebase Auth automatically handles persistence on desktop platforms
 
     await DesktopWindow.setWindowSize(
-      const Size(390, 844),
+      const Size(520, 900),
     ); // iPhone 14 Pro size
-    await DesktopWindow.setMinWindowSize(const Size(390, 844));
-    await DesktopWindow.setMaxWindowSize(const Size(390, 844));
+    await DesktopWindow.setMinWindowSize(const Size(520, 900));
+    await DesktopWindow.setMaxWindowSize(const Size(520, 900));
   }
   await initializeDependencies();
   runApp(const MyApp());

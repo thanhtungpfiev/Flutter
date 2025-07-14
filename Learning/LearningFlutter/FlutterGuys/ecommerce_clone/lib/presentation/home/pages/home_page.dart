@@ -1,4 +1,6 @@
+import 'package:ecommerce_clone/presentation/home/widgets/categories_widget.dart';
 import 'package:ecommerce_clone/presentation/home/widgets/header_widget.dart';
+import 'package:ecommerce_clone/presentation/home/widgets/search_field_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -11,11 +13,11 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             HeaderWidget(),
-            // SizedBox(height: 24),
-            // SearchField(),
-            // SizedBox(height: 24),
-            // Categories(),
-            // SizedBox(height: 24),
+            SizedBox(height: 24),
+            SearchFieldWidget(),
+            SizedBox(height: 24),
+            CategoriesWidget(),
+            SizedBox(height: 24),
             // TopSelling(),
             // SizedBox(height: 24),
             // NewIn(),

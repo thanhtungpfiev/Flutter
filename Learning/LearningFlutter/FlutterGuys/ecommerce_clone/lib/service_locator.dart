@@ -1,7 +1,11 @@
 import 'package:ecommerce_clone/common/blocs/button/basic_reactive_button_cubit.dart';
+import 'package:ecommerce_clone/common/blocs/categories/categories_display_cubit.dart';
 import 'package:ecommerce_clone/data/auth/data_sources/auth_firebase_service.dart';
 import 'package:ecommerce_clone/data/auth/data_sources/auth_service.dart';
 import 'package:ecommerce_clone/data/auth/repositories/auth_repository_impl.dart';
+import 'package:ecommerce_clone/data/category/data_sources/category_firebase_service.dart';
+import 'package:ecommerce_clone/data/category/data_sources/category_service.dart';
+import 'package:ecommerce_clone/data/category/repositories/category_repository_impl.dart';
 import 'package:ecommerce_clone/domain/auth/repositories/auth_repository.dart';
 import 'package:ecommerce_clone/domain/auth/usecases/get_ages_usecase.dart';
 import 'package:ecommerce_clone/domain/auth/usecases/get_user_usecase.dart';
@@ -9,6 +13,8 @@ import 'package:ecommerce_clone/domain/auth/usecases/is_logged_in_usecase.dart';
 import 'package:ecommerce_clone/domain/auth/usecases/send_password_reset_email_usecase.dart';
 import 'package:ecommerce_clone/domain/auth/usecases/signin_usecase.dart';
 import 'package:ecommerce_clone/domain/auth/usecases/signup_usecase.dart';
+import 'package:ecommerce_clone/domain/category/repositories/category_repository.dart';
+import 'package:ecommerce_clone/domain/category/usecases/get_categories_usecase.dart';
 import 'package:ecommerce_clone/presentation/auth/blocs/age_selection_cubit.dart';
 import 'package:ecommerce_clone/presentation/auth/blocs/ages_display_cubit.dart';
 import 'package:ecommerce_clone/presentation/auth/blocs/gender_selection_cubit.dart';
@@ -20,12 +26,21 @@ final sl = GetIt.instance;
 
 Future<void> initializeDependencies() async {
   // Services
+  // Auth
   sl.registerSingleton<AuthService>(AuthFirebaseService());
+  // Category
+  sl.registerSingleton<CategoryService>(CategoryFirebaseService());
 
   // Repositories
+  // Auth
   sl.registerSingleton<AuthRepository>(AuthRepositoryImpl(authService: sl()));
+  // Category
+  sl.registerSingleton<CategoryRepository>(
+    CategoryRepositoryImpl(categoryService: sl()),
+  );
 
   // Usecases
+  // Auth
   sl.registerSingleton<SignupUseCase>(SignupUseCase(authRepository: sl()));
   sl.registerSingleton<SigninUseCase>(SigninUseCase(authRepository: sl()));
   sl.registerSingleton<GetAgesUseCase>(GetAgesUseCase(authRepository: sl()));
@@ -36,8 +51,13 @@ Future<void> initializeDependencies() async {
     IsLoggedInUseCase(authRepository: sl()),
   );
   sl.registerSingleton<GetUserUseCase>(GetUserUseCase(authRepository: sl()));
+  // Category
+  sl.registerSingleton<GetCategoriesUseCase>(
+    GetCategoriesUseCase(categoryRepository: sl()),
+  );
 
   // Blocs
+  // Auth
   sl.registerFactory<SplashCubit>(() => SplashCubit(isLoggedInUseCase: sl()));
   sl.registerFactory<GenderSelectionCubit>(() => GenderSelectionCubit());
   sl.registerFactory<BasicReactiveButtonCubit>(
@@ -49,5 +69,9 @@ Future<void> initializeDependencies() async {
   );
   sl.registerFactory<UserInfoDisplayCubit>(
     () => UserInfoDisplayCubit(getUserUseCase: sl()),
+  );
+  // Category
+  sl.registerFactory<CategoriesDisplayCubit>(
+    () => CategoriesDisplayCubit(getCategoriesUseCase: sl()),
   );
 }
