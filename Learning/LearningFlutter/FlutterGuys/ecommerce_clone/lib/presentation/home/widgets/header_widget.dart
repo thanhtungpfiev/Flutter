@@ -1,8 +1,12 @@
 import 'package:ecommerce_clone/common/enums/gender.dart';
+import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
 import 'package:ecommerce_clone/core/configs/assets/app_images.dart';
 import 'package:ecommerce_clone/core/configs/assets/app_vectors.dart';
 import 'package:ecommerce_clone/core/configs/theme/app_colors.dart';
+import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/domain/auth/entities/user_entity.dart';
+import 'package:ecommerce_clone/domain/auth/usecases/signout_usecase.dart';
+import 'package:ecommerce_clone/presentation/auth/pages/signin_page.dart';
 import 'package:ecommerce_clone/presentation/home/blocs/user_info_display_cubit.dart';
 import 'package:ecommerce_clone/presentation/home/blocs/user_info_display_state.dart';
 import 'package:ecommerce_clone/service_locator.dart';
@@ -18,7 +22,11 @@ class HeaderWidget extends StatelessWidget {
     return BlocProvider(
       create: (context) => sl<UserInfoDisplayCubit>()..displayUserInfo(),
       child: Padding(
-        padding: const EdgeInsets.only(top: 40, right: 16, left: 16),
+        padding: EdgeInsets.only(
+          top: ResponsiveUtils.spacing40,
+          right: ResponsiveUtils.spacing16,
+          left: ResponsiveUtils.spacing16,
+        ),
         child: BlocBuilder<UserInfoDisplayCubit, UserInfoDisplayState>(
           builder: (context, state) {
             if (state is UserInfoDisplayLoadingState) {
@@ -43,12 +51,22 @@ class HeaderWidget extends StatelessWidget {
 
   Widget _profileImage(UserEntity user, BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        // AppNavigator.push(context, const SettingsPage());
+      onTap: () async {
+        // Show confirmation dialog before signing out
+        final shouldSignOut = await _showSignOutDialog(context);
+        if (shouldSignOut == true) {
+          await _signOut(context);
+        }
       },
       child: Container(
-        height: 40,
-        width: 40,
+        height: ResponsiveUtils.responsive(
+          mobile: ResponsiveUtils.height(40),
+          desktop: 40.0,
+        ),
+        width: ResponsiveUtils.responsive(
+          mobile: ResponsiveUtils.width(40),
+          desktop: 40.0,
+        ),
         decoration: BoxDecoration(
           image: DecorationImage(
             image:
@@ -63,18 +81,84 @@ class HeaderWidget extends StatelessWidget {
     );
   }
 
+  Future<bool?> _showSignOutDialog(BuildContext context) {
+    return showDialog<bool>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Sign Out'),
+          content: const Text('Are you sure you want to sign out?'),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(false),
+              child: const Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(true),
+              child: const Text('Sign Out'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Future<void> _signOut(BuildContext context) async {
+    try {
+      // Show loading indicator
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (context) => const Center(child: CircularProgressIndicator()),
+      );
+
+      // Perform sign out
+      await sl<SignOutUseCase>().call();
+
+      // Remove loading indicator
+      if (!context.mounted) return;
+      Navigator.of(context).pop();
+
+      // Navigate to sign in page and remove all previous routes
+      AppNavigator.pushAndRemoveUntil(context, SigninPage());
+    } catch (e) {
+      // Remove loading indicator if there's an error
+      if (!context.mounted) return;
+      Navigator.of(context).pop();
+
+      // Show error message
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Error signing out: ${e.toString()}'),
+          backgroundColor: Colors.red,
+        ),
+      );
+    }
+  }
+
   Widget _gender(UserEntity user) {
     return Container(
-      height: 40,
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      height: ResponsiveUtils.responsive(
+        mobile: ResponsiveUtils.height(40),
+        desktop: 40.0,
+      ),
+      padding: EdgeInsets.symmetric(horizontal: ResponsiveUtils.spacing16),
       decoration: BoxDecoration(
         color: AppColors.secondBackground,
-        borderRadius: BorderRadius.circular(100),
+        borderRadius: BorderRadius.circular(
+          ResponsiveUtils.responsive(
+            mobile: ResponsiveUtils.radius(100),
+            desktop: 100.0,
+          ),
+        ),
       ),
       child: Center(
         child: Text(
           user.gender == Gender.men ? 'Men' : 'Women',
-          style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
+          style: TextStyle(
+            fontWeight: FontWeight.w500,
+            fontSize: ResponsiveUtils.font16,
+          ),
         ),
       ),
     );
@@ -86,8 +170,14 @@ class HeaderWidget extends StatelessWidget {
         // AppNavigator.push(context, const CartPage());
       },
       child: Container(
-        height: 40,
-        width: 40,
+        height: ResponsiveUtils.responsive(
+          mobile: ResponsiveUtils.height(40),
+          desktop: 40.0,
+        ),
+        width: ResponsiveUtils.responsive(
+          mobile: ResponsiveUtils.width(40),
+          desktop: 40.0,
+        ),
         decoration: const BoxDecoration(
           color: AppColors.primary,
           shape: BoxShape.circle,

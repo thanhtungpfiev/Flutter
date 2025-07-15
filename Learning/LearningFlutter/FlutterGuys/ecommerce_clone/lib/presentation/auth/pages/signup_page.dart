@@ -1,6 +1,7 @@
 import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
 import 'package:ecommerce_clone/common/widgets/app_bar/basic_app_bar.dart';
 import 'package:ecommerce_clone/common/widgets/button/basic_app_button.dart';
+import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/data/auth/models/user_signup_req_model.dart';
 import 'package:ecommerce_clone/presentation/auth/pages/gender_and_age_selection_page.dart';
 import 'package:ecommerce_clone/presentation/auth/pages/signin_page.dart';
@@ -55,27 +56,32 @@ class _SignupPageState extends State<SignupPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const BasicAppBar(),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 40),
-        child: Form(
-          key: _formKey,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _signupText(),
-              const SizedBox(height: 20),
-              _firstNameField(),
-              const SizedBox(height: 20),
-              _lastNameField(),
-              const SizedBox(height: 20),
-              _emailField(),
-              const SizedBox(height: 20),
-              _passwordField(context),
-              const SizedBox(height: 20),
-              _continueButton(context),
-              const SizedBox(height: 20),
-              _createAccount(context),
-            ],
+      body: Center(
+        child: SingleChildScrollView(
+          padding: ResponsiveUtils.pagePadding,
+          child: Container(
+            width: ResponsiveUtils.maxFormWidth,
+            child: Form(
+              key: _formKey,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  _signupText(),
+                  SizedBox(height: ResponsiveUtils.spacing24),
+                  _firstNameField(),
+                  SizedBox(height: ResponsiveUtils.spacing20),
+                  _lastNameField(),
+                  SizedBox(height: ResponsiveUtils.spacing20),
+                  _emailField(),
+                  SizedBox(height: ResponsiveUtils.spacing20),
+                  _passwordField(context),
+                  SizedBox(height: ResponsiveUtils.spacing32),
+                  _continueButton(context),
+                  SizedBox(height: ResponsiveUtils.spacing24),
+                  _createAccount(context),
+                ],
+              ),
+            ),
           ),
         ),
       ),
@@ -83,16 +89,24 @@ class _SignupPageState extends State<SignupPage> {
   }
 
   Widget _signupText() {
-    return const Text(
+    return Text(
       'Create Account',
-      style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+      style: TextStyle(
+        fontSize: ResponsiveUtils.font32,
+        fontWeight: FontWeight.bold,
+      ),
     );
   }
 
   Widget _firstNameField() {
     return TextFormField(
       controller: _firstNameController,
-      decoration: const InputDecoration(hintText: 'First Name'),
+      style: TextStyle(fontSize: ResponsiveUtils.font16),
+      decoration: InputDecoration(
+        hintText: 'First Name',
+        hintStyle: TextStyle(fontSize: ResponsiveUtils.font16),
+        contentPadding: ResponsiveUtils.formPadding,
+      ),
       validator: (value) {
         if (value == null || value.trim().isEmpty) {
           return 'First name is required';
@@ -108,7 +122,12 @@ class _SignupPageState extends State<SignupPage> {
   Widget _lastNameField() {
     return TextFormField(
       controller: _lastNameController,
-      decoration: const InputDecoration(hintText: 'Last Name'),
+      style: TextStyle(fontSize: ResponsiveUtils.font16),
+      decoration: InputDecoration(
+        hintText: 'Last Name',
+        hintStyle: TextStyle(fontSize: ResponsiveUtils.font16),
+        contentPadding: ResponsiveUtils.formPadding,
+      ),
       validator: (value) {
         if (value == null || value.trim().isEmpty) {
           return 'Last name is required';
@@ -124,7 +143,12 @@ class _SignupPageState extends State<SignupPage> {
   Widget _emailField() {
     return TextFormField(
       controller: _emailController,
-      decoration: const InputDecoration(hintText: 'Email Address'),
+      style: TextStyle(fontSize: ResponsiveUtils.font16),
+      decoration: InputDecoration(
+        hintText: 'Email Address',
+        hintStyle: TextStyle(fontSize: ResponsiveUtils.font16),
+        contentPadding: ResponsiveUtils.formPadding,
+      ),
       keyboardType: TextInputType.emailAddress,
       validator: (value) {
         if (value == null || value.trim().isEmpty) {
@@ -141,7 +165,12 @@ class _SignupPageState extends State<SignupPage> {
   Widget _passwordField(BuildContext context) {
     return TextFormField(
       controller: _passwordController,
-      decoration: const InputDecoration(hintText: 'Password'),
+      style: TextStyle(fontSize: ResponsiveUtils.font16),
+      decoration: InputDecoration(
+        hintText: 'Password',
+        hintStyle: TextStyle(fontSize: ResponsiveUtils.font16),
+        contentPadding: ResponsiveUtils.formPadding,
+      ),
       obscureText: false,
       validator: _validatePassword,
     );
@@ -174,12 +203,28 @@ class _SignupPageState extends State<SignupPage> {
         }
       },
       title: 'Continue',
+      height: ResponsiveUtils.buttonHeight,
+      content:
+          ResponsiveUtils.isDesktop
+              ? Text(
+                'Continue',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w400,
+                  fontSize: ResponsiveUtils.font16,
+                ),
+              )
+              : null,
     );
   }
 
   Widget _createAccount(BuildContext context) {
     return RichText(
       text: TextSpan(
+        style: TextStyle(
+          fontSize: ResponsiveUtils.font14,
+          color: Theme.of(context).textTheme.bodyMedium?.color,
+        ),
         children: [
           const TextSpan(text: "Do you have an account? "),
           TextSpan(

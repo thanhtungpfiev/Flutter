@@ -1,3 +1,4 @@
+import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:flutter/material.dart';
 
 class BasicAppButton extends StatelessWidget {
@@ -22,17 +23,18 @@ class BasicAppButton extends StatelessWidget {
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         minimumSize: Size(
-          width ?? MediaQuery.of(context).size.width,
-          height ?? 50,
+          width ?? ResponsiveUtils.screenWidth,
+          height ?? ResponsiveUtils.buttonHeight,
         ),
       ),
       child:
           content ??
           Text(
             title,
-            style: const TextStyle(
+            style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.w400,
+              fontSize: ResponsiveUtils.font16,
             ),
           ),
     );

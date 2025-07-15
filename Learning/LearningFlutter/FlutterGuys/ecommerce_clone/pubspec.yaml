@@ -23,6 +23,7 @@ dependencies:
     get_it:
     desktop_window:
     shared_preferences:
+    flutter_screenutil:
 
 dev_dependencies:
     flutter_test:

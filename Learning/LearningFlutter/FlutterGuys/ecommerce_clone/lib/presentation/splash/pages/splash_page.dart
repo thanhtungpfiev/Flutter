@@ -1,6 +1,7 @@
 import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
 import 'package:ecommerce_clone/core/configs/assets/app_vectors.dart';
 import 'package:ecommerce_clone/core/configs/theme/app_colors.dart';
+import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/presentation/auth/pages/signin_page.dart';
 import 'package:ecommerce_clone/presentation/home/pages/home_page.dart';
 import 'package:ecommerce_clone/presentation/splash/bloc/splash_cubit.dart';
@@ -25,7 +26,17 @@ class SplashPage extends StatelessWidget {
       },
       child: Scaffold(
         backgroundColor: AppColors.primary,
-        body: Center(child: SvgPicture.asset(AppVectors.appLogo)),
+        body: Center(
+          child: SvgPicture.asset(
+            AppVectors.appLogo,
+            width: ResponsiveUtils.width(
+              120,
+            ), // Responsive width based on design
+            height: ResponsiveUtils.height(
+              120,
+            ), // Responsive height based on design
+          ),
+        ),
       ),
     );
   }

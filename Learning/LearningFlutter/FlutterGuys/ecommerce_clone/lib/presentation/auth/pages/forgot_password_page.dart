@@ -3,6 +3,7 @@ import 'package:ecommerce_clone/common/blocs/button/basic_reactive_button_state.
 import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
 import 'package:ecommerce_clone/common/widgets/app_bar/basic_app_bar.dart';
 import 'package:ecommerce_clone/common/widgets/button/basic_reactive_button.dart';
+import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/domain/auth/usecases/send_password_reset_email_usecase.dart';
 import 'package:ecommerce_clone/presentation/auth/pages/password_reset_email_page.dart';
 import 'package:ecommerce_clone/service_locator.dart';
@@ -19,54 +20,68 @@ class ForgotPasswordPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const BasicAppBar(),
-      body: BlocProvider(
-        create: (context) => BasicReactiveButtonCubit(),
-        child: BlocListener<BasicReactiveButtonCubit, BasicReactiveButtonState>(
-          listener: (context, state) {
-            if (state is BasicReactiveButtonLoadErrorState) {
-              var snackbar = SnackBar(
-                content: Text(state.errorMessage),
-                behavior: SnackBarBehavior.floating,
-              );
-              ScaffoldMessenger.of(context).showSnackBar(snackbar);
-            }
+      body: Center(
+        child: BlocProvider(
+          create: (context) => BasicReactiveButtonCubit(),
+          child:
+              BlocListener<BasicReactiveButtonCubit, BasicReactiveButtonState>(
+                listener: (context, state) {
+                  if (state is BasicReactiveButtonLoadErrorState) {
+                    var snackbar = SnackBar(
+                      content: Text(state.errorMessage),
+                      behavior: SnackBarBehavior.floating,
+                    );
+                    ScaffoldMessenger.of(context).showSnackBar(snackbar);
+                  }
 
-            if (state is BasicReactiveButtonLoadSuccessState) {
-              AppNavigator.push(context, const PasswordResetEmailPage());
-            }
-          },
-          child: Form(
-            key: _formKey,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 40),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  _signinText(),
-                  const SizedBox(height: 20),
-                  _emailField(),
-                  const SizedBox(height: 20),
-                  _continueButton(),
-                ],
+                  if (state is BasicReactiveButtonLoadSuccessState) {
+                    AppNavigator.push(context, const PasswordResetEmailPage());
+                  }
+                },
+                child: SingleChildScrollView(
+                  padding: ResponsiveUtils.pagePadding,
+                  child: Container(
+                    width: ResponsiveUtils.maxFormWidth,
+                    child: Form(
+                      key: _formKey,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          _signinText(),
+                          SizedBox(height: ResponsiveUtils.spacing32),
+                          _emailField(),
+                          SizedBox(height: ResponsiveUtils.spacing32),
+                          _continueButton(),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
               ),
-            ),
-          ),
         ),
       ),
     );
   }
 
   Widget _signinText() {
-    return const Text(
+    return Text(
       'Forgot Password',
-      style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+      style: TextStyle(
+        fontSize: ResponsiveUtils.font32,
+        fontWeight: FontWeight.bold,
+      ),
     );
   }
 
   Widget _emailField() {
     return TextFormField(
       controller: _emailController,
-      decoration: const InputDecoration(hintText: 'Enter Email'),
+      style: TextStyle(fontSize: ResponsiveUtils.font16),
+      decoration: InputDecoration(
+        hintText: 'Enter Email',
+        hintStyle: TextStyle(fontSize: ResponsiveUtils.font16),
+        contentPadding: ResponsiveUtils.formPadding,
+      ),
       keyboardType: TextInputType.emailAddress,
       validator: (value) {
         if (value == null || value.isEmpty) {

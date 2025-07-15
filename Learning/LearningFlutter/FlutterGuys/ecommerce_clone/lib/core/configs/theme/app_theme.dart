@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../utils/responsive_utils.dart';
 import 'app_colors.dart';
 
 class AppTheme {
@@ -19,13 +20,13 @@ class AppTheme {
         color: Color(0xffA7A7A7),
         fontWeight: FontWeight.w400,
       ),
-      contentPadding: const EdgeInsets.all(16),
+      contentPadding: EdgeInsets.all(ResponsiveUtils.width(16)),
       border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(4),
+        borderRadius: BorderRadius.circular(ResponsiveUtils.radius(4)),
         borderSide: BorderSide.none,
       ),
       enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(4),
+        borderRadius: BorderRadius.circular(ResponsiveUtils.radius(4)),
         borderSide: BorderSide.none,
       ),
     ),
@@ -33,8 +34,13 @@ class AppTheme {
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.primary,
         elevation: 0,
-        textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
+        textStyle: TextStyle(
+          fontSize: ResponsiveUtils.fontSize(16),
+          fontWeight: FontWeight.w400,
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(ResponsiveUtils.radius(100)),
+        ),
       ),
     ),
   );

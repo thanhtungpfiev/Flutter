@@ -1,6 +1,7 @@
 import 'package:ecommerce_clone/common/blocs/categories/categories_display_cubit.dart';
 import 'package:ecommerce_clone/common/blocs/categories/categories_display_state.dart';
-import 'package:ecommerce_clone/common/helper/images/image_display.dart';
+import 'package:ecommerce_clone/common/helper/images/image_display_helper.dart';
+import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/domain/category/entities/category_entity.dart';
 import 'package:ecommerce_clone/service_locator.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +23,7 @@ class CategoriesWidget extends StatelessWidget {
             return Column(
               children: [
                 _seaAll(context),
-                const SizedBox(height: 20),
+                SizedBox(height: ResponsiveUtils.spacing20),
                 _categories(state.categories),
               ],
             );
@@ -35,21 +36,27 @@ class CategoriesWidget extends StatelessWidget {
 
   Widget _seaAll(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: EdgeInsets.symmetric(horizontal: ResponsiveUtils.spacing16),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Text(
+          Text(
             'Categories',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: ResponsiveUtils.font16,
+            ),
           ),
           GestureDetector(
             onTap: () {
               // AppNavigator.push(context, const AllCategoriesPage());
             },
-            child: const Text(
+            child: Text(
               'See All',
-              style: TextStyle(fontWeight: FontWeight.w400, fontSize: 16),
+              style: TextStyle(
+                fontWeight: FontWeight.w400,
+                fontSize: ResponsiveUtils.font16,
+              ),
             ),
           ),
         ],
@@ -59,16 +66,16 @@ class CategoriesWidget extends StatelessWidget {
 
   Widget _categories(List<CategoryEntity> categories) {
     return SizedBox(
-      height: 100,
+      height: ResponsiveUtils.height(100),
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: EdgeInsets.symmetric(horizontal: ResponsiveUtils.spacing16),
         itemBuilder: (context, index) {
           return Column(
             children: [
               Container(
-                height: 60,
-                width: 60,
+                height: ResponsiveUtils.width(10),
+                width: ResponsiveUtils.width(10),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: Colors.white,
@@ -82,18 +89,19 @@ class CategoriesWidget extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: ResponsiveUtils.spacing8),
               Text(
                 categories[index].title,
-                style: const TextStyle(
+                style: TextStyle(
                   fontWeight: FontWeight.w400,
-                  fontSize: 14,
+                  fontSize: ResponsiveUtils.font14,
                 ),
               ),
             ],
           );
         },
-        separatorBuilder: (context, index) => const SizedBox(width: 15),
+        separatorBuilder:
+            (context, index) => SizedBox(width: ResponsiveUtils.spacing16),
         itemCount: categories.length,
       ),
     );

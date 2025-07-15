@@ -1,3 +1,4 @@
+import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/presentation/home/widgets/categories_widget.dart';
 import 'package:ecommerce_clone/presentation/home/widgets/header_widget.dart';
 import 'package:ecommerce_clone/presentation/home/widgets/search_field_widget.dart';
@@ -8,16 +9,16 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
-            HeaderWidget(),
-            SizedBox(height: 24),
-            SearchFieldWidget(),
-            SizedBox(height: 24),
-            CategoriesWidget(),
-            SizedBox(height: 24),
+            const HeaderWidget(),
+            SizedBox(height: ResponsiveUtils.spacing24),
+            const SearchFieldWidget(),
+            SizedBox(height: ResponsiveUtils.spacing24),
+            const CategoriesWidget(),
+            SizedBox(height: ResponsiveUtils.spacing24),
             // TopSelling(),
             // SizedBox(height: 24),
             // NewIn(),

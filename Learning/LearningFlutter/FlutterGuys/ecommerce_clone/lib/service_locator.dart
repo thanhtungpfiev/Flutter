@@ -12,6 +12,7 @@ import 'package:ecommerce_clone/domain/auth/usecases/get_user_usecase.dart';
 import 'package:ecommerce_clone/domain/auth/usecases/is_logged_in_usecase.dart';
 import 'package:ecommerce_clone/domain/auth/usecases/send_password_reset_email_usecase.dart';
 import 'package:ecommerce_clone/domain/auth/usecases/signin_usecase.dart';
+import 'package:ecommerce_clone/domain/auth/usecases/signout_usecase.dart';
 import 'package:ecommerce_clone/domain/auth/usecases/signup_usecase.dart';
 import 'package:ecommerce_clone/domain/category/repositories/category_repository.dart';
 import 'package:ecommerce_clone/domain/category/usecases/get_categories_usecase.dart';
@@ -51,6 +52,7 @@ Future<void> initializeDependencies() async {
     IsLoggedInUseCase(authRepository: sl()),
   );
   sl.registerSingleton<GetUserUseCase>(GetUserUseCase(authRepository: sl()));
+  sl.registerSingleton<SignOutUseCase>(SignOutUseCase(authRepository: sl()));
   // Category
   sl.registerSingleton<GetCategoriesUseCase>(
     GetCategoriesUseCase(categoryRepository: sl()),

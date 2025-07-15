@@ -1,5 +1,6 @@
 import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
 import 'package:ecommerce_clone/core/configs/theme/app_colors.dart';
+import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:flutter/material.dart';
 
 class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -27,7 +28,7 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0,
       centerTitle: true,
       automaticallyImplyLeading: false,
-      toolbarHeight: height ?? 80,
+      toolbarHeight: height ?? ResponsiveUtils.appBarHeight,
       titleSpacing: 0,
       leading:
           hideBack
@@ -37,15 +38,15 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
                   AppNavigator.pop(context);
                 },
                 icon: Container(
-                  height: 50,
-                  width: 50,
+                  height: ResponsiveUtils.appBarBackButtonSize,
+                  width: ResponsiveUtils.appBarBackButtonSize,
                   decoration: const BoxDecoration(
                     color: AppColors.secondBackground,
                     shape: BoxShape.circle,
                   ),
-                  child: const Icon(
+                  child: Icon(
                     Icons.arrow_back_ios_new,
-                    size: 15,
+                    size: ResponsiveUtils.font16,
                     color: Colors.white,
                   ),
                 ),
@@ -54,5 +55,6 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(height ?? 80);
+  Size get preferredSize =>
+      Size.fromHeight(height ?? ResponsiveUtils.appBarHeight);
 }
