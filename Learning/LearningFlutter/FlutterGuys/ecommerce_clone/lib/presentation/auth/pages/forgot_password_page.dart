@@ -40,7 +40,7 @@ class ForgotPasswordPage extends StatelessWidget {
                 },
                 child: SingleChildScrollView(
                   padding: ResponsiveUtils.pagePadding,
-                  child: Container(
+                  child: SizedBox(
                     width: ResponsiveUtils.maxFormWidth,
                     child: Form(
                       key: _formKey,
