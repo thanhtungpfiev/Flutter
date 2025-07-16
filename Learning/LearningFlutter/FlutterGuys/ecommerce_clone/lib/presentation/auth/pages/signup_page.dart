@@ -59,7 +59,7 @@ class _SignupPageState extends State<SignupPage> {
       body: Center(
         child: SingleChildScrollView(
           padding: ResponsiveUtils.pagePadding,
-          child: Container(
+          child: SizedBox(
             width: ResponsiveUtils.maxFormWidth,
             child: Form(
               key: _formKey,

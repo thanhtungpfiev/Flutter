@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:ecommerce_clone/common/blocs/categories/categories_display_cubit.dart';
 import 'package:ecommerce_clone/common/blocs/categories/categories_display_state.dart';
 import 'package:ecommerce_clone/common/helper/images/image_display_helper.dart';
@@ -65,44 +67,90 @@ class CategoriesWidget extends StatelessWidget {
   }
 
   Widget _categories(List<CategoryEntity> categories) {
+    // Responsive sizes: larger on mobile, smaller on desktop
+    final double iconSize = ResponsiveUtils.responsive(
+      mobile: 70.0,
+      tablet: 60.0,
+      desktop: 50.0,
+    );
+
+    final double containerWidth = ResponsiveUtils.responsive(
+      mobile: 85.0,
+      tablet: 75.0,
+      desktop: 70.0,
+    );
+
     return SizedBox(
-      height: ResponsiveUtils.height(100),
-      child: ListView.separated(
-        scrollDirection: Axis.horizontal,
-        padding: EdgeInsets.symmetric(horizontal: ResponsiveUtils.spacing16),
-        itemBuilder: (context, index) {
-          return Column(
-            children: [
-              Container(
-                height: ResponsiveUtils.width(10),
-                width: ResponsiveUtils.width(10),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.white,
-                  image: DecorationImage(
-                    fit: BoxFit.fill,
-                    image: NetworkImage(
-                      ImageDisplayHelper.generateCategoryImageURL(
-                        categories[index].image,
+      height: ResponsiveUtils.responsive(
+        mobile: ResponsiveUtils.height(115),
+        tablet: ResponsiveUtils.height(105),
+        desktop: 100.0,
+      ),
+      child: Builder(
+        builder:
+            (context) => ScrollConfiguration(
+              behavior: ScrollConfiguration.of(context).copyWith(
+                dragDevices: {PointerDeviceKind.touch, PointerDeviceKind.mouse},
+              ),
+              child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                physics: const AlwaysScrollableScrollPhysics(),
+                padding: EdgeInsets.symmetric(
+                  horizontal: ResponsiveUtils.spacing16,
+                ),
+                itemBuilder: (context, index) {
+                  return Column(
+                    children: [
+                      Container(
+                        height: iconSize,
+                        width: iconSize,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.1),
+                              spreadRadius: 1,
+                              blurRadius: 4,
+                              offset: const Offset(0, 2),
+                            ),
+                          ],
+                          image:
+                              categories[index].image.isNotEmpty
+                                  ? DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: NetworkImage(
+                                      ImageDisplayHelper.generateCategoryImageURL(
+                                        categories[index].image,
+                                      ),
+                                    ),
+                                  )
+                                  : null,
+                        ),
                       ),
-                    ),
-                  ),
-                ),
+                      SizedBox(height: ResponsiveUtils.spacing8),
+                      SizedBox(
+                        width: containerWidth,
+                        child: Text(
+                          categories[index].title,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: ResponsiveUtils.font12,
+                          ),
+                          textAlign: TextAlign.center,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ],
+                  );
+                },
+                separatorBuilder:
+                    (context, index) =>
+                        SizedBox(width: ResponsiveUtils.spacing12),
+                itemCount: categories.length,
               ),
-              SizedBox(height: ResponsiveUtils.spacing8),
-              Text(
-                categories[index].title,
-                style: TextStyle(
-                  fontWeight: FontWeight.w400,
-                  fontSize: ResponsiveUtils.font14,
-                ),
-              ),
-            ],
-          );
-        },
-        separatorBuilder:
-            (context, index) => SizedBox(width: ResponsiveUtils.spacing16),
-        itemCount: categories.length,
+            ),
       ),
     );
   }
