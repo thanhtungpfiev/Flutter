@@ -3,8 +3,10 @@ import 'dart:ui';
 import 'package:ecommerce_clone/common/blocs/categories/categories_display_cubit.dart';
 import 'package:ecommerce_clone/common/blocs/categories/categories_display_state.dart';
 import 'package:ecommerce_clone/common/helper/images/image_display_helper.dart';
+import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/domain/category/entities/category_entity.dart';
+import 'package:ecommerce_clone/presentation/all_categories/pages/all_categories_page.dart';
 import 'package:ecommerce_clone/service_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -51,7 +53,7 @@ class CategoriesWidget extends StatelessWidget {
           ),
           GestureDetector(
             onTap: () {
-              // AppNavigator.push(context, const AllCategoriesPage());
+              AppNavigator.push(context, const AllCategoriesPage());
             },
             child: Text(
               'See All',

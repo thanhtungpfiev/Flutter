@@ -57,7 +57,9 @@ class ResponsiveUtils {
   /// Desktop-optimized spacing values
   static double get spacing4 => responsive(mobile: 4.w, desktop: 4.0);
   static double get spacing8 => responsive(mobile: 8.w, desktop: 8.0);
+  static double get spacing10 => responsive(mobile: 10.w, desktop: 10.0);
   static double get spacing12 => responsive(mobile: 12.w, desktop: 12.0);
+  static double get spacing15 => responsive(mobile: 15.w, desktop: 15.0);
   static double get spacing16 => responsive(mobile: 16.w, desktop: 16.0);
   static double get spacing20 => responsive(mobile: 20.w, desktop: 20.0);
   static double get spacing24 => responsive(mobile: 24.w, desktop: 24.0);
@@ -72,6 +74,7 @@ class ResponsiveUtils {
   static double get font16 => responsive(mobile: 16.sp, desktop: 16.0);
   static double get font18 => responsive(mobile: 18.sp, desktop: 18.0);
   static double get font20 => responsive(mobile: 20.sp, desktop: 20.0);
+  static double get font22 => responsive(mobile: 22.sp, desktop: 22.0);
   static double get font24 => responsive(mobile: 24.sp, desktop: 24.0);
   static double get font28 => responsive(mobile: 28.sp, desktop: 26.0);
   static double get font32 => responsive(mobile: 32.sp, desktop: 28.0);

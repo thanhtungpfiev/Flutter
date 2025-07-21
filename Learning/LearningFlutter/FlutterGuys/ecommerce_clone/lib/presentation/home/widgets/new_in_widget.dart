@@ -3,20 +3,21 @@ import 'dart:ui';
 import 'package:ecommerce_clone/common/blocs/products/products_display_cubit.dart';
 import 'package:ecommerce_clone/common/blocs/products/products_display_state.dart';
 import 'package:ecommerce_clone/common/widgets/product/product_card_widget.dart';
+import 'package:ecommerce_clone/core/configs/theme/app_colors.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/domain/product/entities/product_entity.dart';
 import 'package:ecommerce_clone/service_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class TopSellingWidget extends StatelessWidget {
-  const TopSellingWidget({super.key});
+class NewInWidget extends StatelessWidget {
+  const NewInWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<ProductsDisplayCubit>(
+    return BlocProvider(
       create: (context) {
-        final cubit = sl<ProductsDisplayCubit>(instanceName: 'topSelling');
+        final cubit = sl<ProductsDisplayCubit>(instanceName: 'newIn');
         cubit.displayProducts();
         return cubit;
       },
@@ -30,7 +31,7 @@ class TopSellingWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                _topSelling(),
+                _newIn(),
                 SizedBox(height: ResponsiveUtils.spacing20),
                 _products(state.products),
               ],
@@ -42,15 +43,16 @@ class TopSellingWidget extends StatelessWidget {
     );
   }
 
-  Widget _topSelling() {
+  Widget _newIn() {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: ResponsiveUtils.spacing16),
       child: Align(
         alignment: Alignment.centerLeft,
         child: Text(
-          'Top Selling',
+          'New In',
           style: TextStyle(
             fontWeight: FontWeight.bold,
+            color: AppColors.primary,
             fontSize: ResponsiveUtils.font16,
           ),
         ),

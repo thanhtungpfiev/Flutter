@@ -27,7 +27,7 @@ class ProductFirebaseService extends ProductService {
               .collection('Products')
               .where(
                 'createdDate',
-                isGreaterThanOrEqualTo: DateTime(2024, 07, 25),
+                isGreaterThanOrEqualTo: DateTime(2025, 07, 21),
               )
               .get();
       return Right(returnedData.docs.map((e) => e.data()).toList());
