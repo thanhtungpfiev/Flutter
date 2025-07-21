@@ -1,5 +1,6 @@
 import 'package:ecommerce_clone/common/helper/images/image_display_helper.dart';
 import 'package:ecommerce_clone/core/configs/theme/app_colors.dart';
+import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/domain/product/entities/product_entity.dart';
 import 'package:flutter/material.dart';
 
@@ -17,10 +18,14 @@ class ProductCardWidget extends StatelessWidget {
         // );
       },
       child: Container(
-        width: 180,
+        width: ResponsiveUtils.responsive(
+          mobile: ResponsiveUtils.width(180),
+          tablet: ResponsiveUtils.width(180),
+          desktop: 180.0,
+        ),
         decoration: BoxDecoration(
           color: AppColors.secondBackground,
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(ResponsiveUtils.radius8),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,9 +44,9 @@ class ProductCardWidget extends StatelessWidget {
                       ),
                     ),
                   ),
-                  borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(8),
-                    topRight: Radius.circular(8),
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(ResponsiveUtils.radius8),
+                    topRight: Radius.circular(ResponsiveUtils.radius8),
                   ),
                 ),
               ),
@@ -49,14 +54,14 @@ class ProductCardWidget extends StatelessWidget {
             Expanded(
               flex: 1,
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(ResponsiveUtils.spacing8),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       productEntity.title,
-                      style: const TextStyle(
-                        fontSize: 12,
+                      style: TextStyle(
+                        fontSize: ResponsiveUtils.font12,
                         overflow: TextOverflow.ellipsis,
                         fontWeight: FontWeight.w300,
                       ),
@@ -65,20 +70,20 @@ class ProductCardWidget extends StatelessWidget {
                       children: [
                         Text(
                           productEntity.discountedPrice == 0
-                              ? "${productEntity.price}\$"
-                              : "${productEntity.discountedPrice}\$",
-                          style: const TextStyle(
-                            fontSize: 12,
+                              ? "${productEntity.price.toStringAsFixed(2)}\$"
+                              : "${productEntity.discountedPrice.toStringAsFixed(2)}\$",
+                          style: TextStyle(
+                            fontSize: ResponsiveUtils.font12,
                             fontWeight: FontWeight.w300,
                           ),
                         ),
-                        const SizedBox(width: 10),
+                        SizedBox(width: ResponsiveUtils.spacing10),
                         Text(
                           productEntity.discountedPrice == 0
                               ? ''
-                              : "${productEntity.price}\$",
-                          style: const TextStyle(
-                            fontSize: 12,
+                              : "${productEntity.price.toStringAsFixed(2)}\$",
+                          style: TextStyle(
+                            fontSize: ResponsiveUtils.font12,
                             color: Colors.grey,
                             fontWeight: FontWeight.w300,
                             decoration: TextDecoration.lineThrough,

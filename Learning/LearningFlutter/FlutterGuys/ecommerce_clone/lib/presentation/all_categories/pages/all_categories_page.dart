@@ -1,9 +1,11 @@
 import 'package:ecommerce_clone/common/blocs/categories/categories_display_cubit.dart';
 import 'package:ecommerce_clone/common/blocs/categories/categories_display_state.dart';
 import 'package:ecommerce_clone/common/helper/images/image_display_helper.dart';
+import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
 import 'package:ecommerce_clone/common/widgets/app_bar/basic_app_bar.dart';
 import 'package:ecommerce_clone/core/configs/theme/app_colors.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
+import 'package:ecommerce_clone/presentation/category_products/pages/category_products_page.dart';
 import 'package:ecommerce_clone/service_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -54,12 +56,12 @@ class AllCategoriesPage extends StatelessWidget {
             itemBuilder: (context, index) {
               return GestureDetector(
                 onTap: () {
-                  // AppNavigator.push(
-                  //   context,
-                  //   CategoryProductsPage(
-                  //     categoryEntity: state.categories[index],
-                  //   ),
-                  // );
+                  AppNavigator.push(
+                    context,
+                    CategoryProductsPage(
+                      categoryEntity: state.categories[index],
+                    ),
+                  );
                 },
                 child: Container(
                   height: ResponsiveUtils.responsive(

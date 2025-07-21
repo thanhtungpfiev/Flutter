@@ -17,7 +17,7 @@ class NewInWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) {
-        final cubit = sl<ProductsDisplayCubit>(instanceName: 'newIn');
+        final cubit = sl<ProductsDisplayCubit>(instanceName: 'getNewInUseCase');
         cubit.displayProducts();
         return cubit;
       },

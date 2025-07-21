@@ -16,7 +16,9 @@ class TopSellingWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider<ProductsDisplayCubit>(
       create: (context) {
-        final cubit = sl<ProductsDisplayCubit>(instanceName: 'topSelling');
+        final cubit = sl<ProductsDisplayCubit>(
+          instanceName: 'getTopSellingUseCase',
+        );
         cubit.displayProducts();
         return cubit;
       },

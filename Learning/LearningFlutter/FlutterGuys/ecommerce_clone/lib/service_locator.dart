@@ -22,6 +22,7 @@ import 'package:ecommerce_clone/domain/category/repositories/category_repository
 import 'package:ecommerce_clone/domain/category/usecases/get_categories_usecase.dart';
 import 'package:ecommerce_clone/domain/product/repositories/product_repository.dart';
 import 'package:ecommerce_clone/domain/product/usecases/get_new_in_usecase.dart';
+import 'package:ecommerce_clone/domain/product/usecases/get_products_by_category_id_usecase.dart';
 import 'package:ecommerce_clone/domain/product/usecases/get_top_selling_usecase.dart';
 import 'package:ecommerce_clone/presentation/auth/blocs/age_selection_cubit.dart';
 import 'package:ecommerce_clone/presentation/auth/blocs/ages_display_cubit.dart';
@@ -77,6 +78,9 @@ Future<void> initializeDependencies() async {
   sl.registerSingleton<GetNewInUseCase>(
     GetNewInUseCase(productRepository: sl()),
   );
+  sl.registerSingleton<GetProductsByCategoryIdUseCase>(
+    GetProductsByCategoryIdUseCase(productRepository: sl()),
+  );
 
   // Blocs
   // Auth
@@ -99,10 +103,14 @@ Future<void> initializeDependencies() async {
   // Product
   sl.registerFactory<ProductsDisplayCubit>(
     () => ProductsDisplayCubit(useCase: sl<GetTopSellingUseCase>()),
-    instanceName: 'topSelling',
+    instanceName: 'getTopSellingUseCase',
   );
   sl.registerFactory<ProductsDisplayCubit>(
     () => ProductsDisplayCubit(useCase: sl<GetNewInUseCase>()),
-    instanceName: 'newIn',
+    instanceName: 'getNewInUseCase',
+  );
+  sl.registerFactory<ProductsDisplayCubit>(
+    () => ProductsDisplayCubit(useCase: sl<GetProductsByCategoryIdUseCase>()),
+    instanceName: 'getProductsByCategoryIdUseCase',
   );
 }
