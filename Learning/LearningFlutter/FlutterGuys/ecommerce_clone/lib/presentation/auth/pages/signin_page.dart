@@ -31,7 +31,10 @@ class _SigninPageState extends State<SigninPage> {
       appBar: const BasicAppBar(hideBack: true),
       body: Center(
         child: SingleChildScrollView(
-          padding: ResponsiveUtils.pagePadding,
+          padding: EdgeInsets.symmetric(
+            horizontal: ResponsiveUtils.width(16),
+            vertical: ResponsiveUtils.width(40),
+          ),
           child: SizedBox(
             width: ResponsiveUtils.maxFormWidth,
             child: Form(
@@ -40,11 +43,11 @@ class _SigninPageState extends State<SigninPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   _signinText(context),
-                  SizedBox(height: ResponsiveUtils.spacing32),
+                  SizedBox(height: ResponsiveUtils.height(20)),
                   _emailField(context),
-                  SizedBox(height: ResponsiveUtils.spacing32),
+                  SizedBox(height: ResponsiveUtils.height(20)),
                   _continueButton(context),
-                  SizedBox(height: ResponsiveUtils.spacing24),
+                  SizedBox(height: ResponsiveUtils.height(20)),
                   _createAccount(context),
                 ],
               ),
@@ -59,7 +62,7 @@ class _SigninPageState extends State<SigninPage> {
     return Text(
       'Sign in',
       style: TextStyle(
-        fontSize: ResponsiveUtils.font32,
+        fontSize: ResponsiveUtils.fontSize(32),
         fontWeight: FontWeight.bold,
       ),
     );
@@ -68,11 +71,14 @@ class _SigninPageState extends State<SigninPage> {
   Widget _emailField(BuildContext context) {
     return TextFormField(
       controller: _emailController,
-      style: TextStyle(fontSize: ResponsiveUtils.font16),
+      style: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
       decoration: InputDecoration(
         hintText: 'Enter Email',
-        hintStyle: TextStyle(fontSize: ResponsiveUtils.font16),
-        contentPadding: ResponsiveUtils.formPadding,
+        hintStyle: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
+        contentPadding: EdgeInsets.symmetric(
+          vertical: ResponsiveUtils.height(16),
+          horizontal: ResponsiveUtils.width(16),
+        ),
       ),
       validator: (value) {
         if (value == null || value.isEmpty) {
@@ -100,7 +106,7 @@ class _SigninPageState extends State<SigninPage> {
         }
       },
       title: 'Continue',
-      height: ResponsiveUtils.buttonHeight,
+      height: ResponsiveUtils.height(50),
       content:
           ResponsiveUtils.isDesktop
               ? Text(
@@ -108,7 +114,7 @@ class _SigninPageState extends State<SigninPage> {
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w400,
-                  fontSize: ResponsiveUtils.font16,
+                  fontSize: ResponsiveUtils.fontSize(16),
                 ),
               )
               : null,
@@ -119,7 +125,7 @@ class _SigninPageState extends State<SigninPage> {
     return RichText(
       text: TextSpan(
         style: TextStyle(
-          fontSize: ResponsiveUtils.font14,
+          fontSize: ResponsiveUtils.fontSize(14),
           color: Theme.of(context).textTheme.bodyMedium?.color,
         ),
         children: [

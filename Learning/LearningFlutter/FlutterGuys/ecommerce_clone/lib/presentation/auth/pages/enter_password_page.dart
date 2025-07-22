@@ -39,7 +39,10 @@ class _EnterPasswordPageState extends State<EnterPasswordPage> {
       appBar: const BasicAppBar(),
       body: Center(
         child: SingleChildScrollView(
-          padding: ResponsiveUtils.pagePadding,
+          padding: EdgeInsets.symmetric(
+            horizontal: ResponsiveUtils.width(40),
+            vertical: ResponsiveUtils.height(16),
+          ),
           child: SizedBox(
             width: ResponsiveUtils.maxFormWidth,
             child: BlocProvider(
@@ -67,11 +70,11 @@ class _EnterPasswordPageState extends State<EnterPasswordPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       _signinText(context),
-                      SizedBox(height: ResponsiveUtils.spacing32),
+                      SizedBox(height: ResponsiveUtils.height(20)),
                       _passwordField(context),
-                      SizedBox(height: ResponsiveUtils.spacing32),
+                      SizedBox(height: ResponsiveUtils.height(20)),
                       _continueButton(context),
-                      SizedBox(height: ResponsiveUtils.spacing24),
+                      SizedBox(height: ResponsiveUtils.height(20)),
                       _forgotPassword(context),
                     ],
                   ),
@@ -88,7 +91,7 @@ class _EnterPasswordPageState extends State<EnterPasswordPage> {
     return Text(
       'Sign in',
       style: TextStyle(
-        fontSize: ResponsiveUtils.font32,
+        fontSize: ResponsiveUtils.fontSize(32),
         fontWeight: FontWeight.bold,
       ),
     );
@@ -97,12 +100,15 @@ class _EnterPasswordPageState extends State<EnterPasswordPage> {
   Widget _passwordField(BuildContext context) {
     return TextFormField(
       controller: _passwordController,
-      style: TextStyle(fontSize: ResponsiveUtils.font16),
+      style: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
       obscureText: !_isPasswordVisible,
       decoration: InputDecoration(
         hintText: 'Enter Password',
-        hintStyle: TextStyle(fontSize: ResponsiveUtils.font16),
-        contentPadding: ResponsiveUtils.formPadding,
+        hintStyle: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
+        contentPadding: EdgeInsets.symmetric(
+          vertical: ResponsiveUtils.height(16),
+          horizontal: ResponsiveUtils.width(16),
+        ),
         suffixIcon: IconButton(
           icon: Icon(
             _isPasswordVisible ? Icons.visibility : Icons.visibility_off,
@@ -150,7 +156,7 @@ class _EnterPasswordPageState extends State<EnterPasswordPage> {
     return RichText(
       text: TextSpan(
         style: TextStyle(
-          fontSize: ResponsiveUtils.font14,
+          fontSize: ResponsiveUtils.fontSize(14),
           color: Theme.of(context).textTheme.bodyMedium?.color,
         ),
         children: [

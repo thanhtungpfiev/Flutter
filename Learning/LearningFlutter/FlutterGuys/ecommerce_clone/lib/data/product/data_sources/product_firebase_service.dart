@@ -54,11 +54,17 @@ class ProductFirebaseService extends ProductService {
   Future<Either> getProductsByTitle(String title) async {
     try {
       var returnedData =
-          await FirebaseFirestore.instance
-              .collection('Products')
-              .where('title', isGreaterThanOrEqualTo: title)
-              .get();
-      return Right(returnedData.docs.map((e) => e.data()).toList());
+          await FirebaseFirestore.instance.collection('Products').get();
+      var filtered =
+          returnedData.docs
+              .where(
+                (e) => (e.data()['title'] as String).toLowerCase().contains(
+                  title.toLowerCase(),
+                ),
+              )
+              .map((e) => e.data())
+              .toList();
+      return Right(filtered);
     } catch (e) {
       return const Left('Please try again');
     }

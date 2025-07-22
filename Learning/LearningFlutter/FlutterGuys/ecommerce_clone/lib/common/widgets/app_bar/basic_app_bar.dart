@@ -28,7 +28,7 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0,
       centerTitle: true,
       automaticallyImplyLeading: false,
-      toolbarHeight: height ?? ResponsiveUtils.appBarHeight,
+      toolbarHeight: height ?? ResponsiveUtils.height(80),
       titleSpacing: 0,
       leading:
           hideBack
@@ -38,15 +38,15 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
                   AppNavigator.pop(context);
                 },
                 icon: Container(
-                  height: ResponsiveUtils.appBarBackButtonSize,
-                  width: ResponsiveUtils.appBarBackButtonSize,
+                  height: ResponsiveUtils.height(50),
+                  width: ResponsiveUtils.width(50),
                   decoration: const BoxDecoration(
                     color: AppColors.secondBackground,
                     shape: BoxShape.circle,
                   ),
                   child: Icon(
                     Icons.arrow_back_ios_new,
-                    size: ResponsiveUtils.font16,
+                    size: ResponsiveUtils.fontSize(16),
                     color: Colors.white,
                   ),
                 ),
@@ -56,5 +56,5 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize =>
-      Size.fromHeight(height ?? ResponsiveUtils.appBarHeight);
+      Size.fromHeight(height ?? ResponsiveUtils.height(80));
 }

@@ -20,12 +20,12 @@ class AllCategoriesPage extends StatelessWidget {
       body: BlocProvider(
         create: (context) => sl<CategoriesDisplayCubit>()..displayCategories(),
         child: Padding(
-          padding: EdgeInsets.all(ResponsiveUtils.spacing16),
+          padding: EdgeInsets.all(ResponsiveUtils.width(16)),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _shopByCategories(),
-              SizedBox(height: ResponsiveUtils.spacing10),
+              SizedBox(height: ResponsiveUtils.height(10)),
               _categories(),
             ],
           ),
@@ -39,7 +39,7 @@ class AllCategoriesPage extends StatelessWidget {
       'Shop by Categories',
       style: TextStyle(
         fontWeight: FontWeight.bold,
-        fontSize: ResponsiveUtils.font22,
+        fontSize: ResponsiveUtils.fontSize(22),
       ),
     );
   }
@@ -64,27 +64,19 @@ class AllCategoriesPage extends StatelessWidget {
                   );
                 },
                 child: Container(
-                  height: ResponsiveUtils.responsive(
-                    mobile: ResponsiveUtils.height(70),
-                    tablet: ResponsiveUtils.height(70),
-                    desktop: 70,
-                  ),
-                  padding: EdgeInsets.all(ResponsiveUtils.spacing12),
+                  height: ResponsiveUtils.height(70),
+                  padding: EdgeInsets.all(ResponsiveUtils.width(12)),
                   decoration: BoxDecoration(
                     color: AppColors.secondBackground,
                     borderRadius: BorderRadius.circular(
-                      ResponsiveUtils.radius8,
+                      ResponsiveUtils.radius(8),
                     ),
                   ),
                   child: Row(
                     children: [
                       Container(
                         height: ResponsiveUtils.height(50),
-                        width: ResponsiveUtils.responsive(
-                          mobile: ResponsiveUtils.width(50),
-                          tablet: ResponsiveUtils.width(50),
-                          desktop: 50,
-                        ),
+                        width: ResponsiveUtils.width(50),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           shape: BoxShape.circle,
@@ -97,11 +89,11 @@ class AllCategoriesPage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(width: ResponsiveUtils.spacing15),
+                      SizedBox(width: ResponsiveUtils.width(15)),
                       Text(
                         state.categories[index].title,
                         style: TextStyle(
-                          fontSize: ResponsiveUtils.font16,
+                          fontSize: ResponsiveUtils.fontSize(16),
                           fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -111,7 +103,8 @@ class AllCategoriesPage extends StatelessWidget {
               );
             },
             separatorBuilder:
-                (context, index) => SizedBox(height: ResponsiveUtils.spacing10),
+                (context, index) =>
+                    SizedBox(height: ResponsiveUtils.height(10)),
             itemCount: state.categories.length,
           );
         }

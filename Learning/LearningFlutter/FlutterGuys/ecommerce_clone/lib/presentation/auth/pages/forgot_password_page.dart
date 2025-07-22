@@ -39,7 +39,10 @@ class ForgotPasswordPage extends StatelessWidget {
                   }
                 },
                 child: SingleChildScrollView(
-                  padding: ResponsiveUtils.pagePadding,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: ResponsiveUtils.width(40),
+                    vertical: ResponsiveUtils.height(16),
+                  ),
                   child: SizedBox(
                     width: ResponsiveUtils.maxFormWidth,
                     child: Form(
@@ -48,9 +51,9 @@ class ForgotPasswordPage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           _signinText(),
-                          SizedBox(height: ResponsiveUtils.spacing32),
+                          SizedBox(height: ResponsiveUtils.height(20)),
                           _emailField(),
-                          SizedBox(height: ResponsiveUtils.spacing32),
+                          SizedBox(height: ResponsiveUtils.width(20)),
                           _continueButton(),
                         ],
                       ),
@@ -67,7 +70,7 @@ class ForgotPasswordPage extends StatelessWidget {
     return Text(
       'Forgot Password',
       style: TextStyle(
-        fontSize: ResponsiveUtils.font32,
+        fontSize: ResponsiveUtils.fontSize(32),
         fontWeight: FontWeight.bold,
       ),
     );
@@ -76,11 +79,14 @@ class ForgotPasswordPage extends StatelessWidget {
   Widget _emailField() {
     return TextFormField(
       controller: _emailController,
-      style: TextStyle(fontSize: ResponsiveUtils.font16),
+      style: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
       decoration: InputDecoration(
         hintText: 'Enter Email',
-        hintStyle: TextStyle(fontSize: ResponsiveUtils.font16),
-        contentPadding: ResponsiveUtils.formPadding,
+        hintStyle: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
+        contentPadding: EdgeInsets.symmetric(
+          vertical: ResponsiveUtils.height(16),
+          horizontal: ResponsiveUtils.width(16),
+        ),
       ),
       keyboardType: TextInputType.emailAddress,
       validator: (value) {

@@ -16,9 +16,9 @@ class PasswordResetEmailPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           _emailSending(),
-          SizedBox(height: ResponsiveUtils.spacing32),
+          SizedBox(height: ResponsiveUtils.height(30)),
           _sentEmail(),
-          SizedBox(height: ResponsiveUtils.spacing32),
+          SizedBox(height: ResponsiveUtils.width(30)),
           _returnToLoginButton(context),
         ],
       ),
@@ -33,7 +33,7 @@ class PasswordResetEmailPage extends StatelessWidget {
     return Center(
       child: Text(
         'We Sent you an Email to reset your password.',
-        style: TextStyle(fontSize: ResponsiveUtils.font16),
+        style: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
       ),
     );
   }

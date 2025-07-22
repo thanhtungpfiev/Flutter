@@ -23,11 +23,15 @@ import 'package:ecommerce_clone/domain/category/usecases/get_categories_usecase.
 import 'package:ecommerce_clone/domain/product/repositories/product_repository.dart';
 import 'package:ecommerce_clone/domain/product/usecases/get_new_in_usecase.dart';
 import 'package:ecommerce_clone/domain/product/usecases/get_products_by_category_id_usecase.dart';
+import 'package:ecommerce_clone/domain/product/usecases/get_products_by_title_usecase.dart';
 import 'package:ecommerce_clone/domain/product/usecases/get_top_selling_usecase.dart';
 import 'package:ecommerce_clone/presentation/auth/blocs/age_selection_cubit.dart';
 import 'package:ecommerce_clone/presentation/auth/blocs/ages_display_cubit.dart';
 import 'package:ecommerce_clone/presentation/auth/blocs/gender_selection_cubit.dart';
 import 'package:ecommerce_clone/presentation/home/blocs/user_info_display_cubit.dart';
+import 'package:ecommerce_clone/presentation/product_detail/bloc/product_color_selection_cubit.dart';
+import 'package:ecommerce_clone/presentation/product_detail/bloc/product_quantity_cubit.dart';
+import 'package:ecommerce_clone/presentation/product_detail/bloc/product_size_selection_cubit.dart';
 import 'package:ecommerce_clone/presentation/splash/bloc/splash_cubit.dart';
 import 'package:get_it/get_it.dart';
 
@@ -81,14 +85,18 @@ Future<void> initializeDependencies() async {
   sl.registerSingleton<GetProductsByCategoryIdUseCase>(
     GetProductsByCategoryIdUseCase(productRepository: sl()),
   );
+  sl.registerSingleton<GetProductsByTitleUseCase>(
+    GetProductsByTitleUseCase(productRepository: sl()),
+  );
 
   // Blocs
-  // Auth
-  sl.registerFactory<SplashCubit>(() => SplashCubit(isLoggedInUseCase: sl()));
-  sl.registerFactory<GenderSelectionCubit>(() => GenderSelectionCubit());
+  // Common
   sl.registerFactory<BasicReactiveButtonCubit>(
     () => BasicReactiveButtonCubit(),
   );
+  // Auth
+  sl.registerFactory<SplashCubit>(() => SplashCubit(isLoggedInUseCase: sl()));
+  sl.registerFactory<GenderSelectionCubit>(() => GenderSelectionCubit());
   sl.registerFactory<AgeSelectionCubit>(() => AgeSelectionCubit());
   sl.registerFactory<AgesDisplayCubit>(
     () => AgesDisplayCubit(getAgesUseCase: sl()),
@@ -113,4 +121,17 @@ Future<void> initializeDependencies() async {
     () => ProductsDisplayCubit(useCase: sl<GetProductsByCategoryIdUseCase>()),
     instanceName: 'getProductsByCategoryIdUseCase',
   );
+  sl.registerFactory<ProductsDisplayCubit>(
+    () => ProductsDisplayCubit(useCase: sl<GetProductsByTitleUseCase>()),
+    instanceName: 'getProductsByTitleUseCase',
+  );
+  // Product Detail
+  sl.registerFactory<ProductQuantityCubit>(() => ProductQuantityCubit());
+  sl.registerFactory<ProductColorSelectionCubit>(
+    () => ProductColorSelectionCubit(),
+  );
+  sl.registerFactory<ProductSizeSelectionCubit>(
+    () => ProductSizeSelectionCubit(),
+  );
+  // sl.registerFactory<FavoriteIconCubit>(() => FavoriteIconCubit());
 }

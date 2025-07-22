@@ -33,7 +33,7 @@ class TopSellingWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 _topSelling(),
-                SizedBox(height: ResponsiveUtils.spacing20),
+                SizedBox(height: ResponsiveUtils.height(20)),
                 _products(state.products),
               ],
             );
@@ -46,14 +46,14 @@ class TopSellingWidget extends StatelessWidget {
 
   Widget _topSelling() {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: ResponsiveUtils.spacing16),
+      padding: EdgeInsets.symmetric(horizontal: ResponsiveUtils.width(16)),
       child: Align(
         alignment: Alignment.centerLeft,
         child: Text(
           'Top Selling',
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: ResponsiveUtils.font16,
+            fontSize: ResponsiveUtils.fontSize(16),
           ),
         ),
       ),
@@ -62,11 +62,7 @@ class TopSellingWidget extends StatelessWidget {
 
   Widget _products(List<ProductEntity> products) {
     return SizedBox(
-      height: ResponsiveUtils.responsive(
-        mobile: ResponsiveUtils.height(300),
-        tablet: ResponsiveUtils.height(350),
-        desktop: 300.0,
-      ),
+      height: ResponsiveUtils.height(300),
       child: Builder(
         builder:
             (context) => ScrollConfiguration(
@@ -76,7 +72,7 @@ class TopSellingWidget extends StatelessWidget {
               child: ListView.separated(
                 shrinkWrap: true,
                 padding: EdgeInsets.symmetric(
-                  horizontal: ResponsiveUtils.spacing16,
+                  horizontal: ResponsiveUtils.width(16),
                 ),
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
@@ -84,7 +80,7 @@ class TopSellingWidget extends StatelessWidget {
                 },
                 separatorBuilder:
                     (context, index) =>
-                        SizedBox(width: ResponsiveUtils.spacing10),
+                        SizedBox(width: ResponsiveUtils.width(10)),
                 itemCount: products.length,
               ),
             ),

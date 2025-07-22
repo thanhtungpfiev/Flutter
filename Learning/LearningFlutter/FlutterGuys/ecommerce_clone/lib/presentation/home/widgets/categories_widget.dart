@@ -27,7 +27,7 @@ class CategoriesWidget extends StatelessWidget {
             return Column(
               children: [
                 _seaAll(context),
-                SizedBox(height: ResponsiveUtils.spacing20),
+                SizedBox(height: ResponsiveUtils.height(20)),
                 _categories(state.categories),
               ],
             );
@@ -40,7 +40,7 @@ class CategoriesWidget extends StatelessWidget {
 
   Widget _seaAll(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: ResponsiveUtils.spacing16),
+      padding: EdgeInsets.symmetric(horizontal: ResponsiveUtils.width(16)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -48,7 +48,7 @@ class CategoriesWidget extends StatelessWidget {
             'Categories',
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: ResponsiveUtils.font16,
+              fontSize: ResponsiveUtils.fontSize(16),
             ),
           ),
           GestureDetector(
@@ -59,7 +59,7 @@ class CategoriesWidget extends StatelessWidget {
               'See All',
               style: TextStyle(
                 fontWeight: FontWeight.w400,
-                fontSize: ResponsiveUtils.font16,
+                fontSize: ResponsiveUtils.fontSize(16),
               ),
             ),
           ),
@@ -69,25 +69,8 @@ class CategoriesWidget extends StatelessWidget {
   }
 
   Widget _categories(List<CategoryEntity> categories) {
-    // Responsive sizes: larger on mobile, smaller on desktop
-    final double iconSize = ResponsiveUtils.responsive(
-      mobile: 70.0,
-      tablet: 60.0,
-      desktop: 50.0,
-    );
-
-    final double containerWidth = ResponsiveUtils.responsive(
-      mobile: 85.0,
-      tablet: 75.0,
-      desktop: 70.0,
-    );
-
     return SizedBox(
-      height: ResponsiveUtils.responsive(
-        mobile: ResponsiveUtils.height(115),
-        tablet: ResponsiveUtils.height(105),
-        desktop: 100.0,
-      ),
+      height: ResponsiveUtils.height(100),
       child: Builder(
         builder:
             (context) => ScrollConfiguration(
@@ -98,29 +81,21 @@ class CategoriesWidget extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 physics: const AlwaysScrollableScrollPhysics(),
                 padding: EdgeInsets.symmetric(
-                  horizontal: ResponsiveUtils.spacing16,
+                  horizontal: ResponsiveUtils.width(16),
                 ),
                 itemBuilder: (context, index) {
                   return Column(
                     children: [
                       Container(
-                        height: iconSize,
-                        width: iconSize,
+                        height: ResponsiveUtils.height(60),
+                        width: ResponsiveUtils.width(60),
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           color: Colors.white,
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.1),
-                              spreadRadius: 1,
-                              blurRadius: 4,
-                              offset: const Offset(0, 2),
-                            ),
-                          ],
                           image:
                               categories[index].image.isNotEmpty
                                   ? DecorationImage(
-                                    fit: BoxFit.cover,
+                                    fit: BoxFit.fill,
                                     image: NetworkImage(
                                       ImageDisplayHelper.generateCategoryImageURL(
                                         categories[index].image,
@@ -130,18 +105,12 @@ class CategoriesWidget extends StatelessWidget {
                                   : null,
                         ),
                       ),
-                      SizedBox(height: ResponsiveUtils.spacing8),
-                      SizedBox(
-                        width: containerWidth,
-                        child: Text(
-                          categories[index].title,
-                          style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: ResponsiveUtils.font12,
-                          ),
-                          textAlign: TextAlign.center,
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
+                      SizedBox(height: ResponsiveUtils.height(8)),
+                      Text(
+                        categories[index].title,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: ResponsiveUtils.fontSize(14),
                         ),
                       ),
                     ],
@@ -149,7 +118,7 @@ class CategoriesWidget extends StatelessWidget {
                 },
                 separatorBuilder:
                     (context, index) =>
-                        SizedBox(width: ResponsiveUtils.spacing12),
+                        SizedBox(width: ResponsiveUtils.width(15)),
                 itemCount: categories.length,
               ),
             ),

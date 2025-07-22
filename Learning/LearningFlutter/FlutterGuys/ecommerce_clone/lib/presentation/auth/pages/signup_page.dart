@@ -58,7 +58,10 @@ class _SignupPageState extends State<SignupPage> {
       appBar: const BasicAppBar(),
       body: Center(
         child: SingleChildScrollView(
-          padding: ResponsiveUtils.pagePadding,
+          padding: EdgeInsets.symmetric(
+            horizontal: ResponsiveUtils.width(16),
+            vertical: ResponsiveUtils.width(40),
+          ),
           child: SizedBox(
             width: ResponsiveUtils.maxFormWidth,
             child: Form(
@@ -67,17 +70,17 @@ class _SignupPageState extends State<SignupPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   _signupText(),
-                  SizedBox(height: ResponsiveUtils.spacing24),
+                  SizedBox(height: ResponsiveUtils.height(20)),
                   _firstNameField(),
-                  SizedBox(height: ResponsiveUtils.spacing20),
+                  SizedBox(height: ResponsiveUtils.height(20)),
                   _lastNameField(),
-                  SizedBox(height: ResponsiveUtils.spacing20),
+                  SizedBox(height: ResponsiveUtils.height(20)),
                   _emailField(),
-                  SizedBox(height: ResponsiveUtils.spacing20),
+                  SizedBox(height: ResponsiveUtils.height(20)),
                   _passwordField(context),
-                  SizedBox(height: ResponsiveUtils.spacing32),
+                  SizedBox(height: ResponsiveUtils.height(20)),
                   _continueButton(context),
-                  SizedBox(height: ResponsiveUtils.spacing24),
+                  SizedBox(height: ResponsiveUtils.height(20)),
                   _createAccount(context),
                 ],
               ),
@@ -92,7 +95,7 @@ class _SignupPageState extends State<SignupPage> {
     return Text(
       'Create Account',
       style: TextStyle(
-        fontSize: ResponsiveUtils.font32,
+        fontSize: ResponsiveUtils.fontSize(32),
         fontWeight: FontWeight.bold,
       ),
     );
@@ -101,11 +104,14 @@ class _SignupPageState extends State<SignupPage> {
   Widget _firstNameField() {
     return TextFormField(
       controller: _firstNameController,
-      style: TextStyle(fontSize: ResponsiveUtils.font16),
+      style: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
       decoration: InputDecoration(
         hintText: 'First Name',
-        hintStyle: TextStyle(fontSize: ResponsiveUtils.font16),
-        contentPadding: ResponsiveUtils.formPadding,
+        hintStyle: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
+        contentPadding: EdgeInsets.symmetric(
+          vertical: ResponsiveUtils.height(16),
+          horizontal: ResponsiveUtils.width(16),
+        ),
       ),
       validator: (value) {
         if (value == null || value.trim().isEmpty) {
@@ -122,11 +128,14 @@ class _SignupPageState extends State<SignupPage> {
   Widget _lastNameField() {
     return TextFormField(
       controller: _lastNameController,
-      style: TextStyle(fontSize: ResponsiveUtils.font16),
+      style: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
       decoration: InputDecoration(
         hintText: 'Last Name',
-        hintStyle: TextStyle(fontSize: ResponsiveUtils.font16),
-        contentPadding: ResponsiveUtils.formPadding,
+        hintStyle: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
+        contentPadding: EdgeInsets.symmetric(
+          vertical: ResponsiveUtils.height(16),
+          horizontal: ResponsiveUtils.width(16),
+        ),
       ),
       validator: (value) {
         if (value == null || value.trim().isEmpty) {
@@ -143,11 +152,14 @@ class _SignupPageState extends State<SignupPage> {
   Widget _emailField() {
     return TextFormField(
       controller: _emailController,
-      style: TextStyle(fontSize: ResponsiveUtils.font16),
+      style: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
       decoration: InputDecoration(
         hintText: 'Email Address',
-        hintStyle: TextStyle(fontSize: ResponsiveUtils.font16),
-        contentPadding: ResponsiveUtils.formPadding,
+        hintStyle: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
+        contentPadding: EdgeInsets.symmetric(
+          vertical: ResponsiveUtils.height(16),
+          horizontal: ResponsiveUtils.width(16),
+        ),
       ),
       keyboardType: TextInputType.emailAddress,
       validator: (value) {
@@ -165,11 +177,14 @@ class _SignupPageState extends State<SignupPage> {
   Widget _passwordField(BuildContext context) {
     return TextFormField(
       controller: _passwordController,
-      style: TextStyle(fontSize: ResponsiveUtils.font16),
+      style: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
       decoration: InputDecoration(
         hintText: 'Password',
-        hintStyle: TextStyle(fontSize: ResponsiveUtils.font16),
-        contentPadding: ResponsiveUtils.formPadding,
+        hintStyle: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
+        contentPadding: EdgeInsets.symmetric(
+          vertical: ResponsiveUtils.height(16),
+          horizontal: ResponsiveUtils.width(16),
+        ),
       ),
       obscureText: false,
       validator: _validatePassword,
@@ -203,7 +218,7 @@ class _SignupPageState extends State<SignupPage> {
         }
       },
       title: 'Continue',
-      height: ResponsiveUtils.buttonHeight,
+      height: ResponsiveUtils.height(50),
       content:
           ResponsiveUtils.isDesktop
               ? Text(
@@ -211,7 +226,7 @@ class _SignupPageState extends State<SignupPage> {
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w400,
-                  fontSize: ResponsiveUtils.font16,
+                  fontSize: ResponsiveUtils.fontSize(16),
                 ),
               )
               : null,
@@ -222,7 +237,7 @@ class _SignupPageState extends State<SignupPage> {
     return RichText(
       text: TextSpan(
         style: TextStyle(
-          fontSize: ResponsiveUtils.font14,
+          fontSize: ResponsiveUtils.fontSize(14),
           color: Theme.of(context).textTheme.bodyMedium?.color,
         ),
         children: [

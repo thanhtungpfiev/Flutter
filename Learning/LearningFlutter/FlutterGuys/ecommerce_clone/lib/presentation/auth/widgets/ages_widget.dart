@@ -12,7 +12,7 @@ class AgesWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: ResponsiveUtils.screenHeight * 0.37,
+      height: ResponsiveUtils.screenHeight / 2.7,
       child: BlocBuilder<AgesDisplayCubit, AgesDisplayState>(
         builder: (context, state) {
           if (state is AgesDisplayLoadingState) {
@@ -41,7 +41,7 @@ class AgesWidget extends StatelessWidget {
 
   Widget _ages(List<QueryDocumentSnapshot<Map<String, dynamic>>> ages) {
     return ListView.separated(
-      padding: EdgeInsets.all(ResponsiveUtils.spacing16),
+      padding: EdgeInsets.all(ResponsiveUtils.width(16)),
       itemBuilder: (context, index) {
         return GestureDetector(
           onTap: () {
@@ -52,12 +52,12 @@ class AgesWidget extends StatelessWidget {
           },
           child: Text(
             ages[index].data()['value'],
-            style: TextStyle(fontSize: ResponsiveUtils.font18),
+            style: TextStyle(fontSize: ResponsiveUtils.fontSize(18)),
           ),
         );
       },
       separatorBuilder:
-          (context, index) => SizedBox(height: ResponsiveUtils.spacing20),
+          (context, index) => SizedBox(height: ResponsiveUtils.height(20)),
       itemCount: ages.length,
     );
   }

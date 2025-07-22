@@ -29,12 +29,12 @@ class CategoryProductsPage extends StatelessWidget {
             }
             if (state is ProductsDisplayLoadSuccessfulState) {
               return Padding(
-                padding: EdgeInsets.all(ResponsiveUtils.spacing16),
+                padding: EdgeInsets.all(ResponsiveUtils.width(16)),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     _categoryInfo(state.products),
-                    SizedBox(height: ResponsiveUtils.spacing10),
+                    SizedBox(height: ResponsiveUtils.height(10)),
                     _products(state.products),
                   ],
                 ),
@@ -52,7 +52,7 @@ class CategoryProductsPage extends StatelessWidget {
       '${categoryEntity.title} (${products.length})',
       style: TextStyle(
         fontWeight: FontWeight.bold,
-        fontSize: ResponsiveUtils.font16,
+        fontSize: ResponsiveUtils.fontSize(16),
       ),
     );
   }
@@ -68,13 +68,13 @@ class CategoryProductsPage extends StatelessWidget {
             desktop: 6,
           ),
           crossAxisSpacing: ResponsiveUtils.responsive(
-            mobile: ResponsiveUtils.spacing10,
-            tablet: ResponsiveUtils.spacing10,
+            mobile: ResponsiveUtils.width(10),
+            tablet: ResponsiveUtils.width(10),
             desktop: 10,
           ),
           mainAxisSpacing: ResponsiveUtils.responsive(
-            mobile: ResponsiveUtils.spacing10,
-            tablet: ResponsiveUtils.spacing10,
+            mobile: ResponsiveUtils.width(10),
+            tablet: ResponsiveUtils.width(10),
             desktop: 10,
           ),
           childAspectRatio: 0.8,

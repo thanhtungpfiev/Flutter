@@ -16,13 +16,13 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             const HeaderWidget(),
-            SizedBox(height: ResponsiveUtils.spacing24),
+            SizedBox(height: ResponsiveUtils.height(24)),
             const SearchFieldWidget(),
-            SizedBox(height: ResponsiveUtils.spacing24),
+            SizedBox(height: ResponsiveUtils.height(24)),
             const CategoriesWidget(),
-            SizedBox(height: ResponsiveUtils.spacing24),
+            SizedBox(height: ResponsiveUtils.height(24)),
             const TopSellingWidget(),
-            SizedBox(height: ResponsiveUtils.spacing24),
+            SizedBox(height: ResponsiveUtils.height(24)),
             const NewInWidget(),
           ],
         ),

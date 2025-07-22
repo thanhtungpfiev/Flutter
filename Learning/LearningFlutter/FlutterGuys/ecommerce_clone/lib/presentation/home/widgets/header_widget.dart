@@ -23,9 +23,9 @@ class HeaderWidget extends StatelessWidget {
       create: (context) => sl<UserInfoDisplayCubit>()..displayUserInfo(),
       child: Padding(
         padding: EdgeInsets.only(
-          top: ResponsiveUtils.spacing40,
-          right: ResponsiveUtils.spacing16,
-          left: ResponsiveUtils.spacing16,
+          top: ResponsiveUtils.width(40),
+          right: ResponsiveUtils.width(16),
+          left: ResponsiveUtils.width(16),
         ),
         child: BlocBuilder<UserInfoDisplayCubit, UserInfoDisplayState>(
           builder: (context, state) {
@@ -59,14 +59,8 @@ class HeaderWidget extends StatelessWidget {
         }
       },
       child: Container(
-        height: ResponsiveUtils.responsive(
-          mobile: ResponsiveUtils.height(40),
-          desktop: 40.0,
-        ),
-        width: ResponsiveUtils.responsive(
-          mobile: ResponsiveUtils.width(40),
-          desktop: 40.0,
-        ),
+        height: ResponsiveUtils.height(40.0),
+        width: ResponsiveUtils.width(40.0),
         decoration: BoxDecoration(
           image: DecorationImage(
             image:
@@ -138,26 +132,18 @@ class HeaderWidget extends StatelessWidget {
 
   Widget _gender(UserEntity user) {
     return Container(
-      height: ResponsiveUtils.responsive(
-        mobile: ResponsiveUtils.height(40),
-        desktop: 40.0,
-      ),
-      padding: EdgeInsets.symmetric(horizontal: ResponsiveUtils.spacing16),
+      height: ResponsiveUtils.height(40.0),
+      padding: EdgeInsets.symmetric(horizontal: ResponsiveUtils.width(16)),
       decoration: BoxDecoration(
         color: AppColors.secondBackground,
-        borderRadius: BorderRadius.circular(
-          ResponsiveUtils.responsive(
-            mobile: ResponsiveUtils.radius(100),
-            desktop: 100.0,
-          ),
-        ),
+        borderRadius: BorderRadius.circular(ResponsiveUtils.radius(100)),
       ),
       child: Center(
         child: Text(
           user.gender == Gender.men ? 'Men' : 'Women',
           style: TextStyle(
             fontWeight: FontWeight.w500,
-            fontSize: ResponsiveUtils.font16,
+            fontSize: ResponsiveUtils.fontSize(16),
           ),
         ),
       ),
@@ -170,14 +156,8 @@ class HeaderWidget extends StatelessWidget {
         // AppNavigator.push(context, const CartPage());
       },
       child: Container(
-        height: ResponsiveUtils.responsive(
-          mobile: ResponsiveUtils.height(40),
-          desktop: 40.0,
-        ),
-        width: ResponsiveUtils.responsive(
-          mobile: ResponsiveUtils.width(40),
-          desktop: 40.0,
-        ),
+        height: ResponsiveUtils.height(40.0),
+        width: ResponsiveUtils.width(40.0),
         decoration: const BoxDecoration(
           color: AppColors.primary,
           shape: BoxShape.circle,
