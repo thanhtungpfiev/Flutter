@@ -7,6 +7,7 @@ import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/domain/auth/entities/user_entity.dart';
 import 'package:ecommerce_clone/domain/auth/usecases/signout_usecase.dart';
 import 'package:ecommerce_clone/presentation/auth/pages/signin_page.dart';
+import 'package:ecommerce_clone/presentation/cart/pages/cart_page.dart';
 import 'package:ecommerce_clone/presentation/home/blocs/user_info_display_cubit.dart';
 import 'package:ecommerce_clone/presentation/home/blocs/user_info_display_state.dart';
 import 'package:ecommerce_clone/service_locator.dart';
@@ -140,7 +141,9 @@ class HeaderWidget extends StatelessWidget {
       ),
       child: Center(
         child: Text(
-          user.gender == Gender.men ? 'Men' : 'Women',
+          user.gender == Gender.men
+              ? Gender.menDisplayName
+              : Gender.womenDisplayName,
           style: TextStyle(
             fontWeight: FontWeight.w500,
             fontSize: ResponsiveUtils.fontSize(16),
@@ -153,7 +156,7 @@ class HeaderWidget extends StatelessWidget {
   Widget _card(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // AppNavigator.push(context, const CartPage());
+        AppNavigator.push(context, const CartPage());
       },
       child: Container(
         height: ResponsiveUtils.height(40.0),

@@ -1,5 +1,7 @@
 import 'package:dartz/dartz.dart';
+import 'package:ecommerce_clone/data/order/extensions/product_ordered_model_extension.dart';
 import 'package:ecommerce_clone/data/order/models/add_to_cart_req_model.dart';
+import 'package:ecommerce_clone/data/order/models/product_ordered_model.dart';
 import 'package:ecommerce_clone/data/order/source/order_service.dart';
 import 'package:ecommerce_clone/domain/order/repository/order_repository.dart';
 
@@ -13,22 +15,22 @@ class OrderRepositoryImpl extends OrderRepository {
     return orderService.addToCart(addToCartReqModel);
   }
 
-  // @override
-  // Future<Either> getCartProducts() async {
-  //   var returnedData = await sl<OrderFirebaseService>().getCartProducts();
-  //   return returnedData.fold(
-  //     (error) {
-  //       return Left(error);
-  //     },
-  //     (data) {
-  //       return Right(
-  //         List.from(
-  //           data,
-  //         ).map((e) => ProductOrderedModel.fromMap(e).toEntity()).toList(),
-  //       );
-  //     },
-  //   );
-  // }
+  @override
+  Future<Either> getCartProducts() async {
+    var returnedData = await orderService.getCartProducts();
+    return returnedData.fold(
+      (error) {
+        return Left(error);
+      },
+      (data) {
+        return Right(
+          List.from(
+            data,
+          ).map((e) => ProductOrderedModel.fromMap(e).toEntity()).toList(),
+        );
+      },
+    );
+  }
 
   // @override
   // Future<Either> removeCartProduct(String id) async {

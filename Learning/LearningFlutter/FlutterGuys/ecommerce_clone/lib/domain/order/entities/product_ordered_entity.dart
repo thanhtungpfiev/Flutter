@@ -20,6 +20,6 @@ class ProductOrderedEntity {
     required this.totalPrice,
     required this.productImage,
     required this.createdDate,
-    required this.id
+    required this.id,
   });
 }

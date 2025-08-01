@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
+import 'package:ecommerce_clone/core/constants/auth_constants.dart';
+import 'package:ecommerce_clone/core/constants/prefs_constants.dart';
 import 'package:ecommerce_clone/data/auth/data_sources/auth_service.dart';
 import 'package:ecommerce_clone/data/auth/models/user_signin_req_model.dart';
 import 'package:ecommerce_clone/data/auth/models/user_signup_req_model.dart';
@@ -17,22 +19,22 @@ class AuthFirebaseService implements AuthService {
           );
 
       await FirebaseFirestore.instance
-          .collection('Users')
+          .collection(AuthConstants.users)
           .doc(returnedData.user!.uid)
           .set({
-            'firstName': user.firstName,
-            'lastName': user.lastName,
-            'email': user.email,
-            'gender': user.gender,
-            'age': user.age,
-            'image': returnedData.user!.photoURL,
-            'userId': returnedData.user!.uid,
+            AuthConstants.firstName: user.firstName,
+            AuthConstants.lastName: user.lastName,
+            AuthConstants.email: user.email,
+            AuthConstants.gender: user.gender,
+            AuthConstants.age: user.age,
+            AuthConstants.image: returnedData.user!.photoURL,
+            AuthConstants.userId: returnedData.user!.uid,
           });
 
       // Save authentication state to SharedPreferences
       final prefs = await SharedPreferences.getInstance();
-      await prefs.setBool('isLoggedIn', true);
-      await prefs.setString('userEmail', user.email!);
+      await prefs.setBool(PrefsConstants.isLoggedIn, true);
+      await prefs.setString(PrefsConstants.userEmail, user.email!);
 
       return const Right('Sign up was successful');
     } on FirebaseAuthException catch (e) {
@@ -57,8 +59,8 @@ class AuthFirebaseService implements AuthService {
 
       // Save authentication state to SharedPreferences
       final prefs = await SharedPreferences.getInstance();
-      await prefs.setBool('isLoggedIn', true);
-      await prefs.setString('userEmail', user.email!);
+      await prefs.setBool(PrefsConstants.isLoggedIn, true);
+      await prefs.setString(PrefsConstants.userEmail, user.email!);
 
       return const Right('Sign in was successful');
     } on FirebaseAuthException catch (e) {
@@ -80,7 +82,7 @@ class AuthFirebaseService implements AuthService {
   Future<Either> getAges() async {
     try {
       var returnedData =
-          await FirebaseFirestore.instance.collection('Ages').get();
+          await FirebaseFirestore.instance.collection(AuthConstants.ages).get();
       return Right(returnedData.docs);
     } catch (e) {
       return const Left('Please try again');
@@ -105,15 +107,15 @@ class AuthFirebaseService implements AuthService {
     if (currentUser != null) {
       // If Firebase Auth has a user, update local storage for additional reliability
       final prefs = await SharedPreferences.getInstance();
-      await prefs.setBool('isLoggedIn', true);
-      await prefs.setString('userEmail', currentUser.email ?? '');
+      await prefs.setBool(PrefsConstants.isLoggedIn, true);
+      await prefs.setString(PrefsConstants.userEmail, currentUser.email ?? '');
       return true;
     }
 
     // Fallback: Check SharedPreferences if Firebase Auth doesn't have a user
     // This handles edge cases where Firebase persistence might not work
     final prefs = await SharedPreferences.getInstance();
-    return prefs.getBool('isLoggedIn') ?? false;
+    return prefs.getBool(PrefsConstants.isLoggedIn) ?? false;
   }
 
   @override
@@ -121,8 +123,8 @@ class AuthFirebaseService implements AuthService {
     try {
       // Clear SharedPreferences
       final prefs = await SharedPreferences.getInstance();
-      await prefs.setBool('isLoggedIn', false);
-      await prefs.remove('userEmail');
+      await prefs.setBool(PrefsConstants.isLoggedIn, false);
+      await prefs.remove(PrefsConstants.userEmail);
 
       // Sign out from Firebase
       await FirebaseAuth.instance.signOut();
@@ -141,7 +143,7 @@ class AuthFirebaseService implements AuthService {
       }
 
       var userData = await FirebaseFirestore.instance
-          .collection('Users')
+          .collection(AuthConstants.users)
           .doc(currentUser.uid)
           .get()
           .then((value) => value.data());
