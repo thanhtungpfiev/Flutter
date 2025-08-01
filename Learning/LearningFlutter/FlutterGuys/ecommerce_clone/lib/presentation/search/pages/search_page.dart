@@ -3,6 +3,8 @@ import 'package:ecommerce_clone/common/blocs/products/products_display_state.dar
 import 'package:ecommerce_clone/common/widgets/app_bar/basic_app_bar.dart';
 import 'package:ecommerce_clone/common/widgets/product/product_card_widget.dart';
 import 'package:ecommerce_clone/core/configs/assets/app_vectors.dart';
+import 'package:ecommerce_clone/core/constants/service_constants.dart';
+import 'package:ecommerce_clone/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/domain/product/entities/product_entity.dart';
 import 'package:ecommerce_clone/presentation/search/widgets/search_field_widget.dart';
@@ -19,7 +21,7 @@ class SearchPage extends StatelessWidget {
     return BlocProvider(
       create: (context) {
         final cubit = sl<ProductsDisplayCubit>(
-          instanceName: 'getProductsByTitleUseCase',
+          instanceName: ServiceConstants.getProductsByTitleUseCaseInstance,
         );
         return cubit;
       },
@@ -55,7 +57,7 @@ class SearchPage extends StatelessWidget {
           Padding(
             padding: EdgeInsets.all(ResponsiveUtils.width(16)),
             child: Text(
-              "Sorry, we couldn't find any matching result for your Search.",
+              UIConstants.noSearchResults,
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontWeight: FontWeight.w500,

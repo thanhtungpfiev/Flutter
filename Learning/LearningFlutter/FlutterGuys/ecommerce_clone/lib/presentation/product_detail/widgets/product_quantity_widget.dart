@@ -1,4 +1,5 @@
 import 'package:ecommerce_clone/core/configs/theme/app_colors.dart';
+import 'package:ecommerce_clone/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/domain/product/entities/product_entity.dart';
 import 'package:ecommerce_clone/presentation/product_detail/bloc/product_quantity_cubit.dart';
@@ -24,7 +25,7 @@ class ProductQuantityWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            'Quantity',
+            UIConstants.quantity,
             style: TextStyle(
               fontWeight: FontWeight.w500,
               fontSize: ResponsiveUtils.fontSize(14),

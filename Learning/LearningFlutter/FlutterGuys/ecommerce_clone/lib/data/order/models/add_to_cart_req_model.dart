@@ -1,5 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
+import 'package:ecommerce_clone/core/constants/order_constants.dart';
+
 class AddToCartReqModel {
   final String productId;
   final String productTitle;
@@ -25,15 +27,15 @@ class AddToCartReqModel {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'productId': productId,
-      'productTitle': productTitle,
-      'productQuantity': productQuantity,
-      'productColor': productColor,
-      'productSize': productSize,
-      'productPrice': productPrice,
-      'totalPrice': totalPrice,
-      'productImage': productImage,
-      'createdDate': createdDate,
+      OrderConstants.productId: productId,
+      OrderConstants.productTitle: productTitle,
+      OrderConstants.productQuantity: productQuantity,
+      OrderConstants.productColor: productColor,
+      OrderConstants.productSize: productSize,
+      OrderConstants.productPrice: productPrice,
+      OrderConstants.totalPrice: totalPrice,
+      OrderConstants.productImage: productImage,
+      OrderConstants.createdDate: createdDate,
     };
   }
 }

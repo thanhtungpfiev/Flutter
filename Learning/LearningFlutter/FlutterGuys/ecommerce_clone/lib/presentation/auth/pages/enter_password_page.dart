@@ -3,6 +3,7 @@ import 'package:ecommerce_clone/common/blocs/button/basic_reactive_button_state.
 import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
 import 'package:ecommerce_clone/common/widgets/app_bar/basic_app_bar.dart';
 import 'package:ecommerce_clone/common/widgets/button/basic_reactive_button.dart';
+import 'package:ecommerce_clone/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/data/auth/models/user_signin_req_model.dart';
 import 'package:ecommerce_clone/domain/auth/usecases/signin_usecase.dart';
@@ -89,7 +90,7 @@ class _EnterPasswordPageState extends State<EnterPasswordPage> {
 
   Widget _signinText(BuildContext context) {
     return Text(
-      'Sign in',
+      UIConstants.signIn,
       style: TextStyle(
         fontSize: ResponsiveUtils.fontSize(32),
         fontWeight: FontWeight.bold,
@@ -103,7 +104,7 @@ class _EnterPasswordPageState extends State<EnterPasswordPage> {
       style: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
       obscureText: !_isPasswordVisible,
       decoration: InputDecoration(
-        hintText: 'Enter Password',
+        hintText: UIConstants.enterPassword,
         hintStyle: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
         contentPadding: EdgeInsets.symmetric(
           vertical: ResponsiveUtils.height(16),
@@ -122,10 +123,10 @@ class _EnterPasswordPageState extends State<EnterPasswordPage> {
       ),
       validator: (value) {
         if (value == null || value.isEmpty) {
-          return 'Please enter your password';
+          return UIConstants.pleaseEnterPassword;
         }
         if (value.length < 6) {
-          return 'Password must be at least 6 characters long';
+          return UIConstants.passwordMinLength;
         }
         return null;
       },
@@ -146,7 +147,7 @@ class _EnterPasswordPageState extends State<EnterPasswordPage> {
               );
             }
           },
-          title: 'Continue',
+          title: UIConstants.continueText,
         );
       },
     );
@@ -160,9 +161,9 @@ class _EnterPasswordPageState extends State<EnterPasswordPage> {
           color: Theme.of(context).textTheme.bodyMedium?.color,
         ),
         children: [
-          const TextSpan(text: "Forgot password? "),
+          TextSpan(text: UIConstants.forgotPasswordText),
           TextSpan(
-            text: 'Reset',
+            text: UIConstants.resetText,
             recognizer:
                 TapGestureRecognizer()
                   ..onTap = () {

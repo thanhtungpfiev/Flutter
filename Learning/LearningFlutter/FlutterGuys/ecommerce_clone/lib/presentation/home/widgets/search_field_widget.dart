@@ -1,5 +1,6 @@
 import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
 import 'package:ecommerce_clone/core/configs/assets/app_vectors.dart';
+import 'package:ecommerce_clone/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/presentation/search/pages/search_page.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,7 @@ class SearchFieldWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(ResponsiveUtils.radius(50)),
           ),
           prefixIcon: SvgPicture.asset(AppVectors.search, fit: BoxFit.none),
-          hintText: 'search',
+          hintText: UIConstants.search,
           hintStyle: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
         ),
       ),

@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecommerce_clone/common/enums/gender.dart';
+import 'package:ecommerce_clone/core/constants/product_constants.dart';
 import 'package:ecommerce_clone/data/product/models/product_color_model.dart';
 
 class ProductModel {
@@ -32,38 +33,42 @@ class ProductModel {
 
   factory ProductModel.fromMap(Map<String, dynamic> map) {
     return ProductModel(
-      categoryId: map['categoryId'] as String,
+      categoryId: map[ProductConstants.categoryId] as String,
       colors: List<ProductColorModel>.from(
-        map['colors'].map((e) => ProductColorModel.fromMap(e)),
+        map[ProductConstants.colors].map((e) => ProductColorModel.fromMap(e)),
       ),
-      createdDate: map['createdDate'] as Timestamp,
-      discountedPrice: map['discountedPrice'] as num,
+      createdDate: map[ProductConstants.createdDate] as Timestamp,
+      discountedPrice: map[ProductConstants.discountedPrice] as num,
       gender:
-          map['gender'] is int
-              ? Gender.fromInt(map['gender'] as int)
-              : Gender.fromFirestore(map['gender'].toString()),
-      images: List<String>.from(map['images'].map((e) => e.toString())),
-      price: map['price'] as num,
-      sizes: List<String>.from(map['sizes'].map((e) => e.toString())),
-      productId: map['productId'] as String,
-      salesNumber: map['salesNumber'] as int,
-      title: map['title'] as String,
+          map[ProductConstants.gender] is int
+              ? Gender.fromInt(map[ProductConstants.gender] as int)
+              : Gender.fromFirestore(map[ProductConstants.gender].toString()),
+      images: List<String>.from(
+        map[ProductConstants.images].map((e) => e.toString()),
+      ),
+      price: map[ProductConstants.price] as num,
+      sizes: List<String>.from(
+        map[ProductConstants.sizes].map((e) => e.toString()),
+      ),
+      productId: map[ProductConstants.productId] as String,
+      salesNumber: map[ProductConstants.salesNumber] as int,
+      title: map[ProductConstants.title] as String,
     );
   }
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'categoryId': categoryId,
-      'colors': colors.map((e) => e.toMap()).toList(),
-      'createdDate': createdDate,
-      'discountedPrice': discountedPrice,
-      'gender': gender.toInt(),
-      'images': images.map((e) => e.toString()).toList(),
-      'price': price,
-      'sizes': sizes.map((e) => e.toString()).toList(),
-      'productId': productId,
-      'salesNumber': salesNumber,
-      'title': title,
+      ProductConstants.categoryId: categoryId,
+      ProductConstants.colors: colors.map((e) => e.toMap()).toList(),
+      ProductConstants.createdDate: createdDate,
+      ProductConstants.discountedPrice: discountedPrice,
+      ProductConstants.gender: gender.toInt(),
+      ProductConstants.images: images.map((e) => e.toString()).toList(),
+      ProductConstants.price: price,
+      ProductConstants.sizes: sizes.map((e) => e.toString()).toList(),
+      ProductConstants.productId: productId,
+      ProductConstants.salesNumber: salesNumber,
+      ProductConstants.title: title,
     };
   }
 }

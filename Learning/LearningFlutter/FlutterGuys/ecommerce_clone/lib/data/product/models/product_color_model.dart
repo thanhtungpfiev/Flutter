@@ -1,5 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
+import 'package:ecommerce_clone/core/constants/product_constants.dart';
+
 class ProductColorModel {
   final String title;
   final List<int> rgb;
@@ -7,13 +9,16 @@ class ProductColorModel {
   ProductColorModel({required this.title, required this.rgb});
 
   Map<String, dynamic> toMap() {
-    return <String, dynamic>{'title': title, 'rgb': rgb};
+    return <String, dynamic>{
+      ProductConstants.title: title,
+      ProductConstants.rgb: rgb,
+    };
   }
 
   factory ProductColorModel.fromMap(Map<String, dynamic> map) {
     return ProductColorModel(
-      title: map['title'] as String,
-      rgb: List<int>.from(map['rgb'].map((e) => e)),
+      title: map[ProductConstants.title] as String,
+      rgb: List<int>.from(map[ProductConstants.rgb].map((e) => e)),
     );
   }
 }

@@ -3,6 +3,8 @@ import 'dart:ui';
 import 'package:ecommerce_clone/common/blocs/products/products_display_cubit.dart';
 import 'package:ecommerce_clone/common/blocs/products/products_display_state.dart';
 import 'package:ecommerce_clone/common/widgets/product/product_card_widget.dart';
+import 'package:ecommerce_clone/core/constants/service_constants.dart';
+import 'package:ecommerce_clone/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/domain/product/entities/product_entity.dart';
 import 'package:ecommerce_clone/service_locator.dart';
@@ -17,7 +19,7 @@ class TopSellingWidget extends StatelessWidget {
     return BlocProvider<ProductsDisplayCubit>(
       create: (context) {
         final cubit = sl<ProductsDisplayCubit>(
-          instanceName: 'getTopSellingUseCase',
+          instanceName: ServiceConstants.getTopSellingUseCaseInstance,
         );
         cubit.displayProducts();
         return cubit;
@@ -50,7 +52,7 @@ class TopSellingWidget extends StatelessWidget {
       child: Align(
         alignment: Alignment.centerLeft,
         child: Text(
-          'Top Selling',
+          UIConstants.topSelling,
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: ResponsiveUtils.fontSize(16),

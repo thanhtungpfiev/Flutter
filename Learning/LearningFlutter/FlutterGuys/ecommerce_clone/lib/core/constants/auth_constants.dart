@@ -11,4 +11,7 @@ class AuthConstants {
   static const String image = 'image';
   static const String gender = 'gender';
   static const String age = 'age';
+
+  // Ages collection field constants
+  static const String value = 'value';
 }

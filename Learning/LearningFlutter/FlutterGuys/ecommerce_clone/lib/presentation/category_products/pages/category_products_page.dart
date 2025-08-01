@@ -2,6 +2,7 @@ import 'package:ecommerce_clone/common/blocs/products/products_display_cubit.dar
 import 'package:ecommerce_clone/common/blocs/products/products_display_state.dart';
 import 'package:ecommerce_clone/common/widgets/app_bar/basic_app_bar.dart';
 import 'package:ecommerce_clone/common/widgets/product/product_card_widget.dart';
+import 'package:ecommerce_clone/core/constants/service_constants.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/domain/category/entities/category_entity.dart';
 import 'package:ecommerce_clone/domain/product/entities/product_entity.dart';
@@ -20,7 +21,8 @@ class CategoryProductsPage extends StatelessWidget {
       body: BlocProvider(
         create:
             (context) => sl<ProductsDisplayCubit>(
-              instanceName: 'getProductsByCategoryIdUseCase',
+              instanceName:
+                  ServiceConstants.getProductsByCategoryIdUseCaseInstance,
             )..displayProducts(params: categoryEntity.categoryId),
         child: BlocBuilder<ProductsDisplayCubit, ProductsDisplayState>(
           builder: (context, state) {

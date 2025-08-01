@@ -1,6 +1,7 @@
 import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
 import 'package:ecommerce_clone/common/widgets/app_bar/basic_app_bar.dart';
 import 'package:ecommerce_clone/common/widgets/button/basic_app_button.dart';
+import 'package:ecommerce_clone/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/data/auth/models/user_signin_req_model.dart';
 import 'package:ecommerce_clone/presentation/auth/pages/enter_password_page.dart';
@@ -60,7 +61,7 @@ class _SigninPageState extends State<SigninPage> {
 
   Widget _signinText(BuildContext context) {
     return Text(
-      'Sign in',
+      UIConstants.signIn,
       style: TextStyle(
         fontSize: ResponsiveUtils.fontSize(32),
         fontWeight: FontWeight.bold,
@@ -73,7 +74,7 @@ class _SigninPageState extends State<SigninPage> {
       controller: _emailController,
       style: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
       decoration: InputDecoration(
-        hintText: 'Enter Email',
+        hintText: UIConstants.enterEmail,
         hintStyle: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
         contentPadding: EdgeInsets.symmetric(
           vertical: ResponsiveUtils.height(16),
@@ -82,10 +83,10 @@ class _SigninPageState extends State<SigninPage> {
       ),
       validator: (value) {
         if (value == null || value.isEmpty) {
-          return 'Please enter your email';
+          return UIConstants.pleaseEnterEmail;
         }
         if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(value)) {
-          return 'Please enter a valid email address';
+          return UIConstants.pleaseEnterValidEmail;
         }
         return null;
       },
@@ -105,12 +106,12 @@ class _SigninPageState extends State<SigninPage> {
           );
         }
       },
-      title: 'Continue',
+      title: UIConstants.continueText,
       height: ResponsiveUtils.height(50),
       content:
           ResponsiveUtils.isDesktop
               ? Text(
-                'Continue',
+                UIConstants.continueText,
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w400,
@@ -129,9 +130,9 @@ class _SigninPageState extends State<SigninPage> {
           color: Theme.of(context).textTheme.bodyMedium?.color,
         ),
         children: [
-          const TextSpan(text: "Don't you have an account? "),
+          TextSpan(text: UIConstants.dontHaveAccount),
           TextSpan(
-            text: 'Create one',
+            text: UIConstants.createOne,
             recognizer:
                 TapGestureRecognizer()
                   ..onTap = () {

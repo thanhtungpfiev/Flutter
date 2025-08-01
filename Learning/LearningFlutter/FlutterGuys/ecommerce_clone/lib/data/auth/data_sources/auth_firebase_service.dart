@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:ecommerce_clone/core/constants/auth_constants.dart';
+import 'package:ecommerce_clone/core/constants/firebase_error_constants.dart';
+import 'package:ecommerce_clone/core/constants/message_constants.dart';
 import 'package:ecommerce_clone/core/constants/prefs_constants.dart';
 import 'package:ecommerce_clone/data/auth/data_sources/auth_service.dart';
 import 'package:ecommerce_clone/data/auth/models/user_signin_req_model.dart';
@@ -36,14 +38,14 @@ class AuthFirebaseService implements AuthService {
       await prefs.setBool(PrefsConstants.isLoggedIn, true);
       await prefs.setString(PrefsConstants.userEmail, user.email!);
 
-      return const Right('Sign up was successful');
+      return const Right(MessageConstants.signUpSuccess);
     } on FirebaseAuthException catch (e) {
       String message = '';
 
-      if (e.code == 'weak-password') {
-        message = 'The password provided is too weak';
-      } else if (e.code == 'email-already-in-use') {
-        message = 'An account already exists with that email.';
+      if (e.code == FirebaseErrorConstants.weakPassword) {
+        message = MessageConstants.weakPassword;
+      } else if (e.code == FirebaseErrorConstants.emailAlreadyInUse) {
+        message = MessageConstants.emailAlreadyInUse;
       }
       return Left(message);
     }
@@ -62,16 +64,16 @@ class AuthFirebaseService implements AuthService {
       await prefs.setBool(PrefsConstants.isLoggedIn, true);
       await prefs.setString(PrefsConstants.userEmail, user.email!);
 
-      return const Right('Sign in was successful');
+      return const Right(MessageConstants.signInSuccess);
     } on FirebaseAuthException catch (e) {
       String message = '';
 
-      if (e.code == 'invalid-email') {
-        message = 'Not user found for this email';
-      } else if (e.code == 'invalid-credential') {
-        message = 'Wrong password provided for this user';
+      if (e.code == FirebaseErrorConstants.invalidEmail) {
+        message = MessageConstants.userNotFound;
+      } else if (e.code == FirebaseErrorConstants.invalidCredential) {
+        message = MessageConstants.wrongPassword;
       } else {
-        message = e.message ?? 'An unknown error occurred';
+        message = e.message ?? MessageConstants.unknownError;
       }
 
       return Left(message);
@@ -85,7 +87,7 @@ class AuthFirebaseService implements AuthService {
           await FirebaseFirestore.instance.collection(AuthConstants.ages).get();
       return Right(returnedData.docs);
     } catch (e) {
-      return const Left('Please try again');
+      return const Left(MessageConstants.pleaseRetry);
     }
   }
 
@@ -93,9 +95,9 @@ class AuthFirebaseService implements AuthService {
   Future<Either> sendPasswordResetEmail(String email) async {
     try {
       await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
-      return const Right('Password reset email is sent');
+      return const Right(MessageConstants.passwordResetEmailSent);
     } catch (e) {
-      return const Left('Please try again');
+      return const Left(MessageConstants.pleaseRetry);
     }
   }
 
@@ -139,7 +141,7 @@ class AuthFirebaseService implements AuthService {
     try {
       var currentUser = FirebaseAuth.instance.currentUser;
       if (currentUser == null) {
-        return const Left('No user is currently signed in');
+        return const Left(MessageConstants.noUserSignedIn);
       }
 
       var userData = await FirebaseFirestore.instance
@@ -149,12 +151,12 @@ class AuthFirebaseService implements AuthService {
           .then((value) => value.data());
 
       if (userData == null) {
-        return const Left('User data not found');
+        return const Left(MessageConstants.userDataNotFound);
       }
 
       return Right(userData);
     } catch (e) {
-      return const Left('Please try again');
+      return const Left(MessageConstants.pleaseRetry);
     }
   }
 }

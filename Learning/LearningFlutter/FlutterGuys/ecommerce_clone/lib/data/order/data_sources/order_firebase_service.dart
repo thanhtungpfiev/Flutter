@@ -1,8 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:ecommerce_clone/core/constants/auth_constants.dart';
+import 'package:ecommerce_clone/core/constants/message_constants.dart';
+import 'package:ecommerce_clone/core/constants/order_constants.dart';
 import 'package:ecommerce_clone/data/order/models/add_to_cart_req_model.dart';
-import 'package:ecommerce_clone/data/order/source/order_service.dart';
+import 'package:ecommerce_clone/data/order/data_sources/order_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class OrderFirebaseService extends OrderService {
@@ -13,11 +15,11 @@ class OrderFirebaseService extends OrderService {
       await FirebaseFirestore.instance
           .collection(AuthConstants.users)
           .doc(user!.uid)
-          .collection('Cart')
+          .collection(OrderConstants.cart)
           .add(addToCartReqModel.toMap());
-      return const Right('Add to cart was successfully');
+      return const Right(MessageConstants.addToCartSuccess);
     } catch (e) {
-      return const Left('Please try again.');
+      return const Left(MessageConstants.pleaseRetryWithDot);
     }
   }
 
@@ -29,18 +31,18 @@ class OrderFirebaseService extends OrderService {
           await FirebaseFirestore.instance
               .collection(AuthConstants.users)
               .doc(user!.uid)
-              .collection('Cart')
+              .collection(OrderConstants.cart)
               .get();
 
       List<Map> products = [];
       for (var item in returnedData.docs) {
         var data = item.data();
-        data.addAll({'id': item.id});
+        data.addAll({OrderConstants.id: item.id});
         products.add(data);
       }
       return Right(products);
     } catch (e) {
-      return const Left('Please try again');
+      return const Left(MessageConstants.pleaseRetry);
     }
   }
 
@@ -51,12 +53,12 @@ class OrderFirebaseService extends OrderService {
   //     await FirebaseFirestore.instance
   //         .collection(AuthConstants.users)
   //         .doc(user!.uid)
-  //         .collection('Cart')
+  //         .collection(OrderConstants.cart)
   //         .doc(id)
   //         .delete();
-  //     return const Right('Product removed successfully');
+  //     return const Right(MessageConstants.productRemovedSuccess);
   //   } catch (e) {
-  //     return const Left('Please try again');
+  //     return const Left(MessageConstants.pleaseRetry);
   //   }
   // }
 
@@ -67,21 +69,21 @@ class OrderFirebaseService extends OrderService {
   //     await FirebaseFirestore.instance
   //         .collection(AuthConstants.users)
   //         .doc(user!.uid)
-  //         .collection('Orders')
+  //         .collection(OrderConstants.orders)
   //         .add(order.toMap());
 
   //     for (var item in order.products) {
   //       await FirebaseFirestore.instance
   //           .collection(AuthConstants.users)
   //           .doc(user.uid)
-  //           .collection('Cart')
+  //           .collection(OrderConstants.cart)
   //           .doc(item.id)
   //           .delete();
   //     }
 
-  //     return const Right('Order registered successfully');
+  //     return const Right(MessageConstants.orderRegisteredSuccess);
   //   } catch (e) {
-  //     return const Left('Please try again');
+  //     return const Left(MessageConstants.pleaseRetry);
   //   }
   // }
 
@@ -91,13 +93,13 @@ class OrderFirebaseService extends OrderService {
   //     var user = FirebaseAuth.instance.currentUser;
   //     var returnedData =
   //         await FirebaseFirestore.instance
-  //             .collection("Users")
+  //             .collection(AuthConstants.users)
   //             .doc(user!.uid)
-  //             .collection('Orders')
+  //             .collection(OrderConstants.orders)
   //             .get();
   //     return Right(returnedData.docs.map((e) => e.data()).toList());
   //   } catch (e) {
-  //     return const Left('Please try again');
+  //     return const Left(MessageConstants.pleaseRetry);
   //   }
   // }
 }

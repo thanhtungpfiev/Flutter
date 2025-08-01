@@ -3,6 +3,7 @@ import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
 import 'package:ecommerce_clone/core/configs/assets/app_images.dart';
 import 'package:ecommerce_clone/core/configs/assets/app_vectors.dart';
 import 'package:ecommerce_clone/core/configs/theme/app_colors.dart';
+import 'package:ecommerce_clone/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/domain/auth/entities/user_entity.dart';
 import 'package:ecommerce_clone/domain/auth/usecases/signout_usecase.dart';
@@ -81,16 +82,16 @@ class HeaderWidget extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('Sign Out'),
-          content: const Text('Are you sure you want to sign out?'),
+          title: Text(UIConstants.signOut),
+          content: Text(UIConstants.signOutConfirmation),
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(false),
-              child: const Text('Cancel'),
+              child: Text(UIConstants.cancel),
             ),
             TextButton(
               onPressed: () => Navigator.of(context).pop(true),
-              child: const Text('Sign Out'),
+              child: Text(UIConstants.signOut),
             ),
           ],
         );
@@ -124,7 +125,7 @@ class HeaderWidget extends StatelessWidget {
       // Show error message
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text('Error signing out: ${e.toString()}'),
+          content: Text('${UIConstants.errorSigningOut}${e.toString()}'),
           backgroundColor: Colors.red,
         ),
       );

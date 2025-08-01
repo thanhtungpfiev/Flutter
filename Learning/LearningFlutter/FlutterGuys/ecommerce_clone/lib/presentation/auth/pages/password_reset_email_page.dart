@@ -1,6 +1,7 @@
 import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
 import 'package:ecommerce_clone/common/widgets/button/basic_app_button.dart';
 import 'package:ecommerce_clone/core/configs/assets/app_vectors.dart';
+import 'package:ecommerce_clone/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/presentation/auth/pages/signin_page.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +33,7 @@ class PasswordResetEmailPage extends StatelessWidget {
   Widget _sentEmail() {
     return Center(
       child: Text(
-        'We Sent you an Email to reset your password.',
+        UIConstants.passwordResetEmailSent,
         style: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
       ),
     );
@@ -44,7 +45,7 @@ class PasswordResetEmailPage extends StatelessWidget {
         AppNavigator.pushReplacement(context, SigninPage());
       },
       width: ResponsiveUtils.width(200),
-      title: 'Return to Login',
+      title: UIConstants.returnToLogin,
     );
   }
 }

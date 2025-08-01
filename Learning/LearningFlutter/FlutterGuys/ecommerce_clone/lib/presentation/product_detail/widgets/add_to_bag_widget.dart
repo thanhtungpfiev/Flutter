@@ -3,6 +3,7 @@ import 'package:ecommerce_clone/common/blocs/button/basic_reactive_button_state.
 import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
 import 'package:ecommerce_clone/common/helper/product/product_price_helper.dart';
 import 'package:ecommerce_clone/common/widgets/button/basic_reactive_button.dart';
+import 'package:ecommerce_clone/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/data/order/models/add_to_cart_req_model.dart';
 import 'package:ecommerce_clone/domain/order/usecases/add_to_cart_usecase.dart';
@@ -83,7 +84,7 @@ class AddToBagWidget extends StatelessWidget {
                 },
               ),
               Text(
-                'Add to Bag',
+                UIConstants.addToBag,
                 style: TextStyle(
                   fontWeight: FontWeight.w500,
                   color: Colors.white,

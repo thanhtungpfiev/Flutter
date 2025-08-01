@@ -1,6 +1,7 @@
 import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
 import 'package:ecommerce_clone/common/widgets/app_bar/basic_app_bar.dart';
 import 'package:ecommerce_clone/common/widgets/button/basic_app_button.dart';
+import 'package:ecommerce_clone/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/data/auth/models/user_signup_req_model.dart';
 import 'package:ecommerce_clone/presentation/auth/pages/gender_and_age_selection_page.dart';
@@ -41,13 +42,13 @@ class _SignupPageState extends State<SignupPage> {
   // Password validation helper
   String? _validatePassword(String? password) {
     if (password == null || password.isEmpty) {
-      return 'Password is required';
+      return UIConstants.passwordRequired;
     }
     if (password.length < 8) {
-      return 'Password must be at least 8 characters long';
+      return UIConstants.passwordMinLength8;
     }
     if (!RegExp(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)').hasMatch(password)) {
-      return 'Password must contain at least one uppercase letter, one lowercase letter, and one number';
+      return UIConstants.passwordComplexity;
     }
     return null;
   }
@@ -93,7 +94,7 @@ class _SignupPageState extends State<SignupPage> {
 
   Widget _signupText() {
     return Text(
-      'Create Account',
+      UIConstants.createAccount,
       style: TextStyle(
         fontSize: ResponsiveUtils.fontSize(32),
         fontWeight: FontWeight.bold,
@@ -106,7 +107,7 @@ class _SignupPageState extends State<SignupPage> {
       controller: _firstNameController,
       style: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
       decoration: InputDecoration(
-        hintText: 'First Name',
+        hintText: UIConstants.firstName,
         hintStyle: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
         contentPadding: EdgeInsets.symmetric(
           vertical: ResponsiveUtils.height(16),
@@ -115,10 +116,10 @@ class _SignupPageState extends State<SignupPage> {
       ),
       validator: (value) {
         if (value == null || value.trim().isEmpty) {
-          return 'First name is required';
+          return UIConstants.firstNameRequired;
         }
         if (value.trim().length < 2) {
-          return 'First name must be at least 2 characters long';
+          return UIConstants.firstNameMinLength;
         }
         return null;
       },
@@ -130,7 +131,7 @@ class _SignupPageState extends State<SignupPage> {
       controller: _lastNameController,
       style: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
       decoration: InputDecoration(
-        hintText: 'Last Name',
+        hintText: UIConstants.lastName,
         hintStyle: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
         contentPadding: EdgeInsets.symmetric(
           vertical: ResponsiveUtils.height(16),
@@ -139,10 +140,10 @@ class _SignupPageState extends State<SignupPage> {
       ),
       validator: (value) {
         if (value == null || value.trim().isEmpty) {
-          return 'Last name is required';
+          return UIConstants.lastNameRequired;
         }
         if (value.trim().length < 2) {
-          return 'Last name must be at least 2 characters long';
+          return UIConstants.lastNameMinLength;
         }
         return null;
       },
@@ -154,7 +155,7 @@ class _SignupPageState extends State<SignupPage> {
       controller: _emailController,
       style: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
       decoration: InputDecoration(
-        hintText: 'Email Address',
+        hintText: UIConstants.emailAddress,
         hintStyle: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
         contentPadding: EdgeInsets.symmetric(
           vertical: ResponsiveUtils.height(16),
@@ -164,10 +165,10 @@ class _SignupPageState extends State<SignupPage> {
       keyboardType: TextInputType.emailAddress,
       validator: (value) {
         if (value == null || value.trim().isEmpty) {
-          return 'Email address is required';
+          return UIConstants.emailRequired;
         }
         if (!_isValidEmail(value.trim())) {
-          return 'Please enter a valid email address';
+          return UIConstants.pleaseEnterValidEmail;
         }
         return null;
       },
@@ -179,7 +180,7 @@ class _SignupPageState extends State<SignupPage> {
       controller: _passwordController,
       style: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
       decoration: InputDecoration(
-        hintText: 'Password',
+        hintText: UIConstants.password,
         hintStyle: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
         contentPadding: EdgeInsets.symmetric(
           vertical: ResponsiveUtils.height(16),
@@ -210,19 +211,19 @@ class _SignupPageState extends State<SignupPage> {
         } else {
           // Show a snackbar or some feedback that validation failed
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('Please fix the errors above'),
+            SnackBar(
+              content: Text(UIConstants.pleaseFixErrors),
               backgroundColor: Colors.red,
             ),
           );
         }
       },
-      title: 'Continue',
+      title: UIConstants.continueText,
       height: ResponsiveUtils.height(50),
       content:
           ResponsiveUtils.isDesktop
               ? Text(
-                'Continue',
+                UIConstants.continueText,
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w400,
@@ -241,9 +242,9 @@ class _SignupPageState extends State<SignupPage> {
           color: Theme.of(context).textTheme.bodyMedium?.color,
         ),
         children: [
-          const TextSpan(text: "Do you have an account? "),
+          TextSpan(text: UIConstants.doYouHaveAccount),
           TextSpan(
-            text: 'Signin',
+            text: UIConstants.signin,
             recognizer:
                 TapGestureRecognizer()
                   ..onTap = () {

@@ -1,5 +1,6 @@
 import 'package:ecommerce_clone/common/widgets/app_bar/basic_app_bar.dart';
 import 'package:ecommerce_clone/core/configs/assets/app_vectors.dart';
+import 'package:ecommerce_clone/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/domain/order/entities/product_ordered_entity.dart';
 import 'package:ecommerce_clone/presentation/cart/bloc/cart_products_display_cubit.dart';
@@ -15,7 +16,7 @@ class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const BasicAppBar(title: Text('Cart')),
+      appBar: BasicAppBar(title: Text(UIConstants.cart)),
       body: BlocProvider(
         create:
             (context) => sl<CartProductsDisplayCubit>()..displayCartProducts(),
@@ -66,7 +67,7 @@ class CartPage extends StatelessWidget {
         SvgPicture.asset(AppVectors.cartBag),
         SizedBox(height: ResponsiveUtils.height(20)),
         Text(
-          "Cart is empty",
+          UIConstants.cartIsEmpty,
           textAlign: TextAlign.center,
           style: TextStyle(
             fontWeight: FontWeight.w500,

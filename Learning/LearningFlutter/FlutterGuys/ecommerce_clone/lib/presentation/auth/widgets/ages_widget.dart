@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:ecommerce_clone/core/constants/auth_constants.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/presentation/auth/blocs/age_selection_cubit.dart';
 import 'package:ecommerce_clone/presentation/auth/blocs/ages_display_cubit.dart';
@@ -47,11 +48,11 @@ class AgesWidget extends StatelessWidget {
           onTap: () {
             Navigator.pop(context);
             context.read<AgeSelectionCubit>().selectAge(
-              ages[index].data()['value'],
+              ages[index].data()[AuthConstants.value],
             );
           },
           child: Text(
-            ages[index].data()['value'],
+            ages[index].data()[AuthConstants.value],
             style: TextStyle(fontSize: ResponsiveUtils.fontSize(18)),
           ),
         );

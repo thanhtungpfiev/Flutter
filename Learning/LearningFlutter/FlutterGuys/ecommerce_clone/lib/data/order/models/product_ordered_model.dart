@@ -1,5 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
+import 'package:ecommerce_clone/core/constants/order_constants.dart';
+
 class ProductOrderedModel {
   final String productId;
   final String productTitle;
@@ -27,32 +29,31 @@ class ProductOrderedModel {
 
   factory ProductOrderedModel.fromMap(Map<String, dynamic> map) {
     return ProductOrderedModel(
-      productId: map['productId'] as String,
-      productTitle: map['productTitle'] as String,
-      productQuantity: map['productQuantity'] as int,
-      productColor: map['productColor'] as String,
-      productSize: map['productSize'] as String,
-      productPrice: map['productPrice'] as double,
-      totalPrice: map['totalPrice'] as double,
-      productImage: map['productImage'] as String,
-      createdDate: map['createdDate'] as String,
-      id: map['id'] as String,
+      productId: map[OrderConstants.productId] as String,
+      productTitle: map[OrderConstants.productTitle] as String,
+      productQuantity: map[OrderConstants.productQuantity] as int,
+      productColor: map[OrderConstants.productColor] as String,
+      productSize: map[OrderConstants.productSize] as String,
+      productPrice: map[OrderConstants.productPrice] as double,
+      totalPrice: map[OrderConstants.totalPrice] as double,
+      productImage: map[OrderConstants.productImage] as String,
+      createdDate: map[OrderConstants.createdDate] as String,
+      id: map[OrderConstants.id] as String,
     );
   }
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'productId': productId,
-      'productTitle': productTitle,
-      'productQuantity': productQuantity,
-      'productColor': productColor,
-      'productSize': productSize,
-      'productPrice': productPrice,
-      'totalPrice': totalPrice,
-      'productImage': productImage,
-      'createdDate': createdDate,
-      'id': id,
+      OrderConstants.productId: productId,
+      OrderConstants.productTitle: productTitle,
+      OrderConstants.productQuantity: productQuantity,
+      OrderConstants.productColor: productColor,
+      OrderConstants.productSize: productSize,
+      OrderConstants.productPrice: productPrice,
+      OrderConstants.totalPrice: totalPrice,
+      OrderConstants.productImage: productImage,
+      OrderConstants.createdDate: createdDate,
+      OrderConstants.id: id,
     };
   }
 }
-

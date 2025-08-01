@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:desktop_window/desktop_window.dart';
 import 'package:ecommerce_clone/core/configs/theme/app_theme.dart';
+import 'package:ecommerce_clone/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone/firebase_options.dart';
 import 'package:ecommerce_clone/presentation/splash/bloc/splash_cubit.dart';
 import 'package:ecommerce_clone/presentation/splash/pages/splash_page.dart';
@@ -42,7 +43,7 @@ class MyApp extends StatelessWidget {
         return BlocProvider(
           create: (context) => sl<SplashCubit>()..appStarted(),
           child: MaterialApp(
-            title: 'Ecommerce Clone',
+            title: UIConstants.appTitle,
             theme: AppTheme.appTheme,
             debugShowCheckedModeBanner: false,
             home: const FullScreenWrapper(child: SplashPage()),

@@ -6,6 +6,7 @@ import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
 import 'package:ecommerce_clone/common/widgets/app_bar/basic_app_bar.dart';
 import 'package:ecommerce_clone/common/widgets/button/basic_reactive_button.dart';
 import 'package:ecommerce_clone/core/configs/theme/app_colors.dart';
+import 'package:ecommerce_clone/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/data/auth/models/user_signup_req_model.dart';
 import 'package:ecommerce_clone/domain/auth/usecases/signup_usecase.dart';
@@ -82,7 +83,7 @@ class GenderAndAgeSelectionPage extends StatelessWidget {
 
   Widget _tellUs() {
     return Text(
-      'Tell us about yourself',
+      UIConstants.tellUsAboutYourself,
       style: TextStyle(
         fontSize: ResponsiveUtils.fontSize(24),
         fontWeight: FontWeight.w500,
@@ -137,7 +138,7 @@ class GenderAndAgeSelectionPage extends StatelessWidget {
 
   Widget _howOld() {
     return Text(
-      'How old are you?',
+      UIConstants.howOldAreYou,
       style: TextStyle(
         fontSize: ResponsiveUtils.fontSize(18),
         fontWeight: FontWeight.w500,
@@ -204,7 +205,7 @@ class GenderAndAgeSelectionPage extends StatelessWidget {
                   params: userSignupReqModel,
                 );
               },
-              title: 'Finish',
+              title: UIConstants.finish,
             );
           },
         ),

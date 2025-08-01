@@ -1,15 +1,16 @@
 import 'package:ecommerce_clone/common/blocs/button/basic_reactive_button_cubit.dart';
 import 'package:ecommerce_clone/common/blocs/categories/categories_display_cubit.dart';
 import 'package:ecommerce_clone/common/blocs/products/products_display_cubit.dart';
+import 'package:ecommerce_clone/core/constants/service_constants.dart';
 import 'package:ecommerce_clone/data/auth/data_sources/auth_firebase_service.dart';
 import 'package:ecommerce_clone/data/auth/data_sources/auth_service.dart';
 import 'package:ecommerce_clone/data/auth/repositories/auth_repository_impl.dart';
 import 'package:ecommerce_clone/data/category/data_sources/category_firebase_service.dart';
 import 'package:ecommerce_clone/data/category/data_sources/category_service.dart';
 import 'package:ecommerce_clone/data/category/repositories/category_repository_impl.dart';
-import 'package:ecommerce_clone/data/order/repository/order_repository_impl.dart';
-import 'package:ecommerce_clone/data/order/source/order_firebase_service.dart';
-import 'package:ecommerce_clone/data/order/source/order_service.dart';
+import 'package:ecommerce_clone/data/order/data_sources/order_firebase_service.dart';
+import 'package:ecommerce_clone/data/order/data_sources/order_service.dart';
+import 'package:ecommerce_clone/data/order/repositories/order_repository_impl.dart';
 import 'package:ecommerce_clone/data/product/data_sources/product_firebase_service.dart';
 import 'package:ecommerce_clone/data/product/data_sources/product_service.dart';
 import 'package:ecommerce_clone/data/product/repositories/product_repository_impl.dart';
@@ -131,19 +132,19 @@ Future<void> initializeDependencies() async {
   // Product
   sl.registerFactory<ProductsDisplayCubit>(
     () => ProductsDisplayCubit(useCase: sl<GetTopSellingUseCase>()),
-    instanceName: 'getTopSellingUseCase',
+    instanceName: ServiceConstants.getTopSellingUseCaseInstance,
   );
   sl.registerFactory<ProductsDisplayCubit>(
     () => ProductsDisplayCubit(useCase: sl<GetNewInUseCase>()),
-    instanceName: 'getNewInUseCase',
+    instanceName: ServiceConstants.getNewInUseCaseInstance,
   );
   sl.registerFactory<ProductsDisplayCubit>(
     () => ProductsDisplayCubit(useCase: sl<GetProductsByCategoryIdUseCase>()),
-    instanceName: 'getProductsByCategoryIdUseCase',
+    instanceName: ServiceConstants.getProductsByCategoryIdUseCaseInstance,
   );
   sl.registerFactory<ProductsDisplayCubit>(
     () => ProductsDisplayCubit(useCase: sl<GetProductsByTitleUseCase>()),
-    instanceName: 'getProductsByTitleUseCase',
+    instanceName: ServiceConstants.getProductsByTitleUseCaseInstance,
   );
   // Product Detail
   sl.registerFactory<ProductQuantityCubit>(() => ProductQuantityCubit());
