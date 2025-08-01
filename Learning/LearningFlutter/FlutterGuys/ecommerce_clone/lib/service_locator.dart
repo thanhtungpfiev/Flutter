@@ -7,6 +7,9 @@ import 'package:ecommerce_clone/data/auth/repositories/auth_repository_impl.dart
 import 'package:ecommerce_clone/data/category/data_sources/category_firebase_service.dart';
 import 'package:ecommerce_clone/data/category/data_sources/category_service.dart';
 import 'package:ecommerce_clone/data/category/repositories/category_repository_impl.dart';
+import 'package:ecommerce_clone/data/order/repository/order_repository_impl.dart';
+import 'package:ecommerce_clone/data/order/source/order_firebase_service.dart';
+import 'package:ecommerce_clone/data/order/source/order_service.dart';
 import 'package:ecommerce_clone/data/product/data_sources/product_firebase_service.dart';
 import 'package:ecommerce_clone/data/product/data_sources/product_service.dart';
 import 'package:ecommerce_clone/data/product/repositories/product_repository_impl.dart';
@@ -20,6 +23,8 @@ import 'package:ecommerce_clone/domain/auth/usecases/signout_usecase.dart';
 import 'package:ecommerce_clone/domain/auth/usecases/signup_usecase.dart';
 import 'package:ecommerce_clone/domain/category/repositories/category_repository.dart';
 import 'package:ecommerce_clone/domain/category/usecases/get_categories_usecase.dart';
+import 'package:ecommerce_clone/domain/order/repository/order_repository.dart';
+import 'package:ecommerce_clone/domain/order/usecases/add_to_cart_usecase.dart';
 import 'package:ecommerce_clone/domain/product/repositories/product_repository.dart';
 import 'package:ecommerce_clone/domain/product/usecases/get_new_in_usecase.dart';
 import 'package:ecommerce_clone/domain/product/usecases/get_products_by_category_id_usecase.dart';
@@ -45,6 +50,8 @@ Future<void> initializeDependencies() async {
   sl.registerSingleton<CategoryService>(CategoryFirebaseService());
   // Product
   sl.registerSingleton<ProductService>(ProductFirebaseService());
+  // Order
+  sl.registerSingleton<OrderService>(OrderFirebaseService());
 
   // Repositories
   // Auth
@@ -56,6 +63,10 @@ Future<void> initializeDependencies() async {
   // Product
   sl.registerSingleton<ProductRepository>(
     ProductRepositoryImpl(productService: sl()),
+  );
+  // Order
+  sl.registerSingleton<OrderRepository>(
+    OrderRepositoryImpl(orderService: sl()),
   );
 
   // Usecases
@@ -87,6 +98,10 @@ Future<void> initializeDependencies() async {
   );
   sl.registerSingleton<GetProductsByTitleUseCase>(
     GetProductsByTitleUseCase(productRepository: sl()),
+  );
+  // Order
+  sl.registerSingleton<AddToCartUseCase>(
+    AddToCartUseCase(orderRepository: sl()),
   );
 
   // Blocs

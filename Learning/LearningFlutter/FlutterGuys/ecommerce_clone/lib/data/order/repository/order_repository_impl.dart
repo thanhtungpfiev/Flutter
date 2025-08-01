@@ -1,0 +1,75 @@
+import 'package:dartz/dartz.dart';
+import 'package:ecommerce_clone/data/order/models/add_to_cart_req_model.dart';
+import 'package:ecommerce_clone/data/order/source/order_service.dart';
+import 'package:ecommerce_clone/domain/order/repository/order_repository.dart';
+
+class OrderRepositoryImpl extends OrderRepository {
+  final OrderService orderService;
+
+  OrderRepositoryImpl({required this.orderService});
+
+  @override
+  Future<Either> addToCart(AddToCartReqModel addToCartReqModel) async {
+    return orderService.addToCart(addToCartReqModel);
+  }
+
+  // @override
+  // Future<Either> getCartProducts() async {
+  //   var returnedData = await sl<OrderFirebaseService>().getCartProducts();
+  //   return returnedData.fold(
+  //     (error) {
+  //       return Left(error);
+  //     },
+  //     (data) {
+  //       return Right(
+  //         List.from(
+  //           data,
+  //         ).map((e) => ProductOrderedModel.fromMap(e).toEntity()).toList(),
+  //       );
+  //     },
+  //   );
+  // }
+
+  // @override
+  // Future<Either> removeCartProduct(String id) async {
+  //   var returnedData = await sl<OrderFirebaseService>().removeCartProduct(id);
+  //   return returnedData.fold(
+  //     (error) {
+  //       return Left(error);
+  //     },
+  //     (message) {
+  //       return Right(message);
+  //     },
+  //   );
+  // }
+
+  // @override
+  // Future<Either> orderRegistration(OrderRegistrationReq order) async {
+  //   var returnedData = await sl<OrderFirebaseService>().orderRegistration(
+  //     order,
+  //   );
+  //   return returnedData.fold(
+  //     (error) {
+  //       return Left(error);
+  //     },
+  //     (message) {
+  //       return Right(message);
+  //     },
+  //   );
+  // }
+
+  // @override
+  // Future<Either> getOrders() async {
+  //   var returnedData = await sl<OrderFirebaseService>().getOrders();
+  //   return returnedData.fold(
+  //     (error) {
+  //       return Left(error);
+  //     },
+  //     (data) {
+  //       return Right(
+  //         List.from(data).map((e) => OrderModel.fromMap(e).toEntity()).toList(),
+  //       );
+  //     },
+  //   );
+  // }
+}

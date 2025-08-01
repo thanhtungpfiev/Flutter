@@ -5,7 +5,7 @@ import 'package:ecommerce_clone/domain/product/entities/product_entity.dart';
 import 'package:ecommerce_clone/presentation/product_detail/bloc/product_color_selection_cubit.dart';
 import 'package:ecommerce_clone/presentation/product_detail/bloc/product_quantity_cubit.dart';
 import 'package:ecommerce_clone/presentation/product_detail/bloc/product_size_selection_cubit.dart';
-import 'package:ecommerce_clone/presentation/product_detail/widgets/add_to_bag.dart';
+import 'package:ecommerce_clone/presentation/product_detail/widgets/add_to_bag_widget.dart';
 import 'package:ecommerce_clone/presentation/product_detail/widgets/product_images_widget.dart';
 import 'package:ecommerce_clone/presentation/product_detail/widgets/product_price_widget.dart';
 import 'package:ecommerce_clone/presentation/product_detail/widgets/product_quantity_widget.dart';
