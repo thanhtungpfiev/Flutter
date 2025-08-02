@@ -5,6 +5,7 @@ import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/domain/order/entities/product_ordered_entity.dart';
 import 'package:ecommerce_clone/presentation/cart/bloc/cart_products_display_cubit.dart';
 import 'package:ecommerce_clone/presentation/cart/bloc/cart_products_display_state.dart';
+import 'package:ecommerce_clone/presentation/cart/widgets/product_ordered_card_widget.dart';
 import 'package:ecommerce_clone/service_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -52,7 +53,7 @@ class CartPage extends StatelessWidget {
     return ListView.separated(
       padding: EdgeInsets.all(ResponsiveUtils.width(16)),
       itemBuilder: (context, index) {
-        // return ProductOrderedCard(productOrderedEntity: products[index]);
+        return ProductOrderedCardWidget(productOrderedEntity: products[index]);
       },
       separatorBuilder:
           (context, index) => SizedBox(height: ResponsiveUtils.height(10)),
