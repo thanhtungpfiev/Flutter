@@ -4,7 +4,7 @@ import 'package:ecommerce_clone/data/order/models/add_to_cart_req_model.dart';
 abstract class OrderRepository {
   Future<Either> addToCart(AddToCartReqModel addToCartReqModel);
   Future<Either> getCartProducts();
-  // Future<Either> removeCartProduct(String id);
+  Future<Either> removeCartProduct(String id);
   // Future<Either> orderRegistration(OrderRegistrationReq order);
   // Future<Either> getOrders();
 }

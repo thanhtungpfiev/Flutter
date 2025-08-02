@@ -69,19 +69,6 @@ class CategoriesWidget extends StatelessWidget {
   }
 
   Widget _categories(List<CategoryEntity> categories) {
-    // Responsive sizes: larger on mobile, smaller on desktop
-    final double iconSize = ResponsiveUtils.responsive(
-      mobile: 70.0,
-      tablet: 60.0,
-      desktop: 50.0,
-    );
-
-    final double containerWidth = ResponsiveUtils.responsive(
-      mobile: 85.0,
-      tablet: 75.0,
-      desktop: 70.0,
-    );
-
     return SizedBox(
       height: ResponsiveUtils.height(100),
       child: Builder(
