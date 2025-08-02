@@ -24,7 +24,7 @@ class BasicAppButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         minimumSize: Size(
           width ?? ResponsiveUtils.screenWidth,
-          height ?? ResponsiveUtils.buttonHeight,
+          height ?? ResponsiveUtils.height(50),
         ),
       ),
       child:
@@ -34,7 +34,7 @@ class BasicAppButton extends StatelessWidget {
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.w400,
-              fontSize: ResponsiveUtils.font16,
+              fontSize: ResponsiveUtils.fontSize(16),
             ),
           ),
     );

@@ -3,6 +3,7 @@ import 'package:ecommerce_clone/common/blocs/button/basic_reactive_button_state.
 import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
 import 'package:ecommerce_clone/common/widgets/app_bar/basic_app_bar.dart';
 import 'package:ecommerce_clone/common/widgets/button/basic_reactive_button.dart';
+import 'package:ecommerce_clone/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/domain/auth/usecases/send_password_reset_email_usecase.dart';
 import 'package:ecommerce_clone/presentation/auth/pages/password_reset_email_page.dart';
@@ -39,7 +40,10 @@ class ForgotPasswordPage extends StatelessWidget {
                   }
                 },
                 child: SingleChildScrollView(
-                  padding: ResponsiveUtils.pagePadding,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: ResponsiveUtils.width(40),
+                    vertical: ResponsiveUtils.height(16),
+                  ),
                   child: SizedBox(
                     width: ResponsiveUtils.maxFormWidth,
                     child: Form(
@@ -48,9 +52,9 @@ class ForgotPasswordPage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           _signinText(),
-                          SizedBox(height: ResponsiveUtils.spacing32),
+                          SizedBox(height: ResponsiveUtils.height(20)),
                           _emailField(),
-                          SizedBox(height: ResponsiveUtils.spacing32),
+                          SizedBox(height: ResponsiveUtils.width(20)),
                           _continueButton(),
                         ],
                       ),
@@ -65,9 +69,9 @@ class ForgotPasswordPage extends StatelessWidget {
 
   Widget _signinText() {
     return Text(
-      'Forgot Password',
+      UIConstants.forgotPassword,
       style: TextStyle(
-        fontSize: ResponsiveUtils.font32,
+        fontSize: ResponsiveUtils.fontSize(32),
         fontWeight: FontWeight.bold,
       ),
     );
@@ -76,19 +80,22 @@ class ForgotPasswordPage extends StatelessWidget {
   Widget _emailField() {
     return TextFormField(
       controller: _emailController,
-      style: TextStyle(fontSize: ResponsiveUtils.font16),
+      style: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
       decoration: InputDecoration(
-        hintText: 'Enter Email',
-        hintStyle: TextStyle(fontSize: ResponsiveUtils.font16),
-        contentPadding: ResponsiveUtils.formPadding,
+        hintText: UIConstants.enterEmail,
+        hintStyle: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
+        contentPadding: EdgeInsets.symmetric(
+          vertical: ResponsiveUtils.height(16),
+          horizontal: ResponsiveUtils.width(16),
+        ),
       ),
       keyboardType: TextInputType.emailAddress,
       validator: (value) {
         if (value == null || value.isEmpty) {
-          return 'Please enter your email';
+          return UIConstants.pleaseEnterEmail;
         }
         if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
-          return 'Please enter a valid email address';
+          return UIConstants.pleaseEnterValidEmail;
         }
         return null;
       },
@@ -108,7 +115,7 @@ class ForgotPasswordPage extends StatelessWidget {
               );
             }
           },
-          title: 'Continue',
+          title: UIConstants.continueText,
         );
       },
     );

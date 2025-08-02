@@ -6,6 +6,7 @@ import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
 import 'package:ecommerce_clone/common/widgets/app_bar/basic_app_bar.dart';
 import 'package:ecommerce_clone/common/widgets/button/basic_reactive_button.dart';
 import 'package:ecommerce_clone/core/configs/theme/app_colors.dart';
+import 'package:ecommerce_clone/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/data/auth/models/user_signup_req_model.dart';
 import 'package:ecommerce_clone/domain/auth/usecases/signup_usecase.dart';
@@ -55,18 +56,18 @@ class GenderAndAgeSelectionPage extends StatelessWidget {
             children: [
               Padding(
                 padding: EdgeInsets.symmetric(
-                  horizontal: ResponsiveUtils.spacing16,
-                  vertical: ResponsiveUtils.spacing40,
+                  horizontal: ResponsiveUtils.width(16),
+                  vertical: ResponsiveUtils.width(40),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     _tellUs(),
-                    SizedBox(height: ResponsiveUtils.spacing32),
+                    SizedBox(height: ResponsiveUtils.height(30)),
                     _genders(context),
-                    SizedBox(height: ResponsiveUtils.spacing32),
+                    SizedBox(height: ResponsiveUtils.height(30)),
                     _howOld(),
-                    SizedBox(height: ResponsiveUtils.spacing32),
+                    SizedBox(height: ResponsiveUtils.height(30)),
                     _age(),
                   ],
                 ),
@@ -82,9 +83,9 @@ class GenderAndAgeSelectionPage extends StatelessWidget {
 
   Widget _tellUs() {
     return Text(
-      'Tell us about yourself',
+      UIConstants.tellUsAboutYourself,
       style: TextStyle(
-        fontSize: ResponsiveUtils.font24,
+        fontSize: ResponsiveUtils.fontSize(24),
         fontWeight: FontWeight.w500,
       ),
     );
@@ -97,7 +98,7 @@ class GenderAndAgeSelectionPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             genderTile(context, Gender.men),
-            SizedBox(width: ResponsiveUtils.spacing20),
+            SizedBox(width: ResponsiveUtils.width(20)),
             genderTile(context, Gender.women),
           ],
         );
@@ -113,7 +114,7 @@ class GenderAndAgeSelectionPage extends StatelessWidget {
           context.read<GenderSelectionCubit>().selectGender(gender);
         },
         child: Container(
-          height: ResponsiveUtils.formFieldHeight,
+          height: ResponsiveUtils.height(60),
           decoration: BoxDecoration(
             color:
                 context.read<GenderSelectionCubit>().selectedGender == gender
@@ -126,7 +127,7 @@ class GenderAndAgeSelectionPage extends StatelessWidget {
               gender.displayName,
               style: TextStyle(
                 fontWeight: FontWeight.w400,
-                fontSize: ResponsiveUtils.font16,
+                fontSize: ResponsiveUtils.fontSize(16),
               ),
             ),
           ),
@@ -137,9 +138,9 @@ class GenderAndAgeSelectionPage extends StatelessWidget {
 
   Widget _howOld() {
     return Text(
-      'How old are you?',
+      UIConstants.howOldAreYou,
       style: TextStyle(
-        fontSize: ResponsiveUtils.font18,
+        fontSize: ResponsiveUtils.fontSize(18),
         fontWeight: FontWeight.w500,
       ),
     );
@@ -164,9 +165,9 @@ class GenderAndAgeSelectionPage extends StatelessWidget {
             );
           },
           child: Container(
-            height: ResponsiveUtils.formFieldHeight,
+            height: ResponsiveUtils.height(60),
             padding: EdgeInsets.symmetric(
-              horizontal: ResponsiveUtils.spacing16,
+              horizontal: ResponsiveUtils.width(16),
             ),
             decoration: BoxDecoration(
               color: AppColors.secondBackground,
@@ -184,9 +185,9 @@ class GenderAndAgeSelectionPage extends StatelessWidget {
 
   Widget _finishButton(BuildContext context) {
     return Container(
-      height: ResponsiveUtils.formContainerHeight,
+      height: ResponsiveUtils.height(60),
       color: AppColors.secondBackground,
-      padding: EdgeInsets.symmetric(horizontal: ResponsiveUtils.spacing16),
+      padding: EdgeInsets.symmetric(horizontal: ResponsiveUtils.width(16)),
       child: Center(
         child: Builder(
           builder: (context) {
@@ -204,7 +205,7 @@ class GenderAndAgeSelectionPage extends StatelessWidget {
                   params: userSignupReqModel,
                 );
               },
-              title: 'Finish',
+              title: UIConstants.finish,
             );
           },
         ),

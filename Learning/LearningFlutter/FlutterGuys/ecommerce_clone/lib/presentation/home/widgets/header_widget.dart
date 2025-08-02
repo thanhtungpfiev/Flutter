@@ -3,10 +3,12 @@ import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
 import 'package:ecommerce_clone/core/configs/assets/app_images.dart';
 import 'package:ecommerce_clone/core/configs/assets/app_vectors.dart';
 import 'package:ecommerce_clone/core/configs/theme/app_colors.dart';
+import 'package:ecommerce_clone/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/domain/auth/entities/user_entity.dart';
 import 'package:ecommerce_clone/domain/auth/usecases/signout_usecase.dart';
 import 'package:ecommerce_clone/presentation/auth/pages/signin_page.dart';
+import 'package:ecommerce_clone/presentation/cart/pages/cart_page.dart';
 import 'package:ecommerce_clone/presentation/home/blocs/user_info_display_cubit.dart';
 import 'package:ecommerce_clone/presentation/home/blocs/user_info_display_state.dart';
 import 'package:ecommerce_clone/service_locator.dart';
@@ -23,9 +25,9 @@ class HeaderWidget extends StatelessWidget {
       create: (context) => sl<UserInfoDisplayCubit>()..displayUserInfo(),
       child: Padding(
         padding: EdgeInsets.only(
-          top: ResponsiveUtils.spacing40,
-          right: ResponsiveUtils.spacing16,
-          left: ResponsiveUtils.spacing16,
+          top: ResponsiveUtils.width(40),
+          right: ResponsiveUtils.width(16),
+          left: ResponsiveUtils.width(16),
         ),
         child: BlocBuilder<UserInfoDisplayCubit, UserInfoDisplayState>(
           builder: (context, state) {
@@ -59,14 +61,8 @@ class HeaderWidget extends StatelessWidget {
         }
       },
       child: Container(
-        height: ResponsiveUtils.responsive(
-          mobile: ResponsiveUtils.height(40),
-          desktop: 40.0,
-        ),
-        width: ResponsiveUtils.responsive(
-          mobile: ResponsiveUtils.width(40),
-          desktop: 40.0,
-        ),
+        height: ResponsiveUtils.height(40.0),
+        width: ResponsiveUtils.width(40.0),
         decoration: BoxDecoration(
           image: DecorationImage(
             image:
@@ -86,16 +82,16 @@ class HeaderWidget extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('Sign Out'),
-          content: const Text('Are you sure you want to sign out?'),
+          title: Text(UIConstants.signOut),
+          content: Text(UIConstants.signOutConfirmation),
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(false),
-              child: const Text('Cancel'),
+              child: Text(UIConstants.cancel),
             ),
             TextButton(
               onPressed: () => Navigator.of(context).pop(true),
-              child: const Text('Sign Out'),
+              child: Text(UIConstants.signOut),
             ),
           ],
         );
@@ -129,7 +125,7 @@ class HeaderWidget extends StatelessWidget {
       // Show error message
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text('Error signing out: ${e.toString()}'),
+          content: Text('${UIConstants.errorSigningOut}${e.toString()}'),
           backgroundColor: Colors.red,
         ),
       );
@@ -138,26 +134,20 @@ class HeaderWidget extends StatelessWidget {
 
   Widget _gender(UserEntity user) {
     return Container(
-      height: ResponsiveUtils.responsive(
-        mobile: ResponsiveUtils.height(40),
-        desktop: 40.0,
-      ),
-      padding: EdgeInsets.symmetric(horizontal: ResponsiveUtils.spacing16),
+      height: ResponsiveUtils.height(40.0),
+      padding: EdgeInsets.symmetric(horizontal: ResponsiveUtils.width(16)),
       decoration: BoxDecoration(
         color: AppColors.secondBackground,
-        borderRadius: BorderRadius.circular(
-          ResponsiveUtils.responsive(
-            mobile: ResponsiveUtils.radius(100),
-            desktop: 100.0,
-          ),
-        ),
+        borderRadius: BorderRadius.circular(ResponsiveUtils.radius(100)),
       ),
       child: Center(
         child: Text(
-          user.gender == Gender.men ? 'Men' : 'Women',
+          user.gender == Gender.men
+              ? Gender.menDisplayName
+              : Gender.womenDisplayName,
           style: TextStyle(
             fontWeight: FontWeight.w500,
-            fontSize: ResponsiveUtils.font16,
+            fontSize: ResponsiveUtils.fontSize(16),
           ),
         ),
       ),
@@ -167,17 +157,11 @@ class HeaderWidget extends StatelessWidget {
   Widget _card(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // AppNavigator.push(context, const CartPage());
+        AppNavigator.push(context, const CartPage());
       },
       child: Container(
-        height: ResponsiveUtils.responsive(
-          mobile: ResponsiveUtils.height(40),
-          desktop: 40.0,
-        ),
-        width: ResponsiveUtils.responsive(
-          mobile: ResponsiveUtils.width(40),
-          desktop: 40.0,
-        ),
+        height: ResponsiveUtils.height(40.0),
+        width: ResponsiveUtils.width(40.0),
         decoration: const BoxDecoration(
           color: AppColors.primary,
           shape: BoxShape.circle,

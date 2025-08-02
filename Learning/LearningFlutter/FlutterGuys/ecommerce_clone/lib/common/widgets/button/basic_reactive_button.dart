@@ -38,11 +38,11 @@ class BasicReactiveButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         minimumSize: Size(
           width ?? ResponsiveUtils.screenWidth,
-          height ?? ResponsiveUtils.buttonHeight,
+          height ?? ResponsiveUtils.height(50),
         ),
       ),
       child: Container(
-        height: height ?? ResponsiveUtils.buttonHeight,
+        height: height ?? ResponsiveUtils.height(50),
         alignment: Alignment.center,
         child: const CircularProgressIndicator(),
       ),
@@ -55,7 +55,7 @@ class BasicReactiveButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         minimumSize: Size(
           width ?? ResponsiveUtils.screenWidth,
-          height ?? ResponsiveUtils.buttonHeight,
+          height ?? ResponsiveUtils.height(50),
         ),
       ),
       child:
@@ -65,7 +65,7 @@ class BasicReactiveButton extends StatelessWidget {
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.w400,
-              fontSize: ResponsiveUtils.font16,
+              fontSize: ResponsiveUtils.fontSize(16),
             ),
           ),
     );

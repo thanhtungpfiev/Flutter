@@ -1,12 +1,16 @@
 import 'package:ecommerce_clone/common/blocs/button/basic_reactive_button_cubit.dart';
 import 'package:ecommerce_clone/common/blocs/categories/categories_display_cubit.dart';
 import 'package:ecommerce_clone/common/blocs/products/products_display_cubit.dart';
+import 'package:ecommerce_clone/core/constants/service_constants.dart';
 import 'package:ecommerce_clone/data/auth/data_sources/auth_firebase_service.dart';
 import 'package:ecommerce_clone/data/auth/data_sources/auth_service.dart';
 import 'package:ecommerce_clone/data/auth/repositories/auth_repository_impl.dart';
 import 'package:ecommerce_clone/data/category/data_sources/category_firebase_service.dart';
 import 'package:ecommerce_clone/data/category/data_sources/category_service.dart';
 import 'package:ecommerce_clone/data/category/repositories/category_repository_impl.dart';
+import 'package:ecommerce_clone/data/order/data_sources/order_firebase_service.dart';
+import 'package:ecommerce_clone/data/order/data_sources/order_service.dart';
+import 'package:ecommerce_clone/data/order/repositories/order_repository_impl.dart';
 import 'package:ecommerce_clone/data/product/data_sources/product_firebase_service.dart';
 import 'package:ecommerce_clone/data/product/data_sources/product_service.dart';
 import 'package:ecommerce_clone/data/product/repositories/product_repository_impl.dart';
@@ -20,12 +24,22 @@ import 'package:ecommerce_clone/domain/auth/usecases/signout_usecase.dart';
 import 'package:ecommerce_clone/domain/auth/usecases/signup_usecase.dart';
 import 'package:ecommerce_clone/domain/category/repositories/category_repository.dart';
 import 'package:ecommerce_clone/domain/category/usecases/get_categories_usecase.dart';
+import 'package:ecommerce_clone/domain/order/repository/order_repository.dart';
+import 'package:ecommerce_clone/domain/order/usecases/add_to_cart_usecase.dart';
+import 'package:ecommerce_clone/domain/order/usecases/get_cart_products_usecase.dart';
 import 'package:ecommerce_clone/domain/product/repositories/product_repository.dart';
+import 'package:ecommerce_clone/domain/product/usecases/get_new_in_usecase.dart';
+import 'package:ecommerce_clone/domain/product/usecases/get_products_by_category_id_usecase.dart';
+import 'package:ecommerce_clone/domain/product/usecases/get_products_by_title_usecase.dart';
 import 'package:ecommerce_clone/domain/product/usecases/get_top_selling_usecase.dart';
 import 'package:ecommerce_clone/presentation/auth/blocs/age_selection_cubit.dart';
 import 'package:ecommerce_clone/presentation/auth/blocs/ages_display_cubit.dart';
 import 'package:ecommerce_clone/presentation/auth/blocs/gender_selection_cubit.dart';
+import 'package:ecommerce_clone/presentation/cart/bloc/cart_products_display_cubit.dart';
 import 'package:ecommerce_clone/presentation/home/blocs/user_info_display_cubit.dart';
+import 'package:ecommerce_clone/presentation/product_detail/bloc/product_color_selection_cubit.dart';
+import 'package:ecommerce_clone/presentation/product_detail/bloc/product_quantity_cubit.dart';
+import 'package:ecommerce_clone/presentation/product_detail/bloc/product_size_selection_cubit.dart';
 import 'package:ecommerce_clone/presentation/splash/bloc/splash_cubit.dart';
 import 'package:get_it/get_it.dart';
 
@@ -39,6 +53,8 @@ Future<void> initializeDependencies() async {
   sl.registerSingleton<CategoryService>(CategoryFirebaseService());
   // Product
   sl.registerSingleton<ProductService>(ProductFirebaseService());
+  // Order
+  sl.registerSingleton<OrderService>(OrderFirebaseService());
 
   // Repositories
   // Auth
@@ -50,6 +66,10 @@ Future<void> initializeDependencies() async {
   // Product
   sl.registerSingleton<ProductRepository>(
     ProductRepositoryImpl(productService: sl()),
+  );
+  // Order
+  sl.registerSingleton<OrderRepository>(
+    OrderRepositoryImpl(orderService: sl()),
   );
 
   // Usecases
@@ -73,14 +93,31 @@ Future<void> initializeDependencies() async {
   sl.registerSingleton<GetTopSellingUseCase>(
     GetTopSellingUseCase(productRepository: sl()),
   );
+  sl.registerSingleton<GetNewInUseCase>(
+    GetNewInUseCase(productRepository: sl()),
+  );
+  sl.registerSingleton<GetProductsByCategoryIdUseCase>(
+    GetProductsByCategoryIdUseCase(productRepository: sl()),
+  );
+  sl.registerSingleton<GetProductsByTitleUseCase>(
+    GetProductsByTitleUseCase(productRepository: sl()),
+  );
+  // Order
+  sl.registerSingleton<AddToCartUseCase>(
+    AddToCartUseCase(orderRepository: sl()),
+  );
+  sl.registerSingleton<GetCartProductsUseCase>(
+    GetCartProductsUseCase(orderRepository: sl()),
+  );
 
   // Blocs
-  // Auth
-  sl.registerFactory<SplashCubit>(() => SplashCubit(isLoggedInUseCase: sl()));
-  sl.registerFactory<GenderSelectionCubit>(() => GenderSelectionCubit());
+  // Common
   sl.registerFactory<BasicReactiveButtonCubit>(
     () => BasicReactiveButtonCubit(),
   );
+  // Auth
+  sl.registerFactory<SplashCubit>(() => SplashCubit(isLoggedInUseCase: sl()));
+  sl.registerFactory<GenderSelectionCubit>(() => GenderSelectionCubit());
   sl.registerFactory<AgeSelectionCubit>(() => AgeSelectionCubit());
   sl.registerFactory<AgesDisplayCubit>(
     () => AgesDisplayCubit(getAgesUseCase: sl()),
@@ -95,5 +132,32 @@ Future<void> initializeDependencies() async {
   // Product
   sl.registerFactory<ProductsDisplayCubit>(
     () => ProductsDisplayCubit(useCase: sl<GetTopSellingUseCase>()),
+    instanceName: ServiceConstants.getTopSellingUseCaseInstance,
+  );
+  sl.registerFactory<ProductsDisplayCubit>(
+    () => ProductsDisplayCubit(useCase: sl<GetNewInUseCase>()),
+    instanceName: ServiceConstants.getNewInUseCaseInstance,
+  );
+  sl.registerFactory<ProductsDisplayCubit>(
+    () => ProductsDisplayCubit(useCase: sl<GetProductsByCategoryIdUseCase>()),
+    instanceName: ServiceConstants.getProductsByCategoryIdUseCaseInstance,
+  );
+  sl.registerFactory<ProductsDisplayCubit>(
+    () => ProductsDisplayCubit(useCase: sl<GetProductsByTitleUseCase>()),
+    instanceName: ServiceConstants.getProductsByTitleUseCaseInstance,
+  );
+  // Product Detail
+  sl.registerFactory<ProductQuantityCubit>(() => ProductQuantityCubit());
+  sl.registerFactory<ProductColorSelectionCubit>(
+    () => ProductColorSelectionCubit(),
+  );
+  sl.registerFactory<ProductSizeSelectionCubit>(
+    () => ProductSizeSelectionCubit(),
+  );
+  // sl.registerFactory<FavoriteIconCubit>(() => FavoriteIconCubit());
+
+  // Order
+  sl.registerFactory<CartProductsDisplayCubit>(
+    () => CartProductsDisplayCubit(getCartProductsUseCase: sl()),
   );
 }

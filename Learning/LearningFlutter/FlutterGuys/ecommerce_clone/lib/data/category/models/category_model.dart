@@ -1,6 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
+import 'package:ecommerce_clone/core/constants/category_constants.dart';
+
 class CategoryModel {
   final String title;
   final String categoryId;
@@ -14,17 +16,17 @@ class CategoryModel {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'title': title,
-      'categoryId': categoryId,
-      'image': image,
+      CategoryConstants.title: title,
+      CategoryConstants.categoryId: categoryId,
+      CategoryConstants.image: image,
     };
   }
 
   factory CategoryModel.fromMap(Map<String, dynamic> map) {
     return CategoryModel(
-      title: map['title'] as String,
-      categoryId: map['categoryId'] as String,
-      image: map['image'] as String,
+      title: map[CategoryConstants.title] as String,
+      categoryId: map[CategoryConstants.categoryId] as String,
+      image: map[CategoryConstants.image] as String,
     );
   }
 

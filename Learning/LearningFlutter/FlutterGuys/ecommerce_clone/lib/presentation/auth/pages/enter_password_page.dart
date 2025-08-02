@@ -3,6 +3,7 @@ import 'package:ecommerce_clone/common/blocs/button/basic_reactive_button_state.
 import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
 import 'package:ecommerce_clone/common/widgets/app_bar/basic_app_bar.dart';
 import 'package:ecommerce_clone/common/widgets/button/basic_reactive_button.dart';
+import 'package:ecommerce_clone/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/data/auth/models/user_signin_req_model.dart';
 import 'package:ecommerce_clone/domain/auth/usecases/signin_usecase.dart';
@@ -39,7 +40,10 @@ class _EnterPasswordPageState extends State<EnterPasswordPage> {
       appBar: const BasicAppBar(),
       body: Center(
         child: SingleChildScrollView(
-          padding: ResponsiveUtils.pagePadding,
+          padding: EdgeInsets.symmetric(
+            horizontal: ResponsiveUtils.width(40),
+            vertical: ResponsiveUtils.height(16),
+          ),
           child: SizedBox(
             width: ResponsiveUtils.maxFormWidth,
             child: BlocProvider(
@@ -67,11 +71,11 @@ class _EnterPasswordPageState extends State<EnterPasswordPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       _signinText(context),
-                      SizedBox(height: ResponsiveUtils.spacing32),
+                      SizedBox(height: ResponsiveUtils.height(20)),
                       _passwordField(context),
-                      SizedBox(height: ResponsiveUtils.spacing32),
+                      SizedBox(height: ResponsiveUtils.height(20)),
                       _continueButton(context),
-                      SizedBox(height: ResponsiveUtils.spacing24),
+                      SizedBox(height: ResponsiveUtils.height(20)),
                       _forgotPassword(context),
                     ],
                   ),
@@ -86,9 +90,9 @@ class _EnterPasswordPageState extends State<EnterPasswordPage> {
 
   Widget _signinText(BuildContext context) {
     return Text(
-      'Sign in',
+      UIConstants.signIn,
       style: TextStyle(
-        fontSize: ResponsiveUtils.font32,
+        fontSize: ResponsiveUtils.fontSize(32),
         fontWeight: FontWeight.bold,
       ),
     );
@@ -97,12 +101,15 @@ class _EnterPasswordPageState extends State<EnterPasswordPage> {
   Widget _passwordField(BuildContext context) {
     return TextFormField(
       controller: _passwordController,
-      style: TextStyle(fontSize: ResponsiveUtils.font16),
+      style: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
       obscureText: !_isPasswordVisible,
       decoration: InputDecoration(
-        hintText: 'Enter Password',
-        hintStyle: TextStyle(fontSize: ResponsiveUtils.font16),
-        contentPadding: ResponsiveUtils.formPadding,
+        hintText: UIConstants.enterPassword,
+        hintStyle: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
+        contentPadding: EdgeInsets.symmetric(
+          vertical: ResponsiveUtils.height(16),
+          horizontal: ResponsiveUtils.width(16),
+        ),
         suffixIcon: IconButton(
           icon: Icon(
             _isPasswordVisible ? Icons.visibility : Icons.visibility_off,
@@ -116,10 +123,10 @@ class _EnterPasswordPageState extends State<EnterPasswordPage> {
       ),
       validator: (value) {
         if (value == null || value.isEmpty) {
-          return 'Please enter your password';
+          return UIConstants.pleaseEnterPassword;
         }
         if (value.length < 6) {
-          return 'Password must be at least 6 characters long';
+          return UIConstants.passwordMinLength;
         }
         return null;
       },
@@ -140,7 +147,7 @@ class _EnterPasswordPageState extends State<EnterPasswordPage> {
               );
             }
           },
-          title: 'Continue',
+          title: UIConstants.continueText,
         );
       },
     );
@@ -150,13 +157,13 @@ class _EnterPasswordPageState extends State<EnterPasswordPage> {
     return RichText(
       text: TextSpan(
         style: TextStyle(
-          fontSize: ResponsiveUtils.font14,
+          fontSize: ResponsiveUtils.fontSize(14),
           color: Theme.of(context).textTheme.bodyMedium?.color,
         ),
         children: [
-          const TextSpan(text: "Forgot password? "),
+          TextSpan(text: UIConstants.forgotPasswordText),
           TextSpan(
-            text: 'Reset',
+            text: UIConstants.resetText,
             recognizer:
                 TapGestureRecognizer()
                   ..onTap = () {

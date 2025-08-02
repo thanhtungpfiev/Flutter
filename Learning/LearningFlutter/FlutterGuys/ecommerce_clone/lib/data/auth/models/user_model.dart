@@ -2,6 +2,7 @@
 import 'dart:convert';
 
 import 'package:ecommerce_clone/common/enums/gender.dart';
+import 'package:ecommerce_clone/core/constants/auth_constants.dart';
 
 class UserModel {
   final String userId;
@@ -22,23 +23,23 @@ class UserModel {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'userId': userId,
-      'firstName': firstName,
-      'lastName': lastName,
-      'email': email,
-      'image': image,
-      'gender': gender.toFirestore(),
+      AuthConstants.userId: userId,
+      AuthConstants.firstName: firstName,
+      AuthConstants.lastName: lastName,
+      AuthConstants.email: email,
+      AuthConstants.image: image,
+      AuthConstants.gender: gender.toFirestore(),
     };
   }
 
   factory UserModel.fromMap(Map<String, dynamic> map) {
     return UserModel(
-      userId: map['userId'] as String,
-      firstName: map['firstName'] as String,
-      lastName: map['lastName'] as String,
-      email: map['email'] as String,
-      image: map['image'] ?? '',
-      gender: Gender.fromFirestore(map['gender'] as String),
+      userId: map[AuthConstants.userId] as String,
+      firstName: map[AuthConstants.firstName] as String,
+      lastName: map[AuthConstants.lastName] as String,
+      email: map[AuthConstants.email] as String,
+      image: map[AuthConstants.image] ?? '',
+      gender: Gender.fromFirestore(map[AuthConstants.gender] as String),
     );
   }
 

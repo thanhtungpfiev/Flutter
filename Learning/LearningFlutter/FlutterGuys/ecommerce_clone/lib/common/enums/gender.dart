@@ -2,12 +2,18 @@ enum Gender {
   men,
   women;
 
+  // String constants for reusability
+  static const String menDisplayName = 'Men';
+  static const String womenDisplayName = 'Women';
+  static const String menValue = 'men';
+  static const String womenValue = 'women';
+
   String get displayName {
     switch (this) {
       case Gender.men:
-        return 'Men';
+        return menDisplayName;
       case Gender.women:
-        return 'Women';
+        return womenDisplayName;
     }
   }
 
@@ -19,9 +25,9 @@ enum Gender {
   // Convert string from Firestore to enum
   static Gender fromFirestore(String value) {
     switch (value.toLowerCase()) {
-      case 'men':
+      case menValue:
         return Gender.men;
-      case 'women':
+      case womenValue:
         return Gender.women;
       default:
         throw ArgumentError('Invalid gender value: $value');

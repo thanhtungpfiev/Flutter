@@ -10,13 +10,17 @@ class ProductsDisplayCubit extends Cubit<ProductsDisplayState> {
   final UseCase useCase;
 
   void displayProducts({dynamic params}) async {
+    if (isClosed) return;
     emit(ProductsDisplayLoadingState());
     var returnedData = await useCase.call(params: params);
+    if (isClosed) return;
     returnedData.fold(
       (error) {
+        if (isClosed) return;
         emit(LoadProductsLoadErrorState());
       },
       (data) {
+        if (isClosed) return;
         emit(ProductsDisplayLoadSuccessfulState(products: data));
       },
     );

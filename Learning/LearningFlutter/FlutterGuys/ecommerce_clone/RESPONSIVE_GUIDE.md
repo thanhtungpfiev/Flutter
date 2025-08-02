@@ -60,7 +60,7 @@ Text(
 // Using predefined sizes:
 Text(
   'Title',
-  style: TextStyle(fontSize: ResponsiveUtils.font24),
+  style: TextStyle(fontSize: ResponsiveUtils.fontSize(24)),
 )
 ```
 
@@ -69,7 +69,7 @@ Text(
 **Margins & Padding:**
 ```dart
 Padding(
-  padding: EdgeInsets.all(ResponsiveUtils.spacing16),
+  padding: EdgeInsets.all(ResponsiveUtils.width(16)),
   child: child,
 )
 
@@ -82,8 +82,8 @@ Padding(
 // Symmetric padding:
 Padding(
   padding: EdgeInsets.symmetric(
-    horizontal: ResponsiveUtils.spacing20,
-    vertical: ResponsiveUtils.spacing12,
+    horizontal: ResponsiveUtils.width(20),
+    vertical: ResponsiveUtils.width(12),
   ),
   child: child,
 )
@@ -122,22 +122,22 @@ bool isTablet = ResponsiveUtils.isTablet; // width > 600
 ### 1. Responsive Cards
 ```dart
 Card(
-  margin: EdgeInsets.all(ResponsiveUtils.spacing16),
+  margin: EdgeInsets.all(ResponsiveUtils.width(16)),
   child: Padding(
-    padding: EdgeInsets.all(ResponsiveUtils.spacing20),
+    padding: EdgeInsets.all(ResponsiveUtils.width(20)),
     child: Column(
       children: [
         Text(
           'Product Name',
           style: TextStyle(
-            fontSize: ResponsiveUtils.font18,
+            fontSize: ResponsiveUtils.fontSize(18),
             fontWeight: FontWeight.bold,
           ),
         ),
-        SizedBox(height: ResponsiveUtils.spacing12),
+        SizedBox(height: ResponsiveUtils.width(12)),
         Text(
           'Description',
-          style: TextStyle(fontSize: ResponsiveUtils.font14),
+          style: TextStyle(fontSize: ResponsiveUtils.fontSize(14)),
         ),
       ],
     ),
@@ -160,7 +160,7 @@ ElevatedButton(
   onPressed: () {},
   child: Text(
     'Add to Cart',
-    style: TextStyle(fontSize: ResponsiveUtils.font16),
+    style: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
   ),
 )
 ```
@@ -170,8 +170,8 @@ ElevatedButton(
 GridView.builder(
   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
     crossAxisCount: ResponsiveUtils.isTablet ? 3 : 2,
-    crossAxisSpacing: ResponsiveUtils.spacing16,
-    mainAxisSpacing: ResponsiveUtils.spacing16,
+    crossAxisSpacing: ResponsiveUtils.width(16),
+    mainAxisSpacing: ResponsiveUtils.width(16),
     childAspectRatio: 0.8,
   ),
   itemBuilder: (context, index) => ProductCard(),
@@ -184,11 +184,11 @@ AppBar(
   toolbarHeight: ResponsiveUtils.height(60),
   title: Text(
     'Ecommerce',
-    style: TextStyle(fontSize: ResponsiveUtils.font20),
+    style: TextStyle(fontSize: ResponsiveUtils.fontSize(20)),
   ),
   actions: [
     Padding(
-      padding: EdgeInsets.only(right: ResponsiveUtils.spacing16),
+      padding: EdgeInsets.only(right: ResponsiveUtils.width(16)),
       child: Icon(
         Icons.shopping_cart,
         size: ResponsiveUtils.width(24),
@@ -223,7 +223,7 @@ To convert existing hard-coded values:
 - `height: 50` → `height: 50.h` or `ResponsiveUtils.height(50)`
 - `fontSize: 16` → `fontSize: 16.sp` or `ResponsiveUtils.fontSize(16)`
 - `borderRadius: 8` → `borderRadius: 8.r` or `ResponsiveUtils.radius(8)`
-- `padding: 16` → `padding: 16.w` or `ResponsiveUtils.spacing16`
+- `padding: 16` → `padding: 16.w` or `ResponsiveUtils.width(16)`
 
 ## Testing
 

@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:ecommerce_clone/common/enums/gender.dart';
 import 'package:ecommerce_clone/domain/product/entities/product_color_entity.dart';
 
 class ProductEntity {
@@ -7,7 +8,7 @@ class ProductEntity {
   final List<ProductColorEntity> colors;
   final Timestamp createdDate;
   final num discountedPrice;
-  final int gender;
+  final Gender gender;
   final List<String> images;
   final num price;
   final List<String> sizes;

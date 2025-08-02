@@ -19,10 +19,10 @@ class ResponsiveProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       // Responsive margin
-      margin: EdgeInsets.all(ResponsiveUtils.spacing8),
+      margin: EdgeInsets.all(ResponsiveUtils.width(8)),
       // Responsive border radius
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(ResponsiveUtils.radius12),
+        borderRadius: BorderRadius.circular(ResponsiveUtils.radius(12)),
       ),
       elevation: 2,
       child: SizedBox(
@@ -38,15 +38,15 @@ class ResponsiveProductCard extends StatelessWidget {
               height: ResponsiveUtils.height(140),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(ResponsiveUtils.radius12),
-                  topRight: Radius.circular(ResponsiveUtils.radius12),
+                  topLeft: Radius.circular(ResponsiveUtils.radius(12)),
+                  topRight: Radius.circular(ResponsiveUtils.radius(12)),
                 ),
                 color: Colors.grey[300],
               ),
               child: ClipRRect(
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(ResponsiveUtils.radius12),
-                  topRight: Radius.circular(ResponsiveUtils.radius12),
+                  topLeft: Radius.circular(ResponsiveUtils.radius(12)),
+                  topRight: Radius.circular(ResponsiveUtils.radius(12)),
                 ),
                 child: Icon(
                   Icons.image,
@@ -58,7 +58,7 @@ class ResponsiveProductCard extends StatelessWidget {
 
             // Responsive padding for content
             Padding(
-              padding: EdgeInsets.all(ResponsiveUtils.spacing12),
+              padding: EdgeInsets.all(ResponsiveUtils.width(12)),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -66,7 +66,7 @@ class ResponsiveProductCard extends StatelessWidget {
                   Text(
                     productName,
                     style: TextStyle(
-                      fontSize: ResponsiveUtils.font14,
+                      fontSize: ResponsiveUtils.fontSize(14),
                       fontWeight: FontWeight.w600,
                     ),
                     maxLines: 2,
@@ -74,20 +74,20 @@ class ResponsiveProductCard extends StatelessWidget {
                   ),
 
                   // Responsive spacing between elements
-                  SizedBox(height: ResponsiveUtils.spacing8),
+                  SizedBox(height: ResponsiveUtils.width(8)),
 
                   // Product price with responsive font size
                   Text(
                     productPrice,
                     style: TextStyle(
-                      fontSize: ResponsiveUtils.font16,
+                      fontSize: ResponsiveUtils.fontSize(16),
                       fontWeight: FontWeight.bold,
                       color: Theme.of(context).primaryColor,
                     ),
                   ),
 
                   // Responsive spacing
-                  SizedBox(height: ResponsiveUtils.spacing8),
+                  SizedBox(height: ResponsiveUtils.width(8)),
 
                   // Responsive button
                   SizedBox(
@@ -97,7 +97,7 @@ class ResponsiveProductCard extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(
-                            ResponsiveUtils.radius8,
+                            ResponsiveUtils.radius(8),
                           ),
                         ),
                       ),
@@ -106,7 +106,9 @@ class ResponsiveProductCard extends StatelessWidget {
                       },
                       child: Text(
                         'Add to Cart',
-                        style: TextStyle(fontSize: ResponsiveUtils.font12),
+                        style: TextStyle(
+                          fontSize: ResponsiveUtils.fontSize(12),
+                        ),
                       ),
                     ),
                   ),
@@ -132,17 +134,17 @@ class ResponsiveExamplePage extends StatelessWidget {
         toolbarHeight: ResponsiveUtils.height(60),
         title: Text(
           'Responsive Example',
-          style: TextStyle(fontSize: ResponsiveUtils.font18),
+          style: TextStyle(fontSize: ResponsiveUtils.fontSize(18)),
         ),
         actions: [
           Padding(
-            padding: EdgeInsets.only(right: ResponsiveUtils.spacing16),
+            padding: EdgeInsets.only(right: ResponsiveUtils.width(16)),
             child: Icon(Icons.shopping_cart, size: ResponsiveUtils.width(24)),
           ),
         ],
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(ResponsiveUtils.spacing16),
+        padding: EdgeInsets.all(ResponsiveUtils.width(16)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -150,12 +152,12 @@ class ResponsiveExamplePage extends StatelessWidget {
             Text(
               'Featured Products',
               style: TextStyle(
-                fontSize: ResponsiveUtils.font24,
+                fontSize: ResponsiveUtils.fontSize(24),
                 fontWeight: FontWeight.bold,
               ),
             ),
 
-            SizedBox(height: ResponsiveUtils.spacing16),
+            SizedBox(height: ResponsiveUtils.width(16)),
 
             // Responsive grid
             GridView.builder(
@@ -167,8 +169,8 @@ class ResponsiveExamplePage extends StatelessWidget {
                   tablet: 3,
                   desktop: 4,
                 ),
-                crossAxisSpacing: ResponsiveUtils.spacing12,
-                mainAxisSpacing: ResponsiveUtils.spacing12,
+                crossAxisSpacing: ResponsiveUtils.width(12),
+                mainAxisSpacing: ResponsiveUtils.width(12),
                 childAspectRatio: 0.75,
               ),
               itemCount: 6,
@@ -181,7 +183,7 @@ class ResponsiveExamplePage extends StatelessWidget {
               },
             ),
 
-            SizedBox(height: ResponsiveUtils.spacing24),
+            SizedBox(height: ResponsiveUtils.width(24)),
 
             // Responsive banner container
             Container(
@@ -192,7 +194,7 @@ class ResponsiveExamplePage extends StatelessWidget {
               ),
               decoration: BoxDecoration(
                 color: Theme.of(context).primaryColor.withOpacity(0.1),
-                borderRadius: BorderRadius.circular(ResponsiveUtils.radius16),
+                borderRadius: BorderRadius.circular(ResponsiveUtils.radius(16)),
               ),
               child: Center(
                 child: Column(
@@ -201,14 +203,14 @@ class ResponsiveExamplePage extends StatelessWidget {
                     Text(
                       'Special Offer!',
                       style: TextStyle(
-                        fontSize: ResponsiveUtils.font20,
+                        fontSize: ResponsiveUtils.fontSize(20),
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: ResponsiveUtils.spacing8),
+                    SizedBox(height: ResponsiveUtils.width(8)),
                     Text(
                       'Get 50% off on all items',
-                      style: TextStyle(fontSize: ResponsiveUtils.font14),
+                      style: TextStyle(fontSize: ResponsiveUtils.fontSize(14)),
                     ),
                   ],
                 ),

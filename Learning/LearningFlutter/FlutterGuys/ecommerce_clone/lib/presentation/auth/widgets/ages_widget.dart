@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:ecommerce_clone/core/constants/auth_constants.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/presentation/auth/blocs/age_selection_cubit.dart';
 import 'package:ecommerce_clone/presentation/auth/blocs/ages_display_cubit.dart';
@@ -12,7 +13,7 @@ class AgesWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: ResponsiveUtils.screenHeight * 0.37,
+      height: ResponsiveUtils.screenHeight / 2.7,
       child: BlocBuilder<AgesDisplayCubit, AgesDisplayState>(
         builder: (context, state) {
           if (state is AgesDisplayLoadingState) {
@@ -41,23 +42,23 @@ class AgesWidget extends StatelessWidget {
 
   Widget _ages(List<QueryDocumentSnapshot<Map<String, dynamic>>> ages) {
     return ListView.separated(
-      padding: EdgeInsets.all(ResponsiveUtils.spacing16),
+      padding: EdgeInsets.all(ResponsiveUtils.width(16)),
       itemBuilder: (context, index) {
         return GestureDetector(
           onTap: () {
             Navigator.pop(context);
             context.read<AgeSelectionCubit>().selectAge(
-              ages[index].data()['value'],
+              ages[index].data()[AuthConstants.value],
             );
           },
           child: Text(
-            ages[index].data()['value'],
-            style: TextStyle(fontSize: ResponsiveUtils.font18),
+            ages[index].data()[AuthConstants.value],
+            style: TextStyle(fontSize: ResponsiveUtils.fontSize(18)),
           ),
         );
       },
       separatorBuilder:
-          (context, index) => SizedBox(height: ResponsiveUtils.spacing20),
+          (context, index) => SizedBox(height: ResponsiveUtils.height(20)),
       itemCount: ages.length,
     );
   }
