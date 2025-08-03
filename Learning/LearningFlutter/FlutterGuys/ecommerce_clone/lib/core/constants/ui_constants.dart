@@ -54,6 +54,14 @@ class UIConstants {
   // Cart page
   static const String cart = 'Cart';
   static const String cartIsEmpty = 'Cart is empty';
+  static const String subtotal = 'Subtotal';
+  static const String shippingCost = 'Shipping Cost';
+  static const String tax = 'Tax';
+  static const String total = 'Total';
+  static const String checkout = 'Checkout';
+  static const String placeOrder = 'Place Order';
+  static const String shippingAddress = 'Shipping Address';
+  static const String orderPlacedSuccessfully = 'Order Placed Successfully';
 
   // Header widget / Sign out
   static const String signOut = 'Sign Out';

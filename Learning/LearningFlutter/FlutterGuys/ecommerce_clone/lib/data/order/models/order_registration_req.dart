@@ -1,32 +1,32 @@
-// // ignore_for_file: public_member_api_docs, sort_constructors_first
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 
-// import 'package:ecommerce/data/order/models/product_ordered.dart';
+import 'package:ecommerce_clone/core/constants/order_constants.dart';
+import 'package:ecommerce_clone/data/order/extensions/product_ordered_model_extension.dart';
+import 'package:ecommerce_clone/domain/order/entities/product_ordered_entity.dart';
 
-// import '../../../domain/order/entities/product_ordered.dart';
+class OrderRegistrationReqModel {
+  final List<ProductOrderedEntity> products;
+  final String createdDate;
+  final String shippingAddress;
+  final int itemCount;
+  final double totalPrice;
 
-// class OrderRegistrationReq {
-//   final List < ProductOrderedEntity > products;
-//   final String createdDate;
-//   final String shippingAddress;
-//   final int itemCount;
-//   final double totalPrice;
+  OrderRegistrationReqModel({
+    required this.products,
+    required this.createdDate,
+    required this.itemCount,
+    required this.totalPrice,
+    required this.shippingAddress,
+  });
 
-//   OrderRegistrationReq({
-//     required this.products,
-//     required this.createdDate,
-//     required this.itemCount,
-//     required this.totalPrice,
-//     required this.shippingAddress
-//   });
-
-//   Map<String, dynamic> toMap() {
-//     return <String, dynamic>{
-//       'products': products.map((e) => e.fromEntity().toMap()).toList(),
-//       'createdDate': createdDate,
-//       'itemCount': itemCount,
-//       'totalPrice': totalPrice,
-//       'shippingAddress' : shippingAddress
-//     };
-//   }
-
-// }
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      OrderConstants.products:
+          products.map((e) => e.fromEntity().toMap()).toList(),
+      OrderConstants.createdDate: createdDate,
+      OrderConstants.itemCount: itemCount,
+      OrderConstants.totalPrice: totalPrice,
+      OrderConstants.shippingAddress: shippingAddress,
+    };
+  }
+}

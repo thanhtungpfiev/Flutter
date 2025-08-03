@@ -100,6 +100,8 @@ class HeaderWidget extends StatelessWidget {
   }
 
   Future<void> _signOut(BuildContext context) async {
+    if (!context.mounted) return;
+
     try {
       // Show loading indicator
       showDialog(
@@ -108,27 +110,37 @@ class HeaderWidget extends StatelessWidget {
         builder: (context) => const Center(child: CircularProgressIndicator()),
       );
 
-      // Perform sign out
-      await sl<SignOutUseCase>().call();
+      // Perform sign out on the main thread with proper scheduling
+      await Future.microtask(() async {
+        await sl<SignOutUseCase>().call();
+      });
 
-      // Remove loading indicator
-      if (!context.mounted) return;
-      Navigator.of(context).pop();
+      // Use WidgetsBinding to ensure we're on the main thread
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!context.mounted) return;
 
-      // Navigate to sign in page and remove all previous routes
-      AppNavigator.pushAndRemoveUntil(context, SigninPage());
+        // Remove loading indicator
+        Navigator.of(context).pop();
+
+        // Navigate to sign in page and remove all previous routes
+        AppNavigator.pushAndRemoveUntil(context, SigninPage());
+      });
     } catch (e) {
-      // Remove loading indicator if there's an error
-      if (!context.mounted) return;
-      Navigator.of(context).pop();
+      // Use WidgetsBinding for error handling as well
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!context.mounted) return;
 
-      // Show error message
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('${UIConstants.errorSigningOut}${e.toString()}'),
-          backgroundColor: Colors.red,
-        ),
-      );
+        // Remove loading indicator if there's an error
+        Navigator.of(context).pop();
+
+        // Show error message
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('${UIConstants.errorSigningOut}${e.toString()}'),
+            backgroundColor: Colors.red,
+          ),
+        );
+      });
     }
   }
 

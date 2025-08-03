@@ -4,6 +4,9 @@ class OrderConstants {
   static const String orders = 'Orders';
 
   // Order model field constants
+  static const String products = 'products';
+  static const String itemCount = 'itemCount';
+  static const String shippingAddress = 'shippingAddress';
   static const String productId = 'productId';
   static const String productTitle = 'productTitle';
   static const String productQuantity = 'productQuantity';

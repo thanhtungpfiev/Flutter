@@ -123,16 +123,20 @@ class AuthFirebaseService implements AuthService {
   @override
   Future<void> signOut() async {
     try {
-      // Clear SharedPreferences
+      // Clear SharedPreferences first
       final prefs = await SharedPreferences.getInstance();
       await prefs.setBool(PrefsConstants.isLoggedIn, false);
       await prefs.remove(PrefsConstants.userEmail);
 
-      // Sign out from Firebase
-      await FirebaseAuth.instance.signOut();
+      // Sign out from Firebase with proper thread handling
+      await Future.microtask(() async {
+        await FirebaseAuth.instance.signOut();
+      });
     } catch (e) {
       // Handle any errors during sign out
       print('Error during sign out: $e');
+      // Re-throw to allow upper layers to handle the error
+      rethrow;
     }
   }
 
