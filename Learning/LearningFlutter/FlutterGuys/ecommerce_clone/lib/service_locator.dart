@@ -31,6 +31,7 @@ import 'package:ecommerce_clone/domain/order/usecases/order_registration_usecase
 import 'package:ecommerce_clone/domain/order/usecases/remove_cart_product_usecase.dart';
 import 'package:ecommerce_clone/domain/product/repositories/product_repository.dart';
 import 'package:ecommerce_clone/domain/product/usecases/add_or_remove_favorite_product_usecase.dart';
+import 'package:ecommerce_clone/domain/product/usecases/get_favorites_products_usecase.dart';
 import 'package:ecommerce_clone/domain/product/usecases/get_new_in_usecase.dart';
 import 'package:ecommerce_clone/domain/product/usecases/get_products_by_category_id_usecase.dart';
 import 'package:ecommerce_clone/domain/product/usecases/get_products_by_title_usecase.dart';
@@ -113,6 +114,9 @@ Future<void> initializeDependencies() async {
   sl.registerSingleton<AddOrRemoveFavoriteProductUseCase>(
     AddOrRemoveFavoriteProductUseCase(productRepository: sl()),
   );
+  sl.registerSingleton<GetFavoritesProductsUseCase>(
+    GetFavoritesProductsUseCase(productRepository: sl()),
+  );
   // Order
   sl.registerSingleton<AddToCartUseCase>(
     AddToCartUseCase(orderRepository: sl()),
@@ -162,6 +166,10 @@ Future<void> initializeDependencies() async {
   sl.registerFactory<ProductsDisplayCubit>(
     () => ProductsDisplayCubit(useCase: sl<GetProductsByTitleUseCase>()),
     instanceName: ServiceConstants.getProductsByTitleUseCaseInstance,
+  );
+  sl.registerFactory<ProductsDisplayCubit>(
+    () => ProductsDisplayCubit(useCase: sl<GetFavoritesProductsUseCase>()),
+    instanceName: ServiceConstants.getFavoritesProductsUseCaseInstance,
   );
   // Product Detail
   sl.registerFactory<ProductQuantityCubit>(() => ProductQuantityCubit());

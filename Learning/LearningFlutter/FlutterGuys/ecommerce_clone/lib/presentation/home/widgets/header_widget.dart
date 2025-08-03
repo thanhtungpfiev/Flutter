@@ -11,6 +11,7 @@ import 'package:ecommerce_clone/presentation/auth/pages/signin_page.dart';
 import 'package:ecommerce_clone/presentation/cart/pages/cart_page.dart';
 import 'package:ecommerce_clone/presentation/home/blocs/user_info_display_cubit.dart';
 import 'package:ecommerce_clone/presentation/home/blocs/user_info_display_state.dart';
+import 'package:ecommerce_clone/presentation/settings/pages/settings_page.dart';
 import 'package:ecommerce_clone/service_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -54,11 +55,7 @@ class HeaderWidget extends StatelessWidget {
   Widget _profileImage(UserEntity user, BuildContext context) {
     return GestureDetector(
       onTap: () async {
-        // Show confirmation dialog before signing out
-        final shouldSignOut = await _showSignOutDialog(context);
-        if (shouldSignOut == true) {
-          await _signOut(context);
-        }
+        AppNavigator.push(context, const SettingsPage());
       },
       child: Container(
         height: ResponsiveUtils.height(40.0),

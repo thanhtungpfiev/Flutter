@@ -86,4 +86,12 @@ class UIConstants {
 
   // App
   static const String appTitle = 'Ecommerce Clone';
+
+  // Settings page
+  static const String settings = 'Settings';
+  static const String myFavorites = 'My Favorites';
+  static const String myOrders = 'My Orders';
+
+  // My Favorites page
+  static const String pleaseTryAgain = 'Please try again';
 }

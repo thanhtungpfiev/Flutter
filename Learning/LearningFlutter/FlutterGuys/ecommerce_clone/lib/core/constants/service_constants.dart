@@ -6,4 +6,6 @@ class ServiceConstants {
       'getProductsByCategoryIdUseCase';
   static const String getProductsByTitleUseCaseInstance =
       'getProductsByTitleUseCase';
+  static const String getFavoritesProductsUseCaseInstance =
+      'getFavoritesProductsUseCase';
 }
