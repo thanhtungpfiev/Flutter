@@ -30,15 +30,18 @@ import 'package:ecommerce_clone/domain/order/usecases/get_cart_products_usecase.
 import 'package:ecommerce_clone/domain/order/usecases/order_registration_usecase.dart';
 import 'package:ecommerce_clone/domain/order/usecases/remove_cart_product_usecase.dart';
 import 'package:ecommerce_clone/domain/product/repositories/product_repository.dart';
+import 'package:ecommerce_clone/domain/product/usecases/add_or_remove_favorite_product_usecase.dart';
 import 'package:ecommerce_clone/domain/product/usecases/get_new_in_usecase.dart';
 import 'package:ecommerce_clone/domain/product/usecases/get_products_by_category_id_usecase.dart';
 import 'package:ecommerce_clone/domain/product/usecases/get_products_by_title_usecase.dart';
 import 'package:ecommerce_clone/domain/product/usecases/get_top_selling_usecase.dart';
+import 'package:ecommerce_clone/domain/product/usecases/is_favorite_usecase.dart';
 import 'package:ecommerce_clone/presentation/auth/blocs/age_selection_cubit.dart';
 import 'package:ecommerce_clone/presentation/auth/blocs/ages_display_cubit.dart';
 import 'package:ecommerce_clone/presentation/auth/blocs/gender_selection_cubit.dart';
 import 'package:ecommerce_clone/presentation/cart/bloc/cart_products_display_cubit.dart';
 import 'package:ecommerce_clone/presentation/home/blocs/user_info_display_cubit.dart';
+import 'package:ecommerce_clone/presentation/product_detail/bloc/favorite_icon_cubit.dart';
 import 'package:ecommerce_clone/presentation/product_detail/bloc/product_color_selection_cubit.dart';
 import 'package:ecommerce_clone/presentation/product_detail/bloc/product_quantity_cubit.dart';
 import 'package:ecommerce_clone/presentation/product_detail/bloc/product_size_selection_cubit.dart';
@@ -103,6 +106,12 @@ Future<void> initializeDependencies() async {
   );
   sl.registerSingleton<GetProductsByTitleUseCase>(
     GetProductsByTitleUseCase(productRepository: sl()),
+  );
+  sl.registerSingleton<IsFavoriteUseCase>(
+    IsFavoriteUseCase(productRepository: sl()),
+  );
+  sl.registerSingleton<AddOrRemoveFavoriteProductUseCase>(
+    AddOrRemoveFavoriteProductUseCase(productRepository: sl()),
   );
   // Order
   sl.registerSingleton<AddToCartUseCase>(
@@ -169,6 +178,14 @@ Future<void> initializeDependencies() async {
     () => CartProductsDisplayCubit(
       getCartProductsUseCase: sl(),
       removeCartProductUseCase: sl(),
+    ),
+  );
+
+  // Favorite Icon
+  sl.registerFactory<FavoriteIconCubit>(
+    () => FavoriteIconCubit(
+      isFavoriteUseCase: sl(),
+      addOrRemoveFavoriteProductUseCase: sl(),
     ),
   );
 }

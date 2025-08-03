@@ -2,10 +2,12 @@ import 'package:ecommerce_clone/common/blocs/button/basic_reactive_button_cubit.
 import 'package:ecommerce_clone/common/widgets/app_bar/basic_app_bar.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/domain/product/entities/product_entity.dart';
+import 'package:ecommerce_clone/presentation/product_detail/bloc/favorite_icon_cubit.dart';
 import 'package:ecommerce_clone/presentation/product_detail/bloc/product_color_selection_cubit.dart';
 import 'package:ecommerce_clone/presentation/product_detail/bloc/product_quantity_cubit.dart';
 import 'package:ecommerce_clone/presentation/product_detail/bloc/product_size_selection_cubit.dart';
 import 'package:ecommerce_clone/presentation/product_detail/widgets/add_to_bag_widget.dart';
+import 'package:ecommerce_clone/presentation/product_detail/widgets/favorite_button_widget.dart';
 import 'package:ecommerce_clone/presentation/product_detail/widgets/product_images_widget.dart';
 import 'package:ecommerce_clone/presentation/product_detail/widgets/product_price_widget.dart';
 import 'package:ecommerce_clone/presentation/product_detail/widgets/product_quantity_widget.dart';
@@ -28,16 +30,16 @@ class ProductDetailPage extends StatelessWidget {
         BlocProvider(create: (context) => sl<ProductColorSelectionCubit>()),
         BlocProvider(create: (context) => sl<ProductSizeSelectionCubit>()),
         BlocProvider(create: (context) => sl<BasicReactiveButtonCubit>()),
-        // BlocProvider(
-        //   create:
-        //       (context) =>
-        //           sl<FavoriteIconCubit>()..isFavorite(productEntity.productId),
-        // ),
+        BlocProvider(
+          create:
+              (context) =>
+                  sl<FavoriteIconCubit>()..isFavorite(productEntity.productId),
+        ),
       ],
       child: Scaffold(
         appBar: BasicAppBar(
           hideBack: false,
-          // action: FavoriteButton(productEntity: productEntity),
+          action: FavoriteButtonWidget(productEntity: productEntity),
         ),
         bottomNavigationBar: AddToBagWidget(productEntity: productEntity),
         body: SingleChildScrollView(
