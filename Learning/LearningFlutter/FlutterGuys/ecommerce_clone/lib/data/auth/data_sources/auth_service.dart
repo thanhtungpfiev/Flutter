@@ -8,6 +8,6 @@ abstract class AuthService {
   Future<Either> getAges();
   Future<Either> sendPasswordResetEmail(String email);
   Future<bool> isLoggedIn();
-  Future<void> signOut();
+  Future<Either> signOut();
   Future<Either> getUser();
 }

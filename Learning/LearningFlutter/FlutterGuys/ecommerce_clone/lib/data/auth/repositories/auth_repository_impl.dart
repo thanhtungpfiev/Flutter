@@ -37,7 +37,7 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future<void> signOut() async {
+  Future<Either> signOut() async {
     return await authService.signOut();
   }
 

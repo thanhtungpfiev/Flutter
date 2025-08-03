@@ -14,7 +14,7 @@ class AuthFirebaseService implements AuthService {
   @override
   Future<Either> signup(UserSignupReqModel user) async {
     try {
-      // Use runZonedGuarded to ensure proper thread handling
+      // Use Future.microtask to ensure proper thread handling
       var returnedData = await Future.microtask(() async {
         return await FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: user.email!,
@@ -50,8 +50,13 @@ class AuthFirebaseService implements AuthService {
         message = MessageConstants.weakPassword;
       } else if (e.code == FirebaseErrorConstants.emailAlreadyInUse) {
         message = MessageConstants.emailAlreadyInUse;
+      } else {
+        message = e.message ?? MessageConstants.unknownError;
       }
       return Left(message);
+    } catch (e) {
+      // Handle any other unexpected errors
+      return Left('${MessageConstants.unknownError}: ${e.toString()}');
     }
   }
 
@@ -84,6 +89,9 @@ class AuthFirebaseService implements AuthService {
       }
 
       return Left(message);
+    } catch (e) {
+      // Handle any other unexpected errors
+      return Left('${MessageConstants.unknownError}: ${e.toString()}');
     }
   }
 
@@ -103,8 +111,12 @@ class AuthFirebaseService implements AuthService {
     try {
       await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
       return const Right(MessageConstants.passwordResetEmailSent);
+    } on FirebaseAuthException catch (e) {
+      // Handle Firebase Auth specific errors
+      return Left(e.message ?? MessageConstants.pleaseRetry);
     } catch (e) {
-      return const Left(MessageConstants.pleaseRetry);
+      // Handle any other unexpected errors
+      return Left('${MessageConstants.pleaseRetry}: ${e.toString()}');
     }
   }
 
@@ -130,7 +142,7 @@ class AuthFirebaseService implements AuthService {
   }
 
   @override
-  Future<void> signOut() async {
+  Future<Either> signOut() async {
     try {
       // Clear SharedPreferences first
       final prefs = await SharedPreferences.getInstance();
@@ -141,11 +153,11 @@ class AuthFirebaseService implements AuthService {
       await Future.microtask(() async {
         await FirebaseAuth.instance.signOut();
       });
+
+      return const Right(MessageConstants.signOutSuccess);
     } catch (e) {
-      // Handle any errors during sign out
-      print('Error during sign out: $e');
-      // Re-throw to allow upper layers to handle the error
-      rethrow;
+      // Handle any errors during sign out and return Left with error message
+      return Left('${MessageConstants.signOutError}: ${e.toString()}');
     }
   }
 

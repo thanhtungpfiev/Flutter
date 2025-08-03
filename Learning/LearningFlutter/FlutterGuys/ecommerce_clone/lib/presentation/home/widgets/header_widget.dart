@@ -3,11 +3,8 @@ import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
 import 'package:ecommerce_clone/core/configs/assets/app_images.dart';
 import 'package:ecommerce_clone/core/configs/assets/app_vectors.dart';
 import 'package:ecommerce_clone/core/configs/theme/app_colors.dart';
-import 'package:ecommerce_clone/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/domain/auth/entities/user_entity.dart';
-import 'package:ecommerce_clone/domain/auth/usecases/signout_usecase.dart';
-import 'package:ecommerce_clone/presentation/auth/pages/signin_page.dart';
 import 'package:ecommerce_clone/presentation/cart/pages/cart_page.dart';
 import 'package:ecommerce_clone/presentation/home/blocs/user_info_display_cubit.dart';
 import 'package:ecommerce_clone/presentation/home/blocs/user_info_display_state.dart';
@@ -72,73 +69,6 @@ class HeaderWidget extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  Future<bool?> _showSignOutDialog(BuildContext context) {
-    return showDialog<bool>(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text(UIConstants.signOut),
-          content: Text(UIConstants.signOutConfirmation),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(false),
-              child: Text(UIConstants.cancel),
-            ),
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(true),
-              child: Text(UIConstants.signOut),
-            ),
-          ],
-        );
-      },
-    );
-  }
-
-  Future<void> _signOut(BuildContext context) async {
-    if (!context.mounted) return;
-
-    try {
-      // Show loading indicator
-      showDialog(
-        context: context,
-        barrierDismissible: false,
-        builder: (context) => const Center(child: CircularProgressIndicator()),
-      );
-
-      // Perform sign out on the main thread with proper scheduling
-      await Future.microtask(() async {
-        await sl<SignOutUseCase>().call();
-      });
-
-      // Use WidgetsBinding to ensure we're on the main thread
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (!context.mounted) return;
-
-        // Remove loading indicator
-        Navigator.of(context).pop();
-
-        // Navigate to sign in page and remove all previous routes
-        AppNavigator.pushAndRemoveUntil(context, SigninPage());
-      });
-    } catch (e) {
-      // Use WidgetsBinding for error handling as well
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (!context.mounted) return;
-
-        // Remove loading indicator if there's an error
-        Navigator.of(context).pop();
-
-        // Show error message
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('${UIConstants.errorSigningOut}${e.toString()}'),
-            backgroundColor: Colors.red,
-          ),
-        );
-      });
-    }
   }
 
   Widget _gender(UserEntity user) {
