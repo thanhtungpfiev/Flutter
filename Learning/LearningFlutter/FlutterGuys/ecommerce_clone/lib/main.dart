@@ -15,15 +15,25 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
-  // Set full screen for desktop platforms
+  // Initialize Firebase with proper error handling for desktop
+  try {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+  } catch (e) {
+    print('Firebase initialization error: $e');
+  }
+
+  // Set fullscreen immediately for desktop platforms
   if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
-    // Set to full screen mode
-    await DesktopWindow.setFullScreen(true);
-
-    // Also set system UI overlay style to hide status bars (for additional platforms)
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+    try {
+      await DesktopWindow.setFullScreen(true);
+      SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+      print('Fullscreen mode enabled');
+    } catch (e) {
+      print('Error setting fullscreen: $e');
+    }
   }
 
   await initializeDependencies();
@@ -46,57 +56,10 @@ class MyApp extends StatelessWidget {
             title: UIConstants.appTitle,
             theme: AppTheme.appTheme,
             debugShowCheckedModeBanner: false,
-            home: const FullScreenWrapper(child: SplashPage()),
+            home: const SplashPage(),
           ),
         );
       },
     );
-  }
-}
-
-/// Wrapper widget to ensure full screen mode is maintained
-class FullScreenWrapper extends StatefulWidget {
-  final Widget child;
-
-  const FullScreenWrapper({super.key, required this.child});
-
-  @override
-  State<FullScreenWrapper> createState() => _FullScreenWrapperState();
-}
-
-class _FullScreenWrapperState extends State<FullScreenWrapper>
-    with WidgetsBindingObserver {
-  @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance.addObserver(this);
-    _ensureFullScreen();
-  }
-
-  @override
-  void dispose() {
-    WidgetsBinding.instance.removeObserver(this);
-    super.dispose();
-  }
-
-  @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
-    super.didChangeAppLifecycleState(state);
-    if (state == AppLifecycleState.resumed) {
-      _ensureFullScreen();
-    }
-  }
-
-  void _ensureFullScreen() {
-    if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
-      // Re-enable full screen if it was lost
-      DesktopWindow.setFullScreen(true);
-      SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return widget.child;
   }
 }

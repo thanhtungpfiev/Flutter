@@ -14,24 +14,28 @@ class AuthFirebaseService implements AuthService {
   @override
   Future<Either> signup(UserSignupReqModel user) async {
     try {
-      var returnedData = await FirebaseAuth.instance
-          .createUserWithEmailAndPassword(
-            email: user.email!,
-            password: user.password!,
-          );
+      // Use runZonedGuarded to ensure proper thread handling
+      var returnedData = await Future.microtask(() async {
+        return await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: user.email!,
+          password: user.password!,
+        );
+      });
 
-      await FirebaseFirestore.instance
-          .collection(AuthConstants.users)
-          .doc(returnedData.user!.uid)
-          .set({
-            AuthConstants.firstName: user.firstName,
-            AuthConstants.lastName: user.lastName,
-            AuthConstants.email: user.email,
-            AuthConstants.gender: user.gender,
-            AuthConstants.age: user.age,
-            AuthConstants.image: returnedData.user!.photoURL,
-            AuthConstants.userId: returnedData.user!.uid,
-          });
+      await Future.microtask(() async {
+        await FirebaseFirestore.instance
+            .collection(AuthConstants.users)
+            .doc(returnedData.user!.uid)
+            .set({
+              AuthConstants.firstName: user.firstName,
+              AuthConstants.lastName: user.lastName,
+              AuthConstants.email: user.email,
+              AuthConstants.gender: user.gender,
+              AuthConstants.age: user.age,
+              AuthConstants.image: returnedData.user!.photoURL,
+              AuthConstants.userId: returnedData.user!.uid,
+            });
+      });
 
       // Save authentication state to SharedPreferences
       final prefs = await SharedPreferences.getInstance();
@@ -54,10 +58,13 @@ class AuthFirebaseService implements AuthService {
   @override
   Future<Either> signin(UserSigninReqModel user) async {
     try {
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: user.email!,
-        password: user.password!,
-      );
+      // Use Future.microtask to ensure proper thread handling
+      await Future.microtask(() async {
+        await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: user.email!,
+          password: user.password!,
+        );
+      });
 
       // Save authentication state to SharedPreferences
       final prefs = await SharedPreferences.getInstance();
@@ -103,8 +110,10 @@ class AuthFirebaseService implements AuthService {
 
   @override
   Future<bool> isLoggedIn() async {
-    // First check Firebase Auth - with persistence enabled, this should work on desktop
-    final currentUser = FirebaseAuth.instance.currentUser;
+    // Use Future.microtask to ensure proper thread handling for Firebase Auth
+    final currentUser = await Future.microtask(
+      () => FirebaseAuth.instance.currentUser,
+    );
 
     if (currentUser != null) {
       // If Firebase Auth has a user, update local storage for additional reliability
@@ -143,16 +152,21 @@ class AuthFirebaseService implements AuthService {
   @override
   Future<Either> getUser() async {
     try {
-      var currentUser = FirebaseAuth.instance.currentUser;
+      // Use Future.microtask for thread safety
+      var currentUser = await Future.microtask(
+        () => FirebaseAuth.instance.currentUser,
+      );
       if (currentUser == null) {
         return const Left(MessageConstants.noUserSignedIn);
       }
 
-      var userData = await FirebaseFirestore.instance
-          .collection(AuthConstants.users)
-          .doc(currentUser.uid)
-          .get()
-          .then((value) => value.data());
+      var userData = await Future.microtask(() async {
+        return await FirebaseFirestore.instance
+            .collection(AuthConstants.users)
+            .doc(currentUser.uid)
+            .get()
+            .then((value) => value.data());
+      });
 
       if (userData == null) {
         return const Left(MessageConstants.userDataNotFound);
