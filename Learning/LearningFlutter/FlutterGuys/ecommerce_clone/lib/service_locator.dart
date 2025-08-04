@@ -27,6 +27,7 @@ import 'package:ecommerce_clone/domain/category/usecases/get_categories_usecase.
 import 'package:ecommerce_clone/domain/order/repository/order_repository.dart';
 import 'package:ecommerce_clone/domain/order/usecases/add_to_cart_usecase.dart';
 import 'package:ecommerce_clone/domain/order/usecases/get_cart_products_usecase.dart';
+import 'package:ecommerce_clone/domain/order/usecases/get_orders_usecase.dart';
 import 'package:ecommerce_clone/domain/order/usecases/order_registration_usecase.dart';
 import 'package:ecommerce_clone/domain/order/usecases/remove_cart_product_usecase.dart';
 import 'package:ecommerce_clone/domain/product/repositories/product_repository.dart';
@@ -46,6 +47,7 @@ import 'package:ecommerce_clone/presentation/product_detail/bloc/favorite_icon_c
 import 'package:ecommerce_clone/presentation/product_detail/bloc/product_color_selection_cubit.dart';
 import 'package:ecommerce_clone/presentation/product_detail/bloc/product_quantity_cubit.dart';
 import 'package:ecommerce_clone/presentation/product_detail/bloc/product_size_selection_cubit.dart';
+import 'package:ecommerce_clone/presentation/settings/bloc/orders_display_cubit.dart';
 import 'package:ecommerce_clone/presentation/splash/bloc/splash_cubit.dart';
 import 'package:get_it/get_it.dart';
 
@@ -130,6 +132,9 @@ Future<void> initializeDependencies() async {
   sl.registerSingleton<OrderRegistrationUseCase>(
     OrderRegistrationUseCase(orderRepository: sl()),
   );
+  sl.registerSingleton<GetOrdersUseCase>(
+    GetOrdersUseCase(orderRepository: sl()),
+  );
 
   // Blocs
   // Common
@@ -187,6 +192,9 @@ Future<void> initializeDependencies() async {
       getCartProductsUseCase: sl(),
       removeCartProductUseCase: sl(),
     ),
+  );
+  sl.registerFactory<OrdersDisplayCubit>(
+    () => OrdersDisplayCubit(getOrdersUseCase: sl()),
   );
 
   // Favorite Icon

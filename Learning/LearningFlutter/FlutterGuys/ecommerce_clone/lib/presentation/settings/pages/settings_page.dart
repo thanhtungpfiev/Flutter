@@ -8,6 +8,7 @@ import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/domain/auth/usecases/signout_usecase.dart';
 import 'package:ecommerce_clone/presentation/auth/pages/signin_page.dart';
 import 'package:ecommerce_clone/presentation/settings/widgets/my_favorites_tile_widget.dart';
+import 'package:ecommerce_clone/presentation/settings/widgets/my_orders_tile_widget.dart';
 import 'package:ecommerce_clone/service_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -28,7 +29,7 @@ class SettingsPage extends StatelessWidget {
                 children: [
                   MyFavoritesTileWidget(),
                   SizedBox(height: ResponsiveUtils.height(15)),
-                  // MyOrdersTile(),
+                  MyOrdersTileWidget(),
                 ],
               ),
             ),

@@ -1,15 +1,15 @@
-// import 'package:ecommerce/domain/order/entities/order.dart';
+import 'package:ecommerce_clone/domain/order/entities/order_entity.dart';
 
-// abstract class OrdersDisplayState {}
+abstract class OrdersDisplayState {}
 
-// class OrdersLoading extends OrdersDisplayState {}
+class OrdersDisplayLoadingState extends OrdersDisplayState {}
 
-// class OrdersLoaded extends OrdersDisplayState {
-//   final List<OrderEntity> orders;
-//   OrdersLoaded({required this.orders});
-// }
+class OrdersDisplayLoadSuccessState extends OrdersDisplayState {
+  final List<OrderEntity> orders;
+  OrdersDisplayLoadSuccessState({required this.orders});
+}
 
-// class LoadOrdersFailure extends OrdersDisplayState {
-//   final String errorMessage;
-//   LoadOrdersFailure({required this.errorMessage});
-// }
+class OrdersDisplayLoadErrorState extends OrdersDisplayState {
+  final String errorMessage;
+  OrdersDisplayLoadErrorState({required this.errorMessage});
+}

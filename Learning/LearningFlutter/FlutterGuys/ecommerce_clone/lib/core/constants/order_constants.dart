@@ -17,4 +17,10 @@ class OrderConstants {
   static const String productImage = 'productImage';
   static const String createdDate = 'createdDate';
   static const String id = 'id';
+  static const String code = 'code';
+  static const String orderStatus = 'orderStatus';
+
+  // Order status model field constants
+  static const String title = 'title';
+  static const String done = 'done';
 }

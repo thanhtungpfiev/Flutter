@@ -94,4 +94,14 @@ class UIConstants {
 
   // My Favorites page
   static const String pleaseTryAgain = 'Please try again';
+
+  // My Orders page
+  static const String orderNumber = 'Order #';
+  static const String item = 'item';
+  static const String items = 'items';
+
+  // Order Detail page
+  static const String orderItems = 'Order Items';
+  static const String viewAll = 'View All';
+  static const String shippingDetails = 'Shipping details';
 }
