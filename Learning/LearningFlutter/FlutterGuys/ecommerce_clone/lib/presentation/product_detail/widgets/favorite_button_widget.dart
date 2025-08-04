@@ -1,4 +1,4 @@
-import 'package:ecommerce_clone/core/configs/theme/app_colors.dart';
+import 'package:ecommerce_clone/common/utils/theme_utils.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/domain/product/entities/product_entity.dart';
 import 'package:ecommerce_clone/presentation/product_detail/bloc/favorite_icon_cubit.dart';
@@ -18,8 +18,8 @@ class FavoriteButtonWidget extends StatelessWidget {
       icon: Container(
         height: ResponsiveUtils.height(40),
         width: ResponsiveUtils.width(40),
-        decoration: const BoxDecoration(
-          color: AppColors.secondBackground,
+        decoration: BoxDecoration(
+          color: ThemeUtils.getSecondBackground(context),
           shape: BoxShape.circle,
         ),
         child: BlocBuilder<FavoriteIconCubit, bool>(
@@ -27,7 +27,7 @@ class FavoriteButtonWidget extends StatelessWidget {
               (context, state) => Icon(
                 state ? Icons.favorite : Icons.favorite_outline,
                 size: ResponsiveUtils.fontSize(15),
-                color: Colors.white,
+                color: ThemeUtils.getIconColor(context),
               ),
         ),
       ),

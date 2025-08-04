@@ -1,4 +1,5 @@
 import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
+import 'package:ecommerce_clone/common/utils/theme_utils.dart';
 import 'package:ecommerce_clone/common/widgets/app_bar/basic_app_bar.dart';
 import 'package:ecommerce_clone/core/configs/theme/app_colors.dart';
 import 'package:ecommerce_clone/core/constants/ui_constants.dart';
@@ -27,7 +28,7 @@ class OrderDetailPage extends StatelessWidget {
             SizedBox(height: ResponsiveUtils.height(50)),
             _items(context),
             SizedBox(height: ResponsiveUtils.height(30)),
-            _shipping(),
+            _shipping(context),
           ],
         ),
       ),
@@ -51,7 +52,7 @@ class OrderDetailPage extends StatelessWidget {
                     color:
                         orderEntity.orderStatus[index].done
                             ? AppColors.primary
-                            : Colors.white,
+                            : ThemeUtils.getThemeIconColor(context),
                     shape: BoxShape.circle,
                   ),
                   child:
@@ -122,7 +123,7 @@ class OrderDetailPage extends StatelessWidget {
               horizontal: ResponsiveUtils.width(16),
             ),
             decoration: BoxDecoration(
-              color: AppColors.secondBackground,
+              color: ThemeUtils.getSecondBackground(context),
               borderRadius: BorderRadius.circular(ResponsiveUtils.radius(10)),
             ),
             child: Row(
@@ -157,7 +158,7 @@ class OrderDetailPage extends StatelessWidget {
     );
   }
 
-  Widget _shipping() {
+  Widget _shipping(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -173,7 +174,7 @@ class OrderDetailPage extends StatelessWidget {
           width: double.infinity,
           padding: EdgeInsets.all(ResponsiveUtils.width(16)),
           decoration: BoxDecoration(
-            color: AppColors.secondBackground,
+            color: ThemeUtils.getSecondBackground(context),
             borderRadius: BorderRadius.circular(ResponsiveUtils.radius(10)),
           ),
           child: Text(orderEntity.shippingAddress),

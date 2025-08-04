@@ -1,4 +1,5 @@
 import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
+import 'package:ecommerce_clone/common/utils/theme_utils.dart';
 import 'package:ecommerce_clone/core/configs/assets/app_vectors.dart';
 import 'package:ecommerce_clone/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
@@ -23,11 +24,20 @@ class SearchFieldWidget extends StatelessWidget {
           contentPadding: EdgeInsets.all(ResponsiveUtils.width(12)),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(ResponsiveUtils.radius(50)),
+            borderSide: BorderSide.none,
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(ResponsiveUtils.radius(50)),
+            borderSide: BorderSide.none,
           ),
-          prefixIcon: SvgPicture.asset(AppVectors.search, fit: BoxFit.none),
+          prefixIcon: SvgPicture.asset(
+            AppVectors.search,
+            fit: BoxFit.none,
+            colorFilter: ColorFilter.mode(
+              ThemeUtils.getIconColor(context),
+              BlendMode.srcIn,
+            ),
+          ),
           hintText: UIConstants.search,
           hintStyle: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
         ),

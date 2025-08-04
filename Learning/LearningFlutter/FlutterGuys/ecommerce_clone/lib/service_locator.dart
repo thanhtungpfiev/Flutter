@@ -50,6 +50,7 @@ import 'package:ecommerce_clone/presentation/product_detail/bloc/product_color_s
 import 'package:ecommerce_clone/presentation/product_detail/bloc/product_quantity_cubit.dart';
 import 'package:ecommerce_clone/presentation/product_detail/bloc/product_size_selection_cubit.dart';
 import 'package:ecommerce_clone/presentation/settings/bloc/orders_display_cubit.dart';
+import 'package:ecommerce_clone/presentation/settings/bloc/theme_cubit.dart';
 import 'package:ecommerce_clone/presentation/splash/bloc/splash_cubit.dart';
 import 'package:get_it/get_it.dart';
 
@@ -144,6 +145,9 @@ Future<void> initializeDependencies() async {
   );
 
   // Blocs
+  // Theme
+  sl.registerSingleton<ThemeCubit>(ThemeCubit());
+
   // Common
   sl.registerFactory<BasicReactiveButtonCubit>(
     () => BasicReactiveButtonCubit(),

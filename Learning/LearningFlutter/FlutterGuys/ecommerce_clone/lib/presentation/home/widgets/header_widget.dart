@@ -1,5 +1,6 @@
 import 'package:ecommerce_clone/common/enums/gender.dart';
 import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
+import 'package:ecommerce_clone/common/utils/theme_utils.dart';
 import 'package:ecommerce_clone/core/configs/assets/app_images.dart';
 import 'package:ecommerce_clone/core/configs/assets/app_vectors.dart';
 import 'package:ecommerce_clone/core/configs/theme/app_colors.dart';
@@ -34,7 +35,7 @@ class HeaderWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   _defaultProfileImage(context),
-                  _defaultGender(),
+                  _defaultGender(context),
                   _card(context),
                 ],
               );
@@ -44,7 +45,7 @@ class HeaderWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   _profileImage(state.user, context),
-                  _gender(state.user),
+                  _gender(state.user, context),
                   _card(context),
                 ],
               );
@@ -54,7 +55,7 @@ class HeaderWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 _defaultProfileImage(context),
-                _defaultGender(),
+                _defaultGender(context),
                 _card(context),
               ],
             );
@@ -86,12 +87,12 @@ class HeaderWidget extends StatelessWidget {
     );
   }
 
-  Widget _gender(UserEntity user) {
+  Widget _gender(UserEntity user, BuildContext context) {
     return Container(
       height: ResponsiveUtils.height(40.0),
       padding: EdgeInsets.symmetric(horizontal: ResponsiveUtils.width(16)),
       decoration: BoxDecoration(
-        color: AppColors.secondBackground,
+        color: ThemeUtils.getSecondBackground(context),
         borderRadius: BorderRadius.circular(ResponsiveUtils.radius(100)),
       ),
       child: Center(
@@ -142,12 +143,12 @@ class HeaderWidget extends StatelessWidget {
     );
   }
 
-  Widget _defaultGender() {
+  Widget _defaultGender(BuildContext context) {
     return Container(
       height: ResponsiveUtils.height(40.0),
       padding: EdgeInsets.symmetric(horizontal: ResponsiveUtils.width(16)),
       decoration: BoxDecoration(
-        color: AppColors.secondBackground,
+        color: ThemeUtils.getSecondBackground(context),
         borderRadius: BorderRadius.circular(ResponsiveUtils.radius(100)),
       ),
       child: Center(

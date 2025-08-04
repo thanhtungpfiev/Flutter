@@ -104,4 +104,9 @@ class UIConstants {
   static const String orderItems = 'Order Items';
   static const String viewAll = 'View All';
   static const String shippingDetails = 'Shipping details';
+
+  // Theme related
+  static const String theme = 'Theme';
+  static const String lightMode = 'Light Mode';
+  static const String darkMode = 'Dark Mode';
 }

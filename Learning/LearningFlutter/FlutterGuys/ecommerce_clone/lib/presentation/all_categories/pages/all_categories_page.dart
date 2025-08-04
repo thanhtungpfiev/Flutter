@@ -2,8 +2,8 @@ import 'package:ecommerce_clone/common/blocs/categories/categories_display_cubit
 import 'package:ecommerce_clone/common/blocs/categories/categories_display_state.dart';
 import 'package:ecommerce_clone/common/helper/images/image_display_helper.dart';
 import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
+import 'package:ecommerce_clone/common/utils/theme_utils.dart';
 import 'package:ecommerce_clone/common/widgets/app_bar/basic_app_bar.dart';
-import 'package:ecommerce_clone/core/configs/theme/app_colors.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/presentation/category_products/pages/category_products_page.dart';
 import 'package:ecommerce_clone/service_locator.dart';
@@ -67,7 +67,7 @@ class AllCategoriesPage extends StatelessWidget {
                   height: ResponsiveUtils.height(70),
                   padding: EdgeInsets.all(ResponsiveUtils.width(12)),
                   decoration: BoxDecoration(
-                    color: AppColors.secondBackground,
+                    color: ThemeUtils.getSecondBackground(context),
                     borderRadius: BorderRadius.circular(
                       ResponsiveUtils.radius(8),
                     ),

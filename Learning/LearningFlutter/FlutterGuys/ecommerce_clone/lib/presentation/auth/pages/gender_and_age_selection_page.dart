@@ -3,6 +3,7 @@ import 'package:ecommerce_clone/common/blocs/button/basic_reactive_button_state.
 import 'package:ecommerce_clone/common/enums/gender.dart';
 import 'package:ecommerce_clone/common/helper/bottom_sheet/app_bottom_sheet.dart';
 import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
+import 'package:ecommerce_clone/common/utils/theme_utils.dart';
 import 'package:ecommerce_clone/common/widgets/app_bar/basic_app_bar.dart';
 import 'package:ecommerce_clone/common/widgets/button/basic_reactive_button.dart';
 import 'package:ecommerce_clone/core/configs/theme/app_colors.dart';
@@ -119,7 +120,7 @@ class GenderAndAgeSelectionPage extends StatelessWidget {
             color:
                 context.read<GenderSelectionCubit>().selectedGender == gender
                     ? AppColors.primary
-                    : AppColors.secondBackground,
+                    : ThemeUtils.getSecondBackground(context),
             borderRadius: BorderRadius.circular(ResponsiveUtils.radius(30)),
           ),
           child: Center(
@@ -170,7 +171,7 @@ class GenderAndAgeSelectionPage extends StatelessWidget {
               horizontal: ResponsiveUtils.width(16),
             ),
             decoration: BoxDecoration(
-              color: AppColors.secondBackground,
+              color: ThemeUtils.getSecondBackground(context),
               borderRadius: BorderRadius.circular(ResponsiveUtils.radius(30)),
             ),
             child: Row(
@@ -186,7 +187,7 @@ class GenderAndAgeSelectionPage extends StatelessWidget {
   Widget _finishButton(BuildContext context) {
     return Container(
       height: ResponsiveUtils.height(60),
-      color: AppColors.secondBackground,
+      color: ThemeUtils.getSecondBackground(context),
       padding: EdgeInsets.symmetric(horizontal: ResponsiveUtils.width(16)),
       child: Center(
         child: Builder(

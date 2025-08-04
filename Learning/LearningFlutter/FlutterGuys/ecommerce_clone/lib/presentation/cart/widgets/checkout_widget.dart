@@ -1,7 +1,7 @@
 import 'package:ecommerce_clone/common/helper/cart/cart_helper.dart';
 import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
+import 'package:ecommerce_clone/common/utils/theme_utils.dart';
 import 'package:ecommerce_clone/common/widgets/button/basic_app_button.dart';
-import 'package:ecommerce_clone/core/configs/theme/app_colors.dart';
 import 'package:ecommerce_clone/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/domain/order/entities/product_ordered_entity.dart';
@@ -18,7 +18,7 @@ class CheckoutWidget extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(ResponsiveUtils.width(16)),
       height: ResponsiveUtils.screenHeight / 3.5,
-      color: AppColors.background,
+      color: ThemeUtils.getSecondBackground(context),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

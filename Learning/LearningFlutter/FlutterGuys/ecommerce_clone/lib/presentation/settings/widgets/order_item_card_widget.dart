@@ -1,5 +1,5 @@
 import 'package:ecommerce_clone/common/helper/images/image_display_helper.dart';
-import 'package:ecommerce_clone/core/configs/theme/app_colors.dart';
+import 'package:ecommerce_clone/common/utils/theme_utils.dart';
 import 'package:ecommerce_clone/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/domain/order/entities/product_ordered_entity.dart';
@@ -18,7 +18,7 @@ class OrderItemCardWidget extends StatelessWidget {
               : ResponsiveUtils.height(100),
       padding: EdgeInsets.all(ResponsiveUtils.width(8)),
       decoration: BoxDecoration(
-        color: AppColors.secondBackground,
+        color: ThemeUtils.getSecondBackground(context),
         borderRadius: BorderRadius.circular(ResponsiveUtils.radius(8)),
       ),
       child: Row(
@@ -91,7 +91,9 @@ class OrderItemCardWidget extends StatelessWidget {
                                 TextSpan(
                                   text: productOrderedEntity.productSize,
                                   style: TextStyle(
-                                    color: Colors.white,
+                                    color: ThemeUtils.getThemeIconColor(
+                                      context,
+                                    ),
                                     fontWeight: FontWeight.w500,
                                     fontSize:
                                         ResponsiveUtils.isDesktop
@@ -119,7 +121,9 @@ class OrderItemCardWidget extends StatelessWidget {
                                 TextSpan(
                                   text: productOrderedEntity.productColor,
                                   style: TextStyle(
-                                    color: Colors.white,
+                                    color: ThemeUtils.getThemeIconColor(
+                                      context,
+                                    ),
                                     fontWeight: FontWeight.w500,
                                     fontSize:
                                         ResponsiveUtils.isDesktop

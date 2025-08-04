@@ -1,4 +1,5 @@
 import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
+import 'package:ecommerce_clone/common/utils/theme_utils.dart';
 import 'package:ecommerce_clone/common/widgets/button/basic_app_button.dart';
 import 'package:ecommerce_clone/core/configs/assets/app_images.dart';
 import 'package:ecommerce_clone/core/configs/theme/app_colors.dart';
@@ -30,7 +31,7 @@ class OrderPlacedPage extends StatelessWidget {
                 horizontal: ResponsiveUtils.width(16),
               ),
               decoration: BoxDecoration(
-                color: AppColors.secondBackground,
+                color: ThemeUtils.getSecondBackground(context),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(ResponsiveUtils.radius(20)),
                   topRight: Radius.circular(ResponsiveUtils.radius(20)),

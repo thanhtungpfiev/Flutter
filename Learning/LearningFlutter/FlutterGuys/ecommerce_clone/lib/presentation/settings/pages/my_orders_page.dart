@@ -1,6 +1,6 @@
 import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
+import 'package:ecommerce_clone/common/utils/theme_utils.dart';
 import 'package:ecommerce_clone/common/widgets/app_bar/basic_app_bar.dart';
-import 'package:ecommerce_clone/core/configs/theme/app_colors.dart';
 import 'package:ecommerce_clone/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/domain/order/entities/order_entity.dart';
@@ -56,7 +56,7 @@ class MyOrdersPage extends StatelessWidget {
               horizontal: ResponsiveUtils.width(16),
             ),
             decoration: BoxDecoration(
-              color: AppColors.secondBackground,
+              color: ThemeUtils.getSecondBackground(context),
               borderRadius: BorderRadius.circular(ResponsiveUtils.radius(10)),
             ),
             child: Row(

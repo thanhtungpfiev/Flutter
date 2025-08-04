@@ -7,8 +7,10 @@ import 'package:ecommerce_clone/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/domain/auth/usecases/signout_usecase.dart';
 import 'package:ecommerce_clone/presentation/auth/pages/signin_page.dart';
+import 'package:ecommerce_clone/presentation/settings/bloc/theme_cubit.dart';
 import 'package:ecommerce_clone/presentation/settings/widgets/my_favorites_tile_widget.dart';
 import 'package:ecommerce_clone/presentation/settings/widgets/my_orders_tile_widget.dart';
+import 'package:ecommerce_clone/presentation/settings/widgets/theme_tile_widget.dart';
 import 'package:ecommerce_clone/service_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -27,6 +29,11 @@ class SettingsPage extends StatelessWidget {
               padding: EdgeInsets.all(ResponsiveUtils.width(16)),
               child: Column(
                 children: [
+                  BlocProvider.value(
+                    value: sl<ThemeCubit>(),
+                    child: ThemeTileWidget(),
+                  ),
+                  SizedBox(height: ResponsiveUtils.height(15)),
                   MyFavoritesTileWidget(),
                   SizedBox(height: ResponsiveUtils.height(15)),
                   MyOrdersTileWidget(),
