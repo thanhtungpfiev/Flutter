@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:ecommerce_clone/core/constants/auth_constants.dart';
@@ -164,29 +166,53 @@ class AuthFirebaseService implements AuthService {
   @override
   Future<Either> getUser() async {
     try {
-      // Use Future.microtask for thread safety
-      var currentUser = await Future.microtask(
-        () => FirebaseAuth.instance.currentUser,
-      );
-      if (currentUser == null) {
-        return const Left(MessageConstants.noUserSignedIn);
+      // Ensure Firebase is initialized and add retry logic
+      int retryCount = 0;
+      const maxRetries = 3;
+
+      while (retryCount < maxRetries) {
+        try {
+          // Use Future.microtask for thread safety with additional delay
+          await Future.delayed(Duration(milliseconds: 100 * (retryCount + 1)));
+
+          var currentUser = await Future.microtask(
+            () => FirebaseAuth.instance.currentUser,
+          );
+
+          if (currentUser == null) {
+            return const Left(MessageConstants.noUserSignedIn);
+          }
+
+          var userData = await Future.microtask(() async {
+            return await FirebaseFirestore.instance
+                .collection(AuthConstants.users)
+                .doc(currentUser.uid)
+                .get()
+                .timeout(
+                  const Duration(seconds: 10),
+                  onTimeout: () => throw TimeoutException('Firestore timeout'),
+                )
+                .then((value) => value.data());
+          });
+
+          if (userData == null) {
+            return const Left(MessageConstants.userDataNotFound);
+          }
+
+          return Right(userData);
+        } catch (e) {
+          retryCount++;
+          if (retryCount >= maxRetries) {
+            rethrow;
+          }
+          // Wait before retry
+          await Future.delayed(Duration(milliseconds: 500 * retryCount));
+        }
       }
 
-      var userData = await Future.microtask(() async {
-        return await FirebaseFirestore.instance
-            .collection(AuthConstants.users)
-            .doc(currentUser.uid)
-            .get()
-            .then((value) => value.data());
-      });
-
-      if (userData == null) {
-        return const Left(MessageConstants.userDataNotFound);
-      }
-
-      return Right(userData);
-    } catch (e) {
       return const Left(MessageConstants.pleaseRetry);
+    } catch (e) {
+      return Left('${MessageConstants.pleaseRetry}: ${e.toString()}');
     }
   }
 }

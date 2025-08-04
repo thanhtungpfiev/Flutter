@@ -30,7 +30,14 @@ class HeaderWidget extends StatelessWidget {
         child: BlocBuilder<UserInfoDisplayCubit, UserInfoDisplayState>(
           builder: (context, state) {
             if (state is UserInfoDisplayLoadingState) {
-              return const Center(child: CircularProgressIndicator());
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  _defaultProfileImage(context),
+                  _defaultGender(),
+                  _card(context),
+                ],
+              );
             }
             if (state is UserInfoDisplayLoadSuccessState) {
               return Row(
@@ -42,7 +49,15 @@ class HeaderWidget extends StatelessWidget {
                 ],
               );
             }
-            return Container();
+            // Error state or unknown state - show default header
+            return Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                _defaultProfileImage(context),
+                _defaultGender(),
+                _card(context),
+              ],
+            );
           },
         ),
       ),
@@ -106,6 +121,43 @@ class HeaderWidget extends StatelessWidget {
           shape: BoxShape.circle,
         ),
         child: SvgPicture.asset(AppVectors.bag, fit: BoxFit.none),
+      ),
+    );
+  }
+
+  Widget _defaultProfileImage(BuildContext context) {
+    return GestureDetector(
+      onTap: () async {
+        AppNavigator.push(context, const SettingsPage());
+      },
+      child: Container(
+        height: ResponsiveUtils.height(40.0),
+        width: ResponsiveUtils.width(40.0),
+        decoration: const BoxDecoration(
+          image: DecorationImage(image: AssetImage(AppImages.profile)),
+          color: Colors.red,
+          shape: BoxShape.circle,
+        ),
+      ),
+    );
+  }
+
+  Widget _defaultGender() {
+    return Container(
+      height: ResponsiveUtils.height(40.0),
+      padding: EdgeInsets.symmetric(horizontal: ResponsiveUtils.width(16)),
+      decoration: BoxDecoration(
+        color: AppColors.secondBackground,
+        borderRadius: BorderRadius.circular(ResponsiveUtils.radius(100)),
+      ),
+      child: Center(
+        child: Text(
+          Gender.menDisplayName, // Default to men
+          style: TextStyle(
+            fontWeight: FontWeight.w500,
+            fontSize: ResponsiveUtils.fontSize(16),
+          ),
+        ),
       ),
     );
   }
