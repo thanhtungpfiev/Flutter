@@ -2,6 +2,8 @@ import 'package:ecommerce_clone/common/blocs/button/basic_reactive_button_cubit.
 import 'package:ecommerce_clone/common/blocs/categories/categories_display_cubit.dart';
 import 'package:ecommerce_clone/common/blocs/products/products_display_cubit.dart';
 import 'package:ecommerce_clone/core/constants/service_constants.dart';
+import 'package:ecommerce_clone/core/services/app_logging_service.dart';
+import 'package:ecommerce_clone/core/services/logging_service.dart';
 import 'package:ecommerce_clone/data/auth/data_sources/auth_firebase_service.dart';
 import 'package:ecommerce_clone/data/auth/data_sources/auth_service.dart';
 import 'package:ecommerce_clone/data/auth/repositories/auth_repository_impl.dart';
@@ -54,7 +56,12 @@ import 'package:get_it/get_it.dart';
 final sl = GetIt.instance;
 
 Future<void> initializeDependencies() async {
+  // Initialize logging first
+  await AppLoggingService.initialize();
+
   // Services
+  // Logging
+  sl.registerSingleton<LoggingService>(AppLoggingService.instance);
   // Auth
   sl.registerSingleton<AuthService>(AuthFirebaseService());
   // Category

@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:desktop_window/desktop_window.dart';
 import 'package:ecommerce_clone/core/configs/theme/app_theme.dart';
 import 'package:ecommerce_clone/core/constants/ui_constants.dart';
+import 'package:ecommerce_clone/core/utils/app_logger.dart';
 import 'package:ecommerce_clone/firebase_options.dart';
 import 'package:ecommerce_clone/presentation/splash/bloc/splash_cubit.dart';
 import 'package:ecommerce_clone/presentation/splash/pages/splash_page.dart';
@@ -16,13 +17,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  // Initialize logging first, before any other operations
+  await initializeDependencies();
+
   // Initialize Firebase with proper error handling for desktop
   try {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
+    AppLogger.i('Firebase initialized successfully');
   } catch (e) {
-    print('Firebase initialization error: $e');
+    AppLogger.e('Firebase initialization error', e);
   }
 
   // Set fullscreen immediately for desktop platforms
@@ -30,13 +35,13 @@ void main() async {
     try {
       await DesktopWindow.setFullScreen(true);
       SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
-      print('Fullscreen mode enabled');
+      AppLogger.i('Fullscreen mode enabled');
     } catch (e) {
-      print('Error setting fullscreen: $e');
+      AppLogger.e('Error setting fullscreen', e);
     }
   }
 
-  await initializeDependencies();
+  AppLogger.i('Dependencies initialized, starting app');
   runApp(const MyApp());
 }
 
