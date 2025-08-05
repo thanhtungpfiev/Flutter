@@ -1,3 +1,4 @@
+import 'package:ecommerce_clone_getx/app/presentation/auth/pages/signin_page.dart';
 import 'package:ecommerce_clone_getx/app/presentation/splash/binding/splash_binding.dart';
 import 'package:ecommerce_clone_getx/app/presentation/splash/pages/splash_page.dart';
 import 'package:get/get.dart';
@@ -15,5 +16,6 @@ class AppPages {
       page: () => const SplashPage(),
       binding: SplashBinding(),
     ),
+    GetPage(name: Routes.signin, page: () => const SigninPage()),
   ];
 }

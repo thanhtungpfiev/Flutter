@@ -4,11 +4,13 @@ part of 'app_pages.dart';
 abstract class Routes {
   Routes._();
   static const splash = _Paths.splash;
+  static const signin = _Paths.signin;
   static const home = _Paths.home;
 }
 
 abstract class _Paths {
   _Paths._();
   static const home = '/home';
+  static const signin = '/signin';
   static const splash = '/splash';
 }
