@@ -1,4 +1,4 @@
-import 'package:ecommerce_clone/common/utils/theme_utils.dart';
+import 'package:ecommerce_clone/common/helper/theme/theme_helper.dart';
 import 'package:ecommerce_clone/core/configs/theme/app_colors.dart';
 import 'package:ecommerce_clone/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
@@ -19,7 +19,7 @@ class ProductQuantityWidget extends StatelessWidget {
       margin: EdgeInsets.symmetric(horizontal: ResponsiveUtils.width(16)),
       padding: EdgeInsets.only(left: ResponsiveUtils.width(12)),
       decoration: BoxDecoration(
-        color: ThemeUtils.getSecondBackground(context),
+        color: ThemeHelper.getSecondBackground(context),
         borderRadius: BorderRadius.circular(ResponsiveUtils.radius(100)),
       ),
       child: Row(

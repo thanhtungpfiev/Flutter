@@ -1,4 +1,4 @@
-import 'package:ecommerce_clone/common/utils/theme_utils.dart';
+import 'package:ecommerce_clone/common/helper/theme/theme_helper.dart';
 import 'package:ecommerce_clone/core/configs/theme/app_colors.dart';
 import 'package:ecommerce_clone/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
@@ -75,7 +75,7 @@ class ProductColorsWidget extends StatelessWidget {
                             color:
                                 state == index
                                     ? AppColors.primary
-                                    : ThemeUtils.getSecondBackground(context),
+                                    : ThemeHelper.getSecondBackground(context),
                             borderRadius: BorderRadius.circular(
                               ResponsiveUtils.radius(50),
                             ),

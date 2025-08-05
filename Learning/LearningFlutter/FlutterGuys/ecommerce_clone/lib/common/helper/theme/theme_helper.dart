@@ -2,7 +2,7 @@ import 'package:ecommerce_clone/common/helper/theme/is_dark_mode.dart';
 import 'package:ecommerce_clone/core/configs/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
-class ThemeUtils {
+class ThemeHelper {
   /// Returns true if the current theme is dark mode (uses existing extension)
   static bool isDark(BuildContext context) {
     return context.isDarkMode;

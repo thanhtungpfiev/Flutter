@@ -1,5 +1,5 @@
 import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
-import 'package:ecommerce_clone/common/utils/theme_utils.dart';
+import 'package:ecommerce_clone/common/helper/theme/theme_helper.dart';
 import 'package:ecommerce_clone/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/presentation/settings/pages/my_favorites_page.dart';
@@ -18,7 +18,7 @@ class MyFavoritesTileWidget extends StatelessWidget {
         height: ResponsiveUtils.height(70),
         padding: EdgeInsets.symmetric(horizontal: ResponsiveUtils.width(16)),
         decoration: BoxDecoration(
-          color: ThemeUtils.getSecondBackground(context),
+          color: ThemeHelper.getSecondBackground(context),
           borderRadius: BorderRadius.circular(ResponsiveUtils.radius(10)),
         ),
         child: Row(

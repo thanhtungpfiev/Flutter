@@ -1,6 +1,6 @@
 import 'package:ecommerce_clone/common/helper/images/image_display_helper.dart';
 import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
-import 'package:ecommerce_clone/common/utils/theme_utils.dart';
+import 'package:ecommerce_clone/common/helper/theme/theme_helper.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone/domain/product/entities/product_entity.dart';
 import 'package:ecommerce_clone/presentation/product_detail/pages/product_detail_page.dart';
@@ -22,7 +22,7 @@ class ProductCardWidget extends StatelessWidget {
       child: Container(
         width: ResponsiveUtils.width(180),
         decoration: BoxDecoration(
-          color: ThemeUtils.getSecondBackground(context),
+          color: ThemeHelper.getSecondBackground(context),
           borderRadius: BorderRadius.circular(ResponsiveUtils.radius(8)),
         ),
         child: Column(

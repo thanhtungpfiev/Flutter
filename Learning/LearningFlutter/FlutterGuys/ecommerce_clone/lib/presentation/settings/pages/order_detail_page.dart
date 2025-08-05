@@ -1,5 +1,5 @@
 import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
-import 'package:ecommerce_clone/common/utils/theme_utils.dart';
+import 'package:ecommerce_clone/common/helper/theme/theme_helper.dart';
 import 'package:ecommerce_clone/common/widgets/app_bar/basic_app_bar.dart';
 import 'package:ecommerce_clone/core/configs/theme/app_colors.dart';
 import 'package:ecommerce_clone/core/constants/ui_constants.dart';
@@ -52,7 +52,7 @@ class OrderDetailPage extends StatelessWidget {
                     color:
                         orderEntity.orderStatus[index].done
                             ? AppColors.primary
-                            : ThemeUtils.getThemeIconColor(context),
+                            : ThemeHelper.getThemeIconColor(context),
                     shape: BoxShape.circle,
                   ),
                   child:
@@ -123,7 +123,7 @@ class OrderDetailPage extends StatelessWidget {
               horizontal: ResponsiveUtils.width(16),
             ),
             decoration: BoxDecoration(
-              color: ThemeUtils.getSecondBackground(context),
+              color: ThemeHelper.getSecondBackground(context),
               borderRadius: BorderRadius.circular(ResponsiveUtils.radius(10)),
             ),
             child: Row(
@@ -174,7 +174,7 @@ class OrderDetailPage extends StatelessWidget {
           width: double.infinity,
           padding: EdgeInsets.all(ResponsiveUtils.width(16)),
           decoration: BoxDecoration(
-            color: ThemeUtils.getSecondBackground(context),
+            color: ThemeHelper.getSecondBackground(context),
             borderRadius: BorderRadius.circular(ResponsiveUtils.radius(10)),
           ),
           child: Text(orderEntity.shippingAddress),

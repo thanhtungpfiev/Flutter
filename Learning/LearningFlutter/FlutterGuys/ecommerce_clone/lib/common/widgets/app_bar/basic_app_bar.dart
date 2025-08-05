@@ -1,5 +1,5 @@
 import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
-import 'package:ecommerce_clone/common/utils/theme_utils.dart';
+import 'package:ecommerce_clone/common/helper/theme/theme_helper.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
 import 'package:flutter/material.dart';
 
@@ -41,13 +41,13 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
                   height: ResponsiveUtils.height(50),
                   width: ResponsiveUtils.width(50),
                   decoration: BoxDecoration(
-                    color: ThemeUtils.getSecondBackground(context),
+                    color: ThemeHelper.getSecondBackground(context),
                     shape: BoxShape.circle,
                   ),
                   child: Icon(
                     Icons.arrow_back_ios_new,
                     size: ResponsiveUtils.fontSize(16),
-                    color: ThemeUtils.getThemeIconColor(context),
+                    color: ThemeHelper.getThemeIconColor(context),
                   ),
                 ),
               ),

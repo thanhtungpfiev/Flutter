@@ -1,6 +1,6 @@
 import 'package:ecommerce_clone/common/enums/gender.dart';
 import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
-import 'package:ecommerce_clone/common/utils/theme_utils.dart';
+import 'package:ecommerce_clone/common/helper/theme/theme_helper.dart';
 import 'package:ecommerce_clone/core/configs/assets/app_images.dart';
 import 'package:ecommerce_clone/core/configs/assets/app_vectors.dart';
 import 'package:ecommerce_clone/core/configs/theme/app_colors.dart';
@@ -92,7 +92,7 @@ class HeaderWidget extends StatelessWidget {
       height: ResponsiveUtils.height(40.0),
       padding: EdgeInsets.symmetric(horizontal: ResponsiveUtils.width(16)),
       decoration: BoxDecoration(
-        color: ThemeUtils.getSecondBackground(context),
+        color: ThemeHelper.getSecondBackground(context),
         borderRadius: BorderRadius.circular(ResponsiveUtils.radius(100)),
       ),
       child: Center(
@@ -148,7 +148,7 @@ class HeaderWidget extends StatelessWidget {
       height: ResponsiveUtils.height(40.0),
       padding: EdgeInsets.symmetric(horizontal: ResponsiveUtils.width(16)),
       decoration: BoxDecoration(
-        color: ThemeUtils.getSecondBackground(context),
+        color: ThemeHelper.getSecondBackground(context),
         borderRadius: BorderRadius.circular(ResponsiveUtils.radius(100)),
       ),
       child: Center(

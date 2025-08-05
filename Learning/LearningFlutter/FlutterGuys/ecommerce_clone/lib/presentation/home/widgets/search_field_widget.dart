@@ -1,5 +1,5 @@
 import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
-import 'package:ecommerce_clone/common/utils/theme_utils.dart';
+import 'package:ecommerce_clone/common/helper/theme/theme_helper.dart';
 import 'package:ecommerce_clone/core/configs/assets/app_vectors.dart';
 import 'package:ecommerce_clone/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
@@ -34,7 +34,7 @@ class SearchFieldWidget extends StatelessWidget {
             AppVectors.search,
             fit: BoxFit.none,
             colorFilter: ColorFilter.mode(
-              ThemeUtils.getIconColor(context),
+              ThemeHelper.getIconColor(context),
               BlendMode.srcIn,
             ),
           ),
