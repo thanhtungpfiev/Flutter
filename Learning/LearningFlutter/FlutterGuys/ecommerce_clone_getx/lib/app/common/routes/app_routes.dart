@@ -5,12 +5,20 @@ abstract class Routes {
   Routes._();
   static const splash = _Paths.splash;
   static const signin = _Paths.signin;
+  static const enterPassword = _Paths.enterPassword;
+  static const forgotPassword = _Paths.forgotPassword;
+  static const passwordResetEmail = _Paths.passwordResetEmail;
   static const home = _Paths.home;
+  static const settings = _Paths.settings;
 }
 
 abstract class _Paths {
   _Paths._();
-  static const home = '/home';
-  static const signin = '/signin';
   static const splash = '/splash';
+  static const signin = '/signin';
+  static const enterPassword = '/enter-password';
+  static const forgotPassword = '/forgot-password';
+  static const passwordResetEmail = '/password-reset-email';
+  static const home = '/home';
+  static const settings = '/settings';
 }

@@ -19,6 +19,7 @@ class UIConstants {
   static const String tellUsAboutYourself = 'Tell us about yourself';
   static const String howOldAreYou = 'How old are you?';
   static const String finish = 'Finish';
+  static const String userSigninReqModel = 'userSigninReqModel';
 
   // Password reset email
   static const String passwordResetEmailSent =

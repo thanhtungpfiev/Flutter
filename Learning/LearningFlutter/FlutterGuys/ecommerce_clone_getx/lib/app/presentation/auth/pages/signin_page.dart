@@ -1,9 +1,12 @@
+import 'package:ecommerce_clone_getx/app/common/routes/app_pages.dart';
 import 'package:ecommerce_clone_getx/app/common/widgets/app_bar/basic_app_bar.dart';
 import 'package:ecommerce_clone_getx/app/common/widgets/button/basic_app_button.dart';
 import 'package:ecommerce_clone_getx/app/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone_getx/app/core/utils/responsive_utils.dart';
+import 'package:ecommerce_clone_getx/app/data/auth/models/user_signin_req_model.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SigninPage extends StatefulWidget {
   const SigninPage({super.key});
@@ -94,12 +97,14 @@ class _SigninPageState extends State<SigninPage> {
       onPressed: () {
         if (_formKey.currentState!.validate()) {
           // Form is valid, proceed with navigation
-          // AppNavigator.push(
-          //   context,
-          //   EnterPasswordPage(
-          //     signinReqModel: UserSigninReqModel(email: _emailController.text),
-          //   ),
-          // );
+          Get.toNamed(
+            Routes.enterPassword,
+            arguments: {
+              UIConstants.userSigninReqModel: UserSigninReqModel(
+                email: _emailController.text,
+              ),
+            },
+          );
         }
       },
       title: UIConstants.continueText,

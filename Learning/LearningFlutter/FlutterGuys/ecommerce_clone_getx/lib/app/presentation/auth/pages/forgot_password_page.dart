@@ -1,123 +1,111 @@
-// import 'package:ecommerce_clone/common/blocs/button/basic_reactive_button_cubit.dart';
-// import 'package:ecommerce_clone/common/blocs/button/basic_reactive_button_state.dart';
-// import 'package:ecommerce_clone/common/helper/navigator/app_navigator.dart';
-// import 'package:ecommerce_clone/common/widgets/app_bar/basic_app_bar.dart';
-// import 'package:ecommerce_clone/common/widgets/button/basic_reactive_button.dart';
-// import 'package:ecommerce_clone/core/constants/ui_constants.dart';
-// import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
-// import 'package:ecommerce_clone/domain/auth/usecases/send_password_reset_email_usecase.dart';
-// import 'package:ecommerce_clone/presentation/auth/pages/password_reset_email_page.dart';
-// import 'package:ecommerce_clone/service_locator.dart';
-// import 'package:flutter/material.dart';
-// import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ecommerce_clone_getx/app/common/controllers/button/basic_reactive_button_controller.dart';
+import 'package:ecommerce_clone_getx/app/common/widgets/app_bar/basic_app_bar.dart';
+import 'package:ecommerce_clone_getx/app/common/widgets/button/basic_reactive_button.dart';
+import 'package:ecommerce_clone_getx/app/core/constants/ui_constants.dart';
+import 'package:ecommerce_clone_getx/app/core/utils/responsive_utils.dart';
+import 'package:ecommerce_clone_getx/app/domain/auth/usecases/send_password_reset_email_usecase.dart';
+import 'package:ecommerce_clone_getx/service_locator.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-// class ForgotPasswordPage extends StatelessWidget {
-//   ForgotPasswordPage({super.key});
+import '../../../common/routes/app_pages.dart';
 
-//   final TextEditingController _emailController = TextEditingController();
-//   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+class ForgotPasswordPage extends StatelessWidget {
+  ForgotPasswordPage({super.key});
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: const BasicAppBar(),
-//       body: Center(
-//         child: BlocProvider(
-//           create: (context) => BasicReactiveButtonCubit(),
-//           child:
-//               BlocListener<BasicReactiveButtonCubit, BasicReactiveButtonState>(
-//                 listener: (context, state) {
-//                   if (state is BasicReactiveButtonLoadErrorState) {
-//                     var snackbar = SnackBar(
-//                       content: Text(state.errorMessage),
-//                       behavior: SnackBarBehavior.floating,
-//                     );
-//                     ScaffoldMessenger.of(context).showSnackBar(snackbar);
-//                   }
+  final TextEditingController _emailController = TextEditingController();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-//                   if (state is BasicReactiveButtonLoadSuccessState) {
-//                     AppNavigator.push(context, const PasswordResetEmailPage());
-//                   }
-//                 },
-//                 child: SingleChildScrollView(
-//                   padding: EdgeInsets.symmetric(
-//                     horizontal: ResponsiveUtils.width(40),
-//                     vertical: ResponsiveUtils.height(16),
-//                   ),
-//                   child: SizedBox(
-//                     width: ResponsiveUtils.maxFormWidth,
-//                     child: Form(
-//                       key: _formKey,
-//                       child: Column(
-//                         crossAxisAlignment: CrossAxisAlignment.start,
-//                         children: [
-//                           _signinText(),
-//                           SizedBox(height: ResponsiveUtils.height(20)),
-//                           _emailField(),
-//                           SizedBox(height: ResponsiveUtils.width(20)),
-//                           _continueButton(),
-//                         ],
-//                       ),
-//                     ),
-//                   ),
-//                 ),
-//               ),
-//         ),
-//       ),
-//     );
-//   }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: const BasicAppBar(),
+      body: Center(
+        child: SingleChildScrollView(
+          padding: EdgeInsets.symmetric(
+            horizontal: ResponsiveUtils.width(40),
+            vertical: ResponsiveUtils.height(16),
+          ),
+          child: SizedBox(
+            width: ResponsiveUtils.maxFormWidth,
+            child: Form(
+              key: _formKey,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  _signinText(),
+                  SizedBox(height: ResponsiveUtils.height(20)),
+                  _emailField(),
+                  SizedBox(height: ResponsiveUtils.width(20)),
+                  _continueButton(context),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 
-//   Widget _signinText() {
-//     return Text(
-//       UIConstants.forgotPassword,
-//       style: TextStyle(
-//         fontSize: ResponsiveUtils.fontSize(32),
-//         fontWeight: FontWeight.bold,
-//       ),
-//     );
-//   }
+  Widget _signinText() {
+    return Text(
+      UIConstants.forgotPassword,
+      style: TextStyle(
+        fontSize: ResponsiveUtils.fontSize(32),
+        fontWeight: FontWeight.bold,
+      ),
+    );
+  }
 
-//   Widget _emailField() {
-//     return TextFormField(
-//       controller: _emailController,
-//       style: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
-//       decoration: InputDecoration(
-//         hintText: UIConstants.enterEmail,
-//         hintStyle: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
-//         contentPadding: EdgeInsets.symmetric(
-//           vertical: ResponsiveUtils.height(16),
-//           horizontal: ResponsiveUtils.width(16),
-//         ),
-//       ),
-//       keyboardType: TextInputType.emailAddress,
-//       validator: (value) {
-//         if (value == null || value.isEmpty) {
-//           return UIConstants.pleaseEnterEmail;
-//         }
-//         if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
-//           return UIConstants.pleaseEnterValidEmail;
-//         }
-//         return null;
-//       },
-//     );
-//   }
+  Widget _emailField() {
+    return TextFormField(
+      controller: _emailController,
+      style: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
+      decoration: InputDecoration(
+        hintText: UIConstants.enterEmail,
+        hintStyle: TextStyle(fontSize: ResponsiveUtils.fontSize(16)),
+        contentPadding: EdgeInsets.symmetric(
+          vertical: ResponsiveUtils.height(16),
+          horizontal: ResponsiveUtils.width(16),
+        ),
+      ),
+      keyboardType: TextInputType.emailAddress,
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return UIConstants.pleaseEnterEmail;
+        }
+        if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
+          return UIConstants.pleaseEnterValidEmail;
+        }
+        return null;
+      },
+    );
+  }
 
-//   Widget _continueButton() {
-//     return Builder(
-//       builder: (context) {
-//         return BasicReactiveButton(
-//           onPressed: () {
-//             if (_formKey.currentState!.validate()) {
-//               // Form is valid, proceed with the logic
-//               context.read<BasicReactiveButtonCubit>().execute(
-//                 usecase: sl<SendPasswordResetEmailUseCase>(),
-//                 params: _emailController.text,
-//               );
-//             }
-//           },
-//           title: UIConstants.continueText,
-//         );
-//       },
-//     );
-//   }
-// }
+  Widget _continueButton(BuildContext context) {
+    final controller = BasicReactiveButtonController();
+    return BasicReactiveButton(
+      controller: controller,
+      onPressed: () async {
+        if (_formKey.currentState!.validate()) {
+          await controller.execute(
+            usecase: sl<SendPasswordResetEmailUseCase>(),
+            params: _emailController.text,
+          );
+          if (controller.errorMessage != null) {
+            var snackbar = SnackBar(
+              content: Text(controller.errorMessage!),
+              behavior: SnackBarBehavior.floating,
+            );
+            if (context.mounted) {
+              ScaffoldMessenger.of(context).showSnackBar(snackbar);
+            }
+          } else {
+            Get.toNamed(Routes.passwordResetEmail);
+          }
+        }
+      },
+      title: UIConstants.continueText,
+    );
+  }
+}

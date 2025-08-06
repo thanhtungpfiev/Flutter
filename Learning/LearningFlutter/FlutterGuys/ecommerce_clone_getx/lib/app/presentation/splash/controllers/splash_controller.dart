@@ -19,7 +19,7 @@ class SplashController extends GetxController {
       await Future.delayed(const Duration(seconds: 2));
       var isLoggedIn = await isLoggedInUseCase.call();
       if (isLoggedIn) {
-        // Navigate to home or main screen
+        Get.offNamed(Routes.home);
       } else {
         Get.offNamed(Routes.signin);
       }
