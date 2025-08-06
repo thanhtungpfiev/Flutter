@@ -28,7 +28,8 @@ class AppLoggingService implements LoggingService {
       // Create custom logger with both console and file output
       _logger = Logger(
         printer: PrettyPrinter(
-          methodCount: 2,
+          methodCount: 3,
+          stackTraceBeginIndex: 2,
           errorMethodCount: 8,
           lineLength: 120,
           colors: true,
@@ -47,7 +48,8 @@ class AppLoggingService implements LoggingService {
       // Fallback to console-only logging if file initialization fails
       _logger = Logger(
         printer: PrettyPrinter(
-          methodCount: 2,
+          methodCount: 3,
+          stackTraceBeginIndex: 2,
           errorMethodCount: 8,
           lineLength: 120,
           colors: true,
