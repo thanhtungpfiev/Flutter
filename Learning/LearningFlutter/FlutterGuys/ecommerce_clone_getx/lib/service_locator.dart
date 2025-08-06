@@ -4,11 +4,13 @@ import 'package:ecommerce_clone_getx/app/data/auth/data_sources/auth_firebase_se
 import 'package:ecommerce_clone_getx/app/data/auth/data_sources/auth_service.dart';
 import 'package:ecommerce_clone_getx/app/data/auth/repositories/auth_repository_impl.dart';
 import 'package:ecommerce_clone_getx/app/domain/auth/repositories/auth_repository.dart';
+import 'package:ecommerce_clone_getx/app/domain/auth/usecases/get_ages_usecase.dart';
 import 'package:ecommerce_clone_getx/app/domain/auth/usecases/get_user_usecase.dart';
 import 'package:ecommerce_clone_getx/app/domain/auth/usecases/is_logged_in_usecase.dart';
 import 'package:ecommerce_clone_getx/app/domain/auth/usecases/send_password_reset_email_usecase.dart';
 import 'package:ecommerce_clone_getx/app/domain/auth/usecases/signin_usecase.dart';
 import 'package:ecommerce_clone_getx/app/domain/auth/usecases/signout_usecase.dart';
+import 'package:ecommerce_clone_getx/app/domain/auth/usecases/signup_usecase.dart';
 import 'package:ecommerce_clone_getx/app/presentation/settings/controllers/theme_controller.dart';
 import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
@@ -49,9 +51,9 @@ Future<void> initializeDependencies() async {
 
   // Usecases
   // Auth
-  // sl.registerSingleton<SignupUseCase>(SignupUseCase(authRepository: sl()));
+  sl.registerSingleton<SignupUseCase>(SignupUseCase(authRepository: sl()));
   sl.registerSingleton<SigninUseCase>(SigninUseCase(authRepository: sl()));
-  // sl.registerSingleton<GetAgesUseCase>(GetAgesUseCase(authRepository: sl()));
+  sl.registerSingleton<GetAgesUseCase>(GetAgesUseCase(authRepository: sl()));
   sl.registerSingleton<SendPasswordResetEmailUseCase>(
     SendPasswordResetEmailUseCase(authRepository: sl()),
   );

@@ -8,58 +8,59 @@ import 'package:ecommerce_clone_getx/app/core/constants/message_constants.dart';
 import 'package:ecommerce_clone_getx/app/core/constants/prefs_constants.dart';
 import 'package:ecommerce_clone_getx/app/data/auth/data_sources/auth_service.dart';
 import 'package:ecommerce_clone_getx/app/data/auth/models/user_signin_req_model.dart';
+import 'package:ecommerce_clone_getx/app/data/auth/models/user_signup_req_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthFirebaseService implements AuthService {
-  // @override
-  // Future<Either> signup(UserSignupReqModel user) async {
-  //   try {
-  //     // Use Future.microtask to ensure proper thread handling
-  //     var returnedData = await Future.microtask(() async {
-  //       return await FirebaseAuth.instance.createUserWithEmailAndPassword(
-  //         email: user.email!,
-  //         password: user.password!,
-  //       );
-  //     });
+  @override
+  Future<Either> signup(UserSignupReqModel user) async {
+    try {
+      // Use Future.microtask to ensure proper thread handling
+      var returnedData = await Future.microtask(() async {
+        return await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: user.email!,
+          password: user.password!,
+        );
+      });
 
-  //     await Future.microtask(() async {
-  //       await FirebaseFirestore.instance
-  //           .collection(AuthConstants.users)
-  //           .doc(returnedData.user!.uid)
-  //           .set({
-  //             AuthConstants.firstName: user.firstName,
-  //             AuthConstants.lastName: user.lastName,
-  //             AuthConstants.email: user.email,
-  //             AuthConstants.gender: user.gender,
-  //             AuthConstants.age: user.age,
-  //             AuthConstants.image: returnedData.user!.photoURL,
-  //             AuthConstants.userId: returnedData.user!.uid,
-  //           });
-  //     });
+      await Future.microtask(() async {
+        await FirebaseFirestore.instance
+            .collection(AuthConstants.users)
+            .doc(returnedData.user!.uid)
+            .set({
+              AuthConstants.firstName: user.firstName,
+              AuthConstants.lastName: user.lastName,
+              AuthConstants.email: user.email,
+              AuthConstants.gender: user.gender,
+              AuthConstants.age: user.age,
+              AuthConstants.image: returnedData.user!.photoURL,
+              AuthConstants.userId: returnedData.user!.uid,
+            });
+      });
 
-  //     // Save authentication state to SharedPreferences
-  //     final prefs = await SharedPreferences.getInstance();
-  //     await prefs.setBool(PrefsConstants.isLoggedIn, true);
-  //     await prefs.setString(PrefsConstants.userEmail, user.email!);
+      // Save authentication state to SharedPreferences
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setBool(PrefsConstants.isLoggedIn, true);
+      await prefs.setString(PrefsConstants.userEmail, user.email!);
 
-  //     return const Right(MessageConstants.signUpSuccess);
-  //   } on FirebaseAuthException catch (e) {
-  //     String message = '';
+      return const Right(MessageConstants.signUpSuccess);
+    } on FirebaseAuthException catch (e) {
+      String message = '';
 
-  //     if (e.code == FirebaseErrorConstants.weakPassword) {
-  //       message = MessageConstants.weakPassword;
-  //     } else if (e.code == FirebaseErrorConstants.emailAlreadyInUse) {
-  //       message = MessageConstants.emailAlreadyInUse;
-  //     } else {
-  //       message = e.message ?? MessageConstants.unknownError;
-  //     }
-  //     return Left(message);
-  //   } catch (e) {
-  //     // Handle any other unexpected errors
-  //     return Left('${MessageConstants.unknownError}: ${e.toString()}');
-  //   }
-  // }
+      if (e.code == FirebaseErrorConstants.weakPassword) {
+        message = MessageConstants.weakPassword;
+      } else if (e.code == FirebaseErrorConstants.emailAlreadyInUse) {
+        message = MessageConstants.emailAlreadyInUse;
+      } else {
+        message = e.message ?? MessageConstants.unknownError;
+      }
+      return Left(message);
+    } catch (e) {
+      // Handle any other unexpected errors
+      return Left('${MessageConstants.unknownError}: ${e.toString()}');
+    }
+  }
 
   @override
   Future<Either> signin(UserSigninReqModel user) async {
@@ -96,17 +97,17 @@ class AuthFirebaseService implements AuthService {
     }
   }
 
-  // @override
-  // Future<Either> getAges() async {
-  //   try {
-  //     var returnedData = await FirebaseFirestore.instance
-  //         .collection(AuthConstants.ages)
-  //         .get();
-  //     return Right(returnedData.docs);
-  //   } catch (e) {
-  //     return const Left(MessageConstants.pleaseRetry);
-  //   }
-  // }
+  @override
+  Future<Either> getAges() async {
+    try {
+      var returnedData = await FirebaseFirestore.instance
+          .collection(AuthConstants.ages)
+          .get();
+      return Right(returnedData.docs);
+    } catch (e) {
+      return const Left(MessageConstants.pleaseRetry);
+    }
+  }
 
   @override
   Future<Either> sendPasswordResetEmail(String email) async {

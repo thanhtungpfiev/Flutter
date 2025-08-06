@@ -8,6 +8,8 @@ abstract class Routes {
   static const enterPassword = _Paths.enterPassword;
   static const forgotPassword = _Paths.forgotPassword;
   static const passwordResetEmail = _Paths.passwordResetEmail;
+  static const genderAndAgeSelection = _Paths.genderAndAgeSelection;
+  static const signup = _Paths.signup;
   static const home = _Paths.home;
   static const settings = _Paths.settings;
 }
@@ -19,6 +21,8 @@ abstract class _Paths {
   static const enterPassword = '/enter-password';
   static const forgotPassword = '/forgot-password';
   static const passwordResetEmail = '/password-reset-email';
+  static const signup = '/signup';
+  static const genderAndAgeSelection = '/gender-and-age-selection';
   static const home = '/home';
   static const settings = '/settings';
 }

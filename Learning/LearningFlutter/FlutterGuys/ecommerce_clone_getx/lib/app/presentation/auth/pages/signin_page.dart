@@ -135,7 +135,7 @@ class _SigninPageState extends State<SigninPage> {
             text: UIConstants.createOne,
             recognizer: TapGestureRecognizer()
               ..onTap = () {
-                // AppNavigator.push(context, SignupPage());
+                Get.toNamed(Routes.signup);
               },
             style: const TextStyle(fontWeight: FontWeight.bold),
           ),

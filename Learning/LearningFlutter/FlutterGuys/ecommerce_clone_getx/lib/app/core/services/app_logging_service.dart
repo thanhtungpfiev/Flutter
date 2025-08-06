@@ -29,6 +29,7 @@ class AppLoggingService implements LoggingService {
       _logger = Logger(
         printer: PrettyPrinter(
           methodCount: 3,
+          stackTraceBeginIndex: 2,
           errorMethodCount: 8,
           lineLength: 120,
           colors: true,
@@ -48,6 +49,7 @@ class AppLoggingService implements LoggingService {
       _logger = Logger(
         printer: PrettyPrinter(
           methodCount: 3,
+          stackTraceBeginIndex: 2,
           errorMethodCount: 8,
           lineLength: 120,
           colors: true,

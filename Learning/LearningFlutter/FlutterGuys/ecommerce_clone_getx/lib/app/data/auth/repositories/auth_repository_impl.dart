@@ -3,6 +3,7 @@ import 'package:ecommerce_clone_getx/app/data/auth/data_sources/auth_service.dar
 import 'package:ecommerce_clone_getx/app/data/auth/extensions/user_model_extension.dart';
 import 'package:ecommerce_clone_getx/app/data/auth/models/user_model.dart';
 import 'package:ecommerce_clone_getx/app/data/auth/models/user_signin_req_model.dart';
+import 'package:ecommerce_clone_getx/app/data/auth/models/user_signup_req_model.dart';
 import 'package:ecommerce_clone_getx/app/domain/auth/repositories/auth_repository.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
@@ -10,20 +11,20 @@ class AuthRepositoryImpl implements AuthRepository {
 
   AuthRepositoryImpl({required this.authService});
 
-  // @override
-  // Future<Either> signup(UserSignupReqModel user) async {
-  //   return await authService.signup(user);
-  // }
+  @override
+  Future<Either> signup(UserSignupReqModel user) async {
+    return await authService.signup(user);
+  }
 
   @override
   Future<Either> signin(UserSigninReqModel user) async {
     return await authService.signin(user);
   }
 
-  // @override
-  // Future<Either> getAges() async {
-  //   return await authService.getAges();
-  // }
+  @override
+  Future<Either> getAges() async {
+    return await authService.getAges();
+  }
 
   @override
   Future<Either> sendPasswordResetEmail(String email) async {

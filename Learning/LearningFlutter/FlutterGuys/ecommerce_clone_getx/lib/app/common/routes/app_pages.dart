@@ -1,7 +1,10 @@
+import 'package:ecommerce_clone_getx/app/presentation/auth/binding/auth_binding.dart';
 import 'package:ecommerce_clone_getx/app/presentation/auth/pages/enter_password_page.dart';
 import 'package:ecommerce_clone_getx/app/presentation/auth/pages/forgot_password_page.dart';
+import 'package:ecommerce_clone_getx/app/presentation/auth/pages/gender_and_age_selection_page.dart';
 import 'package:ecommerce_clone_getx/app/presentation/auth/pages/password_reset_email_page.dart';
 import 'package:ecommerce_clone_getx/app/presentation/auth/pages/signin_page.dart';
+import 'package:ecommerce_clone_getx/app/presentation/auth/pages/signup_page.dart';
 import 'package:ecommerce_clone_getx/app/presentation/home/binding/home_binding.dart';
 import 'package:ecommerce_clone_getx/app/presentation/home/pages/home_page.dart';
 import 'package:ecommerce_clone_getx/app/presentation/settings/pages/settings_page.dart';
@@ -28,6 +31,12 @@ class AppPages {
     GetPage(
       name: Routes.passwordResetEmail,
       page: () => const PasswordResetEmailPage(),
+    ),
+    GetPage(name: Routes.signup, page: () => const SignupPage()),
+    GetPage(
+      name: Routes.genderAndAgeSelection,
+      page: () => const GenderAndAgeSelectionPage(),
+      binding: AuthBinding(),
     ),
     GetPage(
       name: Routes.home,
