@@ -24,14 +24,7 @@ class HeaderWidget extends GetView<UserInfoDisplayController> {
       ),
       child: Obx(() {
         if (controller.isLoading.value) {
-          return Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              _defaultProfileImage(context),
-              _defaultGender(context),
-              _card(context),
-            ],
-          );
+          return const Center(child: CircularProgressIndicator());
         }
         if (controller.user.value != null) {
           return Row(

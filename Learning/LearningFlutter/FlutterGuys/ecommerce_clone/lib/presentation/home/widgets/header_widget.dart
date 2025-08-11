@@ -31,14 +31,7 @@ class HeaderWidget extends StatelessWidget {
         child: BlocBuilder<UserInfoDisplayCubit, UserInfoDisplayState>(
           builder: (context, state) {
             if (state is UserInfoDisplayLoadingState) {
-              return Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  _defaultProfileImage(context),
-                  _defaultGender(context),
-                  _card(context),
-                ],
-              );
+              return const Center(child: CircularProgressIndicator());
             }
             if (state is UserInfoDisplayLoadSuccessState) {
               return Row(
