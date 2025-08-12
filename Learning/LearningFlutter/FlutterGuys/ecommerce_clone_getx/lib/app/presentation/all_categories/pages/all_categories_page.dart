@@ -1,7 +1,9 @@
 import 'package:ecommerce_clone_getx/app/common/controllers/categories/categories_display_controller.dart';
 import 'package:ecommerce_clone_getx/app/common/helper/images/image_display_helper.dart';
 import 'package:ecommerce_clone_getx/app/common/helper/theme/theme_helper.dart';
+import 'package:ecommerce_clone_getx/app/common/routes/app_pages.dart';
 import 'package:ecommerce_clone_getx/app/common/widgets/app_bar/basic_app_bar.dart';
+import 'package:ecommerce_clone_getx/app/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone_getx/app/core/utils/responsive_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -47,11 +49,12 @@ class AllCategoriesPage extends GetView<CategoriesDisplayController> {
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-              // AppNavigator.push(
-              //   context,
-              //   CategoryProductsPage(categoryEntity: state.categories[index]),
-              // );
-              // Get.toNamed(Routes.categoryProducts, arguments: controller.categories[index].categoryId);
+              Get.toNamed(
+                Routes.categoryProducts,
+                arguments: {
+                  UIConstants.categoryEntity: controller.categories[index],
+                },
+              );
             },
             child: Container(
               height: ResponsiveUtils.height(70),

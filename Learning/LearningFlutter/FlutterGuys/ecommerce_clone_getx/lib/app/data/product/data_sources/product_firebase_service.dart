@@ -34,18 +34,18 @@ class ProductFirebaseService extends ProductService {
     }
   }
 
-  // @override
-  // Future<Either> getProductsByCategoryId(String categoryId) async {
-  //   try {
-  //     var returnedData = await FirebaseFirestore.instance
-  //         .collection(ProductConstants.products)
-  //         .where(ProductConstants.categoryId, isEqualTo: categoryId)
-  //         .get();
-  //     return Right(returnedData.docs.map((e) => e.data()).toList());
-  //   } catch (e) {
-  //     return const Left(MessageConstants.pleaseRetry);
-  //   }
-  // }
+  @override
+  Future<Either> getProductsByCategoryId(String categoryId) async {
+    try {
+      var returnedData = await FirebaseFirestore.instance
+          .collection(ProductConstants.products)
+          .where(ProductConstants.categoryId, isEqualTo: categoryId)
+          .get();
+      return Right(returnedData.docs.map((e) => e.data()).toList());
+    } catch (e) {
+      return const Left(MessageConstants.pleaseRetry);
+    }
+  }
 
   @override
   Future<Either> getProductsByTitle(String title) async {

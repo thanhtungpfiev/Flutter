@@ -87,6 +87,9 @@ class UIConstants {
   static const String color = 'Color';
   static const String productEntity = 'productEntity';
 
+  // Category Products page
+  static const String categoryEntity = 'categoryEntity';
+
   // App
   static const String appTitle = 'Ecommerce Clone';
 

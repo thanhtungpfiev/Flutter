@@ -6,6 +6,8 @@ import 'package:ecommerce_clone_getx/app/presentation/auth/pages/gender_and_age_
 import 'package:ecommerce_clone_getx/app/presentation/auth/pages/password_reset_email_page.dart';
 import 'package:ecommerce_clone_getx/app/presentation/auth/pages/signin_page.dart';
 import 'package:ecommerce_clone_getx/app/presentation/auth/pages/signup_page.dart';
+import 'package:ecommerce_clone_getx/app/presentation/category_products/binding/category_products_binding.dart';
+import 'package:ecommerce_clone_getx/app/presentation/category_products/pages/category_products_page.dart';
 import 'package:ecommerce_clone_getx/app/presentation/home/binding/home_binding.dart';
 import 'package:ecommerce_clone_getx/app/presentation/home/pages/home_page.dart';
 import 'package:ecommerce_clone_getx/app/presentation/product_detail/binding/product_detail_binding.dart';
@@ -60,5 +62,10 @@ class AppPages {
       binding: ProductDetailBinding(),
     ),
     GetPage(name: Routes.allCategories, page: () => const AllCategoriesPage()),
+    GetPage(
+      name: Routes.categoryProducts,
+      page: () => const CategoryProductsPage(),
+      binding: CategoryProductsBinding(),
+    ),
   ];
 }
