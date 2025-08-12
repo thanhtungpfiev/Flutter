@@ -9,22 +9,22 @@ class ProductRepositoryImpl extends ProductRepository {
 
   final ProductService productService;
 
-  // @override
-  // Future<Either> getTopSelling() async {
-  //   var returnedData = await productService.getTopSelling();
-  //   return returnedData.fold(
-  //     (error) {
-  //       return Left(error);
-  //     },
-  //     (data) {
-  //       return Right(
-  //         List.from(
-  //           data,
-  //         ).map((e) => ProductModel.fromMap(e).toEntity()).toList(),
-  //       );
-  //     },
-  //   );
-  // }
+  @override
+  Future<Either> getTopSelling() async {
+    var returnedData = await productService.getTopSelling();
+    return returnedData.fold(
+      (error) {
+        return Left(error);
+      },
+      (data) {
+        return Right(
+          List.from(
+            data,
+          ).map((e) => ProductModel.fromMap(e).toEntity()).toList(),
+        );
+      },
+    );
+  }
 
   // @override
   // Future<Either> getNewIn() async {

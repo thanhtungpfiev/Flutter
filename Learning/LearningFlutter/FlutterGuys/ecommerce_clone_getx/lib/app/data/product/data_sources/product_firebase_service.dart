@@ -5,18 +5,18 @@ import 'package:ecommerce_clone_getx/app/core/constants/product_constants.dart';
 import 'package:ecommerce_clone_getx/app/data/product/data_sources/product_service.dart';
 
 class ProductFirebaseService extends ProductService {
-  // @override
-  // Future<Either> getTopSelling() async {
-  //   try {
-  //     var returnedData = await FirebaseFirestore.instance
-  //         .collection(ProductConstants.products)
-  //         .where(ProductConstants.salesNumber, isGreaterThanOrEqualTo: 20)
-  //         .get();
-  //     return Right(returnedData.docs.map((e) => e.data()).toList());
-  //   } catch (e) {
-  //     return const Left(MessageConstants.pleaseRetry);
-  //   }
-  // }
+  @override
+  Future<Either> getTopSelling() async {
+    try {
+      var returnedData = await FirebaseFirestore.instance
+          .collection(ProductConstants.products)
+          .where(ProductConstants.salesNumber, isGreaterThanOrEqualTo: 20)
+          .get();
+      return Right(returnedData.docs.map((e) => e.data()).toList());
+    } catch (e) {
+      return const Left(MessageConstants.pleaseRetry);
+    }
+  }
 
   // @override
   // Future<Either> getNewIn() async {

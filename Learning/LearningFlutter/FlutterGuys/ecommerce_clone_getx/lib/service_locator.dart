@@ -21,6 +21,7 @@ import 'package:ecommerce_clone_getx/app/domain/category/repositories/category_r
 import 'package:ecommerce_clone_getx/app/domain/category/usecases/get_categories_usecase.dart';
 import 'package:ecommerce_clone_getx/app/domain/product/repositories/product_repository.dart';
 import 'package:ecommerce_clone_getx/app/domain/product/usecases/get_products_by_title_usecase.dart';
+import 'package:ecommerce_clone_getx/app/domain/product/usecases/get_top_selling_usecase.dart';
 import 'package:ecommerce_clone_getx/app/presentation/settings/controllers/theme_controller.dart';
 import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
@@ -76,10 +77,10 @@ Future<void> initializeDependencies() async {
   sl.registerSingleton<GetCategoriesUseCase>(
     GetCategoriesUseCase(categoryRepository: sl()),
   );
-  // // Product
-  // sl.registerSingleton<GetTopSellingUseCase>(
-  //   GetTopSellingUseCase(productRepository: sl()),
-  // );
+  // Product
+  sl.registerSingleton<GetTopSellingUseCase>(
+    GetTopSellingUseCase(productRepository: sl()),
+  );
   // sl.registerSingleton<GetNewInUseCase>(
   //   GetNewInUseCase(productRepository: sl()),
   // );
