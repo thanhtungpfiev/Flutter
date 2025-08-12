@@ -7,6 +7,7 @@ import 'package:ecommerce_clone_getx/app/presentation/auth/pages/signin_page.dar
 import 'package:ecommerce_clone_getx/app/presentation/auth/pages/signup_page.dart';
 import 'package:ecommerce_clone_getx/app/presentation/home/binding/home_binding.dart';
 import 'package:ecommerce_clone_getx/app/presentation/home/pages/home_page.dart';
+import 'package:ecommerce_clone_getx/app/presentation/product_detail/binding/product_detail_binding.dart';
 import 'package:ecommerce_clone_getx/app/presentation/product_detail/pages/product_detail_page.dart';
 import 'package:ecommerce_clone_getx/app/presentation/search/binding/search_binding.dart';
 import 'package:ecommerce_clone_getx/app/presentation/search/pages/search_page.dart';
@@ -52,6 +53,10 @@ class AppPages {
       page: () => const SearchPage(),
       binding: SearchBinding(),
     ),
-    GetPage(name: Routes.productDetail, page: () => const ProductDetailPage()),
+    GetPage(
+      name: Routes.productDetail,
+      page: () => const ProductDetailPage(),
+      binding: ProductDetailBinding(),
+    ),
   ];
 }
