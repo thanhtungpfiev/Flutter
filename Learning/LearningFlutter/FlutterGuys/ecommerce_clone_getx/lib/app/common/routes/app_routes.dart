@@ -12,6 +12,8 @@ abstract class Routes {
   static const signup = _Paths.signup;
   static const home = _Paths.home;
   static const settings = _Paths.settings;
+  static const search = _Paths.search;
+  static const productDetail = _Paths.productDetail;
 }
 
 abstract class _Paths {
@@ -25,4 +27,6 @@ abstract class _Paths {
   static const genderAndAgeSelection = '/gender-and-age-selection';
   static const home = '/home';
   static const settings = '/settings';
+  static const search = '/search';
+  static const productDetail = '/product-detail';
 }

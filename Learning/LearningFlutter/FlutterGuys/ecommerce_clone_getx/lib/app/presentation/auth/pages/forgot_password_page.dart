@@ -92,7 +92,7 @@ class ForgotPasswordPage extends StatelessWidget {
             usecase: sl<SendPasswordResetEmailUseCase>(),
             params: _emailController.text,
           );
-          if (controller.errorMessage != null) {
+          if (controller.state.value == BasicReactiveButtonState.error) {
             var snackbar = SnackBar(
               content: Text(controller.errorMessage!),
               behavior: SnackBarBehavior.floating,

@@ -7,8 +7,9 @@ import 'package:ecommerce_clone/presentation/product_detail/pages/product_detail
 import 'package:flutter/material.dart';
 
 class ProductCardWidget extends StatelessWidget {
-  final ProductEntity productEntity;
   const ProductCardWidget({required this.productEntity, super.key});
+
+  final ProductEntity productEntity;
 
   @override
   Widget build(BuildContext context) {

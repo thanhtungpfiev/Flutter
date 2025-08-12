@@ -85,6 +85,7 @@ class UIConstants {
   static const String quantity = 'Quantity';
   static const String size = 'Size';
   static const String color = 'Color';
+  static const String productEntity = 'productEntity';
 
   // App
   static const String appTitle = 'Ecommerce Clone';

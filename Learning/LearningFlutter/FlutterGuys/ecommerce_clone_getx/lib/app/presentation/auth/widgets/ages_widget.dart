@@ -14,13 +14,13 @@ class AgesWidget extends StatelessWidget {
     return SizedBox(
       height: ResponsiveUtils.screenHeight / 2.7,
       child: Obx(() {
-        if (agesDisplayController.isLoading.value) {
+        if (agesDisplayController.state.value == AgesDisplayState.loading) {
           return Container(
             alignment: Alignment.center,
             child: const CircularProgressIndicator(),
           );
         }
-        if (agesDisplayController.errorMessage.value != null) {
+        if (agesDisplayController.state.value == AgesDisplayState.error) {
           return Container(
             alignment: Alignment.center,
             child: Text(agesDisplayController.errorMessage.value!),

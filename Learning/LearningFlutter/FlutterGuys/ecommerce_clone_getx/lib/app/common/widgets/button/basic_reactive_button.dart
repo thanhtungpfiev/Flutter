@@ -24,7 +24,7 @@ class BasicReactiveButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Obx(() {
-      if (controller.isLoading.value) {
+      if (controller.state.value == BasicReactiveButtonState.loading) {
         return _loading();
       }
       return _initial();

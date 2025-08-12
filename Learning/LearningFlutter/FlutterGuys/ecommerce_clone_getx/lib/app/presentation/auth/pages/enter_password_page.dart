@@ -127,7 +127,7 @@ class _EnterPasswordPageState extends State<EnterPasswordPage> {
             usecase: sl<SigninUseCase>(),
             params: signinReqModel,
           );
-          if (controller.errorMessage != null) {
+          if (controller.state.value == BasicReactiveButtonState.error) {
             var snackbar = SnackBar(
               content: Text(controller.errorMessage!),
               backgroundColor: Colors.red,

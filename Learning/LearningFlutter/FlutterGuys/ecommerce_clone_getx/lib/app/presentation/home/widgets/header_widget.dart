@@ -23,10 +23,10 @@ class HeaderWidget extends GetView<UserInfoDisplayController> {
         left: ResponsiveUtils.width(16),
       ),
       child: Obx(() {
-        if (controller.isLoading.value) {
+        if (controller.state.value == UserInfoDisplayState.loading) {
           return const Center(child: CircularProgressIndicator());
         }
-        if (controller.user.value != null) {
+        if (controller.state.value == UserInfoDisplayState.success) {
           return Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

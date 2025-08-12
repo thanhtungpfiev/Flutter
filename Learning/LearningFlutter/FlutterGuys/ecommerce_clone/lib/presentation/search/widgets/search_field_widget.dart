@@ -1,11 +1,7 @@
 import 'package:ecommerce_clone/common/blocs/products/products_display_cubit.dart';
-import 'package:ecommerce_clone/common/helper/theme/theme_helper.dart';
-import 'package:ecommerce_clone/core/configs/assets/app_vectors.dart';
-import 'package:ecommerce_clone/core/constants/ui_constants.dart';
-import 'package:ecommerce_clone/core/utils/responsive_utils.dart';
+import 'package:ecommerce_clone/common/widgets/search_field/common_search_field_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class SearchFieldWidget extends StatelessWidget {
   SearchFieldWidget({super.key});
@@ -14,38 +10,16 @@ class SearchFieldWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: ResponsiveUtils.width(8)),
-      child: TextField(
-        controller: textEditingController,
-        onChanged: (value) {
-          if (value.isEmpty) {
-            context.read<ProductsDisplayCubit>().displayInitial();
-          } else {
-            context.read<ProductsDisplayCubit>().displayProducts(params: value);
-          }
-        },
-        decoration: InputDecoration(
-          contentPadding: EdgeInsets.all(ResponsiveUtils.width(12)),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(ResponsiveUtils.radius(50)),
-            borderSide: BorderSide.none,
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(ResponsiveUtils.radius(50)),
-            borderSide: BorderSide.none,
-          ),
-          prefixIcon: SvgPicture.asset(
-            AppVectors.search,
-            fit: BoxFit.none,
-            colorFilter: ColorFilter.mode(
-              ThemeHelper.getIconColor(context),
-              BlendMode.srcIn,
-            ),
-          ),
-          hintText: UIConstants.search,
-        ),
-      ),
+    return CommonSearchFieldWidget(
+      controller: textEditingController,
+      horizontalPadding: 8,
+      onChanged: (value) {
+        if (value.isEmpty) {
+          context.read<ProductsDisplayCubit>().displayInitial();
+        } else {
+          context.read<ProductsDisplayCubit>().displayProducts(params: value);
+        }
+      },
     );
   }
 }
