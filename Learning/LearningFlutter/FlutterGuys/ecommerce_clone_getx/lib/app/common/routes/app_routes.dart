@@ -14,6 +14,7 @@ abstract class Routes {
   static const settings = _Paths.settings;
   static const search = _Paths.search;
   static const productDetail = _Paths.productDetail;
+  static const allCategories = _Paths.allCategories;
 }
 
 abstract class _Paths {
@@ -29,4 +30,5 @@ abstract class _Paths {
   static const settings = '/settings';
   static const search = '/search';
   static const productDetail = '/product-detail';
+  static const allCategories = '/all-categories';
 }

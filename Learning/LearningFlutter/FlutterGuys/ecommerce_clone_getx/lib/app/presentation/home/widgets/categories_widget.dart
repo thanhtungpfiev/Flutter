@@ -2,10 +2,11 @@ import 'dart:ui';
 
 import 'package:ecommerce_clone_getx/app/common/controllers/categories/categories_display_controller.dart';
 import 'package:ecommerce_clone_getx/app/common/helper/images/image_display_helper.dart';
+import 'package:ecommerce_clone_getx/app/common/routes/app_pages.dart';
 import 'package:ecommerce_clone_getx/app/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone_getx/app/domain/category/entities/category_entity.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/get.dart';
 
 class CategoriesWidget extends GetView<CategoriesDisplayController> {
   const CategoriesWidget({super.key});
@@ -44,7 +45,7 @@ class CategoriesWidget extends GetView<CategoriesDisplayController> {
           ),
           GestureDetector(
             onTap: () {
-              // AppNavigator.push(context, const AllCategoriesPage());
+              Get.toNamed(Routes.allCategories);
             },
             child: Text(
               'See All',

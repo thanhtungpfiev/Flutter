@@ -1,3 +1,4 @@
+import 'package:ecommerce_clone_getx/app/presentation/all_categories/pages/all_categories_page.dart';
 import 'package:ecommerce_clone_getx/app/presentation/auth/binding/auth_binding.dart';
 import 'package:ecommerce_clone_getx/app/presentation/auth/pages/enter_password_page.dart';
 import 'package:ecommerce_clone_getx/app/presentation/auth/pages/forgot_password_page.dart';
@@ -58,5 +59,6 @@ class AppPages {
       page: () => const ProductDetailPage(),
       binding: ProductDetailBinding(),
     ),
+    GetPage(name: Routes.allCategories, page: () => const AllCategoriesPage()),
   ];
 }
