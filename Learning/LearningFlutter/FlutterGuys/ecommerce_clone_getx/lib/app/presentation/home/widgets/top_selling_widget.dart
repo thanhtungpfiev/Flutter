@@ -26,7 +26,7 @@ class TopSellingWidget extends GetView<ProductsDisplayController> {
       }
 
       if (controller.state.value == ProductDisplayState.loading) {
-        return const Center(child: CircularProgressIndicator());
+        return const CircularProgressIndicator();
       }
       if (controller.state.value == ProductDisplayState.success) {
         return Column(
