@@ -2,14 +2,14 @@ import 'package:ecommerce_clone_getx/app/domain/category/entities/category_entit
 import 'package:ecommerce_clone_getx/app/domain/category/usecases/get_categories_usecase.dart';
 import 'package:get/get.dart';
 
-enum CategoriesDisplayStatus { initial, loading, success, error }
+enum CategoriesDisplayState { initial, loading, success, error }
 
 class CategoriesDisplayController extends GetxController {
   CategoriesDisplayController({required this.getCategoriesUseCase});
 
   final GetCategoriesUseCase getCategoriesUseCase;
 
-  var status = CategoriesDisplayStatus.initial.obs;
+  var state = CategoriesDisplayState.initial.obs;
   var categories = <CategoryEntity>[].obs;
 
   @override
@@ -19,14 +19,14 @@ class CategoriesDisplayController extends GetxController {
   }
 
   void displayCategories() async {
-    status.value = CategoriesDisplayStatus.loading;
+    state.value = CategoriesDisplayState.loading;
     var returnedData = await getCategoriesUseCase.call();
     returnedData.fold(
       (error) {
-        status.value = CategoriesDisplayStatus.error;
+        state.value = CategoriesDisplayState.error;
       },
       (data) {
-        status.value = CategoriesDisplayStatus.success;
+        state.value = CategoriesDisplayState.success;
         categories.assignAll(data);
       },
     );

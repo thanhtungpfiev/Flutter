@@ -14,10 +14,10 @@ class CategoriesWidget extends GetView<CategoriesDisplayController> {
   @override
   Widget build(BuildContext context) {
     return Obx(() {
-      if (controller.status.value == CategoriesDisplayStatus.loading) {
+      if (controller.state.value == CategoriesDisplayState.loading) {
         return const CircularProgressIndicator();
       }
-      if (controller.status.value == CategoriesDisplayStatus.success) {
+      if (controller.state.value == CategoriesDisplayState.success) {
         return Column(
           children: [
             _seaAll(context),

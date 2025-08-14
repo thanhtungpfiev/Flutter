@@ -40,10 +40,10 @@ class AllCategoriesPage extends GetView<CategoriesDisplayController> {
   }
 
   Widget _categories() {
-    if (controller.status.value == CategoriesDisplayStatus.loading) {
+    if (controller.state.value == CategoriesDisplayState.loading) {
       return const CircularProgressIndicator();
     }
-    if (controller.status.value == CategoriesDisplayStatus.success) {
+    if (controller.state.value == CategoriesDisplayState.success) {
       return ListView.separated(
         shrinkWrap: true,
         itemBuilder: (context, index) {
