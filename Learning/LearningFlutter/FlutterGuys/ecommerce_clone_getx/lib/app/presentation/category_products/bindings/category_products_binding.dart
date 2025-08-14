@@ -7,8 +7,10 @@ import 'package:get/get.dart';
 class CategoryProductsBinding extends Bindings {
   @override
   void dependencies() {
-    Get.put<ProductsDisplayController>(
-      ProductsDisplayController(useCase: sl<GetProductsByCategoryIdUseCase>()),
+    Get.lazyPut<ProductsDisplayController>(
+      () => ProductsDisplayController(
+        useCase: sl<GetProductsByCategoryIdUseCase>(),
+      ),
       tag: ServiceConstants.getProductsByCategoryIdUseCaseInstance,
     );
   }

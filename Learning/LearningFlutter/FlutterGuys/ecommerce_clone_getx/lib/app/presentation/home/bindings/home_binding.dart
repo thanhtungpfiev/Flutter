@@ -12,20 +12,20 @@ import 'package:get/get.dart';
 class HomeBinding extends Bindings {
   @override
   void dependencies() {
-    Get.put<UserInfoDisplayController>(
-      UserInfoDisplayController(getUserUseCase: sl<GetUserUseCase>()),
+    Get.lazyPut<UserInfoDisplayController>(
+      () => UserInfoDisplayController(getUserUseCase: sl<GetUserUseCase>()),
     );
-    Get.put<CategoriesDisplayController>(
-      CategoriesDisplayController(
+    Get.lazyPut<CategoriesDisplayController>(
+      () => CategoriesDisplayController(
         getCategoriesUseCase: sl<GetCategoriesUseCase>(),
       ),
     );
-    Get.put<ProductsDisplayController>(
-      ProductsDisplayController(useCase: sl<GetTopSellingUseCase>()),
+    Get.lazyPut<ProductsDisplayController>(
+      () => ProductsDisplayController(useCase: sl<GetTopSellingUseCase>()),
       tag: ServiceConstants.getTopSellingUseCaseInstance,
     );
-    Get.put<ProductsDisplayController>(
-      ProductsDisplayController(useCase: sl<GetNewInUseCase>()),
+    Get.lazyPut<ProductsDisplayController>(
+      () => ProductsDisplayController(useCase: sl<GetNewInUseCase>()),
       tag: ServiceConstants.getNewInUseCaseInstance,
     );
   }

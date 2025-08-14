@@ -7,8 +7,10 @@ import 'package:get/get.dart';
 class AuthBinding extends Bindings {
   @override
   void dependencies() {
-    Get.put<GenderSelectionController>(GenderSelectionController());
-    Get.put<AgesDisplayController>(AgesDisplayController(getAgesUseCase: sl()));
-    Get.put<AgeSelectionController>(AgeSelectionController());
+    Get.lazyPut<GenderSelectionController>(() => GenderSelectionController());
+    Get.lazyPut<AgesDisplayController>(
+      () => AgesDisplayController(getAgesUseCase: sl()),
+    );
+    Get.lazyPut<AgeSelectionController>(() => AgeSelectionController());
   }
 }

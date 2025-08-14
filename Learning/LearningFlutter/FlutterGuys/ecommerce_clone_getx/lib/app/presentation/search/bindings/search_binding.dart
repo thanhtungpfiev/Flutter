@@ -7,8 +7,8 @@ import 'package:get/get.dart';
 class SearchBinding extends Bindings {
   @override
   void dependencies() {
-    Get.put<ProductsDisplayController>(
-      ProductsDisplayController(useCase: sl<GetProductsByTitleUseCase>()),
+    Get.lazyPut<ProductsDisplayController>(
+      () => ProductsDisplayController(useCase: sl<GetProductsByTitleUseCase>()),
       tag: ServiceConstants.getProductsByTitleUseCaseInstance,
     );
   }
