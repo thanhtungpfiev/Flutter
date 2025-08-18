@@ -4,6 +4,7 @@ import 'package:ecommerce_clone_getx/app/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone_getx/app/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone_getx/app/domain/order/entities/product_ordered_entity.dart';
 import 'package:ecommerce_clone_getx/app/presentation/cart/controllers/cart_products_display_controller.dart';
+import 'package:ecommerce_clone_getx/app/presentation/cart/widgets/checkout_widget.dart';
 import 'package:ecommerce_clone_getx/app/presentation/cart/widgets/product_ordered_card_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -29,7 +30,7 @@ class CartPage extends GetView<CartProductsDisplayController> {
                 _products(controller.products),
                 Align(
                   alignment: Alignment.bottomCenter,
-                  // child: CheckoutWidget(products: controller.products),
+                  child: CheckoutWidget(products: controller.products),
                 ),
               ],
             );
