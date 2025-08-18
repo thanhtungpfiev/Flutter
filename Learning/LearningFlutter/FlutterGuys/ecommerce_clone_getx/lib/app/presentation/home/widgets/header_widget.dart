@@ -95,7 +95,7 @@ class HeaderWidget extends GetView<UserInfoDisplayController> {
   Widget _card(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // AppNavigator.push(context, const CartPage());
+        Get.toNamed(Routes.cart);
       },
       child: Container(
         height: ResponsiveUtils.height(40.0),

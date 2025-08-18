@@ -4,6 +4,7 @@ import 'package:ecommerce_clone_getx/app/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone_getx/app/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone_getx/app/domain/order/entities/product_ordered_entity.dart';
 import 'package:ecommerce_clone_getx/app/presentation/cart/controllers/cart_products_display_controller.dart';
+import 'package:ecommerce_clone_getx/app/presentation/cart/widgets/product_ordered_card_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -47,7 +48,7 @@ class CartPage extends GetView<CartProductsDisplayController> {
     return ListView.separated(
       padding: EdgeInsets.all(ResponsiveUtils.width(16)),
       itemBuilder: (context, index) {
-        // return ProductOrderedCardWidget(productOrderedEntity: products[index]);
+        return ProductOrderedCardWidget(productOrderedEntity: products[index]);
       },
       separatorBuilder: (context, index) =>
           SizedBox(height: ResponsiveUtils.height(10)),
