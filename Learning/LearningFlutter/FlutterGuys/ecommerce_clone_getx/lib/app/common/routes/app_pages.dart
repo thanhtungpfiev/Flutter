@@ -8,6 +8,8 @@ import 'package:ecommerce_clone_getx/app/presentation/auth/pages/signin_page.dar
 import 'package:ecommerce_clone_getx/app/presentation/auth/pages/signup_page.dart';
 import 'package:ecommerce_clone_getx/app/presentation/cart/bindings/cart_binding.dart';
 import 'package:ecommerce_clone_getx/app/presentation/cart/pages/cart_page.dart';
+import 'package:ecommerce_clone_getx/app/presentation/cart/pages/checkout_page.dart';
+import 'package:ecommerce_clone_getx/app/presentation/cart/pages/order_placed_page.dart';
 import 'package:ecommerce_clone_getx/app/presentation/category_products/bindings/category_products_binding.dart';
 import 'package:ecommerce_clone_getx/app/presentation/category_products/pages/category_products_page.dart';
 import 'package:ecommerce_clone_getx/app/presentation/home/bindings/home_binding.dart';
@@ -74,5 +76,7 @@ class AppPages {
       page: () => const CartPage(),
       binding: CartBinding(),
     ),
+    GetPage(name: Routes.checkout, page: () => CheckOutPage()),
+    GetPage(name: Routes.orderPlaced, page: () => const OrderPlacedPage()),
   ];
 }

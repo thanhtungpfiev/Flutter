@@ -64,6 +64,7 @@ class UIConstants {
   static const String placeOrder = 'Place Order';
   static const String shippingAddress = 'Shipping Address';
   static const String orderPlacedSuccessfully = 'Order Placed Successfully';
+  static const String products = 'products';
 
   // Header widget / Sign out
   static const String signOut = 'Sign Out';

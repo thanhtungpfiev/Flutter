@@ -1,10 +1,12 @@
 import 'package:ecommerce_clone_getx/app/common/helper/cart/cart_helper.dart';
 import 'package:ecommerce_clone_getx/app/common/helper/theme/theme_helper.dart';
+import 'package:ecommerce_clone_getx/app/common/routes/app_pages.dart';
 import 'package:ecommerce_clone_getx/app/common/widgets/button/basic_app_button.dart';
 import 'package:ecommerce_clone_getx/app/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone_getx/app/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone_getx/app/domain/order/entities/product_ordered_entity.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CheckoutWidget extends StatelessWidget {
   const CheckoutWidget({required this.products, super.key});
@@ -99,6 +101,10 @@ class CheckoutWidget extends StatelessWidget {
           ),
           BasicAppButton(
             onPressed: () {
+              Get.toNamed(
+                Routes.checkout,
+                arguments: {UIConstants.products: products},
+              );
               // AppNavigator.push(context, CheckOutPage(products: products));
             },
             title: UIConstants.checkout,
