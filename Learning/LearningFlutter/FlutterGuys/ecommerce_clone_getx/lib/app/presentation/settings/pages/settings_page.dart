@@ -5,6 +5,7 @@ import 'package:ecommerce_clone_getx/app/common/widgets/button/basic_reactive_bu
 import 'package:ecommerce_clone_getx/app/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone_getx/app/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone_getx/app/domain/auth/usecases/signout_usecase.dart';
+import 'package:ecommerce_clone_getx/app/presentation/settings/widgets/theme_tile_widget.dart';
 import 'package:ecommerce_clone_getx/service_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -23,7 +24,7 @@ class SettingsPage extends StatelessWidget {
               padding: EdgeInsets.all(ResponsiveUtils.width(16)),
               child: Column(
                 children: [
-                  // ThemeTileWidget(),
+                  ThemeTileWidget(),
                   SizedBox(height: ResponsiveUtils.height(15)),
                   // MyFavoritesTileWidget(),
                   SizedBox(height: ResponsiveUtils.height(15)),
