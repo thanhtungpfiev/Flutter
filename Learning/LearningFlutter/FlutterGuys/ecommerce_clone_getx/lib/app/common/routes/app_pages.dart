@@ -18,6 +18,8 @@ import 'package:ecommerce_clone_getx/app/presentation/product_detail/bindings/pr
 import 'package:ecommerce_clone_getx/app/presentation/product_detail/pages/product_detail_page.dart';
 import 'package:ecommerce_clone_getx/app/presentation/search/bindings/search_binding.dart';
 import 'package:ecommerce_clone_getx/app/presentation/search/pages/search_page.dart';
+import 'package:ecommerce_clone_getx/app/presentation/settings/bindings/settings_binding.dart';
+import 'package:ecommerce_clone_getx/app/presentation/settings/pages/my_favorites_page.dart';
 import 'package:ecommerce_clone_getx/app/presentation/settings/pages/settings_page.dart';
 import 'package:ecommerce_clone_getx/app/presentation/splash/bindings/splash_binding.dart';
 import 'package:ecommerce_clone_getx/app/presentation/splash/pages/splash_page.dart';
@@ -78,5 +80,10 @@ class AppPages {
     ),
     GetPage(name: Routes.checkout, page: () => CheckOutPage()),
     GetPage(name: Routes.orderPlaced, page: () => const OrderPlacedPage()),
+    GetPage(
+      name: Routes.myFavorites,
+      page: () => const MyFavoritesPage(),
+      binding: SettingsBinding(),
+    ),
   ];
 }

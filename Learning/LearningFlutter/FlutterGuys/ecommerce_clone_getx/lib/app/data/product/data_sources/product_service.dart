@@ -7,5 +7,5 @@ abstract class ProductService {
   Future<Either> getProductsByTitle(String title);
   // Future<Either> addOrRemoveFavoriteProduct(ProductModel product);
   // Future<bool> isFavorite(String productId);
-  // Future<Either> getFavoritesProducts();
+  Future<Either> getFavoritesProducts();
 }

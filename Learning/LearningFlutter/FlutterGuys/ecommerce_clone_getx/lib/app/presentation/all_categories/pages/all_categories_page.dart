@@ -41,7 +41,7 @@ class AllCategoriesPage extends GetView<CategoriesDisplayController> {
 
   Widget _categories() {
     if (controller.state.value == CategoriesDisplayState.loading) {
-      return const CircularProgressIndicator();
+      return const Center(child: CircularProgressIndicator());
     }
     if (controller.state.value == CategoriesDisplayState.success) {
       return ListView.separated(

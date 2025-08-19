@@ -1,8 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
+import 'package:ecommerce_clone_getx/app/core/constants/auth_constants.dart';
 import 'package:ecommerce_clone_getx/app/core/constants/message_constants.dart';
 import 'package:ecommerce_clone_getx/app/core/constants/product_constants.dart';
 import 'package:ecommerce_clone_getx/app/data/product/data_sources/product_service.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class ProductFirebaseService extends ProductService {
   @override
@@ -115,18 +117,18 @@ class ProductFirebaseService extends ProductService {
   //   }
   // }
 
-  // @override
-  // Future<Either> getFavoritesProducts() async {
-  //   try {
-  //     var user = FirebaseAuth.instance.currentUser;
-  //     var returnedData = await FirebaseFirestore.instance
-  //         .collection(AuthConstants.users)
-  //         .doc(user!.uid)
-  //         .collection(ProductConstants.favorites)
-  //         .get();
-  //     return Right(returnedData.docs.map((e) => e.data()).toList());
-  //   } catch (e) {
-  //     return const Left(MessageConstants.pleaseRetry);
-  //   }
-  // }
+  @override
+  Future<Either> getFavoritesProducts() async {
+    try {
+      var user = FirebaseAuth.instance.currentUser;
+      var returnedData = await FirebaseFirestore.instance
+          .collection(AuthConstants.users)
+          .doc(user!.uid)
+          .collection(ProductConstants.favorites)
+          .get();
+      return Right(returnedData.docs.map((e) => e.data()).toList());
+    } catch (e) {
+      return const Left(MessageConstants.pleaseRetry);
+    }
+  }
 }

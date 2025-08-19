@@ -19,7 +19,7 @@ class CartPage extends GetView<CartProductsDisplayController> {
       appBar: BasicAppBar(title: Text(UIConstants.cart)),
       body: Obx(() {
         if (controller.state.value == CartProductsDisplayState.loading) {
-          return const Center(child: CircularProgressIndicator());
+          return Center(child: CircularProgressIndicator());
         }
         if (controller.state.value == CartProductsDisplayState.success) {
           if (controller.products.isEmpty) {

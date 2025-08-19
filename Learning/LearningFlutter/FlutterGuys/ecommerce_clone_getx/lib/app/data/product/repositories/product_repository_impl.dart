@@ -97,20 +97,20 @@ class ProductRepositoryImpl extends ProductRepository {
   //   return await productService.isFavorite(productId);
   // }
 
-  // @override
-  // Future<Either> getFavoritesProducts() async {
-  //   var returnedData = await productService.getFavoritesProducts();
-  //   return returnedData.fold(
-  //     (error) {
-  //       return Left(error);
-  //     },
-  //     (data) {
-  //       return Right(
-  //         List.from(
-  //           data,
-  //         ).map((e) => ProductModel.fromMap(e).toEntity()).toList(),
-  //       );
-  //     },
-  //   );
-  // }
+  @override
+  Future<Either> getFavoritesProducts() async {
+    var returnedData = await productService.getFavoritesProducts();
+    return returnedData.fold(
+      (error) {
+        return Left(error);
+      },
+      (data) {
+        return Right(
+          List.from(
+            data,
+          ).map((e) => ProductModel.fromMap(e).toEntity()).toList(),
+        );
+      },
+    );
+  }
 }

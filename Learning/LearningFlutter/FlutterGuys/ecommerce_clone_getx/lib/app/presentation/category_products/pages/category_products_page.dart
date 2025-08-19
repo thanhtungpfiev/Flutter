@@ -29,7 +29,7 @@ class CategoryProductsPage extends GetView<ProductsDisplayController> {
           controller.displayProducts(params: categoryEntity.categoryId);
         }
         if (controller.state.value == ProductDisplayState.loading) {
-          return CircularProgressIndicator();
+          return Center(child: CircularProgressIndicator());
         }
         if (controller.state.value == ProductDisplayState.success) {
           return Padding(

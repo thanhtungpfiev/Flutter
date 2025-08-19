@@ -31,7 +31,7 @@ class HeaderWidget extends StatelessWidget {
         child: BlocBuilder<UserInfoDisplayCubit, UserInfoDisplayState>(
           builder: (context, state) {
             if (state is UserInfoDisplayLoadingState) {
-              return const Center(child: CircularProgressIndicator());
+              return CircularProgressIndicator();
             }
             if (state is UserInfoDisplayLoadSuccessState) {
               return Row(
