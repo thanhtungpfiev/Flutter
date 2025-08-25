@@ -23,7 +23,7 @@ class AgesWidget extends StatelessWidget {
         if (agesDisplayController.state.value == AgesDisplayState.error) {
           return Container(
             alignment: Alignment.center,
-            child: Text(agesDisplayController.errorMessage.value!),
+            child: Text(agesDisplayController.errorMessage.value),
           );
         }
         return _ages(context, agesDisplayController.ages);

@@ -20,6 +20,7 @@ abstract class Routes {
   static const checkout = _Paths.checkout;
   static const orderPlaced = _Paths.orderPlaced;
   static const myFavorites = _Paths.myFavorites;
+  static const myOrders = _Paths.myOrders;
 }
 
 abstract class _Paths {
@@ -41,4 +42,5 @@ abstract class _Paths {
   static const checkout = '/checkout';
   static const orderPlaced = '/order-placed';
   static const myFavorites = '/my-favorites';
+  static const myOrders = '/my-orders';
 }

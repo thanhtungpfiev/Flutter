@@ -8,22 +8,26 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ProductCardWidget extends StatelessWidget {
-  const ProductCardWidget({required this.productEntity, this.onTap, super.key});
+  const ProductCardWidget({
+    required this.productEntity,
+    this.onReturn,
+    super.key,
+  });
 
   final ProductEntity productEntity;
-  final VoidCallback? onTap;
+  final VoidCallback? onReturn;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap:
-          onTap ??
-          () {
-            Get.toNamed(
-              Routes.productDetail,
-              arguments: {UIConstants.productEntity: productEntity},
-            );
-          },
+      onTap: () async {
+        await Get.toNamed(
+          Routes.productDetail,
+          arguments: {UIConstants.productEntity: productEntity},
+        );
+        // Call the callback when returning from product detail
+        onReturn?.call();
+      },
       child: Container(
         width: ResponsiveUtils.width(180),
         decoration: BoxDecoration(

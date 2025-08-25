@@ -1,22 +1,22 @@
-// import 'package:ecommerce_clone/domain/order/entities/order_status_entity.dart';
-// import 'package:ecommerce_clone/domain/order/entities/product_ordered_entity.dart';
+import 'package:ecommerce_clone_getx/app/domain/order/entities/order_status_entity.dart';
+import 'package:ecommerce_clone_getx/app/domain/order/entities/product_ordered_entity.dart';
 
-// class OrderEntity {
-//   final List<ProductOrderedEntity> products;
-//   final String createdDate;
-//   final String shippingAddress;
-//   final int itemCount;
-//   final double totalPrice;
-//   final String code;
-//   final List<OrderStatusEntity> orderStatus;
+class OrderEntity {
+  final List<ProductOrderedEntity> products;
+  final String createdDate;
+  final String shippingAddress;
+  final int itemCount;
+  final double totalPrice;
+  final String code;
+  final List<OrderStatusEntity> orderStatus;
 
-//   OrderEntity({
-//     required this.products,
-//     required this.createdDate,
-//     required this.shippingAddress,
-//     required this.itemCount,
-//     required this.totalPrice,
-//     required this.code,
-//     required this.orderStatus,
-//   });
-// }
+  OrderEntity({
+    required this.products,
+    required this.createdDate,
+    required this.shippingAddress,
+    required this.itemCount,
+    required this.totalPrice,
+    required this.code,
+    required this.orderStatus,
+  });
+}

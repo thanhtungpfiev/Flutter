@@ -5,27 +5,27 @@ import 'package:get/get.dart';
 enum BasicReactiveButtonState { initial, loading, success, error }
 
 class BasicReactiveButtonController extends GetxController {
-  var state = BasicReactiveButtonState.initial.obs;
-  String? errorMessage;
+  final state = BasicReactiveButtonState.initial.obs;
+  final errorMessage = ''.obs;
 
   Future<void> execute({dynamic params, required UseCase usecase}) async {
     state.value = BasicReactiveButtonState.loading;
-    errorMessage = null;
+    errorMessage.value = '';
     try {
       Either result = await usecase.call(params: params);
       result.fold(
         (error) {
           state.value = BasicReactiveButtonState.error;
-          errorMessage = error;
+          errorMessage.value = error;
         },
         (data) {
           state.value = BasicReactiveButtonState.success;
-          errorMessage = null;
+          errorMessage.value = '';
         },
       );
     } catch (e) {
       state.value = BasicReactiveButtonState.error;
-      errorMessage = e.toString();
+      errorMessage.value = e.toString();
     }
   }
 }

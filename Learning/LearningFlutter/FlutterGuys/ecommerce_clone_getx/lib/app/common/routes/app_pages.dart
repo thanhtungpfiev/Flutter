@@ -20,6 +20,7 @@ import 'package:ecommerce_clone_getx/app/presentation/search/bindings/search_bin
 import 'package:ecommerce_clone_getx/app/presentation/search/pages/search_page.dart';
 import 'package:ecommerce_clone_getx/app/presentation/settings/bindings/settings_binding.dart';
 import 'package:ecommerce_clone_getx/app/presentation/settings/pages/my_favorites_page.dart';
+import 'package:ecommerce_clone_getx/app/presentation/settings/pages/my_orders_page.dart';
 import 'package:ecommerce_clone_getx/app/presentation/settings/pages/settings_page.dart';
 import 'package:ecommerce_clone_getx/app/presentation/splash/bindings/splash_binding.dart';
 import 'package:ecommerce_clone_getx/app/presentation/splash/pages/splash_page.dart';
@@ -83,6 +84,11 @@ class AppPages {
     GetPage(
       name: Routes.myFavorites,
       page: () => const MyFavoritesPage(),
+      binding: SettingsBinding(),
+    ),
+    GetPage(
+      name: Routes.myOrders,
+      page: () => const MyOrdersPage(),
       binding: SettingsBinding(),
     ),
   ];

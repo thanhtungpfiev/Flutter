@@ -94,7 +94,7 @@ class ForgotPasswordPage extends StatelessWidget {
           );
           if (controller.state.value == BasicReactiveButtonState.error) {
             var snackbar = SnackBar(
-              content: Text(controller.errorMessage!),
+              content: Text(controller.errorMessage.value),
               behavior: SnackBarBehavior.floating,
             );
             if (context.mounted) {

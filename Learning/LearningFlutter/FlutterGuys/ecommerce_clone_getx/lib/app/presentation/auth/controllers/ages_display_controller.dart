@@ -8,22 +8,23 @@ class AgesDisplayController extends GetxController {
 
   final GetAgesUseCase getAgesUseCase;
 
-  var state = AgesDisplayState.initial.obs;
-  var errorMessage = RxnString();
-  var ages = <dynamic>[].obs;
+  final state = AgesDisplayState.initial.obs;
+  final errorMessage = ''.obs;
+  final ages = <dynamic>[].obs;
 
   Future<void> displayAges() async {
     state.value = AgesDisplayState.loading;
-    errorMessage.value = null;
+    errorMessage.value = '';
     var returnedData = await getAgesUseCase.call();
     returnedData.fold(
-      (message) {
+      (error) {
         state.value = AgesDisplayState.error;
-        errorMessage.value = message;
+        errorMessage.value = error;
         ages.clear();
       },
       (data) {
         state.value = AgesDisplayState.success;
+        errorMessage.value = '';
         ages.value = data;
       },
     );

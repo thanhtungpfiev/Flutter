@@ -36,6 +36,7 @@ class CartProductsDisplayController extends GetxController {
       },
       (data) {
         state.value = CartProductsDisplayState.success;
+        errorMessage.value = '';
         products.assignAll(data);
       },
     );

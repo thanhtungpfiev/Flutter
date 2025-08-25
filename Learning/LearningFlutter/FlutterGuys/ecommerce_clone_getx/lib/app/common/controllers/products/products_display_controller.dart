@@ -9,19 +9,24 @@ class ProductsDisplayController extends GetxController {
 
   final UseCase useCase;
 
-  var state = ProductDisplayState.initial.obs;
-  var products = <ProductEntity>[].obs;
+  final state = ProductDisplayState.initial.obs;
+  final products = <ProductEntity>[].obs;
+  final errorMessage = ''.obs;
 
   Future<void> displayProducts({dynamic params}) async {
     state.value = ProductDisplayState.loading;
+    errorMessage.value = '';
     var returnedData = await useCase.call(params: params);
     returnedData.fold(
       (error) {
         state.value = ProductDisplayState.error;
+        errorMessage.value = error;
+        products.clear();
       },
       (data) {
         state.value = ProductDisplayState.success;
-        products.value = data;
+        errorMessage.value = '';
+        products.assignAll(data);
       },
     );
   }

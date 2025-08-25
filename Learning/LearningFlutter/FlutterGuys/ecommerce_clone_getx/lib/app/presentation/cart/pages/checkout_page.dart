@@ -78,7 +78,7 @@ class CheckOutPage extends StatelessWidget {
                     if (buttonController.state.value ==
                         BasicReactiveButtonState.error) {
                       var snackbar = SnackBar(
-                        content: Text(buttonController.errorMessage!),
+                        content: Text(buttonController.errorMessage.value),
                         behavior: SnackBarBehavior.floating,
                       );
                       if (context.mounted) {

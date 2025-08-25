@@ -9,8 +9,9 @@ class CategoriesDisplayController extends GetxController {
 
   final GetCategoriesUseCase getCategoriesUseCase;
 
-  var state = CategoriesDisplayState.initial.obs;
-  var categories = <CategoryEntity>[].obs;
+  final state = CategoriesDisplayState.initial.obs;
+  final categories = <CategoryEntity>[].obs;
+  final errorMessage = ''.obs;
 
   @override
   void onInit() {
@@ -20,13 +21,17 @@ class CategoriesDisplayController extends GetxController {
 
   void displayCategories() async {
     state.value = CategoriesDisplayState.loading;
+    errorMessage.value = '';
     var returnedData = await getCategoriesUseCase.call();
     returnedData.fold(
       (error) {
         state.value = CategoriesDisplayState.error;
+        errorMessage.value = error;
+        categories.clear();
       },
       (data) {
         state.value = CategoriesDisplayState.success;
+        errorMessage.value = '';
         categories.assignAll(data);
       },
     );

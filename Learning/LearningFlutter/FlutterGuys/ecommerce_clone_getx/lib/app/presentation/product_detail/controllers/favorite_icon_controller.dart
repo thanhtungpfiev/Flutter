@@ -13,6 +13,7 @@ class FavoriteIconController extends GetxController {
   final AddOrRemoveFavoriteProductUseCase addOrRemoveFavoriteProductUseCase;
 
   final isFavorite = false.obs;
+  final errorMessage = ''.obs;
 
   Future<void> checkIsFavorite(String productId) async {
     final result = await isFavoriteUseCase.call(params: productId);
@@ -23,8 +24,14 @@ class FavoriteIconController extends GetxController {
     final result = await addOrRemoveFavoriteProductUseCase.call(
       params: product,
     );
-    result.fold((error) {}, (data) {
-      isFavorite.value = data;
-    });
+    result.fold(
+      (error) {
+        errorMessage.value = error;
+      },
+      (data) {
+        errorMessage.value = '';
+        isFavorite.value = data;
+      },
+    );
   }
 }

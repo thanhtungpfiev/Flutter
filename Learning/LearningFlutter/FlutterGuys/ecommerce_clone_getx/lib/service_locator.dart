@@ -25,6 +25,7 @@ import 'package:ecommerce_clone_getx/app/domain/category/usecases/get_categories
 import 'package:ecommerce_clone_getx/app/domain/order/repository/order_repository.dart';
 import 'package:ecommerce_clone_getx/app/domain/order/usecases/add_to_cart_usecase.dart';
 import 'package:ecommerce_clone_getx/app/domain/order/usecases/get_cart_products_usecase.dart';
+import 'package:ecommerce_clone_getx/app/domain/order/usecases/get_orders_usecase.dart';
 import 'package:ecommerce_clone_getx/app/domain/order/usecases/order_registration_usecase.dart';
 import 'package:ecommerce_clone_getx/app/domain/order/usecases/remove_cart_product_usecase.dart';
 import 'package:ecommerce_clone_getx/app/domain/product/repositories/product_repository.dart';
@@ -125,9 +126,9 @@ Future<void> initializeDependencies() async {
   sl.registerSingleton<OrderRegistrationUseCase>(
     OrderRegistrationUseCase(orderRepository: sl()),
   );
-  // sl.registerSingleton<GetOrdersUseCase>(
-  //   GetOrdersUseCase(orderRepository: sl()),
-  // );
+  sl.registerSingleton<GetOrdersUseCase>(
+    GetOrdersUseCase(orderRepository: sl()),
+  );
 
   // Controllers
   // Theme

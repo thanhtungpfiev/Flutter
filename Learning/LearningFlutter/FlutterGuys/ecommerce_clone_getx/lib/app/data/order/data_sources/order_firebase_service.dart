@@ -87,18 +87,18 @@ class OrderFirebaseService extends OrderService {
     }
   }
 
-  // @override
-  // Future<Either> getOrders() async {
-  //   try {
-  //     var user = FirebaseAuth.instance.currentUser;
-  //     var returnedData = await FirebaseFirestore.instance
-  //         .collection(AuthConstants.users)
-  //         .doc(user!.uid)
-  //         .collection(OrderConstants.orders)
-  //         .get();
-  //     return Right(returnedData.docs.map((e) => e.data()).toList());
-  //   } catch (e) {
-  //     return const Left(MessageConstants.pleaseRetry);
-  //   }
-  // }
+  @override
+  Future<Either> getOrders() async {
+    try {
+      var user = FirebaseAuth.instance.currentUser;
+      var returnedData = await FirebaseFirestore.instance
+          .collection(AuthConstants.users)
+          .doc(user!.uid)
+          .collection(OrderConstants.orders)
+          .get();
+      return Right(returnedData.docs.map((e) => e.data()).toList());
+    } catch (e) {
+      return const Left(MessageConstants.pleaseRetry);
+    }
+  }
 }

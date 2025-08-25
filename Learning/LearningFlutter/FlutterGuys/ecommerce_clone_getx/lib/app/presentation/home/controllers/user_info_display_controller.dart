@@ -12,6 +12,7 @@ class UserInfoDisplayController extends GetxController {
 
   var state = UserInfoDisplayState.initial.obs;
   Rxn<UserEntity> user = Rxn<UserEntity>();
+  var errorMessage = ''.obs;
 
   @override
   void onInit() {
@@ -22,23 +23,27 @@ class UserInfoDisplayController extends GetxController {
   Future<void> displayUserInfo() async {
     try {
       state.value = UserInfoDisplayState.loading;
+      errorMessage.value = '';
       await Future.delayed(const Duration(milliseconds: 500));
       var returnedData = await getUserUseCase.call();
       returnedData.fold(
         (error) {
           AppLogger.e('Failed to load user info', error);
           state.value = UserInfoDisplayState.error;
+          errorMessage.value = error;
           user.value = null;
         },
         (data) {
           AppLogger.i('User info loaded successfully');
           state.value = UserInfoDisplayState.success;
+          errorMessage.value = '';
           user.value = data;
         },
       );
     } catch (e) {
       AppLogger.e('Exception while loading user info', e);
       state.value = UserInfoDisplayState.error;
+      errorMessage.value = e.toString();
       user.value = null;
     }
   }

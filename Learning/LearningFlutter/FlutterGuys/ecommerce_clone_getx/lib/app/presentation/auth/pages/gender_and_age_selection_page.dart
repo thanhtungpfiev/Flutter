@@ -172,7 +172,7 @@ class GenderAndAgeSelectionPage extends StatelessWidget {
             if (buttonController.state.value ==
                 BasicReactiveButtonState.error) {
               var snackbar = SnackBar(
-                content: Text(buttonController.errorMessage!),
+                content: Text(buttonController.errorMessage.value),
                 backgroundColor: Colors.red,
                 behavior: SnackBarBehavior.floating,
               );

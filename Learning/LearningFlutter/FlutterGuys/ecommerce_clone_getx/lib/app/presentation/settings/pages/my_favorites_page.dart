@@ -1,5 +1,4 @@
 import 'package:ecommerce_clone_getx/app/common/controllers/products/products_display_controller.dart';
-import 'package:ecommerce_clone_getx/app/common/routes/app_pages.dart';
 import 'package:ecommerce_clone_getx/app/common/widgets/app_bar/basic_app_bar.dart';
 import 'package:ecommerce_clone_getx/app/common/widgets/product/product_card_widget.dart';
 import 'package:ecommerce_clone_getx/app/core/constants/service_constants.dart';
@@ -17,15 +16,6 @@ class MyFavoritesPage extends GetView<ProductsDisplayController> {
       Get.find<ProductsDisplayController>(
         tag: ServiceConstants.getFavoritesProductsUseCaseInstance,
       );
-
-  void _navigateToProductDetail(ProductEntity product) async {
-    await Get.toNamed(
-      Routes.productDetail,
-      arguments: {UIConstants.productEntity: product},
-    );
-    // Refresh the favorites list when returning from product detail
-    controller.displayProducts();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +65,10 @@ class MyFavoritesPage extends GetView<ProductsDisplayController> {
       itemBuilder: (BuildContext context, int index) {
         return ProductCardWidget(
           productEntity: products[index],
-          onTap: () => _navigateToProductDetail(products[index]),
+          onReturn: () {
+            // Refresh the favorites list when returning from product detail
+            controller.displayProducts();
+          },
         );
       },
     );
