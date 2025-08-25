@@ -1,4 +1,5 @@
 import 'package:ecommerce_clone_getx/app/common/helper/theme/theme_helper.dart';
+import 'package:ecommerce_clone_getx/app/common/routes/app_pages.dart';
 import 'package:ecommerce_clone_getx/app/common/widgets/app_bar/basic_app_bar.dart';
 import 'package:ecommerce_clone_getx/app/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone_getx/app/core/utils/responsive_utils.dart';
@@ -35,10 +36,10 @@ class MyOrdersPage extends GetView<OrdersDisplayController> {
       itemBuilder: (context, index) {
         return GestureDetector(
           onTap: () {
-            // AppNavigator.push(
-            //   context,
-            //   OrderDetailPage(orderEntity: orders[index]),
-            // );
+            Get.toNamed(
+              Routes.orderDetail,
+              arguments: {UIConstants.orderEntity: orders[index]},
+            );
           },
           child: Container(
             height: ResponsiveUtils.height(70),

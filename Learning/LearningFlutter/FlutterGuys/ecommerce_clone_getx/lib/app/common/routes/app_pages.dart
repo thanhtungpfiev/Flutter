@@ -21,6 +21,8 @@ import 'package:ecommerce_clone_getx/app/presentation/search/pages/search_page.d
 import 'package:ecommerce_clone_getx/app/presentation/settings/bindings/settings_binding.dart';
 import 'package:ecommerce_clone_getx/app/presentation/settings/pages/my_favorites_page.dart';
 import 'package:ecommerce_clone_getx/app/presentation/settings/pages/my_orders_page.dart';
+import 'package:ecommerce_clone_getx/app/presentation/settings/pages/order_detail_page.dart';
+import 'package:ecommerce_clone_getx/app/presentation/settings/pages/order_items_page.dart';
 import 'package:ecommerce_clone_getx/app/presentation/settings/pages/settings_page.dart';
 import 'package:ecommerce_clone_getx/app/presentation/splash/bindings/splash_binding.dart';
 import 'package:ecommerce_clone_getx/app/presentation/splash/pages/splash_page.dart';
@@ -91,5 +93,7 @@ class AppPages {
       page: () => const MyOrdersPage(),
       binding: SettingsBinding(),
     ),
+    GetPage(name: Routes.orderDetail, page: () => const OrderDetailPage()),
+    GetPage(name: Routes.orderItems, page: () => const OrderItemsPage()),
   ];
 }

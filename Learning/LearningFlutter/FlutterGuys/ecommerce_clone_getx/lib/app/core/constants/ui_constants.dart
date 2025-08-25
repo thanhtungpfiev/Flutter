@@ -111,6 +111,7 @@ class UIConstants {
   static const String orderItems = 'Order Items';
   static const String viewAll = 'View All';
   static const String shippingDetails = 'Shipping details';
+  static const String orderEntity = 'orderEntity';
 
   // Theme related
   static const String theme = 'Theme';
