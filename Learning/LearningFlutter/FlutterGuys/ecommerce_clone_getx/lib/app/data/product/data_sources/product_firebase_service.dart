@@ -4,6 +4,7 @@ import 'package:ecommerce_clone_getx/app/core/constants/auth_constants.dart';
 import 'package:ecommerce_clone_getx/app/core/constants/message_constants.dart';
 import 'package:ecommerce_clone_getx/app/core/constants/product_constants.dart';
 import 'package:ecommerce_clone_getx/app/data/product/data_sources/product_service.dart';
+import 'package:ecommerce_clone_getx/app/data/product/models/product_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class ProductFirebaseService extends ProductService {
@@ -69,53 +70,53 @@ class ProductFirebaseService extends ProductService {
     }
   }
 
-  // @override
-  // Future<Either> addOrRemoveFavoriteProduct(ProductModel product) async {
-  //   try {
-  //     var user = FirebaseAuth.instance.currentUser;
-  //     var products = await FirebaseFirestore.instance
-  //         .collection(AuthConstants.users)
-  //         .doc(user!.uid)
-  //         .collection(ProductConstants.favorites)
-  //         .where(ProductConstants.productId, isEqualTo: product.productId)
-  //         .get();
+  @override
+  Future<Either> addOrRemoveFavoriteProduct(ProductModel product) async {
+    try {
+      var user = FirebaseAuth.instance.currentUser;
+      var products = await FirebaseFirestore.instance
+          .collection(AuthConstants.users)
+          .doc(user!.uid)
+          .collection(ProductConstants.favorites)
+          .where(ProductConstants.productId, isEqualTo: product.productId)
+          .get();
 
-  //     if (products.docs.isNotEmpty) {
-  //       await products.docs.first.reference.delete();
-  //       return const Right(false);
-  //     } else {
-  //       await FirebaseFirestore.instance
-  //           .collection(AuthConstants.users)
-  //           .doc(user.uid)
-  //           .collection(ProductConstants.favorites)
-  //           .add(product.toMap());
-  //       return const Right(true);
-  //     }
-  //   } catch (e) {
-  //     return const Left(MessageConstants.pleaseRetry);
-  //   }
-  // }
+      if (products.docs.isNotEmpty) {
+        await products.docs.first.reference.delete();
+        return const Right(false);
+      } else {
+        await FirebaseFirestore.instance
+            .collection(AuthConstants.users)
+            .doc(user.uid)
+            .collection(ProductConstants.favorites)
+            .add(product.toMap());
+        return const Right(true);
+      }
+    } catch (e) {
+      return const Left(MessageConstants.pleaseRetry);
+    }
+  }
 
-  // @override
-  // Future<bool> isFavorite(String productId) async {
-  //   try {
-  //     var user = FirebaseAuth.instance.currentUser;
-  //     var products = await FirebaseFirestore.instance
-  //         .collection(AuthConstants.users)
-  //         .doc(user!.uid)
-  //         .collection(ProductConstants.favorites)
-  //         .where(ProductConstants.productId, isEqualTo: productId)
-  //         .get();
+  @override
+  Future<bool> isFavorite(String productId) async {
+    try {
+      var user = FirebaseAuth.instance.currentUser;
+      var products = await FirebaseFirestore.instance
+          .collection(AuthConstants.users)
+          .doc(user!.uid)
+          .collection(ProductConstants.favorites)
+          .where(ProductConstants.productId, isEqualTo: productId)
+          .get();
 
-  //     if (products.docs.isNotEmpty) {
-  //       return true;
-  //     } else {
-  //       return false;
-  //     }
-  //   } catch (e) {
-  //     return false;
-  //   }
-  // }
+      if (products.docs.isNotEmpty) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch (e) {
+      return false;
+    }
+  }
 
   @override
   Future<Either> getFavoritesProducts() async {

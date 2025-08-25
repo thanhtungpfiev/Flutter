@@ -3,6 +3,7 @@ import 'package:ecommerce_clone_getx/app/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone_getx/app/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone_getx/app/domain/product/entities/product_entity.dart';
 import 'package:ecommerce_clone_getx/app/presentation/product_detail/widgets/add_to_bag_widget.dart';
+import 'package:ecommerce_clone_getx/app/presentation/product_detail/widgets/favorite_button_widget.dart';
 import 'package:ecommerce_clone_getx/app/presentation/product_detail/widgets/product_images_widget.dart';
 import 'package:ecommerce_clone_getx/app/presentation/product_detail/widgets/product_price_widget.dart';
 import 'package:ecommerce_clone_getx/app/presentation/product_detail/widgets/product_quantity_widget.dart';
@@ -23,7 +24,7 @@ class ProductDetailPage extends StatelessWidget {
     return Scaffold(
       appBar: BasicAppBar(
         hideBack: false,
-        // action: FavoriteButtonWidget(productEntity: productEntity),
+        action: FavoriteButtonWidget(productEntity: productEntity),
       ),
       bottomNavigationBar: AddToBagWidget(productEntity: productEntity),
       body: SingleChildScrollView(

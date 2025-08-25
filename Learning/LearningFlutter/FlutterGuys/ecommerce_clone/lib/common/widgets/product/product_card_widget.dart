@@ -7,18 +7,25 @@ import 'package:ecommerce_clone/presentation/product_detail/pages/product_detail
 import 'package:flutter/material.dart';
 
 class ProductCardWidget extends StatelessWidget {
-  const ProductCardWidget({required this.productEntity, super.key});
+  const ProductCardWidget({
+    required this.productEntity,
+    this.onReturn,
+    super.key,
+  });
 
   final ProductEntity productEntity;
+  final VoidCallback? onReturn;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        AppNavigator.push(
+      onTap: () async {
+        await AppNavigator.push(
           context,
           ProductDetailPage(productEntity: productEntity),
         );
+        // Call the callback when returning from product detail
+        onReturn?.call();
       },
       child: Container(
         width: ResponsiveUtils.width(180),

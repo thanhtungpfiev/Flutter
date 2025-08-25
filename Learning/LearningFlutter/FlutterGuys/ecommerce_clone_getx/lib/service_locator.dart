@@ -28,11 +28,13 @@ import 'package:ecommerce_clone_getx/app/domain/order/usecases/get_cart_products
 import 'package:ecommerce_clone_getx/app/domain/order/usecases/order_registration_usecase.dart';
 import 'package:ecommerce_clone_getx/app/domain/order/usecases/remove_cart_product_usecase.dart';
 import 'package:ecommerce_clone_getx/app/domain/product/repositories/product_repository.dart';
+import 'package:ecommerce_clone_getx/app/domain/product/usecases/add_or_remove_favorite_product_usecase.dart';
 import 'package:ecommerce_clone_getx/app/domain/product/usecases/get_favorites_products_usecase.dart';
 import 'package:ecommerce_clone_getx/app/domain/product/usecases/get_new_in_usecase.dart';
 import 'package:ecommerce_clone_getx/app/domain/product/usecases/get_products_by_category_id_usecase.dart';
 import 'package:ecommerce_clone_getx/app/domain/product/usecases/get_products_by_title_usecase.dart';
 import 'package:ecommerce_clone_getx/app/domain/product/usecases/get_top_selling_usecase.dart';
+import 'package:ecommerce_clone_getx/app/domain/product/usecases/is_favorite_usecase.dart';
 import 'package:ecommerce_clone_getx/app/presentation/settings/controllers/theme_controller.dart';
 import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
@@ -101,12 +103,12 @@ Future<void> initializeDependencies() async {
   sl.registerSingleton<GetProductsByTitleUseCase>(
     GetProductsByTitleUseCase(productRepository: sl()),
   );
-  // sl.registerSingleton<IsFavoriteUseCase>(
-  //   IsFavoriteUseCase(productRepository: sl()),
-  // );
-  // sl.registerSingleton<AddOrRemoveFavoriteProductUseCase>(
-  //   AddOrRemoveFavoriteProductUseCase(productRepository: sl()),
-  // );
+  sl.registerSingleton<IsFavoriteUseCase>(
+    IsFavoriteUseCase(productRepository: sl()),
+  );
+  sl.registerSingleton<AddOrRemoveFavoriteProductUseCase>(
+    AddOrRemoveFavoriteProductUseCase(productRepository: sl()),
+  );
   sl.registerSingleton<GetFavoritesProductsUseCase>(
     GetFavoritesProductsUseCase(productRepository: sl()),
   );

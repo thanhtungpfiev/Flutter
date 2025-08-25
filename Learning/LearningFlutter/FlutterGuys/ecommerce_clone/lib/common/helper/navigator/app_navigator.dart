@@ -7,8 +7,10 @@ class AppNavigator {
     ).pushReplacement(MaterialPageRoute(builder: (context) => page));
   }
 
-  static void push(BuildContext context, Widget page) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) => page));
+  static Future<T?> push<T>(BuildContext context, Widget page) {
+    return Navigator.of(
+      context,
+    ).push<T>(MaterialPageRoute(builder: (context) => page));
   }
 
   static void pushAndRemoveUntil(BuildContext context, Widget page) {

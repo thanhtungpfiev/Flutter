@@ -67,7 +67,13 @@ class MyFavoritesPage extends StatelessWidget {
           childAspectRatio: 0.8,
         ),
         itemBuilder: (BuildContext context, int index) {
-          return ProductCardWidget(productEntity: products[index]);
+          return ProductCardWidget(
+            productEntity: products[index],
+            onReturn: () {
+              // Refresh the favorites list when returning from product detail
+              context.read<ProductsDisplayCubit>().displayProducts();
+            },
+          );
         },
       ),
     );
