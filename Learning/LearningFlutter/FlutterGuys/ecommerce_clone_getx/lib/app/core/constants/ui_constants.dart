@@ -21,6 +21,9 @@ class UIConstants {
   static const String finish = 'Finish';
   static const String userSigninReqModel = 'userSigninReqModel';
   static const String userSignupReqModel = 'userSignupReqModel';
+  static const String continueWithApple = 'Continue With Apple';
+  static const String continueWithGoogle = 'Continue With Google';
+  static const String continueWithFacebook = 'Continue With Facebook';
 
   // Password reset email
   static const String passwordResetEmailSent =

@@ -38,4 +38,9 @@ class ThemeHelper {
   static Color? getThemeIconColor(BuildContext context) {
     return Theme.of(context).iconTheme.color;
   }
+
+  /// Returns black for light theme, white for dark theme (for text)
+  static Color getTextColor(BuildContext context) {
+    return context.isDarkMode ? Colors.white : Colors.black;
+  }
 }

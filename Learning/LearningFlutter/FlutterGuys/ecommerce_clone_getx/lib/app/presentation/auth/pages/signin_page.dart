@@ -1,11 +1,15 @@
+import 'package:ecommerce_clone_getx/app/common/helper/theme/theme_helper.dart';
 import 'package:ecommerce_clone_getx/app/common/routes/app_pages.dart';
 import 'package:ecommerce_clone_getx/app/common/widgets/app_bar/basic_app_bar.dart';
 import 'package:ecommerce_clone_getx/app/common/widgets/button/basic_app_button.dart';
+import 'package:ecommerce_clone_getx/app/core/configs/assets/app_vectors.dart';
 import 'package:ecommerce_clone_getx/app/core/constants/ui_constants.dart';
 import 'package:ecommerce_clone_getx/app/core/utils/responsive_utils.dart';
 import 'package:ecommerce_clone_getx/app/data/auth/models/user_signin_req_model.dart';
+import 'package:ecommerce_clone_getx/app/presentation/auth/widgets/social_login_button.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 class SigninPage extends StatefulWidget {
@@ -49,6 +53,8 @@ class _SigninPageState extends State<SigninPage> {
                   _continueButton(context),
                   SizedBox(height: ResponsiveUtils.height(20)),
                   _createAccount(context),
+                  SizedBox(height: ResponsiveUtils.height(40)),
+                  _socialLoginButtons(),
                 ],
               ),
             ),
@@ -141,6 +147,50 @@ class _SigninPageState extends State<SigninPage> {
           ),
         ],
       ),
+    );
+  }
+
+  Widget _socialLoginButtons() {
+    return Column(
+      children: [
+        // Continue with Apple
+        SocialLoginButton(
+          icon: ThemeHelper.isDark(context)
+              ? SvgPicture.asset(AppVectors.appleDark)
+              : SvgPicture.asset(AppVectors.appleLight),
+          text: UIConstants.continueWithApple,
+          onPressed: () {
+            // Handle Apple login
+            print('Apple login pressed');
+          },
+        ),
+        SizedBox(height: ResponsiveUtils.height(12)),
+
+        // Continue with Google
+        SocialLoginButton(
+          icon: ThemeHelper.isDark(context)
+              ? SvgPicture.asset(AppVectors.googleDark)
+              : SvgPicture.asset(AppVectors.googleLight),
+          text: UIConstants.continueWithGoogle,
+          onPressed: () {
+            // Handle Google login
+            print('Google login pressed');
+          },
+        ),
+        SizedBox(height: ResponsiveUtils.height(12)),
+
+        // // Continue with Facebook
+        SocialLoginButton(
+          icon: ThemeHelper.isDark(context)
+              ? SvgPicture.asset(AppVectors.facebookDark)
+              : SvgPicture.asset(AppVectors.facebookLight),
+          text: UIConstants.continueWithFacebook,
+          onPressed: () {
+            // Handle Facebook login
+            print('Facebook login pressed');
+          },
+        ),
+      ],
     );
   }
 }
