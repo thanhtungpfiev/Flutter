@@ -27,11 +27,14 @@ app.use(bodyParser.json());
 app.use(morgan("tiny"));
 app.use(cors());
 
+const authRouter = require("./routes/auth");
+
+app.use(`${env.API_URL}/auth`, authRouter);
+
 app.get("/", (req, res) => {
   res.send("Hello, World! This is the starting point of the server.");
 });
 
-// Connect to MongoDB
 const connectToMongoDB = () => {
   const mongoEnv = env.MONGO_ENV || "local";
   console.log(`MongoDB Environment: ${mongoEnv}`);
