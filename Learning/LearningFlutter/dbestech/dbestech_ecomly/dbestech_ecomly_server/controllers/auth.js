@@ -16,6 +16,7 @@
 
 const { validationResult } = require("express-validator");
 const { User } = require("../models/user");
+const { Token } = require("../models/token");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
@@ -92,10 +93,38 @@ exports.login = async (req, res) => {
     if (token) await Token.deleteOne({ userId: user._id });
     await new Token({ userId: user._id, refreshToken, accessToken }).save();
 
+    // Remove sensitive fields before sending the user back
+    const userObj = user.toObject ? user.toObject() : { ...user };
+    delete userObj.passwordHash;
+
     return res
       .status(200)
-      .json({ message: "Login successful", user, accessToken, refreshToken });
+      .json({ message: "Login successful", user: userObj, accessToken });
   } catch (error) {
     return res.status(500).json({ type: error.name, message: error.message });
   }
 };
+
+exports.verifyToken = async (req, res) => {
+  try {
+    let accessToken = req.headers.authorization;
+    if (!accessToken) return res.json(false);
+    accessToken = accessToken.replace("Bearer ", "").trim();
+    const token = await Token.findOne({ accessToken });
+    if (!token) return res.json(false);
+    const tokenData = jwt.decode(token.refreshToken);
+    const user = await User.findById(tokenData.userId);
+    if (!user) return res.json(false);
+    const isValid = jwt.verify(
+      token.refreshToken,
+      env.JWT_REFRESH_TOKEN_SECRET
+    );
+    if (!isValid) return res.json(false);
+
+    return res.json(true);
+  } catch (error) {
+    return res.status(500).json({ type: error.name, message: error.message });
+  }
+};
+
+exports.forgotPassword = async (req, res) => {};

@@ -39,8 +39,8 @@ const validateUser = [
 
 router.post("/register", validateUser, authController.register);
 
-router.post("/login", (req, res) => {
-  res.status(201).json({ name: "Paul", age: 200 });
-});
+router.post("/login", authController.login);
+
+router.post("/verify-token", authController.verifyToken);
 
 module.exports = router;
