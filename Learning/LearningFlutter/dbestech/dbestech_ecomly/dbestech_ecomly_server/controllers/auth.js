@@ -17,6 +17,9 @@
 const { validationResult } = require("express-validator");
 const { User } = require("../models/user");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+require("dotenv").config();
+const env = process.env;
 
 exports.register = async (req, res) => {
   const errors = validationResult(req);
@@ -48,6 +51,51 @@ exports.register = async (req, res) => {
         .status(409)
         .json({ type: "Auth Error", message: "Email already exists" });
     }
+    return res.status(500).json({ type: error.name, message: error.message });
+  }
+};
+
+exports.login = async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res
+        .status(404)
+        .json({ type: "Auth Error", message: "User not found" });
+    }
+
+    const isPasswordValid = bcrypt.compareSync(password, user.passwordHash);
+    if (!isPasswordValid) {
+      return res
+        .status(401)
+        .json({ type: "Auth Error", message: "Invalid password" });
+    }
+
+    const accessToken = jwt.sign(
+      { userId: user._id, isAdmin: user.isAdmin },
+      env.JWT_ACCESS_TOKEN_SECRET,
+      {
+        expiresIn: "1h",
+      }
+    );
+    const refreshToken = jwt.sign(
+      { userId: user._id, isAdmin: user.isAdmin },
+      env.JWT_REFRESH_TOKEN_SECRET,
+      {
+        expiresIn: "30d",
+      }
+    );
+
+    const token = await Token.findOne({ userId: user._id });
+    if (token) await Token.deleteOne({ userId: user._id });
+    await new Token({ userId: user._id, refreshToken, accessToken }).save();
+
+    return res
+      .status(200)
+      .json({ message: "Login successful", user, accessToken, refreshToken });
+  } catch (error) {
     return res.status(500).json({ type: error.name, message: error.message });
   }
 };
