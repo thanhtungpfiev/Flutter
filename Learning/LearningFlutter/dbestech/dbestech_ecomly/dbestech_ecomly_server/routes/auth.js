@@ -43,4 +43,6 @@ router.post("/login", authController.login);
 
 router.post("/verify-token", authController.verifyToken);
 
+router.post("/forgot-password", authController.forgotPassword);
+
 module.exports = router;

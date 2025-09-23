@@ -21,6 +21,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 const env = process.env;
+const mailSender = require("../helpers/email_sender");
 
 exports.register = async (req, res) => {
   const errors = validationResult(req);
@@ -127,4 +128,28 @@ exports.verifyToken = async (req, res) => {
   }
 };
 
-exports.forgotPassword = async (req, res) => {};
+exports.forgotPassword = async (req, res) => {
+  try {
+    const { email } = req.body;
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res
+        .status(404)
+        .json({ message: "User with that email does NOT exist!" });
+    }
+    const otp = Math.floor(1000 + Math.random() * 9000); // Generate a 4-digit OTP
+    user.resetPasswordOtp = otp;
+    user.resetPasswordOtpExpiry = Date.now() + 3600000; // OTP valid for 1 hour
+    await user.save();
+    const response = await mailSender.sendMail(
+      email,
+      "Password Reset OTP",
+      `Your OTP for password reset is: ${otp}. It is valid for 1 hour.`,
+      "Password reset OTP sent successfully",
+      "Error sending password reset OTP"
+    );
+    return res.json({ message: response });
+  } catch (error) {
+    return res.status(500).json({ type: error.name, message: error.message });
+  }
+};
