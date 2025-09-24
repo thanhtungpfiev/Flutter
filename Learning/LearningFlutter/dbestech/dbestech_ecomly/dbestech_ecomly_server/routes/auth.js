@@ -37,6 +37,16 @@ const validateUser = [
     .withMessage("Valid phone number is required"),
 ];
 
+const validateNewPassword = [
+  body("newPassword")
+    .isLength({ min: 8 })
+    .withMessage("Password must be at least 8 characters long")
+    .isStrongPassword()
+    .withMessage(
+      "Password must include uppercase, lowercase, number, and symbol"
+    ),
+];
+
 router.post("/register", validateUser, authController.register);
 
 router.post("/login", authController.login);
@@ -44,5 +54,13 @@ router.post("/login", authController.login);
 router.post("/verify-token", authController.verifyToken);
 
 router.post("/forgot-password", authController.forgotPassword);
+
+router.post("/verify-otp", authController.verifyOtp);
+
+router.post(
+  "/reset-password",
+  validateNewPassword,
+  authController.resetPassword
+);
 
 module.exports = router;
