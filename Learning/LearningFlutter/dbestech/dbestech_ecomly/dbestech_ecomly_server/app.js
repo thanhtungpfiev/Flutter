@@ -13,23 +13,37 @@
  * *
  * *****************************************************************************
  */
+
+// External libraries
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const express = require("express");
-const morgan = require("morgan");
 const mongoose = require("mongoose");
+const morgan = require("morgan");
+
+// Config / side-effects
 require("dotenv").config();
+
+// Internal modules
+const authJwt = require("./middlewares/jwt");
+const authRouter = require("./routes/auth");
+const errorHandler = require("./middlewares/error_handler");
 
 const app = express();
 const env = process.env;
 
+// Middlewares (order: parsers -> logging -> cors -> auth)
 app.use(bodyParser.json());
 app.use(morgan("tiny"));
 app.use(cors());
-
-const authRouter = require("./routes/auth");
+app.use(authJwt());
+app.use(errorHandler);
 
 app.use(`${env.API_URL}/auth`, authRouter);
+app.get(`${env.API_URL}/users`, (req, res) => {
+  // Handle fetching users
+  res.json({ message: "List of users" });
+});
 
 app.get("/", (req, res) => {
   res.send("Hello, World! This is the starting point of the server.");

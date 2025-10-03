@@ -14,14 +14,19 @@
  * *****************************************************************************
  */
 
+// External libraries
 const { validationResult } = require("express-validator");
-const { User } = require("../models/user");
-const { Token } = require("../models/token");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+
+// Config / side-effects
 require("dotenv").config();
 const env = process.env;
+
+// Internal modules
 const mailSender = require("../helpers/email_sender");
+const { Token } = require("../models/token");
+const { User } = require("../models/user");
 
 exports.register = async (req, res) => {
   const errors = validationResult(req);
@@ -79,7 +84,7 @@ exports.login = async (req, res) => {
       { userId: user._id, isAdmin: user.isAdmin },
       env.JWT_ACCESS_TOKEN_SECRET,
       {
-        expiresIn: "1h",
+        expiresIn: "5m",
       }
     );
     const refreshToken = jwt.sign(

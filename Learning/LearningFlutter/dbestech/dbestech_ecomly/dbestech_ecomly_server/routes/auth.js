@@ -13,12 +13,14 @@
  * *
  * *****************************************************************************
  */
+// External libraries
+const { body } = require("express-validator");
 const express = require("express");
+
 const router = express.Router();
 
+// Internal modules
 const authController = require("../controllers/auth");
-
-const { body } = require("express-validator");
 
 const validateUser = [
   body("name").notEmpty().withMessage("Name is required"),
