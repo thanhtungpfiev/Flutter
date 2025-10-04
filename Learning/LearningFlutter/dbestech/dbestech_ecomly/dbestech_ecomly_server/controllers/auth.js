@@ -84,7 +84,7 @@ exports.login = async (req, res) => {
       { userId: user._id, isAdmin: user.isAdmin },
       env.JWT_ACCESS_TOKEN_SECRET,
       {
-        expiresIn: "5m",
+        expiresIn: "1h",
       }
     );
     const refreshToken = jwt.sign(

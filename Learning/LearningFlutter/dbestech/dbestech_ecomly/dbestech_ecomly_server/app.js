@@ -27,6 +27,7 @@ require("dotenv").config();
 // Internal modules
 const authJwt = require("./middlewares/jwt");
 const authRouter = require("./routes/auth");
+const usersRouter = require("./routes/users");
 const errorHandler = require("./middlewares/error_handler");
 
 const app = express();
@@ -40,10 +41,7 @@ app.use(authJwt());
 app.use(errorHandler);
 
 app.use(`${env.API_URL}/auth`, authRouter);
-app.get(`${env.API_URL}/users`, (req, res) => {
-  // Handle fetching users
-  res.json({ message: "List of users" });
-});
+app.use(`${env.API_URL}/users`, usersRouter);
 
 app.get("/", (req, res) => {
   res.send("Hello, World! This is the starting point of the server.");

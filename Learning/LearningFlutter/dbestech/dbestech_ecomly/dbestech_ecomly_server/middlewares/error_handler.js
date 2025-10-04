@@ -1,3 +1,18 @@
+/*
+ * *****************************************************************************
+ * * \author Dao Thanh Tung (MS/EAE1-BST) - thanhtungpfiev@gmail.com
+ * *
+ * * \date Fri Oct 03 2025
+ * *
+ * * \copyright 2025 - thanhtungpfiev@gmail.com. All rights reserved.
+ * *
+ * * \filename error_handler.js
+ * *
+ * * \brief
+ * *
+ * *
+ * *****************************************************************************
+ */
 const jsonwebtoken = require("jsonwebtoken");
 const { Token } = require("../models/token");
 const { User } = require("../models/user");
@@ -35,7 +50,7 @@ async function errorHandler(error, req, res, next) {
       const newAccessToken = jsonwebtoken.sign(
         { userId: user.id, isAdmin: user.isAdmin },
         process.env.JWT_ACCESS_TOKEN_SECRET,
-        { expiresIn: "5m" }
+        { expiresIn: "1h" }
       );
       req.headers["authorization"] = `Bearer ${newAccessToken}`;
       await Token.updateOne(
