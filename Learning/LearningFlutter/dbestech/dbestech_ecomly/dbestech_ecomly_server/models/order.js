@@ -15,7 +15,6 @@
  */
 
 const mongoose = require("mongoose");
-const { use } = require("react");
 
 const orderSchema = new mongoose.Schema({
   orderItems: [

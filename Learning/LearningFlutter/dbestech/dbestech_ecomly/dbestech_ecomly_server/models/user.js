@@ -29,6 +29,7 @@ const userSchema = new mongoose.Schema({
   isAdmin: { type: Boolean, default: false },
   resetPasswordOtp: { type: Number, default: null },
   resetPasswordOtpExpiry: { type: Date, default: null },
+  cart: [{ type: mongoose.Schema.Types.ObjectId, ref: "CartProduct" }],
   wishlist: [
     {
       productId: {

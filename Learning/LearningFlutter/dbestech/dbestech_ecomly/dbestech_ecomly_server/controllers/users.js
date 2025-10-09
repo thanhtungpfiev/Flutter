@@ -32,7 +32,7 @@ exports.getUsers = async (req, res) => {
 exports.getUserById = async (req, res) => {
   try {
     const user = await User.findById(req.params.id).select(
-      "-passwordHash -resetPasswordOtp -resetPasswordOtpExpiry"
+      "-passwordHash -resetPasswordOtp -resetPasswordOtpExpiry -cart"
     );
     if (!user) {
       return res.status(404).json({ message: "User not found" });
@@ -56,10 +56,12 @@ exports.updateUser = async (req, res) => {
       {
         new: true,
       }
-    ).select("-passwordHash -resetPasswordOtp -resetPasswordOtpExpiry");
+    ).select("-passwordHash -resetPasswordOtp -resetPasswordOtpExpiry -cart");
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
+    user.passwordHash = undefined;
+    user.cart = undefined;
     res.json(user);
   } catch (error) {
     res.status(500).json({ message: "Error updating user", error });
