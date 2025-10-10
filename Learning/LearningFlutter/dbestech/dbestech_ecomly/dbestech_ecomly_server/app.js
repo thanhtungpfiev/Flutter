@@ -115,6 +115,8 @@ const connectToMongoDB = () => {
     });
 };
 
+require("./helpers/cron_job");
+
 connectToMongoDB();
 
 app.listen(env.PORT, env.HOST, () => {
