@@ -30,6 +30,7 @@ const authRouter = require("./routes/auth");
 const usersRouter = require("./routes/users");
 const adminRouter = require("./routes/admin");
 const categoriesRouter = require("./routes/categories");
+const productsRouter = require("./routes/products");
 const errorHandler = require("./middlewares/error_handler");
 
 const app = express();
@@ -46,6 +47,7 @@ app.use(`${env.API_URL}/auth`, authRouter);
 app.use(`${env.API_URL}/users`, usersRouter);
 app.use(`${env.API_URL}/admin`, adminRouter);
 app.use(`${env.API_URL}/categories`, categoriesRouter);
+app.use(`${env.API_URL}/products`, productsRouter);
 app.use("/public", express.static(__dirname + "/public"));
 
 app.get("/", (req, res) => {

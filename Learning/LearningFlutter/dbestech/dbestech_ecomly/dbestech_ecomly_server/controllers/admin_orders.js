@@ -41,7 +41,7 @@ exports.getAllOrders = async (req, res) => {
     return res.status(200).json({ orders });
   } catch (error) {
     console.error("Error fetching orders:", error);
-    return res.status(500).json({ message: "Internal server error" });
+    return res.status(500).json({ type: error.name, message: error.message });
   }
 };
 
@@ -54,7 +54,7 @@ exports.getOrdersCount = async (req, res) => {
     return res.status(200).json({ count });
   } catch (error) {
     console.error("Error fetching orders count:", error);
-    return res.status(500).json({ message: "Internal server error" });
+    return res.status(500).json({ type: error.name, message: error.message });
   }
 };
 
@@ -77,7 +77,7 @@ exports.updateOrderStatusById = async (req, res) => {
       .json({ message: "Order status updated successfully", order });
   } catch (error) {
     console.error("Error updating order status:", error);
-    return res.status(500).json({ message: "Internal server error" });
+    return res.status(500).json({ type: error.name, message: error.message });
   }
 };
 
@@ -94,6 +94,6 @@ exports.deleteOrderById = async (req, res) => {
     return res.status(204).end();
   } catch (error) {
     console.error("Error deleting order:", error);
-    return res.status(500).json({ message: "Internal server error" });
+    return res.status(500).json({ type: error.name, message: error.message });
   }
 };

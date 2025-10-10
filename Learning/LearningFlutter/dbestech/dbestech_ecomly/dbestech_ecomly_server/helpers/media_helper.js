@@ -73,7 +73,7 @@ exports.updateCategory = async (req, res) => {
       .json({ message: "Category updated successfully", category });
   } catch (error) {
     console.error("Error updating category:", error);
-    return res.status(500).json({ message: "Internal server error" });
+    return res.status(500).json({ type: error.name, message: error.message });
   }
 };
 

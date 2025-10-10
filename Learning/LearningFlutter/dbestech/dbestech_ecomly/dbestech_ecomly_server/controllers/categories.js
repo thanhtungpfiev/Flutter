@@ -23,7 +23,7 @@ exports.getCategories = async (req, res) => {
     return res.status(200).json(categories);
   } catch (error) {
     console.error("Error fetching categories:", error);
-    return res.status(500).json({ message: "Internal server error" });
+    return res.status(500).json({ type: error.name, message: error.message });
   }
 };
 
@@ -36,6 +36,6 @@ exports.getCategoryById = async (req, res) => {
     return res.status(200).json(category);
   } catch (error) {
     console.error("Error fetching category:", error);
-    return res.status(500).json({ message: "Internal server error" });
+    return res.status(500).json({ type: error.name, message: error.message });
   }
 };
