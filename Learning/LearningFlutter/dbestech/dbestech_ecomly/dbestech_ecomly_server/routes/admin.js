@@ -31,7 +31,8 @@ router.post("/categories", adminCategoriesController.createCategory);
 router.delete("/categories/:id", adminCategoriesController.deleteCategoryById);
 
 // PRODUCTS
-router.get("/products/count", adminProductsController.getProductCount);
+router.get("/products/count", adminProductsController.getProductsCount);
+router.get("/products", adminProductsController.getAllProducts);
 router.post("/products", adminProductsController.createProduct);
 router.put("/products/:id", adminProductsController.updateProductById);
 router.delete("/products/:id", adminProductsController.deleteProductById);
@@ -44,5 +45,6 @@ router.delete(
 router.get("/orders", adminOrdersController.getAllOrders);
 router.get("/orders/count", adminOrdersController.getOrdersCount);
 router.put("/orders/:id/status", adminOrdersController.updateOrderStatusById);
+router.delete("/orders/:id", adminOrdersController.deleteOrderById);
 
 module.exports = router;
