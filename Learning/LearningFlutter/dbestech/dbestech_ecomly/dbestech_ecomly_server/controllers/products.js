@@ -112,11 +112,3 @@ exports.getProductById = async (req, res) => {
     return res.status(500).json({ type: error.name, message: error.message });
   }
 };
-exports.addProductReview = async (req, res) => {
-  try {
-  } catch (error) {}
-};
-exports.getProductReviews = async (req, res) => {
-  try {
-  } catch (error) {}
-};
