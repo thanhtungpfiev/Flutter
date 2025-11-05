@@ -26,6 +26,7 @@
     "node-cron": "^4.2.1",
     "nodemailer": "^7.0.6",
     "nodemon": "^3.1.10",
+    "stripe": "^19.2.0",
     "tunnel-agent": "^0.6.0"
   }
 }

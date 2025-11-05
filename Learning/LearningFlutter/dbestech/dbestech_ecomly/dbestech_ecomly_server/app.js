@@ -32,6 +32,7 @@ const adminRouter = require("./routes/admin");
 const categoriesRouter = require("./routes/categories");
 const productsRouter = require("./routes/products");
 const errorHandler = require("./middlewares/error_handler");
+const authorizePostRequests = require("./middlewares/authorization");
 
 const app = express();
 const env = process.env;
@@ -41,6 +42,7 @@ app.use(bodyParser.json());
 app.use(morgan("tiny"));
 app.use(cors());
 app.use(authJwt());
+app.use(authorizePostRequests);
 app.use(errorHandler);
 
 app.use(`${env.API_URL}/auth`, authRouter);
