@@ -17,7 +17,7 @@
 // External libraries
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
+const jsonwebtoken = require("jsonwebtoken");
 
 // Config / side-effects
 require("dotenv").config();
@@ -80,14 +80,14 @@ exports.login = async (req, res) => {
         .json({ type: "Auth Error", message: "Invalid password" });
     }
 
-    const accessToken = jwt.sign(
+    const accessToken = jsonwebtoken.sign(
       { userId: user._id, isAdmin: user.isAdmin },
       env.JWT_ACCESS_TOKEN_SECRET,
       {
         expiresIn: "1h",
       }
     );
-    const refreshToken = jwt.sign(
+    const refreshToken = jsonwebtoken.sign(
       { userId: user._id, isAdmin: user.isAdmin },
       env.JWT_REFRESH_TOKEN_SECRET,
       {
@@ -118,10 +118,10 @@ exports.verifyToken = async (req, res) => {
     accessToken = accessToken.replace("Bearer ", "").trim();
     const token = await Token.findOne({ accessToken });
     if (!token) return res.json(false);
-    const tokenData = jwt.decode(token.refreshToken);
+    const tokenData = jsonwebtoken.decode(token.refreshToken);
     const user = await User.findById(tokenData.userId);
     if (!user) return res.json(false);
-    const isValid = jwt.verify(
+    const isValid = jsonwebtoken.verify(
       token.refreshToken,
       env.JWT_REFRESH_TOKEN_SECRET
     );

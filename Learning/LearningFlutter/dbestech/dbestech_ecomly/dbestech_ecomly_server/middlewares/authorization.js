@@ -13,7 +13,7 @@
  * *
  * *****************************************************************************
  */
-const jwt = require("jsonwebtoken");
+const jsonwebtoken = require("jsonwebtoken");
 const { default: mongoose } = require("mongoose");
 
 async function authorizePostRequests(req, res, next) {
@@ -35,7 +35,7 @@ async function authorizePostRequests(req, res, next) {
   const authHeader = req.header("Authorization");
   if (!authHeader) return next();
   const accessToken = authHeader.replace("Bearer ", "").trim();
-  const tokenData = jwt.decode(accessToken);
+  const tokenData = jsonwebtoken.decode(accessToken);
   if (req.body.user && tokenData != req.body.user) {
     return res.status(401).json({ message: "Unauthorized: User mismatch" });
   } else if (/\/users\/([^/]+)\//.test(req.originalUrl)) {
