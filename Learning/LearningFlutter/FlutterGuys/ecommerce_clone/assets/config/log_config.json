@@ -1,0 +1,8 @@
+{
+  "console_log_level": "DEBUG",
+  "file_log_level": "INFO",
+  "enable_console_output": true,
+  "enable_file_output": true,
+  "buffer_size": 50,
+  "log_retention_days": 7
+}

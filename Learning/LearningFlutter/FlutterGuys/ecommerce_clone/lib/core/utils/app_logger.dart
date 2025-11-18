@@ -63,6 +63,48 @@ class AppLogger {
     return await _logger.getLogFilePath();
   }
 
+  /// Flush all buffered logs to file immediately
+  static Future<void> flush() async {
+    await AppLoggingService.flush();
+  }
+
+  // Performance-optimized logging methods
+
+  /// Ultra-fast logging for high-frequency data streams (no stack trace)
+  /// Use for: streaming data, continuous monitoring, high-frequency events (>100 Hz)
+  /// Example: AppLogger.stream('Packet received: ${packet.length} bytes');
+  static void stream(String message) {
+    AppLoggingService.stream(message);
+  }
+
+  /// Fast debug logging without stack trace extraction
+  /// Use for: frequent updates, performance-critical debugging
+  /// Example: AppLogger.debugFast('Processing item ${index}');
+  static void debugFast(String message) {
+    AppLoggingService.debugFast(message);
+  }
+
+  /// Conditional logging with zero overhead when condition is false
+  /// Use for: verbose debugging that can be toggled
+  /// Example: AppLogger.debugIf(isVerboseMode, 'Detailed info');
+  static void debugIf(bool condition, String message) {
+    AppLoggingService.debugIf(condition, message);
+  }
+
+  /// Sample-based logging to reduce volume for high-frequency events
+  /// Only logs every Nth call based on sampleRate
+  /// Example: AppLogger.debugSample('High freq event', sampleRate: 100);
+  static void debugSample(String message, {int sampleRate = 10}) {
+    AppLoggingService.debugSample(message, sampleRate: sampleRate);
+  }
+
+  /// Raw logging for structured data (CSV, JSON, audit trails)
+  /// Minimal formatting, file-only output
+  /// Example: AppLogger.raw('CSV,${timestamp},${value1},${value2}');
+  static void raw(String message) {
+    AppLoggingService.raw(message);
+  }
+
   // Convenience methods that match common print/debugPrint usage patterns
 
   /// Print-like method for simple string logging
