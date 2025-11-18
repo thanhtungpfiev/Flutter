@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:ecommerce_clone/core/services/logging_service.dart';
+import 'package:blog_app/core/services/logging_service.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:logger/logger.dart';
