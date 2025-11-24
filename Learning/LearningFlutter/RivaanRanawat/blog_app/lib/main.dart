@@ -1,12 +1,16 @@
-import 'package:blog_app/core/theme/theme.dart';
+import 'package:blog_app/core/theme/app_theme.dart';
 import 'package:blog_app/core/utils/app_logger.dart';
 import 'package:blog_app/features/auth/presentation/pages/signup_page.dart';
 import 'package:blog_app/service_locator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Load environment variables
+  await dotenv.load(fileName: ".env");
 
   // Initialize logging first, before any other operations
   await initializeDependencies();

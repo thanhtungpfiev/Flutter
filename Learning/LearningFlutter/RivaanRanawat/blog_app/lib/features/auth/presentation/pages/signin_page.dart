@@ -1,5 +1,5 @@
 import 'package:blog_app/core/helpers/navigator/app_navigator.dart';
-import 'package:blog_app/core/theme/app_pallete.dart';
+import 'package:blog_app/core/theme/app_colors.dart';
 import 'package:blog_app/core/utils/responsive_utils.dart';
 import 'package:blog_app/features/auth/presentation/pages/signup_page.dart';
 import 'package:blog_app/features/auth/presentation/widgets/auth_field_widget.dart';
@@ -48,7 +48,7 @@ class _SigninPageState extends State<SigninPage> {
                 isObscureText: true,
               ),
               SizedBox(height: ResponsiveUtils.height(20)),
-              AuthGradientButton(buttonText: 'Sign In'),
+              AuthGradientButton(buttonText: 'Sign In', onPressed: () {}),
               SizedBox(height: ResponsiveUtils.height(20)),
               GestureDetector(
                 onTap: () {
@@ -63,7 +63,7 @@ class _SigninPageState extends State<SigninPage> {
                         text: 'Sign Up',
                         style: Theme.of(context).textTheme.titleMedium
                             ?.copyWith(
-                              color: AppPallete.gradient2,
+                              color: AppColors.gradient2,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
