@@ -15,15 +15,8 @@ class AuthDataSourceImpl implements AuthDataSource {
     required String password,
   }) async {
     try {
-      final trimmed = email.trim();
-      String cleanEmail = trimmed;
-      if ((cleanEmail.startsWith('"') && cleanEmail.endsWith('"')) ||
-          (cleanEmail.startsWith("'") && cleanEmail.endsWith("'"))) {
-        cleanEmail = cleanEmail.substring(1, cleanEmail.length - 1);
-      }
-      cleanEmail = cleanEmail.toLowerCase();
       final response = await supabaseClient.auth.signUp(
-        email: cleanEmail,
+        email: email,
         password: password,
         data: {'name': name},
       );
@@ -39,7 +32,7 @@ class AuthDataSourceImpl implements AuthDataSource {
         );
       }
 
-      return UserModel(userId: user.id);
+      return UserModel.fromJson(user.toJson());
     } catch (e) {
       // Map known Supabase auth errors to ServerException for repository
       // handling; fall back to the error's toString() for unknown cases.

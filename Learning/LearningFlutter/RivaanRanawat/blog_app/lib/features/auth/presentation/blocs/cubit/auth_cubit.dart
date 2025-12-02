@@ -1,3 +1,4 @@
+import 'package:blog_app/features/auth/domain/entities/user_entity.dart';
 import 'package:blog_app/features/auth/domain/usecases/signup_usecase.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -23,7 +24,7 @@ class AuthCubit extends Cubit<AuthState> {
         emit(AuthFailure(errorMessage: failure.message));
       },
       (userEntity) {
-        emit(AuthSuccess(userId: userEntity.userId));
+        emit(AuthSuccess(userEntity: userEntity));
       },
     );
   }

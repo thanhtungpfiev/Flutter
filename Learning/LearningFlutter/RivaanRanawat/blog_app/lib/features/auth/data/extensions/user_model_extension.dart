@@ -3,6 +3,6 @@ import 'package:blog_app/features/auth/domain/entities/user_entity.dart';
 
 extension UserModelExtension on UserModel {
   UserEntity toEntity() {
-    return UserEntity(userId: userId);
+    return UserEntity(userId: userId, email: email, name: name);
   }
 }
