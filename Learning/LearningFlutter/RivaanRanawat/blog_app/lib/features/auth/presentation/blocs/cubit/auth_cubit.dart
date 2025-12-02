@@ -1,4 +1,5 @@
 import 'package:blog_app/features/auth/domain/entities/user_entity.dart';
+import 'package:blog_app/features/auth/domain/usecases/signin_usecase.dart';
 import 'package:blog_app/features/auth/domain/usecases/signup_usecase.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -7,7 +8,10 @@ part 'auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
   final SignUpUseCase signUpUseCase;
-  AuthCubit({required this.signUpUseCase}) : super(AuthInitial());
+  final SignInUseCase signInUseCase;
+
+  AuthCubit({required this.signUpUseCase, required this.signInUseCase})
+    : super(AuthInitial());
 
   Future<void> signUp({
     required String name,
@@ -17,6 +21,22 @@ class AuthCubit extends Cubit<AuthState> {
     emit(AuthLoading());
     final result = await signUpUseCase(
       params: SignUpUsecaseParams(name: name, email: email, password: password),
+    );
+
+    result.fold(
+      (failure) {
+        emit(AuthFailure(errorMessage: failure.message));
+      },
+      (userEntity) {
+        emit(AuthSuccess(userEntity: userEntity));
+      },
+    );
+  }
+
+  Future<void> signIn({required String email, required String password}) async {
+    emit(AuthLoading());
+    final result = await signInUseCase(
+      params: SignInUsecaseParams(email: email, password: password),
     );
 
     result.fold(

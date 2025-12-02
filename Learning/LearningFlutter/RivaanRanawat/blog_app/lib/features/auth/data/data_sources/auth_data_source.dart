@@ -7,7 +7,7 @@ abstract interface class AuthDataSource {
     required String password,
   });
 
-  Future<String> signInWithEmailPassword({
+  Future<UserModel> signInWithEmailPassword({
     required String email,
     required String password,
   });

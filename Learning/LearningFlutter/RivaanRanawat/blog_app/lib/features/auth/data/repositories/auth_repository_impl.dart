@@ -29,11 +29,18 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future<Either<Failure, String>> signInWithEmailPassword({
+  Future<Either<Failure, UserEntity>> signInWithEmailPassword({
     required String email,
     required String password,
-  }) {
-    // TODO: implement signInWithEmailPassword
-    throw UnimplementedError();
+  }) async {
+    try {
+      final userModel = await authDataSource.signInWithEmailPassword(
+        email: email,
+        password: password,
+      );
+      return Right(userModel.toEntity());
+    } on ServerException catch (e) {
+      return Left(Failure(e.message));
+    }
   }
 }

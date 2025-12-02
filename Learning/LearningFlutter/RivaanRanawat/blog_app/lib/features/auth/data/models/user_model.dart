@@ -6,11 +6,18 @@ class UserModel {
   UserModel({required this.userId, required this.email, required this.name});
 
   factory UserModel.fromJson(Map<String, dynamic> json) {
-    return UserModel(
-      userId: json['userId'],
-      email: json['email'],
-      name: json['name'],
-    );
+    // Handles both direct User object from Supabase and custom map
+    // Supabase user: id, email, user_metadata['name']
+    final userId = json['userId'] ?? json['id'] ?? '';
+    final email = json['email'] ?? '';
+    // Try both direct and nested user_metadata for name
+    String? name = json['name'];
+    if (name == null &&
+        json['user_metadata'] != null &&
+        json['user_metadata'] is Map) {
+      name = json['user_metadata']['name'] as String?;
+    }
+    return UserModel(userId: userId, email: email, name: name ?? '');
   }
 
   Map<String, dynamic> toJson() {
