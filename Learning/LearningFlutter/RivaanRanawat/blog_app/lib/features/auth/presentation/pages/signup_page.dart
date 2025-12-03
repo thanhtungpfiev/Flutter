@@ -6,7 +6,6 @@ import 'package:blog_app/features/auth/presentation/blocs/cubit/auth_cubit.dart'
 import 'package:blog_app/features/auth/presentation/pages/signin_page.dart';
 import 'package:blog_app/features/auth/presentation/widgets/auth_field_widget.dart';
 import 'package:blog_app/features/auth/presentation/widgets/auth_gradient_button.dart';
-import 'package:blog_app/service_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -56,75 +55,68 @@ class _SignupPageState extends State<SignupPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: BlocProvider(
-        create: (context) => sl<AuthCubit>(),
-        child: Builder(
-          builder: (context) => Padding(
-            padding: EdgeInsets.all(ResponsiveUtils.width(16)),
-            child: BlocBuilder<AuthCubit, AuthState>(
-              builder: (context, state) {
-                final isLoading = state is AuthLoading;
-                return AbsorbPointer(
-                  absorbing: isLoading,
-                  child: Form(
-                    key: formKey,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          UIConstants.signUp,
-                          style: TextStyle(
-                            fontSize: 50,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        SizedBox(height: ResponsiveUtils.height(30)),
-                        _nameField(),
-                        SizedBox(height: ResponsiveUtils.height(15)),
-                        _emailField(),
-                        SizedBox(height: ResponsiveUtils.height(15)),
-                        _passwordField(),
-                        SizedBox(height: ResponsiveUtils.height(20)),
-                        BlocConsumer<AuthCubit, AuthState>(
-                          listener: (context, state) {
-                            if (state is AuthSuccess) {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text('Sign up successful'),
-                                  backgroundColor: AppColors.successColor,
-                                ),
-                              );
-                              // Optionally navigate away or pop
-                            } else if (state is AuthFailure) {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text(state.errorMessage),
-                                  backgroundColor: AppColors.errorColor,
-                                ),
-                              );
-                            }
-                          },
-                          builder: (context, state) {
-                            if (state is AuthLoading) {
-                              return SizedBox(
-                                height: 48,
-                                child: Center(
-                                  child: CircularProgressIndicator(),
-                                ),
-                              );
-                            }
-                            return _signUpButton(context);
-                          },
-                        ),
-                        SizedBox(height: ResponsiveUtils.height(20)),
-                        _alreadyHaveAccountText(context),
-                      ],
+      body: Padding(
+        padding: EdgeInsets.all(ResponsiveUtils.width(16)),
+        child: BlocBuilder<AuthCubit, AuthState>(
+          builder: (context, state) {
+            final isLoading = state is AuthLoading;
+            return AbsorbPointer(
+              absorbing: isLoading,
+              child: Form(
+                key: formKey,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      UIConstants.signUp,
+                      style: TextStyle(
+                        fontSize: 50,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                );
-              },
-            ),
-          ),
+                    SizedBox(height: ResponsiveUtils.height(30)),
+                    _nameField(),
+                    SizedBox(height: ResponsiveUtils.height(15)),
+                    _emailField(),
+                    SizedBox(height: ResponsiveUtils.height(15)),
+                    _passwordField(),
+                    SizedBox(height: ResponsiveUtils.height(20)),
+                    BlocConsumer<AuthCubit, AuthState>(
+                      listener: (context, state) {
+                        if (state is AuthSuccess) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text('Sign up successful'),
+                              backgroundColor: AppColors.successColor,
+                            ),
+                          );
+                          // Optionally navigate away or pop
+                        } else if (state is AuthFailure) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(state.errorMessage),
+                              backgroundColor: AppColors.errorColor,
+                            ),
+                          );
+                        }
+                      },
+                      builder: (context, state) {
+                        if (state is AuthLoading) {
+                          return SizedBox(
+                            height: 48,
+                            child: Center(child: CircularProgressIndicator()),
+                          );
+                        }
+                        return _signUpButton(context);
+                      },
+                    ),
+                    SizedBox(height: ResponsiveUtils.height(20)),
+                    _alreadyHaveAccountText(context),
+                  ],
+                ),
+              ),
+            );
+          },
         ),
       ),
     );

@@ -5,6 +5,7 @@ import 'package:blog_app/features/auth/data/data_sources/auth_data_source.dart';
 import 'package:blog_app/features/auth/data/data_sources/auth_data_source_impl.dart';
 import 'package:blog_app/features/auth/data/repositories/auth_repository_impl.dart';
 import 'package:blog_app/features/auth/domain/repositories/auth_repository.dart';
+import 'package:blog_app/features/auth/domain/usecases/get_current_user_usecase.dart';
 import 'package:blog_app/features/auth/domain/usecases/signin_usecase.dart';
 import 'package:blog_app/features/auth/domain/usecases/signup_usecase.dart';
 import 'package:blog_app/features/auth/presentation/blocs/cubit/auth_cubit.dart';
@@ -44,7 +45,16 @@ Future<void> initializeDependencies() async {
   // Auth
   sl.registerSingleton<SignUpUseCase>(SignUpUseCase(authRepository: sl()));
   sl.registerSingleton<SignInUseCase>(SignInUseCase(authRepository: sl()));
+  sl.registerSingleton<GetCurrentUserUseCase>(
+    GetCurrentUserUseCase(authRepository: sl()),
+  );
 
   // Blocs
-  sl.registerFactory(() => AuthCubit(signUpUseCase: sl(), signInUseCase: sl()));
+  sl.registerFactory(
+    () => AuthCubit(
+      signUpUseCase: sl(),
+      signInUseCase: sl(),
+      getCurrentUserUseCase: sl(),
+    ),
+  );
 }

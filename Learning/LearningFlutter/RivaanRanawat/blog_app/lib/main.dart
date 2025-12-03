@@ -1,8 +1,10 @@
 import 'package:blog_app/core/theme/app_theme.dart';
 import 'package:blog_app/core/utils/app_logger.dart';
-import 'package:blog_app/features/auth/presentation/pages/signup_page.dart';
+import 'package:blog_app/features/auth/presentation/blocs/cubit/auth_cubit.dart';
+import 'package:blog_app/features/auth/presentation/pages/auth_gate.dart';
 import 'package:blog_app/service_locator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -31,11 +33,18 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return MaterialApp(
-          title: 'Blog App',
-          debugShowCheckedModeBanner: false,
-          theme: AppTheme.darkThemeMode,
-          home: const SignupPage(),
+        return BlocProvider<AuthCubit>(
+          create: (_) {
+            final cubit = sl<AuthCubit>();
+            cubit.getCurrentUser();
+            return cubit;
+          },
+          child: MaterialApp(
+            title: 'Blog App',
+            debugShowCheckedModeBanner: false,
+            theme: AppTheme.darkThemeMode,
+            home: const AuthGate(),
+          ),
         );
       },
     );

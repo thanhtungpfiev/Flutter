@@ -43,4 +43,18 @@ class AuthRepositoryImpl implements AuthRepository {
       return Left(Failure(e.message));
     }
   }
+
+  @override
+  Future<Either<Failure, UserEntity>> getCurrentUser() async {
+    try {
+      final userModel = await authDataSource.getCurrentUserData();
+      if (userModel != null) {
+        return Right(userModel.toEntity());
+      } else {
+        return Left(Failure('No user is currently signed in.'));
+      }
+    } on ServerException catch (e) {
+      return Left(Failure(e.message));
+    }
+  }
 }

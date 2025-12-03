@@ -73,4 +73,26 @@ class AuthDataSourceImpl implements AuthDataSource {
       throw ServerException(message);
     }
   }
+
+  @override
+  Session? get currentUserSession => supabaseClient.auth.currentSession;
+
+  @override
+  Future<UserModel?> getCurrentUserData() async {
+    try {
+      if (currentUserSession == null) {
+        return null;
+      }
+      final userData = await supabaseClient
+          .from('profiles')
+          .select()
+          .eq('id', currentUserSession!.user.id);
+      return UserModel.fromJson(
+        userData.first,
+      ).copyWith(email: currentUserSession!.user.email);
+    } catch (e) {
+      AppLogger.e('Error fetching current user data: $e');
+      throw ServerException(e.toString());
+    }
+  }
 }
