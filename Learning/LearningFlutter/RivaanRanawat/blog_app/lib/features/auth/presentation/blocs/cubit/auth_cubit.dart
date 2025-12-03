@@ -1,5 +1,5 @@
 import 'package:blog_app/core/utils/app_logger.dart';
-import 'package:blog_app/features/auth/domain/entities/user_entity.dart';
+import 'package:blog_app/core/common/entities/user_entity.dart';
 import 'package:blog_app/features/auth/domain/usecases/get_current_user_usecase.dart';
 import 'package:blog_app/features/auth/domain/usecases/signin_usecase.dart';
 import 'package:blog_app/features/auth/domain/usecases/signup_usecase.dart';

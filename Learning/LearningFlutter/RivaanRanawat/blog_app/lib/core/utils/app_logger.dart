@@ -1,4 +1,4 @@
-import 'package:blog_app/core/services/app_logging_service.dart';
+import 'package:blog_app/core/services/logging/app_logging_service.dart';
 
 /// A simple logger utility that can be used throughout the app as a replacement for print() and debugPrint()
 ///

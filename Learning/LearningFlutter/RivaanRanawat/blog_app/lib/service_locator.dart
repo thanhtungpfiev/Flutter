@@ -1,6 +1,7 @@
+import 'package:blog_app/core/services/app_user/app_user_service.dart';
 import 'package:blog_app/core/secrets/app_secrets.dart';
-import 'package:blog_app/core/services/app_logging_service.dart';
-import 'package:blog_app/core/services/logging_service.dart';
+import 'package:blog_app/core/services/logging/app_logging_service.dart';
+import 'package:blog_app/core/services/logging/logging_service.dart';
 import 'package:blog_app/features/auth/data/data_sources/auth_data_source.dart';
 import 'package:blog_app/features/auth/data/data_sources/auth_data_source_impl.dart';
 import 'package:blog_app/features/auth/data/repositories/auth_repository_impl.dart';
@@ -57,4 +58,7 @@ Future<void> initializeDependencies() async {
       getCurrentUserUseCase: sl(),
     ),
   );
+
+  // App-level user service
+  sl.registerSingleton<AppUserService>(AppUserService());
 }

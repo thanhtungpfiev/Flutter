@@ -1,7 +1,9 @@
 import 'package:blog_app/core/helpers/navigator/app_navigator.dart';
+import 'package:blog_app/core/services/app_user/app_user_service.dart';
 import 'package:blog_app/features/auth/presentation/blocs/cubit/auth_cubit.dart';
 import 'package:blog_app/features/auth/presentation/pages/signin_page.dart';
 import 'package:blog_app/features/auth/presentation/pages/signup_page.dart';
+import 'package:blog_app/service_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -23,12 +25,14 @@ class _AuthGateState extends State<AuthGate> {
 
   @override
   Widget build(BuildContext context) {
-    // Use the global AuthCubit provided at the app root
     return BlocListener<AuthCubit, AuthState>(
       listener: (context, state) {
+        if (!mounted) return;
         if (state is AuthSuccess) {
+          sl<AppUserService>().saveUser(state.userEntity);
           AppNavigator.pushReplacement(context, const SignupPage());
         } else if (state is AuthFailure) {
+          sl<AppUserService>().clear();
           AppNavigator.pushReplacement(context, const SigninPage());
         }
       },

@@ -33,12 +33,16 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return BlocProvider<AuthCubit>(
-          create: (_) {
-            final cubit = sl<AuthCubit>();
-            cubit.getCurrentUser();
-            return cubit;
-          },
+        return MultiBlocProvider(
+          providers: [
+            BlocProvider<AuthCubit>(
+              create: (_) {
+                final cubit = sl<AuthCubit>();
+                cubit.getCurrentUser();
+                return cubit;
+              },
+            ),
+          ],
           child: MaterialApp(
             title: 'Blog App',
             debugShowCheckedModeBanner: false,

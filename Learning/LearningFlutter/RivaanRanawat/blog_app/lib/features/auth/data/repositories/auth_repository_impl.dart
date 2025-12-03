@@ -2,7 +2,7 @@ import 'package:blog_app/core/error/failure.dart';
 import 'package:blog_app/core/error/server_exception.dart';
 import 'package:blog_app/features/auth/data/data_sources/auth_data_source.dart';
 import 'package:blog_app/features/auth/data/extensions/user_model_extension.dart';
-import 'package:blog_app/features/auth/domain/entities/user_entity.dart';
+import 'package:blog_app/core/common/entities/user_entity.dart';
 import 'package:blog_app/features/auth/domain/repositories/auth_repository.dart';
 import 'package:dartz/dartz.dart';
 
