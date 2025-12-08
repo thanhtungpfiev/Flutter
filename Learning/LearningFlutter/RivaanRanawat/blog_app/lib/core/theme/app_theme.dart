@@ -15,6 +15,10 @@ class AppTheme {
       elevation: 0,
       centerTitle: true,
     ),
+    chipTheme: const ChipThemeData(
+      color: WidgetStatePropertyAll(AppColors.backgroundColor),
+      side: BorderSide.none,
+    ),
     snackBarTheme: const SnackBarThemeData(
       backgroundColor: AppColors.backgroundColor,
       contentTextStyle: TextStyle(color: Colors.white),

@@ -2,7 +2,7 @@ import 'package:blog_app/core/constants/ui_constants.dart';
 import 'package:blog_app/core/helpers/navigator/app_navigator.dart';
 import 'package:blog_app/core/theme/app_colors.dart';
 import 'package:blog_app/core/utils/responsive_utils.dart';
-import 'package:blog_app/features/auth/presentation/blocs/cubit/auth_cubit.dart';
+import 'package:blog_app/features/auth/presentation/cubits/auth_cubit.dart';
 import 'package:blog_app/features/auth/presentation/pages/signin_page.dart';
 import 'package:blog_app/features/auth/presentation/widgets/auth_field_widget.dart';
 import 'package:blog_app/features/auth/presentation/widgets/auth_gradient_button.dart';

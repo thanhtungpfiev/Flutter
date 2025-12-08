@@ -32,4 +32,10 @@ class UIConstants {
   static const String signInPasswordMinLength8 =
       'Password must be at least 8 characters long.';
   static const String signInPleaseFixErrors = 'Please fix the errors above';
+
+  // Blog Page
+  static const String blogPageTitle = 'Blog Posts';
+
+  // Add New Blog Page
+  static const String addNewBlogSelectImage = 'Select your image';
 }

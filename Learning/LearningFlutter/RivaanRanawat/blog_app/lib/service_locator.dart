@@ -1,5 +1,5 @@
-import 'package:blog_app/core/services/app_user/app_user_service.dart';
 import 'package:blog_app/core/secrets/app_secrets.dart';
+import 'package:blog_app/core/services/app_user/app_user_service.dart';
 import 'package:blog_app/core/services/logging/app_logging_service.dart';
 import 'package:blog_app/core/services/logging/logging_service.dart';
 import 'package:blog_app/features/auth/data/data_sources/auth_data_source.dart';
@@ -9,7 +9,8 @@ import 'package:blog_app/features/auth/domain/repositories/auth_repository.dart'
 import 'package:blog_app/features/auth/domain/usecases/get_current_user_usecase.dart';
 import 'package:blog_app/features/auth/domain/usecases/signin_usecase.dart';
 import 'package:blog_app/features/auth/domain/usecases/signup_usecase.dart';
-import 'package:blog_app/features/auth/presentation/blocs/cubit/auth_cubit.dart';
+import 'package:blog_app/features/auth/presentation/cubits/auth_cubit.dart';
+import 'package:blog_app/features/blog/presentation/cubit/blog_cubit.dart';
 import 'package:get_it/get_it.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -51,6 +52,7 @@ Future<void> initializeDependencies() async {
   );
 
   // Blocs
+  // Auth
   sl.registerFactory(
     () => AuthCubit(
       signUpUseCase: sl(),
@@ -58,6 +60,9 @@ Future<void> initializeDependencies() async {
       getCurrentUserUseCase: sl(),
     ),
   );
+
+  // Blog
+  sl.registerFactory(() => BlogCubit());
 
   // App-level user service
   sl.registerSingleton<AppUserService>(AppUserService());
