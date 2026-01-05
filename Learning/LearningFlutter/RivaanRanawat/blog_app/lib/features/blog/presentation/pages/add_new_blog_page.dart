@@ -104,12 +104,12 @@ class _AddNewBlogPageState extends State<AddNewBlogPage> {
                               onTap: selectImage,
                               child: SizedBox(
                                 width: double.infinity,
-                                height: ResponsiveUtils.height(150),
+                                height: ResponsiveUtils.height(600),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(
                                     ResponsiveUtils.radius(10),
                                   ),
-                                  child: Image.file(image!, fit: BoxFit.cover),
+                                  child: Image.file(image!, fit: BoxFit.fill),
                                 ),
                               ),
                             )
@@ -128,7 +128,7 @@ class _AddNewBlogPageState extends State<AddNewBlogPage> {
                                 ),
 
                                 child: SizedBox(
-                                  height: ResponsiveUtils.height(150),
+                                  height: ResponsiveUtils.height(600),
                                   width: double.infinity,
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
