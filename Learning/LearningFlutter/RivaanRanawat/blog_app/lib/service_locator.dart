@@ -10,6 +10,11 @@ import 'package:blog_app/features/auth/domain/usecases/get_current_user_usecase.
 import 'package:blog_app/features/auth/domain/usecases/signin_usecase.dart';
 import 'package:blog_app/features/auth/domain/usecases/signup_usecase.dart';
 import 'package:blog_app/features/auth/presentation/cubits/auth_cubit.dart';
+import 'package:blog_app/features/blog/data/data_sources/blog_remote_data_source.dart';
+import 'package:blog_app/features/blog/data/data_sources/blog_remote_data_source_impl.dart';
+import 'package:blog_app/features/blog/data/repositories/blog_repository_impl.dart';
+import 'package:blog_app/features/blog/domain/repositories/blog_repository.dart';
+import 'package:blog_app/features/blog/domain/usecases/upload_blog_usecase.dart';
 import 'package:blog_app/features/blog/presentation/cubit/blog_cubit.dart';
 import 'package:get_it/get_it.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -37,10 +42,20 @@ Future<void> initializeDependencies() async {
     AuthDataSourceImpl(supabaseClient: sl()),
   );
 
+  // Blog
+  sl.registerSingleton<BlogRemoteDataSource>(
+    BlogRemoteDataSourceImpl(supabaseClient: sl()),
+  );
+
   // Repositories
   // Auth
   sl.registerSingleton<AuthRepository>(
     AuthRepositoryImpl(authDataSource: sl()),
+  );
+
+  // Blog
+  sl.registerSingleton<BlogRepository>(
+    BlogRepositoryImpl(blogRemoteDataSource: sl()),
   );
 
   // Usecases
@@ -49,6 +64,11 @@ Future<void> initializeDependencies() async {
   sl.registerSingleton<SignInUseCase>(SignInUseCase(authRepository: sl()));
   sl.registerSingleton<GetCurrentUserUseCase>(
     GetCurrentUserUseCase(authRepository: sl()),
+  );
+
+  // Blog
+  sl.registerSingleton<UploadBlogUseCase>(
+    UploadBlogUseCase(blogRepository: sl()),
   );
 
   // Blocs
@@ -62,7 +82,7 @@ Future<void> initializeDependencies() async {
   );
 
   // Blog
-  sl.registerFactory(() => BlogCubit());
+  sl.registerFactory(() => BlogCubit(uploadBlogUseCase: sl()));
 
   // App-level user service
   sl.registerSingleton<AppUserService>(AppUserService());

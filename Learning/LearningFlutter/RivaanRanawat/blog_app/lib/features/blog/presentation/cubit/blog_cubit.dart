@@ -1,8 +1,21 @@
+import 'package:blog_app/features/blog/domain/entities/blog_entity.dart';
+import 'package:blog_app/features/blog/domain/usecases/upload_blog_usecase.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'blog_state.dart';
 
 class BlogCubit extends Cubit<BlogState> {
-  BlogCubit() : super(BlogInitial());
+  final UploadBlogUseCase uploadBlogUseCase;
+
+  BlogCubit({required this.uploadBlogUseCase}) : super(BlogInitial());
+
+  Future<void> uploadBlog(UploadBlogUseCaseParams params) async {
+    emit(BlogLoading());
+    final result = await uploadBlogUseCase.call(params: params);
+    result.fold(
+      (failure) => emit(BlogError(message: failure.message)),
+      (blog) => emit(BlogUploaded(blog: blog)),
+    );
+  }
 }

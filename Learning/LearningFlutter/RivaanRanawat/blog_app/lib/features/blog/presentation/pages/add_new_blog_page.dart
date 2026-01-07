@@ -1,12 +1,17 @@
 import 'dart:io';
 
+import 'package:blog_app/core/common/widgets/loader.dart';
 import 'package:blog_app/core/constants/ui_constants.dart';
+import 'package:blog_app/core/helpers/navigator/app_navigator.dart';
+import 'package:blog_app/core/services/app_user/app_user_service.dart';
 import 'package:blog_app/core/theme/app_colors.dart';
 import 'package:blog_app/core/utils/pick_image.dart';
 import 'package:blog_app/core/utils/responsive_utils.dart';
 import 'package:blog_app/features/blog/core/constants/blog_constants.dart';
+import 'package:blog_app/features/blog/domain/usecases/upload_blog_usecase.dart';
 import 'package:blog_app/features/blog/presentation/cubit/blog_cubit.dart';
-import 'package:blog_app/features/blog/presentation/widgets/blog_editor.dart';
+import 'package:blog_app/features/blog/presentation/pages/blog_page.dart';
+import 'package:blog_app/features/blog/presentation/widgets/blog_editor_widget.dart';
 import 'package:blog_app/service_locator.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +30,7 @@ class _AddNewBlogPageState extends State<AddNewBlogPage> {
   final formKey = GlobalKey<FormState>();
   List<String> selectedTopics = [];
   File? image;
+  late final BlogCubit _blogCubit;
 
   void selectImage() async {
     final pickedImage = await pickImage();
@@ -39,31 +45,47 @@ class _AddNewBlogPageState extends State<AddNewBlogPage> {
     if (formKey.currentState!.validate() &&
         selectedTopics.isNotEmpty &&
         image != null) {
-      // final posterId =
-      //     (context.read<AppUserCubit>().state as AppUserLoggedIn).user.id;
-      // context.read<BlogBloc>().add(
-      //   BlogUpload(
-      //     posterId: posterId,
-      //     title: titleController.text.trim(),
-      //     content: contentController.text.trim(),
-      //     image: image!,
-      //     topics: selectedTopics,
-      //   ),
-      // );
+      final currentUser = sl<AppUserService>().currentUser;
+      if (currentUser == null) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('User not logged in'),
+            backgroundColor: AppColors.errorColor,
+          ),
+        );
+        return;
+      }
+      final posterId = currentUser.userId;
+      _blogCubit.uploadBlog(
+        UploadBlogUseCaseParams(
+          posterId: posterId,
+          title: titleController.text.trim(),
+          content: contentController.text.trim(),
+          image: image!,
+          topics: selectedTopics,
+        ),
+      );
     }
   }
 
   @override
   void dispose() {
-    super.dispose();
     titleController.dispose();
     contentController.dispose();
+    _blogCubit.close();
+    super.dispose();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _blogCubit = sl<BlogCubit>();
   }
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<BlogCubit>(
-      create: (_) => sl<BlogCubit>(),
+    return BlocProvider<BlogCubit>.value(
+      value: _blogCubit,
       child: Scaffold(
         appBar: AppBar(
           actions: [
@@ -77,20 +99,21 @@ class _AddNewBlogPageState extends State<AddNewBlogPage> {
         ),
         body: BlocConsumer<BlogCubit, BlogState>(
           listener: (context, state) {
-            // if (state is BlogFailure) {
-            //   showSnackBar(context, state.error);
-            // } else if (state is BlogUploadSuccess) {
-            //   Navigator.pushAndRemoveUntil(
-            //     context,
-            //     BlogPage.route(),
-            //     (route) => false,
-            //   );
-            // }
+            if (state is BlogError) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(state.message),
+                  backgroundColor: AppColors.errorColor,
+                ),
+              );
+            } else if (state is BlogUploaded) {
+              AppNavigator.pushAndRemoveUntil(context, BlogPage());
+            }
           },
           builder: (context, state) {
-            // if (state is BlogLoading) {
-            //   return const Loader();
-            // }
+            if (state is BlogLoading) {
+              return const LoaderWidget();
+            }
 
             return SingleChildScrollView(
               child: Padding(
@@ -192,12 +215,12 @@ class _AddNewBlogPageState extends State<AddNewBlogPage> {
                         ),
                       ),
                       SizedBox(height: ResponsiveUtils.height(10)),
-                      BlogEditor(
+                      BlogEditorWidget(
                         controller: titleController,
                         hintText: 'Blog title',
                       ),
                       SizedBox(height: ResponsiveUtils.height(10)),
-                      BlogEditor(
+                      BlogEditorWidget(
                         controller: contentController,
                         hintText: 'Blog content',
                       ),

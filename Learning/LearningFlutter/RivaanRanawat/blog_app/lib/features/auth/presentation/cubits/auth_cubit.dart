@@ -1,5 +1,5 @@
-import 'package:blog_app/core/utils/app_logger.dart';
 import 'package:blog_app/core/common/entities/user_entity.dart';
+import 'package:blog_app/core/utils/app_logger.dart';
 import 'package:blog_app/features/auth/domain/usecases/get_current_user_usecase.dart';
 import 'package:blog_app/features/auth/domain/usecases/signin_usecase.dart';
 import 'package:blog_app/features/auth/domain/usecases/signup_usecase.dart';
@@ -26,7 +26,7 @@ class AuthCubit extends Cubit<AuthState> {
   }) async {
     emit(AuthLoading());
     final result = await signUpUseCase(
-      params: SignUpUsecaseParams(name: name, email: email, password: password),
+      params: SignUpUseCaseParams(name: name, email: email, password: password),
     );
 
     result.fold(
@@ -42,7 +42,7 @@ class AuthCubit extends Cubit<AuthState> {
   Future<void> signIn({required String email, required String password}) async {
     emit(AuthLoading());
     final result = await signInUseCase(
-      params: SignInUsecaseParams(email: email, password: password),
+      params: SignInUseCaseParams(email: email, password: password),
     );
 
     result.fold(
