@@ -12,6 +12,11 @@ final class BlogUploaded extends BlogState {
   BlogUploaded({required this.blog});
 }
 
+final class BlogsLoaded extends BlogState {
+  final List<BlogEntity> blogs;
+  BlogsLoaded({required this.blogs});
+}
+
 final class BlogError extends BlogState {
   final String message;
   BlogError({required this.message});

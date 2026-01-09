@@ -14,6 +14,7 @@ import 'package:blog_app/features/blog/data/data_sources/blog_remote_data_source
 import 'package:blog_app/features/blog/data/data_sources/blog_remote_data_source_impl.dart';
 import 'package:blog_app/features/blog/data/repositories/blog_repository_impl.dart';
 import 'package:blog_app/features/blog/domain/repositories/blog_repository.dart';
+import 'package:blog_app/features/blog/domain/usecases/get_all_blogs_usecase.dart';
 import 'package:blog_app/features/blog/domain/usecases/upload_blog_usecase.dart';
 import 'package:blog_app/features/blog/presentation/cubit/blog_cubit.dart';
 import 'package:get_it/get_it.dart';
@@ -70,6 +71,9 @@ Future<void> initializeDependencies() async {
   sl.registerSingleton<UploadBlogUseCase>(
     UploadBlogUseCase(blogRepository: sl()),
   );
+  sl.registerSingleton<GetAllBlogsUseCase>(
+    GetAllBlogsUseCase(blogRepository: sl()),
+  );
 
   // Blocs
   // Auth
@@ -82,7 +86,9 @@ Future<void> initializeDependencies() async {
   );
 
   // Blog
-  sl.registerFactory(() => BlogCubit(uploadBlogUseCase: sl()));
+  sl.registerFactory(
+    () => BlogCubit(uploadBlogUseCase: sl(), getAllBlogsUseCase: sl()),
+  );
 
   // App-level user service
   sl.registerSingleton<AppUserService>(AppUserService());

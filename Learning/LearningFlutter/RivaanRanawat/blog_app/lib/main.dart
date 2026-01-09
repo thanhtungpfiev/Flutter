@@ -2,6 +2,7 @@ import 'package:blog_app/core/theme/app_theme.dart';
 import 'package:blog_app/core/utils/app_logger.dart';
 import 'package:blog_app/features/auth/presentation/cubits/auth_cubit.dart';
 import 'package:blog_app/features/auth/presentation/pages/auth_gate.dart';
+import 'package:blog_app/features/blog/presentation/cubit/blog_cubit.dart';
 import 'package:blog_app/service_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
                 return cubit;
               },
             ),
+            BlocProvider<BlogCubit>(create: (_) => sl<BlogCubit>()),
           ],
           child: MaterialApp(
             title: 'Blog App',
