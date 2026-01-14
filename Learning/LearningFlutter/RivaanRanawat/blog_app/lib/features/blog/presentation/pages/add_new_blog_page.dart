@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:blog_app/core/common/widgets/loader.dart';
-import 'package:blog_app/core/constants/ui_constants.dart';
 import 'package:blog_app/core/services/app_user/app_user_service.dart';
 import 'package:blog_app/core/theme/app_colors.dart';
 import 'package:blog_app/core/utils/pick_image.dart';
@@ -153,7 +152,7 @@ class _AddNewBlogPageState extends State<AddNewBlogPage> {
                                       height: ResponsiveUtils.height(15),
                                     ),
                                     Text(
-                                      UIConstants.addNewBlogSelectImage,
+                                      'Select your image',
                                       style: TextStyle(
                                         fontSize: ResponsiveUtils.fontSize(15),
                                       ),

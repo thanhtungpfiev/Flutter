@@ -40,13 +40,13 @@ class _SignupPageState extends State<SignupPage> {
   // Password validation helper
   String? _validatePassword(String? password) {
     if (password == null || password.isEmpty) {
-      return UIConstants.signUpPasswordRequired;
+      return 'Password is required.';
     }
     if (password.length < 8) {
-      return UIConstants.signUpPasswordMinLength8;
+      return 'Password must be at least 8 characters long.';
     }
     if (!RegExp(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)').hasMatch(password)) {
-      return UIConstants.signUpPasswordComplexity;
+      return 'Password must contain at least one uppercase letter, one lowercase letter, and one number.';
     }
     return null;
   }
@@ -129,11 +129,11 @@ class _SignupPageState extends State<SignupPage> {
       },
       child: RichText(
         text: TextSpan(
-          text: UIConstants.signUpAlreadyHaveAccount,
+          text: 'Already have an account? ',
           style: Theme.of(context).textTheme.titleMedium,
           children: [
             TextSpan(
-              text: UIConstants.signUpSignInButtonText,
+              text: 'Sign In',
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                 color: AppColors.gradient2,
                 fontWeight: FontWeight.bold,
@@ -158,7 +158,7 @@ class _SignupPageState extends State<SignupPage> {
         } else {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text(UIConstants.signUpPleaseFixErrors),
+              content: Text('Please fix the errors above'),
               backgroundColor: AppColors.errorColor,
             ),
           );
@@ -169,7 +169,7 @@ class _SignupPageState extends State<SignupPage> {
 
   AuthFieldWidget _passwordField() {
     return AuthFieldWidget(
-      hintText: UIConstants.signUpNamePassWord,
+      hintText: 'Password',
       controller: passwordController,
       validator: _validatePassword,
       isObscureText: true,
@@ -178,14 +178,14 @@ class _SignupPageState extends State<SignupPage> {
 
   AuthFieldWidget _emailField() {
     return AuthFieldWidget(
-      hintText: UIConstants.signUpEmailHintText,
+      hintText: 'Email',
       controller: emailController,
       validator: (value) {
         if (value == null || value.trim().isEmpty) {
-          return UIConstants.signUpEmailRequired;
+          return 'Email address is required';
         }
         if (!_isValidEmail(value.trim())) {
-          return UIConstants.signUpPleaseEnterValidEmail;
+          return 'Please enter a valid email address';
         }
         return null;
       },
@@ -195,14 +195,14 @@ class _SignupPageState extends State<SignupPage> {
 
   AuthFieldWidget _nameField() {
     return AuthFieldWidget(
-      hintText: UIConstants.signUpNameHintText,
+      hintText: 'Name',
       controller: nameController,
       validator: (value) {
         if (value == null || value.isEmpty) {
-          return UIConstants.signUpNameRequired;
+          return 'Name is required';
         }
         if (value.length < 2) {
-          return UIConstants.signUpNameMinLength;
+          return 'Name must be at least 2 characters long';
         }
         return null;
       },

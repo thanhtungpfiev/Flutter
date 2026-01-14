@@ -38,10 +38,10 @@ class _SigninPageState extends State<SigninPage> {
   // Password validation helper
   String? _validatePassword(String? password) {
     if (password == null || password.isEmpty) {
-      return UIConstants.signInPasswordRequired;
+      return 'Password is required.';
     }
     if (password.length < 8) {
-      return UIConstants.signInPasswordMinLength8;
+      return 'Password must be at least 8 characters long.';
     }
     return null;
   }
@@ -122,11 +122,11 @@ class _SigninPageState extends State<SigninPage> {
       },
       child: RichText(
         text: TextSpan(
-          text: UIConstants.signInDontHaveAccount,
+          text: "Don't have an account? ",
           style: Theme.of(context).textTheme.titleMedium,
           children: [
             TextSpan(
-              text: UIConstants.signInSignUpButtonText,
+              text: 'Sign Up',
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                 color: AppColors.gradient2,
                 fontWeight: FontWeight.bold,
@@ -140,7 +140,7 @@ class _SigninPageState extends State<SigninPage> {
 
   AuthGradientButton _signInButton(BuildContext context) {
     return AuthGradientButton(
-      buttonText: UIConstants.signIn,
+      buttonText: 'Sign In',
       onPressed: () {
         if (formKey.currentState!.validate()) {
           context.read<AuthCubit>().signIn(
@@ -150,7 +150,7 @@ class _SigninPageState extends State<SigninPage> {
         } else {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text(UIConstants.signInPleaseFixErrors),
+              content: Text('Please fix the errors above'),
               backgroundColor: AppColors.errorColor,
             ),
           );
@@ -161,7 +161,7 @@ class _SigninPageState extends State<SigninPage> {
 
   AuthFieldWidget _passwordField() {
     return AuthFieldWidget(
-      hintText: UIConstants.signInPasswordHintText,
+      hintText: 'Password',
       controller: passwordController,
       validator: _validatePassword,
       isObscureText: true,
@@ -170,14 +170,14 @@ class _SigninPageState extends State<SigninPage> {
 
   AuthFieldWidget _emailField() {
     return AuthFieldWidget(
-      hintText: UIConstants.signInEmailHintText,
+      hintText: 'Email',
       controller: emailController,
       validator: (value) {
         if (value == null || value.trim().isEmpty) {
-          return UIConstants.signInEmailRequired;
+          return 'Email address is required';
         }
         if (!_isValidEmail(value.trim())) {
-          return UIConstants.signInPleaseEnterValidEmail;
+          return 'Please enter a valid email address';
         }
         return null;
       },
