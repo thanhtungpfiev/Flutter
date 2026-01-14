@@ -2,6 +2,8 @@ import 'dart:io';
 
 import 'package:blog_app/core/error/failure.dart';
 import 'package:blog_app/core/error/server_exception.dart';
+import 'package:blog_app/core/services/network/connection_checker.dart';
+import 'package:blog_app/features/blog/core/constants/blog_constants.dart';
 import 'package:blog_app/features/blog/data/data_sources/blog_remote_data_source.dart';
 import 'package:blog_app/features/blog/data/extensions/blog_model_extension.dart';
 import 'package:blog_app/features/blog/data/models/blog_model.dart';
@@ -13,11 +15,11 @@ import 'package:uuid/uuid.dart';
 class BlogRepositoryImpl implements BlogRepository {
   final BlogRemoteDataSource blogRemoteDataSource;
   // final BlogLocalDataSource blogLocalDataSource;
-  // final ConnectionChecker connectionChecker;
+  final ConnectionChecker connectionChecker;
   BlogRepositoryImpl({
     required this.blogRemoteDataSource,
     // this.blogLocalDataSource,
-    // this.connectionChecker,
+    required this.connectionChecker,
   });
 
   @override
@@ -29,9 +31,9 @@ class BlogRepositoryImpl implements BlogRepository {
     required List<String> topics,
   }) async {
     try {
-      // if (!await (connectionChecker.isConnected)) {
-      //   return left(Failure(Constants.noConnectionErrorMessage));
-      // }
+      if (!await (connectionChecker.isConnected)) {
+        return Left(Failure(BlogConstants.noConnectionErrorMessage));
+      }
       BlogModel blogModel = BlogModel(
         id: const Uuid().v1(),
         posterId: posterId,
@@ -59,10 +61,10 @@ class BlogRepositoryImpl implements BlogRepository {
   @override
   Future<Either<Failure, List<BlogEntity>>> getAllBlogs() async {
     try {
-      // if (!await (connectionChecker.isConnected)) {
-      //   final blogs = blogLocalDataSource.loadBlogs();
-      //   return right(blogs);
-      // }
+      if (!await (connectionChecker.isConnected)) {
+        // final blogs = blogLocalDataSource.loadBlogs();
+        // return Right(blogs);
+      }
       final blogs = await blogRemoteDataSource.getAllBlogs();
       // blogLocalDataSource.uploadLocalBlogs(blogs: blogs);
       return Right(blogs.map((blog) => blog.toEntity()).toList());
