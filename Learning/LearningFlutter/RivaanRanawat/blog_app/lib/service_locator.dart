@@ -3,6 +3,7 @@ import 'package:blog_app/core/services/app_user/app_user_service.dart';
 import 'package:blog_app/core/services/logging/app_logging_service.dart';
 import 'package:blog_app/core/services/logging/logging_service.dart';
 import 'package:blog_app/core/services/network/connection_checker.dart';
+import 'package:blog_app/core/services/network/connection_checker_impl.dart';
 import 'package:blog_app/features/auth/data/data_sources/auth_data_source.dart';
 import 'package:blog_app/features/auth/data/data_sources/auth_data_source_impl.dart';
 import 'package:blog_app/features/auth/data/repositories/auth_repository_impl.dart';
@@ -11,6 +12,8 @@ import 'package:blog_app/features/auth/domain/usecases/get_current_user_usecase.
 import 'package:blog_app/features/auth/domain/usecases/signin_usecase.dart';
 import 'package:blog_app/features/auth/domain/usecases/signup_usecase.dart';
 import 'package:blog_app/features/auth/presentation/cubits/auth_cubit.dart';
+import 'package:blog_app/features/blog/data/data_sources/blog_local_data_source.dart';
+import 'package:blog_app/features/blog/data/data_sources/blog_local_data_source_impl.dart';
 import 'package:blog_app/features/blog/data/data_sources/blog_remote_data_source.dart';
 import 'package:blog_app/features/blog/data/data_sources/blog_remote_data_source_impl.dart';
 import 'package:blog_app/features/blog/data/repositories/blog_repository_impl.dart';
@@ -19,7 +22,9 @@ import 'package:blog_app/features/blog/domain/usecases/get_all_blogs_usecase.dar
 import 'package:blog_app/features/blog/domain/usecases/upload_blog_usecase.dart';
 import 'package:blog_app/features/blog/presentation/cubit/blog_cubit.dart';
 import 'package:get_it/get_it.dart';
+import 'package:hive/hive.dart';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 final sl = GetIt.instance;
@@ -38,6 +43,10 @@ Future<void> initializeDependencies() async {
   sl.registerSingleton<ConnectionChecker>(
     ConnectionCheckerImpl(internetConnection: sl()),
   );
+  // Hive
+  Hive.defaultDirectory = (await getApplicationDocumentsDirectory()).path;
+  sl.registerLazySingleton(() => Hive.box(name: 'blogs'));
+
   // Auth
   // Initialize Supabase (supabase_flutter provides AsyncStorage for gotrue)
   await Supabase.initialize(
@@ -56,6 +65,7 @@ Future<void> initializeDependencies() async {
   sl.registerSingleton<BlogRemoteDataSource>(
     BlogRemoteDataSourceImpl(supabaseClient: sl()),
   );
+  sl.registerSingleton<BlogLocalDataSource>(BlogLocalDataSourceImpl(box: sl()));
 
   // Repositories
   // Auth
@@ -65,7 +75,11 @@ Future<void> initializeDependencies() async {
 
   // Blog
   sl.registerSingleton<BlogRepository>(
-    BlogRepositoryImpl(blogRemoteDataSource: sl(), connectionChecker: sl()),
+    BlogRepositoryImpl(
+      blogRemoteDataSource: sl(),
+      blogLocalDataSource: sl(),
+      connectionChecker: sl(),
+    ),
   );
 
   // Usecases

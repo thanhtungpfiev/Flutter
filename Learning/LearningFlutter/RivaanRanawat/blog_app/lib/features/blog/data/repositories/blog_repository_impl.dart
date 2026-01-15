@@ -3,7 +3,9 @@ import 'dart:io';
 import 'package:blog_app/core/error/failure.dart';
 import 'package:blog_app/core/error/server_exception.dart';
 import 'package:blog_app/core/services/network/connection_checker.dart';
+import 'package:blog_app/core/utils/app_logger.dart';
 import 'package:blog_app/features/blog/core/constants/blog_constants.dart';
+import 'package:blog_app/features/blog/data/data_sources/blog_local_data_source.dart';
 import 'package:blog_app/features/blog/data/data_sources/blog_remote_data_source.dart';
 import 'package:blog_app/features/blog/data/extensions/blog_model_extension.dart';
 import 'package:blog_app/features/blog/data/models/blog_model.dart';
@@ -14,11 +16,11 @@ import 'package:uuid/uuid.dart';
 
 class BlogRepositoryImpl implements BlogRepository {
   final BlogRemoteDataSource blogRemoteDataSource;
-  // final BlogLocalDataSource blogLocalDataSource;
+  final BlogLocalDataSource blogLocalDataSource;
   final ConnectionChecker connectionChecker;
   BlogRepositoryImpl({
     required this.blogRemoteDataSource,
-    // this.blogLocalDataSource,
+    required this.blogLocalDataSource,
     required this.connectionChecker,
   });
 
@@ -62,8 +64,9 @@ class BlogRepositoryImpl implements BlogRepository {
   Future<Either<Failure, List<BlogEntity>>> getAllBlogs() async {
     try {
       if (!await (connectionChecker.isConnected)) {
-        // final blogs = blogLocalDataSource.loadBlogs();
-        // return Right(blogs);
+        AppLogger.e('No internet connection. Loading blogs from local cache.');
+        final blogs = blogLocalDataSource.loadBlogs();
+        return Right(blogs.map((blog) => blog.toEntity()).toList());
       }
       final blogs = await blogRemoteDataSource.getAllBlogs();
       // blogLocalDataSource.uploadLocalBlogs(blogs: blogs);
